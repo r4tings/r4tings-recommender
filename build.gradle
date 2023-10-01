@@ -46,7 +46,7 @@ subprojects {
         implementation("org.apache.spark:spark-sql_$scalaBinaryVersion:$sparkVersion")
 
         /* Logback Classic Module */
-        implementation("ch.qos.logback:logback-classic:1.2.3")
+        implementation("ch.qos.logback:logback-classic:$logbackVersion")
 
         /* Lombok */
         compileOnly("org.projectlombok:lombok:$lombokVersion")
@@ -62,7 +62,7 @@ subprojects {
 ////    testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 ////    testImplementation("org.junit.vintage:junit-vintage-engine:$junitVintageVersion")
 //
-        testImplementation("net.lingala.zip4j:zip4j:2.11.3")
+        testImplementation("net.lingala.zip4j:zip4j:$zip4jVersion")
 
     }
 
