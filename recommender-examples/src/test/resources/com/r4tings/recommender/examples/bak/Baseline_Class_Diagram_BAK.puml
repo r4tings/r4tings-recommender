@@ -1,0 +1,120 @@
+@startuml
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+'skinparam linetype polyline
+'skinparam linetype ortho
+'left to right direction
+
+'title Association Rule Mining Recommender
+
+
+abstract class org.apache.spark.ml.Estimator{
+    + {abstract} Model fit(Dataset<?> dataset)
+    + {abstract} StructType transformSchema(StructType schema)
+    + {abstract} Estimator copy(ParamMap extra)
+    + {abstract} String uid()
+}
+
+abstract class org.apache.spark.ml.Model{
+    + {abstract} StructType transformSchema(StructType schema)
+    + {abstract} Model copy(ParamMap extra)
+    + {abstract} String uid()
+}
+
+org.apache.spark.ml.Model .[hidden]left. org.apache.spark.ml.Estimator
+
+
+interface com.r4tings.recommender.common.ml.param.Verbose{
+    ~ BooleanParam verbose()
+    ~ Boolean getVerbose()
+    ~ Verbose setVerbose(Boolean value)
+}
+
+interface com.r4tings.recommender.common.ml.param.OutputCol{
+    ~ Param<String> outputCol()
+    ~ String getOutputCol()
+    ~ OutputCol setOutputCol(String values)
+}
+
+interface com.r4tings.recommender.common.ml.param.RatingCol{
+    ~ Param<String> userCol()
+    ~ Param<String> itemCol()
+    ~ Param<String> ratingCol()
+    ~ String getUserCol()
+    ~ String getItemCol()
+    ~ String getRatingCol()
+    ~ RatingCol setUserCol(String value)
+    ~ RatingCol setItemCol(String value)
+    ~ RatingCol setRatingCol(String value)
+}
+
+com.r4tings.recommender.common.ml.param.OutputCol .[hidden]left. com.r4tings.recommender.common.ml.param.Verbose
+com.r4tings.recommender.common.ml.param.RatingCol .[hidden]left. com.r4tings.recommender.common.ml.param.OutputCol
+
+
+abstract class com.r4tings.recommender.common.ml.AbstractEstimator{
+
+}
+
+abstract class com.r4tings.recommender.common.ml.AbstractModel{
+
+}
+
+com.r4tings.recommender.common.ml.AbstractModel .[hidden]left. com.r4tings.recommender.common.ml.AbstractEstimator
+
+
+org.apache.spark.ml.Estimator <|-- com.r4tings.recommender.common.ml.AbstractEstimator
+org.apache.spark.ml.Model <|--- com.r4tings.recommender.common.ml.AbstractModel
+
+
+com.r4tings.recommender.common.ml.param.Verbose <|.. com.r4tings.recommender.common.ml.AbstractEstimator
+com.r4tings.recommender.common.ml.param.OutputCol <|.. com.r4tings.recommender.common.ml.AbstractEstimator
+com.r4tings.recommender.common.ml.param.RatingCol <|... com.r4tings.recommender.common.ml.AbstractEstimator
+
+
+com.r4tings.recommender.common.ml.param.Verbose <|.. com.r4tings.recommender.common.ml.AbstractModel
+com.r4tings.recommender.common.ml.param.OutputCol <|.. com.r4tings.recommender.common.ml.AbstractModel
+com.r4tings.recommender.common.ml.param.RatingCol <|.. com.r4tings.recommender.common.ml.AbstractModel
+
+
+abstract class com.r4tings.recommender.common.ml.CommonEstimator<T extends CommonEstimator<T>>{
+
+}
+
+com.r4tings.recommender.common.ml.AbstractEstimator <|-- com.r4tings.recommender.common.ml.CommonEstimator
+
+abstract class com.r4tings.recommender.common.ml.CommonModel<T extends CommonModel<T>>{
+
+}
+
+com.r4tings.recommender.common.ml.AbstractModel <|-- com.r4tings.recommender.common.ml.CommonModel
+
+
+class com.r4tings.recommender.model.svd.baseline.GeneralMeanRatingBaseline{
+
+}
+
+class com.r4tings.recommender.model.svd.baseline.SimpleMeanRatingBaseline{
+
+}
+
+
+com.r4tings.recommender.common.ml.CommonEstimator <|-- com.r4tings.recommender.model.svd.baseline.SimpleMeanRatingBaseline
+
+com.r4tings.recommender.common.ml.CommonEstimator <|-- com.r4tings.recommender.model.svd.baseline.GeneralMeanRatingBaseline
+
+
+com.r4tings.recommender.common.ml.CommonModel <|-- com.r4tings.recommender.model.svd.baseline.MeanRatingBaselineModel
+
+
+class com.r4tings.recommender.model.svd.baseline.MeanRatingBaselineModel{
+
+}
+
+com.r4tings.recommender.model.svd.baseline.SimpleMeanRatingBaseline *-- com.r4tings.recommender.model.svd.baseline.MeanRatingBaselineModel
+
+com.r4tings.recommender.model.svd.baseline.GeneralMeanRatingBaseline *-- com.r4tings.recommender.model.svd.baseline.MeanRatingBaselineModel
+
+
+@enduml

@@ -1,0 +1,12 @@
+Ratings Data File                            ,Criterion,Verbose,User Column,Item Column,Rating Column,"User Id,    Item Id,  Expected"
+dataset/r4tings/ratings.csv                  ,         ,true   ,           ,           ,             ,"     u4,         i1,      0.3 "
+dataset/r4tings/ratings.csv                  ,USER     ,true   ,           ,           ,             ,"The requested operation is not supported. - user"
+dataset/r4tings/ratings.csv                  ,ITEM     ,true   ,           ,           ,             ,"The requested operation is not supported. - item"
+
+dataset/Book-Crossing/BX-Book-Ratings.parquet,         ,       ,User-ID    ,ISBN       ,Book-Rating  ,"   254,  0590353403,      0.9 "
+
+dataset/MovieLens/ml-latest-small/ratings.csv,         ,true   ,userId     ,movieId    ,             ,"      1,        260,      0.5 "
+
+dataset/MovieLens/ml-latest/ratings.csv      ,         ,       ,userId     ,movieId    ,             ,"      1,        260,      0.45"
+
+dataset/MovieLens/ml-coursera/ratings.csv    ,         ,true   ,userId     ,movieId    ,             ,"  76630,       2571,      0.45"

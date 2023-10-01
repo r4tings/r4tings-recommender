@@ -1,0 +1,68 @@
+@startuml
+
+scale 1
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam shadowing false
+
+create CosineSimilarityTest <<(C,#ADD1B2)>>
+
+
+
+loop
+
+'== 데이터셋 로드 ==
+
+autonumber "<b> 1-0"
+
+        create DataLoader <<(C,#ADD1B2)>>
+
+        CosineSimilarityTest -->  DataLoader  : <<create>>
+
+CosineSimilarityTest -[#red]> DataLoader: load()
+activate DataLoader
+
+CosineSimilarityTest<-[#0000FF]- DataLoader : Dataset<Row>
+deactivate DataLoader
+
+
+
+'== 평점 정규화 ==
+
+    opt
+
+autonumber "<b> 2-0"
+        create RatingScaler <<(C,#ADD1B2)>>
+        CosineSimilarityTest -->  RatingScaler  : <<create>>
+        CosineSimilarityTest -[#red]> RatingScaler: normalize():Dataset<Row>
+        activate RatingScaler
+        CosineSimilarityTest<-[#0000FF]- RatingScaler : Dataset<Row>
+        deactivate RatingScaler
+
+    end
+
+
+'== 유사도 계산 ==
+
+autonumber "<b> 3-0"
+
+    create CosineSimilarityMeasurer <<(C,#ADD1B2)>>
+
+    CosineSimilarityTest  --[#green]>> CosineSimilarityMeasurer: <<create>>
+
+    CosineSimilarityTest -[#red]> CosineSimilarityMeasurer: transform():Dataset<Row>
+    activate CosineSimilarityMeasurer
+
+    CosineSimilarityTest<-[#0000FF]- CosineSimilarityMeasurer : Dataset<Row>
+
+
+    deactivate CosineSimilarityMeasurer
+
+
+end
+
+
+
+
+@enduml

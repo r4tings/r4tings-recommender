@@ -1,0 +1,25 @@
+Ratings Data File                            ,"Criterion,       Rating Scaler, Verbose, Lower, Upper, Threshold",Criterion,Verbose,Impute Zero,Ids       ,User Column,Item Column,Rating Column,"    LHS Id,      RHS Id,   Expected"
+dataset/r4tings/ratings.csv                  ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",USER     ,true   ,           ,          ,           ,           ,             ,"        u4,          u5,  0.1428571"
+dataset/r4tings/ratings.csv                  ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",ITEM     ,true   ,           ,          ,           ,           ,             ,"        i3,          i1,  0.3333333"
+dataset/r4tings/ratings.csv                  ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",USER     ,true   ,false      ,          ,           ,           ,             ,"         u4,         u5,  0.1428571"
+dataset/r4tings/ratings.csv                  ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",ITEM     ,true   ,false      ,          ,           ,           ,             ,"         i3,         i1,  0.3333333"
+
+dataset/Book-Crossing/BX-Book-Ratings.parquet,"         , BINARY_THRESHOLDING,        ,      ,      ,        5d",USER     ,       ,           ,11676     ,User-ID    ,ISBN       ,Book-Rating  ,"     11676,       98391,  0.0181573"
+dataset/Book-Crossing/BX-Book-Ratings.parquet,"         , BINARY_THRESHOLDING,        ,      ,      ,        5d",USER     ,       ,false      ,11676     ,User-ID    ,ISBN       ,Book-Rating  ,"     11676,       98391,  0.0181573"
+dataset/Book-Crossing/BX-Book-Ratings.parquet,"         , BINARY_THRESHOLDING,        ,      ,      ,        5d",ITEM     ,       ,           ,0316666343,User-ID    ,ISBN       ,Book-Rating  ,"0316666343,  0971880107,  0.0062112"
+dataset/Book-Crossing/BX-Book-Ratings.parquet,"         , BINARY_THRESHOLDING,        ,      ,      ,        5d",ITEM     ,       ,false      ,0316666343,User-ID    ,ISBN       ,Book-Rating  ,"0316666343,  0971880107,  0.0062112"
+
+dataset/MovieLens/ml-latest-small/ratings.csv,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",USER     ,       ,           ,414       ,userId     ,movieId    ,             ,"       414,         599,  0.2513598"
+dataset/MovieLens/ml-latest-small/ratings.csv,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",USER     ,       ,false      ,414       ,userId     ,movieId    ,             ,"       414,         599,  0.2513598"
+dataset/MovieLens/ml-latest-small/ratings.csv,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",ITEM     ,       ,           ,356       ,userId     ,movieId    ,             ,"       356,         318,  0.5429975"
+dataset/MovieLens/ml-latest-small/ratings.csv,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",ITEM     ,       ,false      ,356       ,userId     ,movieId    ,             ,"       356,         318,  0.5429975"
+
+dataset/MovieLens/ml-latest/ratings.csv      ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",USER     ,       ,           ,123100    ,userId     ,movieId    ,             ,"    123100,      117490,  0.0239521"
+dataset/MovieLens/ml-latest/ratings.csv      ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",USER     ,       ,false      ,123100    ,userId     ,movieId    ,             ,"    123100,      117490,  0.0239521"
+dataset/MovieLens/ml-latest/ratings.csv      ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",ITEM     ,       ,           ,318       ,userId     ,movieId    ,             ,"       318,         356,  0.4292868"
+dataset/MovieLens/ml-latest/ratings.csv      ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",ITEM     ,       ,false      ,318       ,userId     ,movieId    ,             ,"       318,         356,  0.4292868"
+
+dataset/MovieLens/ml-coursera/ratings.csv    ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",USER     ,       ,           ,76630     ,userId     ,movieId    ,             ,"     76630,      133811,  0.4498934"
+dataset/MovieLens/ml-coursera/ratings.csv    ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",USER     ,       ,false      ,76630     ,userId     ,movieId    ,             ,"     76630,      133811,  0.4498934"
+dataset/MovieLens/ml-coursera/ratings.csv    ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",ITEM     ,       ,           ,2571      ,userId     ,movieId    ,             ,"      2571,        4993,  0.7122708"
+dataset/MovieLens/ml-coursera/ratings.csv    ,"         , BINARY_THRESHOLDING,        ,      ,      ,        3d",ITEM     ,       ,false      ,2571      ,userId     ,movieId    ,             ,"      2571,        4993,  0.7122708"

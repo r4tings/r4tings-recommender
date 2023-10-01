@@ -1,0 +1,27 @@
+Ratings Data File                            ,Criterion,Verbose,Impute Zero,Ids                     ,User Column,Item Column,Rating Column,"     LHS Id,      RHS Id,  Expected"
+dataset/r4tings/ratings.csv                  ,USER     ,true   ,           ,                        ,           ,           ,             ,"         u4,          u5,        1d"
+dataset/r4tings/ratings.csv                  ,ITEM     ,true   ,           ,                        ,           ,           ,             ,"         i3,          i1,        1d"
+dataset/r4tings/ratings.csv                  ,USER     ,true   ,true       ,                        ,           ,           ,             ,"         u4,          u5,       0.5"
+dataset/r4tings/ratings.csv                  ,USER     ,true   ,           ,u4                      ,           ,           ,             ,"         u4,          u5,        1d"
+dataset/r4tings/ratings.csv                  ,ITEM     ,true   ,true       ,                        ,           ,           ,             ,"         i3,          i1,       0.5"
+dataset/r4tings/ratings.csv                  ,ITEM     ,true   ,           ,"i1, i2, i4, i6, i8, i9",           ,           ,             ,"         i3,          i1,        1d"
+
+dataset/Book-Crossing/BX-Book-Ratings.parquet,USER     ,       ,true       ,11676                   ,User-ID    ,ISBN       ,Book-Rating  ,"      11676,       98391,       0.5"
+dataset/Book-Crossing/BX-Book-Ratings.parquet,USER     ,       ,           ,11676                   ,User-ID    ,ISBN       ,Book-Rating  ,"      11676,       98391, 0.5053582"
+dataset/Book-Crossing/BX-Book-Ratings.parquet,ITEM     ,       ,true       ,0316666343              ,User-ID    ,ISBN       ,Book-Rating  ," 0316666343,  0971880107,       0.5"
+dataset/Book-Crossing/BX-Book-Ratings.parquet,ITEM     ,       ,           ,0316666343              ,User-ID    ,ISBN       ,Book-Rating  ," 0316666343,  0971880107, 0.5000000"
+
+dataset/MovieLens/ml-latest-small/ratings.csv,USER     ,true   ,true       ,414                     ,userId     ,movieId    ,             ,"        414,         599,       0.5"
+dataset/MovieLens/ml-latest-small/ratings.csv,USER     ,true   ,           ,414                     ,userId     ,movieId    ,             ,"        414,         599, 0.6714880"
+dataset/MovieLens/ml-latest-small/ratings.csv,ITEM     ,true   ,true       ,356                     ,userId     ,movieId    ,             ,"        356,         318,       0.5"
+dataset/MovieLens/ml-latest-small/ratings.csv,ITEM     ,true   ,           ,356                     ,userId     ,movieId    ,             ,"        356,         318, 0.5873501"
+
+dataset/MovieLens/ml-latest/ratings.csv      ,USER     ,       ,true       ,123100                  ,userId     ,movieId    ,             ,"     123100,      117490,       0.5"
+dataset/MovieLens/ml-latest/ratings.csv      ,USER     ,       ,           ,123100                  ,userId     ,movieId    ,             ,"     123100,      117490, 0.8739097"
+dataset/MovieLens/ml-latest/ratings.csv      ,ITEM     ,       ,true       ,318                     ,userId     ,movieId    ,             ,"        318,         356,       0.5"
+dataset/MovieLens/ml-latest/ratings.csv      ,ITEM     ,       ,           ,318                     ,userId     ,movieId    ,             ,"        318,         356, 0.6139840"
+
+dataset/MovieLens/ml-coursera/ratings.csv    ,USER     ,       ,true       ,76630                   ,userId     ,movieId    ,             ,"      76630,      133811,       0.5"
+dataset/MovieLens/ml-coursera/ratings.csv    ,USER     ,       ,           ,76630                   ,userId     ,movieId    ,             ,"      76630,      133811, 0.5540187"
+dataset/MovieLens/ml-coursera/ratings.csv    ,ITEM     ,       ,true       ,2571                    ,userId     ,movieId    ,             ,"       2571,        4993, 0.5028935"
+dataset/MovieLens/ml-coursera/ratings.csv    ,ITEM     ,       ,           ,2571                    ,userId     ,movieId    ,             ,"       2571,        4993, 0.5894879"

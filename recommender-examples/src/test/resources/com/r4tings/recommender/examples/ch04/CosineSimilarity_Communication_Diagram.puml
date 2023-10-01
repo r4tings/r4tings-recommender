@@ -1,0 +1,40 @@
+@startuml
+
+scale 1
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam shadowing false
+
+|A|
+start
+
+|B|
+: 평점 데이터 로드;
+
+|A|
+
+if (평점 정규화) then (yes)
+|C|
+: 평점 정규화;
+ else (no)
+    endif
+
+|D|
+: 유사도 계산;
+
+|A|
+
+:A|
+:A<
+:A>
+:A/
+:A\\
+:A]
+:A}
+
+
+stop
+
+
+@enduml

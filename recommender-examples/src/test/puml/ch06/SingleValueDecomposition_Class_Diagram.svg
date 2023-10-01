@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="1112px" preserveAspectRatio="none"
+     style="width:1387px;height:1112px;background:#FFFFFF;" version="1.1" viewBox="0 0 1387 1112" width="1387px"
+     zoomAndPan="magnify">
+    <defs/>
+    <g><!--MD5=[36a01395821b2eaae4c1182ca71968d3]
+cluster org.apache.spark.ml-->
+        <polygon fill="#FFFFFF" points="381,6,501,6,508,24.7599,1217,24.7599,1217,149,381,149,381,6"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="381" x2="508" y1="24.7599" y2="24.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="114" x="385" y="18.2299">org.apache.spark.ml
+        </text><!--MD5=[5251f2a81915f14ce8a29227505cc9fd]
+cluster com.r4tings.recommender.common.ml-->
+        <polygon fill="#FFFFFF" points="16,197,220,197,227,215.7599,1217,215.7599,1217,836,16,836,16,197"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="227" y1="215.7599" y2="215.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="198" x="20" y="209.2299">com.r4tings.recommender.common.ml
+        </text><!--MD5=[06ed629ced50ca4162b5bd688d358b3c]
+cluster com.r4tings.recommender.common.ml.param-->
+        <polygon fill="#FFFFFF" points="40,272,280,272,287,290.7599,290,290.7599,290,521,40,521,40,272"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="40" x2="287" y1="290.7599" y2="290.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="234" x="44" y="284.2299">com.r4tings.recommender.common.ml.param
+        </text><!--MD5=[e682eab179de3d0448c5b6f4ba11c15e]
+cluster com.r4tings.recommender.model.svd.mf-->
+        <polygon fill="#FFFFFF" points="366,860,588,860,595,878.7599,1370,878.7599,1370,1105,366,1105,366,860"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="366" x2="595" y1="878.7599" y2="878.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="216" x="370" y="872.2299">com.r4tings.recommender.model.svd.mf
+        </text><!--MD5=[238dbd9944093bcdc066e7d3f25fa0ed]
+class Estimator-->
+        <rect codeLine="14" fill="#FEFECE" height="95.0396" id="Estimator" style="stroke:#A80036;stroke-width:1.5;"
+              width="288" x="397" y="37.5"/>
+        <ellipse cx="510.25" cy="51.5" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M514.2813,55 L512.8281,55 L511.9844,53 L508.9063,53 L508.1094,55 L506.6563,55 L509.8125,46.5625 L511.125,46.5625 L514.2813,55 Z M511.5313,51.5625 L510.3906,48.3906 Q510.2969,48.1875 510.4375,47.8125 L510.4688,47.8125 Q510.6094,48.2188 510.5156,48.4063 L509.375,51.5625 L511.5313,51.5625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="527.75" y="55.35">Estimator
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="398" x2="684" y1="65.5" y2="65.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="398" x2="684" y1="73.5" y2="73.5"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="180" x="403" y="87.7299">+Model fit(Dataset&lt;?&gt; dataset)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="276" x="403" y="100.4898">+StructType transformSchema(StructType schema)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="186" x="403" y="113.2497">+Estimator copy(ParamMap extra)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="78" x="403" y="126.0096">+String uid()
+        </text><!--MD5=[7e20e022571e30ec1001cf6eabd7f3e2]
+class Model-->
+        <rect codeLine="20" fill="#FEFECE" height="82.2797" id="Model" style="stroke:#A80036;stroke-width:1.5;"
+              width="288" x="913" y="48"/>
+        <ellipse cx="1038.25" cy="62" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1042.2813,65.5 L1040.8281,65.5 L1039.9844,63.5 L1036.9063,63.5 L1036.1094,65.5 L1034.6563,65.5 L1037.8125,57.0625 L1039.125,57.0625 L1042.2813,65.5 Z M1039.5313,62.0625 L1038.3906,58.8906 Q1038.2969,58.6875 1038.4375,58.3125 L1038.4688,58.3125 Q1038.6094,58.7188 1038.5156,58.9063 L1037.375,62.0625 L1039.5313,62.0625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="30" x="1055.75" y="65.85">Model
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="914" x2="1200" y1="76" y2="76"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="914" x2="1200" y1="84" y2="84"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="276" x="919" y="98.2299">+StructType transformSchema(StructType schema)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="162" x="919" y="110.9898">+Model copy(ParamMap extra)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="78" x="919" y="123.7497">+String uid()
+        </text><!--MD5=[617c0a6156c619baf309abff36798664]
+class AbstractEstimator-->
+        <rect codeLine="60" fill="#FEFECE" height="273.6783" id="AbstractEstimator"
+              style="stroke:#A80036;stroke-width:1.5;" width="288" x="397" y="302"/>
+        <ellipse cx="486.25" cy="316" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M490.2813,319.5 L488.8281,319.5 L487.9844,317.5 L484.9063,317.5 L484.1094,319.5 L482.6563,319.5 L485.8125,311.0625 L487.125,311.0625 L490.2813,319.5 Z M487.5313,316.0625 L486.3906,312.8906 Q486.2969,312.6875 486.4375,312.3125 L486.4688,312.3125 Q486.6094,312.7188 486.5156,312.9063 L485.375,316.0625 L487.5313,316.0625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="102" x="503.75" y="319.85">AbstractEstimator
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="398" x2="684" y1="330" y2="330"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="398" x2="684" y1="338" y2="338"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="276" x="403" y="352.2299">+StructType transformSchema(StructType schema)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="186" x="403" y="364.9898">+Estimator copy(ParamMap extra)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="78" x="403" y="377.7497">+String uid()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="403" y="390.5096">+BooleanParam verbose()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="403" y="403.2695">+Param&lt;String&gt; outputCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="403" y="416.0294">+Param&lt;String&gt; userCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="403" y="428.7894">+Param&lt;String&gt; itemCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="403" y="441.5493">+Param&lt;String&gt; ratingCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="403" y="454.3092">+Boolean getVerbose()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="403" y="467.0691">+String getOutputCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="403" y="479.829">+String getUserCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="403" y="492.5889">+String getItemCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="403" y="505.3488">+String getRatingCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="403" y="518.1087">+Boolean getVerbose()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="403" y="530.8686">+String getOutputCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="403" y="543.6285">+String getUserCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="403" y="556.3884">+String getItemCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="403" y="569.1483">+String getRatingCol()
+        </text><!--MD5=[f70348de0bb9b5d996d01a557bcd3609]
+class AbstractModel-->
+        <rect codeLine="80" fill="#FEFECE" height="273.6783" id="AbstractModel" style="stroke:#A80036;stroke-width:1.5;"
+              width="288" x="913" y="265"/>
+        <ellipse cx="1014.25" cy="279" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M1018.2813,282.5 L1016.8281,282.5 L1015.9844,280.5 L1012.9063,280.5 L1012.1094,282.5 L1010.6563,282.5 L1013.8125,274.0625 L1015.125,274.0625 L1018.2813,282.5 Z M1015.5313,279.0625 L1014.3906,275.8906 Q1014.2969,275.6875 1014.4375,275.3125 L1014.4688,275.3125 Q1014.6094,275.7188 1014.5156,275.9063 L1013.375,279.0625 L1015.5313,279.0625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="78" x="1031.75" y="282.85">AbstractModel
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="914" x2="1200" y1="293" y2="293"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="914" x2="1200" y1="301" y2="301"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="276" x="919" y="315.2299">+StructType transformSchema(StructType schema)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="162" x="919" y="327.9898">+Model copy(ParamMap extra)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="78" x="919" y="340.7497">+String uid()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="919" y="353.5096">+BooleanParam verbose()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="919" y="366.2695">+Param&lt;String&gt; outputCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="919" y="379.0294">+Param&lt;String&gt; userCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="919" y="391.7894">+Param&lt;String&gt; itemCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="919" y="404.5493">+Param&lt;String&gt; ratingCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="919" y="417.3092">+Boolean getVerbose()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="919" y="430.0691">+String getOutputCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="919" y="442.829">+String getUserCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="919" y="455.5889">+String getItemCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="919" y="468.3488">+String getRatingCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="919" y="481.1087">+Boolean getVerbose()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="919" y="493.8686">+String getOutputCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="919" y="506.6285">+String getUserCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="919" y="519.3884">+String getItemCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="919" y="532.1483">+String getRatingCol()
+        </text><!--MD5=[a0c57a0a28441049e026126bbee0bc3d]
+class CommonEstimator-->
+        <rect codeLine="100" fill="#FEFECE" height="171.599" id="CommonEstimator"
+              style="stroke:#A80036;stroke-width:1.5;" width="290" x="396" y="648"/>
+        <ellipse cx="409" cy="662" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M413.0313,665.5 L411.5781,665.5 L410.7344,663.5 L407.6563,663.5 L406.8594,665.5 L405.4063,665.5 L408.5625,657.0625 L409.875,657.0625 L413.0313,665.5 Z M410.2813,662.0625 L409.1406,658.8906 Q409.0469,658.6875 409.1875,658.3125 L409.2188,658.3125 Q409.3594,658.7188 409.2656,658.9063 L408.125,662.0625 L410.2813,662.0625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="90" x="421" y="665.85">CommonEstimator
+        </text>
+        <rect fill="#FFFFFF" height="14.7599" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;"
+              width="170" x="519" y="645"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="168" x="520" y="656.2299">T extends CommonEstimator&lt;T&gt;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="397" x2="685" y1="676" y2="676"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="397" x2="685" y1="684" y2="684"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="168"
+              x="402" y="698.2299">+T setVerbose(Boolean value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="174"
+              x="402" y="710.9898">+T setOutputCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="402" y="723.7497">+T setUserCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="402" y="736.5096">+T setItemCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="174"
+              x="402" y="749.2695">+T setRatingCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="192"
+              x="402" y="762.0294">+T setCriterion(Criterion value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="192"
+              x="402" y="774.7894">+T setCriterionCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="186"
+              x="402" y="787.5493">+T setImputeZero(Boolean value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="402" y="800.3092">+T setIds(Object... value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="402" y="813.0691">#T self()
+        </text><!--MD5=[ef48e4e5c8f235e0dd7fbe1971454575]
+class CommonModel-->
+        <rect codeLine="112" fill="#FEFECE" height="171.599" id="CommonModel" style="stroke:#A80036;stroke-width:1.5;"
+              width="242" x="936" y="592"/>
+        <ellipse cx="949" cy="606" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M953.0313,609.5 L951.5781,609.5 L950.7344,607.5 L947.6563,607.5 L946.8594,609.5 L945.4063,609.5 L948.5625,601.0625 L949.875,601.0625 L953.0313,609.5 Z M950.2813,606.0625 L949.1406,602.8906 Q949.0469,602.6875 949.1875,602.3125 L949.2188,602.3125 Q949.3594,602.7188 949.2656,602.9063 L948.125,606.0625 L950.2813,606.0625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="66" x="961" y="609.85">CommonModel
+        </text>
+        <rect fill="#FFFFFF" height="14.7599" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;"
+              width="146" x="1035" y="589"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="144" x="1036" y="600.2299">T extends CommonModel&lt;T&gt;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="937" x2="1177" y1="620" y2="620"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="937" x2="1177" y1="628" y2="628"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="168"
+              x="942" y="642.2299">+T setVerbose(Boolean value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="174"
+              x="942" y="654.9898">+T setOutputCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="942" y="667.7497">+T setUserCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="942" y="680.5096">+T setItemCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="174"
+              x="942" y="693.2695">+T setRatingCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="192"
+              x="942" y="706.0294">+T setCriterion(Criterion value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="192"
+              x="942" y="718.7894">+T setCriterionCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="186"
+              x="942" y="731.5493">+T setImputeZero(Boolean value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="942" y="744.3092">+T setIds(Object... value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="942" y="757.0691">#T self()
+        </text><!--MD5=[986af0b77bb368f4644cf27d4dc3ce6a]
+class Verbose-->
+        <rect codeLine="33" fill="#FEFECE" height="44" id="Verbose" style="stroke:#A80036;stroke-width:1.5;" width="70"
+              x="130" y="382"/>
+        <ellipse cx="143" cy="396" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M143.9375,400 L142.5,400 L142.5,391.5625 L143.9375,391.5625 L143.9375,400 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="42" x="155" y="399.85">Verbose
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="131" x2="199" y1="410" y2="410"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="131" x2="199" y1="418" y2="418"/><!--MD5=[fb49fb28c4ef27686c59ea575820fdd8]
+class OutputCol-->
+        <rect codeLine="38" fill="#FEFECE" height="44" id="OutputCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="82" x="124" y="461"/>
+        <ellipse cx="137" cy="475" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M137.9375,479 L136.5,479 L136.5,470.5625 L137.9375,470.5625 L137.9375,479 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="149" y="478.85">OutputCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="125" x2="205" y1="489" y2="489"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="125" x2="205" y1="497" y2="497"/><!--MD5=[6e8b8349b871199d2f29f8f6b56a4806]
+class RatingCol-->
+        <rect codeLine="43" fill="#FEFECE" height="44" id="RatingCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="82" x="124" y="303"/>
+        <ellipse cx="137" cy="317" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M137.9375,321 L136.5,321 L136.5,312.5625 L137.9375,312.5625 L137.9375,321 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="149" y="320.85">RatingCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="125" x2="205" y1="331" y2="331"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="125" x2="205" y1="339" y2="339"/><!--MD5=[3c7c5abc428fb271c434eed6ceb32ff1]
+class SingleValueDecomposition-->
+        <rect codeLine="131" fill="#FEFECE" height="120.5594" id="SingleValueDecomposition"
+              style="stroke:#A80036;stroke-width:1.5;" width="318" x="382" y="910.5"/>
+        <ellipse cx="465.25" cy="924.5" fill="#ADD1B2" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M467.6875,927.3594 Q466.8281,928.5 465.625,928.5 Q464.0938,928.5 463.1719,927.3594 Q462.25,926.2031 462.25,924.4219 Q462.25,922.5469 463.25,921.3125 Q464.2656,920.0625 465.8906,920.0625 Q466.9688,920.0625 467.6875,921.2188 L467.6875,923 Q466.6875,921.5 465.9531,921.5 Q464.9219,921.5 464.2969,922.2969 Q463.6875,923.0938 463.6875,924.375 Q463.6875,925.5938 464.2656,926.3281 Q464.8438,927.0625 465.7969,927.0625 Q466.6563,927.0625 467.6875,925.5938 L467.6875,927.3594 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="482.75" y="928.35">SingleValueDecomposition
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="383" x2="699" y1="938.5" y2="938.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="383" x2="699" y1="946.5" y2="946.5"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="388" y="960.7299">+SingleValueDecomposition()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="306"
+              x="388" y="973.4898">+SingleValueDecompositionModel fit(Dataset ratings)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="78"
+              x="388" y="986.2497">+IntParam k()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="90"
+              x="388" y="999.0096">+Integer getK()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="270"
+              x="388" y="1011.7695">+SingleValueDecomposition setK(Integer value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="54"
+              x="388" y="1024.5294">#T self()
+        </text><!--MD5=[dd2d9bb36d2d7f589fbd06a67193fb71]
+class SingleValueDecompositionModel-->
+        <rect codeLine="139" fill="#FEFECE" height="197.1189" id="SingleValueDecompositionModel"
+              style="stroke:#A80036;stroke-width:1.5;" width="594" x="760" y="891.5"/>
+        <ellipse cx="966.25" cy="905.5" fill="#ADD1B2" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M968.6875,908.3594 Q967.8281,909.5 966.625,909.5 Q965.0938,909.5 964.1719,908.3594 Q963.25,907.2031 963.25,905.4219 Q963.25,903.5469 964.25,902.3125 Q965.2656,901.0625 966.8906,901.0625 Q967.9688,901.0625 968.6875,902.2188 L968.6875,904 Q967.6875,902.5 966.9531,902.5 Q965.9219,902.5 965.2969,903.2969 Q964.6875,904.0938 964.6875,905.375 Q964.6875,906.5938 965.2656,907.3281 Q965.8438,908.0625 966.7969,908.0625 Q967.6563,908.0625 968.6875,906.5938 L968.6875,908.3594 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="174"
+              x="983.75" y="909.35">SingleValueDecompositionModel
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="761" x2="1353" y1="919.5" y2="919.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="761" x2="1353" y1="927.5" y2="927.5"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="192"
+              x="766" y="941.7299">+SingleValueDecompositionModel()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing"
+              text-decoration="underline" textLength="582" x="766" y="954.4898">+Double reconstructRating(WrappedArray&lt;Double&gt;
+            u, WrappedArray&lt;Double&gt; s, WrappedArray&lt;Double&gt; v)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="216"
+              x="766" y="967.2497">+Param&lt;Dataset&lt;Row&gt;&gt; userFeatureDS()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="198"
+              x="766" y="980.0096">+Param&lt;Double[]&gt; featureWeights()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="216"
+              x="766" y="992.7695">+Param&lt;Dataset&lt;Row&gt;&gt; itemFeatureDS()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="192"
+              x="766" y="1005.5294">+Dataset&lt;Row&gt; getUserFeatureDS()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="192"
+              x="766" y="1018.2894">+Dataset&lt;Row&gt; getItemFeatureDS()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="174"
+              x="766" y="1031.0493">+Dataset&lt;Row&gt; getItemBiasDS()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="402"
+              x="766" y="1043.8092">+SingleValueDecompositionModel setUserFeatureDS(Dataset&lt;Row&gt; value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="402"
+              x="766" y="1056.5691">+SingleValueDecompositionModel setItemFeatureDS(Dataset&lt;Row&gt; value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="384"
+              x="766" y="1069.329">+SingleValueDecompositionModel setFeatureWeights(double[] value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="54"
+              x="766" y="1082.0889">#T self()
+        </text><!--MD5=[a27a2a2e4f943c5979308063e58ddf12]
+link Estimator to Model--><!--MD5=[a4821a64db1beb3b2d49dfaf36623f59]
+link OutputCol to Verbose--><!--MD5=[a03d5bb6c0295fa9c1f790ae209cddf0]
+link RatingCol to OutputCol--><!--MD5=[67bc0ee03f715e23eaa59a9a8d8034c6]
+link AbstractEstimator to AbstractModel--><!--MD5=[1c2aba370ddecd0f18f531377bed265c]
+link AbstractEstimator to Estimator-->
+        <path codeLine="158" d="M541,301.88 C541,301.88 541,152.75 541,152.75 " fill="none"
+              id="AbstractEstimator-to-Estimator" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="534,152.75,541,132.75,548,152.75,534,152.75"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c0a03a7adf0cf884632c72a8bb4a8fdf]
+link AbstractEstimator to Verbose-->
+        <path codeLine="160" d="M396.97,411.33 C396.97,411.33 220.12,411.33 220.12,411.33 " fill="none"
+              id="AbstractEstimator-to-Verbose" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="220.12,418.33,200.12,411.33,220.12,404.33,220.12,418.33"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[f2d6e88dfcaef0c58cde3baea72f6fe8]
+reverse link OutputCol to AbstractEstimator-->
+        <path codeLine="161" d="M226.31,483 C226.31,483 396.75,483 396.75,483 " fill="none"
+              id="OutputCol-backto-AbstractEstimator"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="226.31,490,206.31,483,226.31,476,226.31,490"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[5ddfa1e7766a7eda28017a65ad2d3b9f]
+reverse link RatingCol to AbstractEstimator-->
+        <path codeLine="162" d="M226.31,325 C226.31,325 396.75,325 396.75,325 " fill="none"
+              id="RatingCol-backto-AbstractEstimator"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="226.31,332,206.31,325,226.31,318,226.31,332"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[44e3dd4f4eeed96e0be358a70853e9c7]
+link CommonEstimator to AbstractEstimator-->
+        <path codeLine="164" d="M541,647.88 C541,647.88 541,596.01 541,596.01 " fill="none"
+              id="CommonEstimator-to-AbstractEstimator" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="534,596.01,541,576.01,548,596.01,534,596.01"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6bbd2ed41b70ccc057c8c6ffeca8b0cf]
+link AbstractModel to Model-->
+        <path codeLine="166" d="M1057,264.71 C1057,264.71 1057,150.12 1057,150.12 " fill="none"
+              id="AbstractModel-to-Model" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="1050,150.12,1057,130.12,1064,150.12,1050,150.12"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[96b37368612430803b0de333458bc72d]
+reverse link Verbose to AbstractModel-->
+        <path codeLine="168"
+              d="M220.25,396.67 C220.25,396.67 294,396.67 294,396.67 C294,396.67 294,289.67 294,289.67 C294,289.67 691.39,289.67 912.59,289.67 "
+              fill="none" id="Verbose-backto-AbstractModel"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="220.25,403.67,200.25,396.67,220.25,389.67,220.25,403.67"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[beb2fbdc7e084f4afef229a0d899667d]
+reverse link OutputCol to AbstractModel-->
+        <path codeLine="169"
+              d="M165,525.42 C165,525.42 165,584 165,584 C165,584 925,584 925,584 C925,584 925,564.87 925,539.01 "
+              fill="none" id="OutputCol-backto-AbstractModel"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="158,525.42,165,505.42,172,525.42,158,525.42"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[fedde1b5fca9f00cf711218002a2c981]
+reverse link RatingCol to AbstractModel-->
+        <path codeLine="170" d="M165,282.84 C165,282.84 165,277.33 165,277.33 C165,277.33 660.24,277.33 912.69,277.33 "
+              fill="none" id="RatingCol-backto-AbstractModel"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="172,282.84,165,302.84,158,282.84,172,282.84"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[915234c9d8daf64da0627bf8c99e2aa5]
+link CommonModel to AbstractModel-->
+        <path codeLine="172" d="M1057,591.81 C1057,591.81 1057,559.14 1057,559.14 " fill="none"
+              id="CommonModel-to-AbstractModel" style="stroke:#0000FF;stroke-width:1.0;"/>
+        <polygon fill="none" points="1050,559.14,1057,539.14,1064,559.14,1050,559.14"
+                 style="stroke:#0000FF;stroke-width:1.0;"/><!--MD5=[2c411f7656d232f457a0c8d87a32f5f2]
+reverse link SingleValueDecomposition to SingleValueDecompositionModel-->
+        <path codeLine="174" d="M713.03,971 C713.03,971 759.84,971 759.84,971 " fill="none"
+              id="SingleValueDecomposition-backto-SingleValueDecompositionModel"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="#A80036" points="700.03,971,706.03,975,712.03,971,706.03,967,700.03,971"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[61040f01ba27020a0c7f48801659b8b8]
+link SingleValueDecomposition to CommonEstimator-->
+        <path codeLine="176" d="M541,910.27 C541,910.27 541,840.04 541,840.04 " fill="none"
+              id="SingleValueDecomposition-to-CommonEstimator" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="534,840.04,541,820.04,548,840.04,534,840.04"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[85e5af7b67df8fa2e4214cf104f0064c]
+link SingleValueDecompositionModel to CommonModel-->
+        <path codeLine="177" d="M1057,891.28 C1057,891.28 1057,784.24 1057,784.24 " fill="none"
+              id="SingleValueDecompositionModel-to-CommonModel" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="1050,784.24,1057,764.24,1064,784.24,1050,784.24"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ce3925b07a2c985c2ad84228130596b2]
+@startuml
+
+scale 1
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam linetype ortho
+left to right direction
+
+
+package org.apache.spark.ml {
+    abstract class Estimator{
+        + {abstract} Model fit(Dataset<?> dataset)
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Estimator copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+    abstract class Model{
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Model copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+
+      Estimator .[hidden]. Model
+}
+
+together {
+package com.r4tings.recommender.common.ml {
+
+    package com.r4tings.recommender.common.ml.param {
+        interface Verbose{
+            '~ BooleanParam verbose()
+           ' ~ Boolean getVerbose()
+           ' ~ Verbose setVerbose(Boolean value)
+        }
+        interface OutputCol{
+           ' ~ Param<String> outputCol()
+           ' ~ String getOutputCol()
+           ' ~ OutputCol setOutputCol(String values)
+        }
+        interface RatingCol{
+           ' ~ Param<String> userCol()
+           ' ~ Param<String> itemCol()
+           ' ~ Param<String> ratingCol()
+           ' ~ String getUserCol()
+           ' ~ String getItemCol()
+           ' ~ String getRatingCol()
+           ' ~ RatingCol setUserCol(String value)
+           ' ~ RatingCol setItemCol(String value)
+           ' ~ RatingCol setRatingCol(String value)
+        }
+
+          Verbose .[hidden]left. OutputCol
+          OutputCol .[hidden]left. RatingCol
+
+    }
+
+    abstract class AbstractEstimator{
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Estimator copy(ParamMap extra)
+        + {abstract} String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+    }
+    abstract class AbstractModel{
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Model copy(ParamMap extra)
+        + {abstract} String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+    }
+    abstract class CommonEstimator<T extends CommonEstimator<T>>{
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setCriterion(Criterion value)
+        + T setCriterionCol(String value)
+        + T setImputeZero(Boolean value)
+        + T setIds(Object... value)
+        # {abstract} T self()
+    }
+    abstract class CommonModel<T extends CommonModel<T>>{
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setCriterion(Criterion value)
+        + T setCriterionCol(String value)
+        + T setImputeZero(Boolean value)
+        + T setIds(Object... value)
+        # {abstract} T self()
+    }
+
+
+}
+
+
+
+package com.r4tings.recommender.model.svd.mf {
+    class SingleValueDecomposition{
+        + SingleValueDecomposition()
+        + SingleValueDecompositionModel fit(Dataset ratings)
+        + IntParam k()
+        + Integer getK()
+        + SingleValueDecomposition setK(Integer value)
+        # T self()
+    }
+    class SingleValueDecompositionModel{
+        + SingleValueDecompositionModel()
+        + {static} Double reconstructRating(WrappedArray<Double> u, WrappedArray<Double> s, WrappedArray<Double> v)
+        + Param<Dataset<Row>> userFeatureDS()
+        + Param<Double[]> featureWeights()
+        + Param<Dataset<Row>> itemFeatureDS()
+        + Dataset<Row> getUserFeatureDS()
+        + Dataset<Row> getItemFeatureDS()
+        + Dataset<Row> getItemBiasDS()
+        + SingleValueDecompositionModel setUserFeatureDS(Dataset<Row> value)
+        + SingleValueDecompositionModel setItemFeatureDS(Dataset<Row> value)
+        + SingleValueDecompositionModel setFeatureWeights(double[] value)
+        # T self()
+    }
+}
+
+ AbstractEstimator .[hidden]. AbstractModel
+
+
+Estimator <|-left- AbstractEstimator
+
+Verbose <|.up. AbstractEstimator
+OutputCol <|.. AbstractEstimator
+RatingCol <|.. AbstractEstimator
+
+AbstractEstimator <|-left- CommonEstimator
+
+Model <|-left- - AbstractModel
+
+Verbose <|.down. AbstractModel
+OutputCol <|.. AbstractModel
+RatingCol <|.. AbstractModel
+
+AbstractModel <|-left[#blue]- CommonModel
+
+SingleValueDecomposition *- - SingleValueDecompositionModel
+
+CommonEstimator <|-left- SingleValueDecomposition
+CommonModel <|-left- SingleValueDecompositionModel
+
+
+
+@enduml
+
+@startuml
+
+scale 1
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam linetype ortho
+left to right direction
+
+
+package org.apache.spark.ml {
+    abstract class Estimator{
+        + {abstract} Model fit(Dataset<?> dataset)
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Estimator copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+    abstract class Model{
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Model copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+
+      Estimator .[hidden]. Model
+}
+
+together {
+package com.r4tings.recommender.common.ml {
+
+    package com.r4tings.recommender.common.ml.param {
+        interface Verbose{
+        }
+        interface OutputCol{
+        }
+        interface RatingCol{
+        }
+
+          Verbose .[hidden]left. OutputCol
+          OutputCol .[hidden]left. RatingCol
+
+    }
+
+    abstract class AbstractEstimator{
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Estimator copy(ParamMap extra)
+        + {abstract} String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+    }
+    abstract class AbstractModel{
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Model copy(ParamMap extra)
+        + {abstract} String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+    }
+    abstract class CommonEstimator<T extends CommonEstimator<T>>{
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setCriterion(Criterion value)
+        + T setCriterionCol(String value)
+        + T setImputeZero(Boolean value)
+        + T setIds(Object... value)
+        # {abstract} T self()
+    }
+    abstract class CommonModel<T extends CommonModel<T>>{
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setCriterion(Criterion value)
+        + T setCriterionCol(String value)
+        + T setImputeZero(Boolean value)
+        + T setIds(Object... value)
+        # {abstract} T self()
+    }
+
+
+}
+
+
+
+package com.r4tings.recommender.model.svd.mf {
+    class SingleValueDecomposition{
+        + SingleValueDecomposition()
+        + SingleValueDecompositionModel fit(Dataset ratings)
+        + IntParam k()
+        + Integer getK()
+        + SingleValueDecomposition setK(Integer value)
+        # T self()
+    }
+    class SingleValueDecompositionModel{
+        + SingleValueDecompositionModel()
+        + {static} Double reconstructRating(WrappedArray<Double> u, WrappedArray<Double> s, WrappedArray<Double> v)
+        + Param<Dataset<Row>> userFeatureDS()
+        + Param<Double[]> featureWeights()
+        + Param<Dataset<Row>> itemFeatureDS()
+        + Dataset<Row> getUserFeatureDS()
+        + Dataset<Row> getItemFeatureDS()
+        + Dataset<Row> getItemBiasDS()
+        + SingleValueDecompositionModel setUserFeatureDS(Dataset<Row> value)
+        + SingleValueDecompositionModel setItemFeatureDS(Dataset<Row> value)
+        + SingleValueDecompositionModel setFeatureWeights(double[] value)
+        # T self()
+    }
+}
+
+ AbstractEstimator .[hidden]. AbstractModel
+
+
+Estimator <|-left- AbstractEstimator
+
+Verbose <|.up. AbstractEstimator
+OutputCol <|.. AbstractEstimator
+RatingCol <|.. AbstractEstimator
+
+AbstractEstimator <|-left- CommonEstimator
+
+Model <|-left- - AbstractModel
+
+Verbose <|.down. AbstractModel
+OutputCol <|.. AbstractModel
+RatingCol <|.. AbstractModel
+
+AbstractModel <|-left[#blue]- CommonModel
+
+SingleValueDecomposition *- - SingleValueDecompositionModel
+
+CommonEstimator <|-left- SingleValueDecomposition
+CommonModel <|-left- SingleValueDecompositionModel
+
+
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 21:40:07 KST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: MS949
+Language: ko
+Country: KR
+-->
+    </g>
+</svg>

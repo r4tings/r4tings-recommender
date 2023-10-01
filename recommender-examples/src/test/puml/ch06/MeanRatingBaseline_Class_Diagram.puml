@@ -1,0 +1,229 @@
+@startuml
+
+scale 1
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam linetype ortho
+left to right direction
+
+package org.apache.spark.ml {
+    abstract class Estimator{
+        + {abstract} Model fit(Dataset<?> dataset)
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Estimator copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+    abstract class Model{
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Model copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+}
+
+Estimator .[hidden]left. Model
+
+
+package com.r4tings.recommender.common.ml.param {
+    interface Verbose{
+        ~ BooleanParam verbose()
+        ~ Boolean getVerbose()
+        ~ Verbose setVerbose(Boolean value)
+    }
+    interface OutputCol{
+        ~ Param<String> outputCol()
+        ~ String getOutputCol()
+        ~ OutputCol setOutputCol(String values)
+    }
+    interface RatingCol{
+        ~ Param<String> userCol()
+        ~ Param<String> itemCol()
+        ~ Param<String> ratingCol()
+        ~ String getUserCol()
+        ~ String getItemCol()
+        ~ String getRatingCol()
+        ~ RatingCol setUserCol(String value)
+        ~ RatingCol setItemCol(String value)
+        ~ RatingCol setRatingCol(String value)
+    }
+}
+
+ '  Verbose .[hidden]left. OutputCol
+ '  OutputCol .[hidden]left. RatingCol
+   'RatingCol .[hidden]left. Estimator
+
+
+package com.r4tings.recommender.common.ml {
+
+    abstract class AbstractEstimator{
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Estimator copy(ParamMap extra)
+        + {abstract} String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+    }
+    abstract class AbstractModel{
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Model copy(ParamMap extra)
+        + {abstract} String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+    }
+    abstract class CommonEstimator<T extends CommonEstimator<T>>{
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setCriterion(Criterion value)
+        + T setCriterionCol(String value)
+        + T setImputeZero(Boolean value)
+        + T setIds(Object... value)
+        # {abstract} T self()
+    }
+    abstract class CommonModel<T extends CommonModel<T>>{
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setCriterion(Criterion value)
+        + T setCriterionCol(String value)
+        + T setImputeZero(Boolean value)
+        + T setIds(Object... value)
+        # {abstract} T self()
+    }
+
+
+}
+
+   'AbstractEstimator .[hidden]left. AbstractModel
+
+' CommonEstimator .[hidden]right. CommonModel
+'  Estimator .[hidden]down. AbstractEstimator
+'  AbstractEstimator .[hidden]up. Estimator
+
+   Estimator .[hidden]down.. AbstractEstimator
+   'Model .[hidden]. AbstractModel
+
+Estimator <|-- AbstractEstimator
+Model <|-- AbstractModel
+
+
+Verbose <|... AbstractEstimator
+OutputCol <|.. AbstractEstimator
+RatingCol <|.. AbstractEstimator
+
+
+Estimator .[hidden]down. AbstractEstimator
+Model .[hidden]down. AbstractModel
+
+
+Verbose <|.[#blue]. AbstractModel
+OutputCol <|.[#blue]. AbstractModel
+RatingCol <|.[#blue]. AbstractModel
+
+
+AbstractEstimator <|-- CommonEstimator
+AbstractModel <|-[#blue]- CommonModel
+
+
+
+package com.r4tings.recommender.model.svd.baseline {
+    class SimpleMeanRatingBaseline{
+        + SimpleMeanRatingBaseline()
+        + MeanRatingBaselineModel fit(Dataset ratings)
+        # T self()
+    }
+    class GeneralMeanRatingBaseline{
+        + GeneralMeanRatingBaseline()
+        + MeanRatingBaselineModel fit(Dataset ratings)
+        + IntParam lamda1()
+        + IntParam lamda2()
+        + Integer getLamda1()
+        + Integer getLamda2()
+        + GeneralMeanRatingBaseline setLamda1(Integer value)
+        + GeneralMeanRatingBaseline setLamda2(Integer value)
+        # T self()
+    }
+    class MeanRatingBaselineModel{
+        + MeanRatingBaselineModel()
+        + Dataset<Row> transform(Dataset<?> ratings)
+        + Param<String> residualCol()
+        + DoubleParam overallMeanRating()
+        + Param<Dataset<Row>> userBiasDS()
+        + Param<Dataset<Row>> itemBiasDS()
+        + String getResidualCol()
+        + Double getOverallMeanRating()
+        + Dataset<Row> getUserBiasDS()
+        + Dataset<Row> getItemBiasDS()
+        + MeanRatingBaselineModel setResidualCol(String value)
+        + MeanRatingBaselineModel setOverallMeanRating(Double value)
+        + MeanRatingBaselineModel setUserBiasDS(Dataset<Row> value)
+        + MeanRatingBaselineModel setItemBiasDS(Dataset<Row> value)
+        # T self()
+    }
+}
+
+CommonEstimator <|-- SimpleMeanRatingBaseline
+CommonEstimator <|-- GeneralMeanRatingBaseline
+
+CommonEstimator .[hidden]. GeneralMeanRatingBaseline
+
+'SimpleMeanRatingBaseline .[hidden]left. GeneralMeanRatingBaseline
+
+
+CommonModel .[hidden]. GeneralMeanRatingBaseline
+
+CommonModel <|-[#blue]- MeanRatingBaselineModel
+
+
+
+SimpleMeanRatingBaseline *-right- MeanRatingBaselineModel
+GeneralMeanRatingBaseline *-- MeanRatingBaselineModel
+
+
+ '   Estimator <|-down- AbstractEstimator
+ '   Model <|-down- AbstractModel
+
+'  CommonEstimator <|-left- SimpleMeanRatingBaseline
+'  CommonEstimator <|-left- GeneralMeanRatingBaseline
+'  CommonModel <|-left- MeanRatingBaselineModel
+
+
+   ' Verbose <|.left. AbstractEstimator
+   ' OutputCol <|.. AbstractEstimator
+   ' RatingCol <|.. AbstractEstimator
+
+
+
+@enduml

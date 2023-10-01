@@ -1,0 +1,26 @@
+@startuml
+start
+
+:A;
+
+if (A = B) then (true)
+  partition "Processing of A" {
+    :C;
+    :D;
+    :E;
+  }
+else (false)
+  partition "Processing of B" {
+    if (A > B) then (true)
+      :C;
+    else (false)
+      partition "Processing of C" {
+        :C;
+        :E;
+      }
+    endif
+  }
+endif
+
+stop
+@enduml

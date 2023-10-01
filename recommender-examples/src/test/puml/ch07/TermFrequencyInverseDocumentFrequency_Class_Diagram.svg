@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="828px" preserveAspectRatio="none"
+     style="width:1323px;height:828px;background:#FFFFFF;" version="1.1" viewBox="0 0 1323 828" width="1323px"
+     zoomAndPan="magnify">
+    <defs/>
+    <g><!--MD5=[36a01395821b2eaae4c1182ca71968d3]
+cluster org.apache.spark.ml-->
+        <polygon fill="#FFFFFF" points="379,6,499,6,506,24.7599,615,24.7599,615,123,379,123,379,6"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="379" x2="506" y1="24.7599" y2="24.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="114" x="383" y="18.2299">org.apache.spark.ml
+        </text><!--MD5=[5251f2a81915f14ce8a29227505cc9fd]
+cluster com.r4tings.recommender.common.ml-->
+        <polygon fill="#FFFFFF" points="16,155,220,155,227,173.7599,648,173.7599,648,800,16,800,16,155"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="227" y1="173.7599" y2="173.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="198" x="20" y="167.2299">com.r4tings.recommender.common.ml
+        </text><!--MD5=[06ed629ced50ca4162b5bd688d358b3c]
+cluster com.r4tings.recommender.common.ml.param-->
+        <polygon fill="#FFFFFF" points="48,202,288,202,295,220.7599,326,220.7599,326,760,48,760,48,202"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="48" x2="295" y1="220.7599" y2="220.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="234" x="52" y="214.2299">com.r4tings.recommender.common.ml.param
+        </text><!--MD5=[22dcdd5415d4bb55f2b549afb23a3658]
+cluster com.r4tings.recommender.model.tfidf-->
+        <polygon fill="#FFFFFF" points="688,269,904,269,911,287.7599,1306,287.7599,1306,821,688,821,688,269"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="688" x2="911" y1="287.7599" y2="287.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="210" x="692" y="281.2299">com.r4tings.recommender.model.tfidf
+        </text><!--MD5=[869fe55e41dfc8e865b305729d789939]
+class JavaParams-->
+        <rect codeLine="11" fill="#F5DEB3" height="69.5198" id="JavaParams" style="stroke:#A80036;stroke-width:1.5;"
+              width="204" x="395" y="37"/>
+        <ellipse cx="463.25" cy="51" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M463.9531,52.5 L462.5469,52.5 L462.3594,53.5 L462.3594,53.5 L462.4063,53.5 L462.75,53.75 L462.75,54 L462.75,54.25 L462.4063,54.5 L462.3594,54.5 L460.2344,54.5 L460.0938,54.5 L459.75,54.25 L459.75,54 L459.75,53.75 L460.0938,53.5 L460.2344,53.5 L461.4219,48.5 L460.4219,48.5 L460.0938,48.5 L459.75,48.25 L459.75,48 L459.75,47.75 L460.0938,47.5 L460.4219,47.5 L464.875,47.5 L466.2656,53.5 L466.4063,53.5 L466.4063,53.5 L466.75,53.75 L466.75,54 L466.75,54.25 L466.4063,54.5 L466.2656,54.5 L464.1563,54.5 L464.0938,54.5 L463.75,54.25 L463.75,54 L463.75,53.75 L464.0938,53.5 L464.1563,53.5 L464.1563,53.5 L463.9531,52.5 Z M463.7656,51.5 L463.25,49.1719 L462.75,51.5 L463.7656,51.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="60" x="480.75" y="54.85">JavaParams
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="396" x2="598" y1="65" y2="65"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="396" x2="598" y1="73" y2="73"/>
+        <ellipse cx="406" cy="84" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="180" x="413" y="87.2299">Estimator copy(ParamMap extra)
+        </text>
+        <ellipse cx="406" cy="96.7599" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="72" x="413" y="99.9898">String uid()
+        </text><!--MD5=[2fbab58d7f217eb07ff1de7afdf55d99]
+class CommonParams-->
+        <rect codeLine="53" fill="#FEFECE" height="401.2773" id="CommonParams" style="stroke:#A80036;stroke-width:1.5;"
+              width="254" x="370" y="194.5"/>
+        <ellipse cx="383" cy="208.5" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M383.7031,210 L382.2969,210 L382.1094,211 L382.1094,211 L382.1563,211 L382.5,211.25 L382.5,211.5 L382.5,211.75 L382.1563,212 L382.1094,212 L379.9844,212 L379.8438,212 L379.5,211.75 L379.5,211.5 L379.5,211.25 L379.8438,211 L379.9844,211 L381.1719,206 L380.1719,206 L379.8438,206 L379.5,205.75 L379.5,205.5 L379.5,205.25 L379.8438,205 L380.1719,205 L384.625,205 L386.0156,211 L386.1563,211 L386.1563,211 L386.5,211.25 L386.5,211.5 L386.5,211.75 L386.1563,212 L386.0156,212 L383.9063,212 L383.8438,212 L383.5,211.75 L383.5,211.5 L383.5,211.25 L383.8438,211 L383.9063,211 L383.9063,211 L383.7031,210 Z M383.5156,209 L383,206.6719 L382.5,209 L383.5156,209 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="72" x="395" y="212.35">CommonParams
+        </text>
+        <rect fill="#FFFFFF" height="14.7599" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;"
+              width="152" x="475" y="191.5"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="150" x="476" y="202.7299">T extends CommonParams&lt;T&gt;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="371" x2="623" y1="222.5" y2="222.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="371" x2="623" y1="230.5" y2="230.5"/>
+        <ellipse cx="381" cy="241.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="388" y="244.7299">CommonParams(String prefix)
+        </text>
+        <ellipse cx="381" cy="254.2599" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="180"
+              x="388" y="257.4898">Estimator copy(ParamMap extra)
+        </text>
+        <ellipse cx="381" cy="267.0198" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="72"
+              x="388" y="270.2497">String uid()
+        </text>
+        <ellipse cx="381" cy="279.7797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="388" y="283.0096">BooleanParam verbose()
+        </text>
+        <ellipse cx="381" cy="292.5396" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="150"
+              x="388" y="295.7695">Param&lt;String&gt; outputCol()
+        </text>
+        <ellipse cx="381" cy="305.2995" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="388" y="308.5294">Param&lt;String&gt; userCol()
+        </text>
+        <ellipse cx="381" cy="318.0594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="388" y="321.2894">Param&lt;String&gt; itemCol()
+        </text>
+        <ellipse cx="381" cy="330.8193" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="150"
+              x="388" y="334.0493">Param&lt;String&gt; ratingCol()
+        </text>
+        <ellipse cx="381" cy="343.5792" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="388" y="346.8092">Boolean getVerbose()
+        </text>
+        <ellipse cx="381" cy="356.3391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="388" y="359.5691">String getOutputCol()
+        </text>
+        <ellipse cx="381" cy="369.099" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="388" y="372.329">String getUserCol()
+        </text>
+        <ellipse cx="381" cy="381.859" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="388" y="385.0889">String getItemCol()
+        </text>
+        <ellipse cx="381" cy="394.6189" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="388" y="397.8488">String getRatingCol()
+        </text>
+        <ellipse cx="381" cy="407.3788" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="388" y="410.6087">Boolean getVerbose()
+        </text>
+        <ellipse cx="381" cy="420.1387" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="388" y="423.3686">String getOutputCol()
+        </text>
+        <ellipse cx="381" cy="432.8986" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="388" y="436.1285">String getUserCol()
+        </text>
+        <ellipse cx="381" cy="445.6585" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="388" y="448.8884">String getItemCol()
+        </text>
+        <ellipse cx="381" cy="458.4184" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="388" y="461.6483">String getRatingCol()
+        </text>
+        <ellipse cx="381" cy="471.1783" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="388" y="474.4082">T setVerbose(Boolean value)
+        </text>
+        <ellipse cx="381" cy="483.9382" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="168"
+              x="388" y="487.1681">T setOutputCol(String value)
+        </text>
+        <ellipse cx="381" cy="496.6981" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="388" y="499.928">T setUserCol(String value)
+        </text>
+        <ellipse cx="381" cy="509.458" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="388" y="512.6879">T setItemCol(String value)
+        </text>
+        <ellipse cx="381" cy="522.2179" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="168"
+              x="388" y="525.4478">T setRatingCol(String value)
+        </text>
+        <ellipse cx="381" cy="534.9778" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="186"
+              x="388" y="538.2077">T setCriterion(Criterion value)
+        </text>
+        <ellipse cx="381" cy="547.7377" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="186"
+              x="388" y="550.9676">T setCriterionCol(String value)
+        </text>
+        <ellipse cx="381" cy="560.4976" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="180"
+              x="388" y="563.7275">T setImputeZero(Boolean value)
+        </text>
+        <ellipse cx="381" cy="573.2575" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="150"
+              x="388" y="576.4875">T setIds(Object... value)
+        </text>
+        <polygon fill="#FFFF44" points="381,581.0174,385,585.0174,381,589.0174,377,585.0174"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="48" x="388" y="589.2474">T self()
+        </text><!--MD5=[6e8b8349b871199d2f29f8f6b56a4806]
+class RatingCol-->
+        <rect codeLine="22" fill="#FEFECE" height="158.8391" id="RatingCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="240" x="67" y="233.5"/>
+        <ellipse cx="156.25" cy="247.5" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M157.25,245 L157.25,250 L158.25,250 L158.9063,250 L159.25,250.25 L159.25,250.5 L159.25,250.75 L158.9063,251 L158.25,251 L154.25,251 L153.5938,251 L153.25,250.75 L153.25,250.5 L153.25,250.25 L153.5938,250 L154.25,250 L155.25,250 L155.25,245 L154.25,245 L153.5938,245 L153.25,244.75 L153.25,244.5 L153.25,244.25 L153.5938,244 L154.25,244 L158.25,244 L158.9063,244 L159.25,244.25 L159.25,244.5 L159.25,244.75 L158.9063,245 L158.25,245 L157.25,245 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="173.75" y="251.35">RatingCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="68" x2="306" y1="261.5" y2="261.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="68" x2="306" y1="269.5" y2="269.5"/>
+        <polygon fill="#4177AF" points="78,276.5,74,282.5,82,282.5" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="85" y="283.7299">Param&lt;String&gt; userCol()
+        </text>
+        <polygon fill="#4177AF" points="78,289.2599,74,295.2599,82,295.2599" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="85" y="296.4898">Param&lt;String&gt; itemCol()
+        </text>
+        <polygon fill="#4177AF" points="78,302.0198,74,308.0198,82,308.0198" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="150"
+              x="85" y="309.2497">Param&lt;String&gt; ratingCol()
+        </text>
+        <polygon fill="#4177AF" points="78,314.7797,74,320.7797,82,320.7797" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="85" y="322.0096">String getUserCol()
+        </text>
+        <polygon fill="#4177AF" points="78,327.5396,74,333.5396,82,333.5396" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="85" y="334.7695">String getItemCol()
+        </text>
+        <polygon fill="#4177AF" points="78,340.2995,74,346.2995,82,346.2995" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="85" y="347.5294">String getRatingCol()
+        </text>
+        <polygon fill="#4177AF" points="78,353.0594,74,359.0594,82,359.0594" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="204"
+              x="85" y="360.2894">RatingCol setUserCol(String value)
+        </text>
+        <polygon fill="#4177AF" points="78,365.8193,74,371.8193,82,371.8193" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="204"
+              x="85" y="373.0493">RatingCol setItemCol(String value)
+        </text>
+        <polygon fill="#4177AF" points="78,378.5792,74,384.5792,82,384.5792" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="216"
+              x="85" y="385.8092">RatingCol setRatingCol(String value)
+        </text><!--MD5=[fb49fb28c4ef27686c59ea575820fdd8]
+class OutputCol-->
+        <rect codeLine="34" fill="#FEFECE" height="82.2797" id="OutputCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="246" x="64" y="428"/>
+        <ellipse cx="156.25" cy="442" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M157.25,439.5 L157.25,444.5 L158.25,444.5 L158.9063,444.5 L159.25,444.75 L159.25,445 L159.25,445.25 L158.9063,445.5 L158.25,445.5 L154.25,445.5 L153.5938,445.5 L153.25,445.25 L153.25,445 L153.25,444.75 L153.5938,444.5 L154.25,444.5 L155.25,444.5 L155.25,439.5 L154.25,439.5 L153.5938,439.5 L153.25,439.25 L153.25,439 L153.25,438.75 L153.5938,438.5 L154.25,438.5 L158.25,438.5 L158.9063,438.5 L159.25,438.75 L159.25,439 L159.25,439.25 L158.9063,439.5 L158.25,439.5 L157.25,439.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="173.75" y="445.85">OutputCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="65" x2="309" y1="456" y2="456"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="65" x2="309" y1="464" y2="464"/>
+        <polygon fill="#4177AF" points="75,471,71,477,79,477" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="150"
+              x="82" y="478.2299">Param&lt;String&gt; outputCol()
+        </text>
+        <polygon fill="#4177AF" points="75,483.7599,71,489.7599,79,489.7599" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="82" y="490.9898">String getOutputCol()
+        </text>
+        <polygon fill="#4177AF" points="75,496.5198,71,502.5198,79,502.5198" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="222"
+              x="82" y="503.7497">OutputCol setOutputCol(String values)
+        </text><!--MD5=[986af0b77bb368f4644cf27d4dc3ce6a]
+class Verbose-->
+        <rect codeLine="40" fill="#FEFECE" height="82.2797" id="Verbose" style="stroke:#A80036;stroke-width:1.5;"
+              width="222" x="76" y="545"/>
+        <ellipse cx="162.25" cy="559" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M163.25,556.5 L163.25,561.5 L164.25,561.5 L164.9063,561.5 L165.25,561.75 L165.25,562 L165.25,562.25 L164.9063,562.5 L164.25,562.5 L160.25,562.5 L159.5938,562.5 L159.25,562.25 L159.25,562 L159.25,561.75 L159.5938,561.5 L160.25,561.5 L161.25,561.5 L161.25,556.5 L160.25,556.5 L159.5938,556.5 L159.25,556.25 L159.25,556 L159.25,555.75 L159.5938,555.5 L160.25,555.5 L164.25,555.5 L164.9063,555.5 L165.25,555.75 L165.25,556 L165.25,556.25 L164.9063,556.5 L164.25,556.5 L163.25,556.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="42" x="179.75" y="562.85">Verbose
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="77" x2="297" y1="573" y2="573"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="77" x2="297" y1="581" y2="581"/>
+        <polygon fill="#4177AF" points="87,588,83,594,91,594" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="94" y="595.2299">BooleanParam verbose()
+        </text>
+        <polygon fill="#4177AF" points="87,600.7599,83,606.7599,91,606.7599" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="94" y="607.9898">Boolean getVerbose()
+        </text>
+        <polygon fill="#4177AF" points="87,613.5198,83,619.5198,91,619.5198" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="198"
+              x="94" y="620.7497">Verbose setVerbose(Boolean value)
+        </text><!--MD5=[ea7ce6addb6ce4fc1f3a5b6821bc5614]
+class TermCol-->
+        <rect codeLine="46" fill="#FEFECE" height="82.2797" id="TermCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="222" x="76" y="662"/>
+        <ellipse cx="162.25" cy="676" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M163.25,673.5 L163.25,678.5 L164.25,678.5 L164.9063,678.5 L165.25,678.75 L165.25,679 L165.25,679.25 L164.9063,679.5 L164.25,679.5 L160.25,679.5 L159.5938,679.5 L159.25,679.25 L159.25,679 L159.25,678.75 L159.5938,678.5 L160.25,678.5 L161.25,678.5 L161.25,673.5 L160.25,673.5 L159.5938,673.5 L159.25,673.25 L159.25,673 L159.25,672.75 L159.5938,672.5 L160.25,672.5 L164.25,672.5 L164.9063,672.5 L165.25,672.75 L165.25,673 L165.25,673.25 L164.9063,673.5 L164.25,673.5 L163.25,673.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="42" x="179.75" y="679.85">TermCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="77" x2="297" y1="690" y2="690"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="77" x2="297" y1="698" y2="698"/>
+        <polygon fill="#4177AF" points="87,705,83,711,91,711" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="94" y="712.2299">Param&lt;String&gt; termCol()
+        </text>
+        <polygon fill="#4177AF" points="87,717.7599,83,723.7599,91,723.7599" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="94" y="724.9898">String getTermCol()
+        </text>
+        <polygon fill="#4177AF" points="87,730.5198,83,736.5198,91,736.5198" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="198"
+              x="94" y="737.7497">TermCol setTermCol(String values)
+        </text><!--MD5=[8715ed199f63636c0f39673ba8d8c326]
+class TermFrequencyInverseDocumentFrequencyParams-->
+        <rect codeLine="94" fill="#FEFECE" height="171.599" id="TermFrequencyInverseDocumentFrequencyParams"
+              style="stroke:#A80036;stroke-width:1.5;" width="570" x="712" y="308"/>
+        <ellipse cx="864.25" cy="322" fill="#ADD1B2" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M864.75,318.5 Q864.9531,318.5 865.1875,318.5 Q865.4219,318.5 865.6875,318.5 Q866.1563,318.5 866.4531,318.6406 Q866.75,318.7813 866.75,319.1094 L866.75,319.8906 Q866.75,320.2188 866.6094,320.3594 Q866.4688,320.5 866.25,320.5 Q866.0469,320.5 865.9375,320.4219 Q865.8125,320.3281 865.75,320.0938 Q865.7188,319.9531 865.625,319.8594 Q865.4375,319.7031 865.0938,319.6094 Q864.7656,319.5 864.4219,319.5 L863.5469,319.5 L862.75,320.2969 L862.75,320.2969 L862.75,321.7188 L862.75,322.5 L862.75,323.7031 L863.5469,324.5 L864.5781,324.5 Q865.0781,324.5 865.4375,324.2969 Q865.6406,324.1875 865.875,323.8281 Q866.0156,323.625 866.0938,323.5625 Q866.1875,323.5 866.2813,323.5 Q866.4688,323.5 866.6094,323.6719 Q866.75,323.8438 866.75,324.0781 Q866.75,324.3125 866.5156,324.5781 Q866.1875,324.9688 865.6563,325.2031 Q864.9531,325.5 864.0938,325.5 L862.9531,325.5 L860.75,324.2969 L860.75,324.2969 L860.75,324.2969 L860.75,322.4844 L860.75,321.7344 L860.75,319.7031 L860.75,319.7031 L862.9531,318.5 L863.3281,318.5 Q863.7344,318.5 864.0781,318.5 Q864.4375,318.5 864.75,318.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="258"
+              x="881.75" y="325.85">TermFrequencyInverseDocumentFrequencyParams
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="713" x2="1281" y1="336" y2="336"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="713" x2="1281" y1="344" y2="344"/>
+        <ellipse cx="723" cy="355" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="270"
+              x="730" y="358.2299">TermFrequencyInverseDocumentFrequencyParams()
+        </text>
+        <ellipse cx="723" cy="367.7599" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="730" y="370.9898">Param&lt;String&gt; termCol()
+        </text>
+        <ellipse cx="723" cy="380.5198" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="730" y="383.7497">DoubleParam threshold()
+        </text>
+        <ellipse cx="723" cy="393.2797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="276"
+              x="730" y="396.5096">Param&lt;UserDefinedFunction&gt; similarityMeasure()
+        </text>
+        <ellipse cx="723" cy="406.0396" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="730" y="409.2695">String getTermCol()
+        </text>
+        <ellipse cx="723" cy="418.7995" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="730" y="422.0294">Double getThreshold()
+        </text>
+        <ellipse cx="723" cy="431.5594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="414"
+              x="730" y="434.7894">TermFrequencyInverseDocumentFrequencyParams setTermCol(String values)
+        </text>
+        <ellipse cx="723" cy="444.3193" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="420"
+              x="730" y="447.5493">TermFrequencyInverseDocumentFrequencyParams setThreshold(Double value)
+        </text>
+        <ellipse cx="723" cy="457.0792" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="546"
+              x="730" y="460.3092">TermFrequencyInverseDocumentFrequencyParams setSimilarityMeasure(UserDefinedFunction
+            value)
+        </text>
+        <polygon fill="#FFFF44" points="723,464.8391,727,468.8391,723,472.8391,719,468.8391"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="48"
+              x="730" y="473.0691">T self()
+        </text><!--MD5=[65f12bfdfecafc1f54306acc2a12ec7c]
+class TermFrequencyInverseDocumentFrequency-->
+        <rect codeLine="107" fill="#FEFECE" height="82.2797" id="TermFrequencyInverseDocumentFrequency"
+              style="stroke:#A80036;stroke-width:1.5;" width="558" x="718" y="515"/>
+        <ellipse cx="882.25" cy="529" fill="#ADD1B2" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M882.75,525.5 Q882.9531,525.5 883.1875,525.5 Q883.4219,525.5 883.6875,525.5 Q884.1563,525.5 884.4531,525.6406 Q884.75,525.7813 884.75,526.1094 L884.75,526.8906 Q884.75,527.2188 884.6094,527.3594 Q884.4688,527.5 884.25,527.5 Q884.0469,527.5 883.9375,527.4219 Q883.8125,527.3281 883.75,527.0938 Q883.7188,526.9531 883.625,526.8594 Q883.4375,526.7031 883.0938,526.6094 Q882.7656,526.5 882.4219,526.5 L881.5469,526.5 L880.75,527.2969 L880.75,527.2969 L880.75,528.7188 L880.75,529.5 L880.75,530.7031 L881.5469,531.5 L882.5781,531.5 Q883.0781,531.5 883.4375,531.2969 Q883.6406,531.1875 883.875,530.8281 Q884.0156,530.625 884.0938,530.5625 Q884.1875,530.5 884.2813,530.5 Q884.4688,530.5 884.6094,530.6719 Q884.75,530.8438 884.75,531.0781 Q884.75,531.3125 884.5156,531.5781 Q884.1875,531.9688 883.6563,532.2031 Q882.9531,532.5 882.0938,532.5 L880.9531,532.5 L878.75,531.2969 L878.75,531.2969 L878.75,531.2969 L878.75,529.4844 L878.75,528.7344 L878.75,526.7031 L878.75,526.7031 L880.9531,525.5 L881.3281,525.5 Q881.7344,525.5 882.0781,525.5 Q882.4375,525.5 882.75,525.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="222"
+              x="899.75" y="532.85">TermFrequencyInverseDocumentFrequency
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="719" x2="1275" y1="543" y2="543"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="719" x2="1275" y1="551" y2="551"/>
+        <ellipse cx="729" cy="562" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="534"
+              x="736" y="565.2299">TermFrequencyInverseDocumentFrequency(TermFrequencyInverseDocumentFrequencyParams
+            params)
+        </text>
+        <ellipse cx="729" cy="574.7599" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="492"
+              x="736" y="577.9898">Dataset&lt;Row&gt; recommend(Dataset&lt;Row&gt; ratings, Dataset&lt;Row&gt; terms,
+            String... userId)
+        </text>
+        <polygon fill="#FFFF44" points="729,582.5198,733,586.5198,729,590.5198,725,586.5198"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="468"
+              x="736" y="590.7497">Dataset&lt;Row&gt; compute(Dataset&lt;Row&gt; ratingDS, Dataset&lt;Row&gt; termDS,
+            Object[] ids)
+        </text><!--MD5=[4605968b9c3c4175c5b371d1e167685a]
+class SimilarityMeasure-->
+        <rect codeLine="120" fill="#FEFECE" height="146.0792" id="SimilarityMeasure"
+              style="stroke:#A80036;stroke-width:1.5;" width="402" x="796" y="632"/>
+        <ellipse cx="942.25" cy="646" fill="#EB937F" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M942.25,646.5 L942.25,648.5 L944.25,648.5 L944.25,648.5 L944.25,647.8438 L944.5,647.5 L944.75,647.5 L945,647.5 L945.25,647.8438 L945.25,648.5 L945.25,649.5 L940.25,649.5 L939.5938,649.5 L939.25,649.25 L939.25,649 L939.25,648.75 L939.5938,648.5 L940.25,648.5 L940.25,648.5 L940.25,643.5 L940.25,643.5 L939.5938,643.5 L939.25,643.25 L939.25,643 L939.25,642.75 L939.5938,642.5 L940.25,642.5 L945.25,642.5 L945.25,643.5 L945.25,644.1563 L945,644.5 L944.75,644.5 L944.5,644.5 L944.25,644.1563 L944.25,643.5 L944.25,643.5 L942.25,643.5 L942.25,645.5 L943.25,645.5 L943.25,644.8438 L943.25,644.8438 L943.5,644.5 L943.75,644.5 L944,644.5 L944.25,644.8438 L944.25,645.5 L944.25,646.5 L944.25,647.1563 L944,647.5 L944,647.5 L943.75,647.5 L943.5,647.5 L943.25,647.1563 L943.25,647.1563 L943.25,646.5 L942.25,646.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="102"
+              x="959.75" y="649.85">SimilarityMeasure
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="797" x2="1197" y1="660" y2="660"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="36"
+              x="802" y="674.2299">COSINE
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="42"
+              x="802" y="686.9898">PEARSON
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="54"
+              x="802" y="699.7497">MANHATTAN
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="54"
+              x="802" y="712.5096">EUCLIDEAN
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="60"
+              x="802" y="725.2695">BINARY_SMC
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="84"
+              x="802" y="738.0294">BINARY_JACCARD
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="797" x2="1197" y1="744.5594" y2="744.5594"/>
+        <ellipse cx="807" cy="755.5594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="222"
+              x="814" y="758.7894">SimilarityMeasure(String description)
+        </text>
+        <ellipse cx="807" cy="768.3193" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="378" x="814" y="771.5493">UserDefinedFunction invoke(Boolean imputeZero, Boolean verbose)
+        </text><!--MD5=[8e67b4260bbb422e69c6684bd2011a3e]
+link CommonParams to JavaParams-->
+        <path codeLine="84" d="M497,194.11 C497,194.11 497,127.13 497,127.13 " fill="none"
+              id="CommonParams-to-JavaParams" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="490,127.13,497,107.13,504,127.13,490,127.13"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[e7722515fd5bf39490915e3155ebd8b6]
+reverse link OutputCol to CommonParams-->
+        <path codeLine="86" d="M330.41,469 C330.41,469 369.95,469 369.95,469 " fill="none"
+              id="OutputCol-backto-CommonParams" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="330.41,476,310.41,469,330.41,462,330.41,476"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[403a8dff5f41ea71cf1fcb74178f991c]
+reverse link Verbose to CommonParams-->
+        <path codeLine="87" d="M318.04,570.25 C318.04,570.25 369.86,570.25 369.86,570.25 " fill="none"
+              id="Verbose-backto-CommonParams" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="318.04,577.25,298.04,570.25,318.04,563.25,318.04,577.25"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[27d720d63a1ccb5c9d2c1f8a6063a982]
+reverse link RatingCol to CommonParams-->
+        <path codeLine="88" d="M327.3,313 C327.3,313 369.85,313 369.85,313 " fill="none"
+              id="RatingCol-backto-CommonParams" style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="327.3,320,307.3,313,327.3,306,327.3,320" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ecd77770da4d3b25e3cd4abbab053cd2]
+reverse link TermFrequencyInverseDocumentFrequency to TermFrequencyInverseDocumentFrequencyParams-->
+        <path codeLine="114" d="M997,501.7 C997,501.7 997,480.04 997,480.04 " fill="none"
+              id="TermFrequencyInverseDocumentFrequency-backto-TermFrequencyInverseDocumentFrequencyParams"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="997,514.7,1001,508.7,997,502.7,993,508.7,997,514.7"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9a44394c91df92528e8f46240ebd9afb]
+reverse link CommonParams to TermFrequencyInverseDocumentFrequencyParams-->
+        <path codeLine="116" d="M644.14,351 C644.14,351 711.61,351 711.61,351 " fill="none"
+              id="CommonParams-backto-TermFrequencyInverseDocumentFrequencyParams"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="644.14,358,624.14,351,644.14,344,644.14,358"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9ef16da89c80d799badc399a631e6d7c]
+reverse link TermCol to TermFrequencyInverseDocumentFrequencyParams-->
+        <path codeLine="118"
+              d="M318.26,703 C318.26,703 654,703 654,703 C654,703 654,394 654,394 C654,394 677.32,394 711.8,394 "
+              fill="none" id="TermCol-backto-TermFrequencyInverseDocumentFrequencyParams"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="318.26,710,298.26,703,318.26,696,318.26,710"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d72e8582bfb8b80843680cd81c223130]
+reverse link SimilarityMeasure to TermFrequencyInverseDocumentFrequencyParams-->
+        <path codeLine="131"
+              d="M790.92,647 C790.92,647 683,647 683,647 C683,647 683,437 683,437 C683,437 694.04,437 711.98,437 "
+              fill="none" id="SimilarityMeasure-backto-TermFrequencyInverseDocumentFrequencyParams"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036" points="795.92,647,786.92,643,790.92,647,786.92,651,795.92,647"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[680547f6e69200bb4f27c2402efdd9ff]
+link com.r4tings.recommender.common.ml to com.r4tings.recommender.model.tfidf--><!--MD5=[b37b41ec962938e7fa7d468266872dff]
+@startuml
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam shadowing false
+
+skinparam linetype ortho
+left to right direction
+
+package org.apache.spark.ml {
+
+    abstract class JavaParams #Wheat {
+        + {abstract} Estimator copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+
+}
+
+package com.r4tings.recommender.common.ml {
+
+    package com.r4tings.recommender.common.ml.param {
+
+        interface RatingCol{
+            ~ Param<String> userCol()
+            ~ Param<String> itemCol()
+            ~ Param<String> ratingCol()
+            ~ String getUserCol()
+            ~ String getItemCol()
+            ~ String getRatingCol()
+            ~ RatingCol setUserCol(String value)
+            ~ RatingCol setItemCol(String value)
+            ~ RatingCol setRatingCol(String value)
+        }
+
+        interface OutputCol{
+            ~ Param<String> outputCol()
+            ~ String getOutputCol()
+            ~ OutputCol setOutputCol(String values)
+        }
+
+        interface Verbose{
+            ~ BooleanParam verbose()
+            ~ Boolean getVerbose()
+            ~ Verbose setVerbose(Boolean value)
+        }
+
+        interface TermCol{
+            ~ Param<String> termCol()
+            ~ String getTermCol()
+            ~ TermCol setTermCol(String values)
+        }
+    }
+
+    abstract class CommonParams<T extends CommonParams<T>>{
+        + CommonParams(String prefix)
+        + Estimator copy(ParamMap extra)
+        + String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setCriterion(Criterion value)
+        + T setCriterionCol(String value)
+        + T setImputeZero(Boolean value)
+        + T setIds(Object... value)
+        # {abstract} T self()
+    }
+
+    JavaParams <|-left- CommonParams
+
+    OutputCol <|.. CommonParams
+    Verbose <|.. CommonParams
+    RatingCol <|.. CommonParams
+
+}
+
+package com.r4tings.recommender.model.tfidf {
+
+    class TermFrequencyInverseDocumentFrequencyParams{
+        + TermFrequencyInverseDocumentFrequencyParams()
+        + Param<String> termCol()
+        + DoubleParam threshold()
+        + Param<UserDefinedFunction> similarityMeasure()
+        + String getTermCol()
+        + Double getThreshold()
+        + TermFrequencyInverseDocumentFrequencyParams setTermCol(String values)
+        + TermFrequencyInverseDocumentFrequencyParams setThreshold(Double value)
+        + TermFrequencyInverseDocumentFrequencyParams setSimilarityMeasure(UserDefinedFunction value)
+        # T self()
+    }
+
+    class TermFrequencyInverseDocumentFrequency{
+        + TermFrequencyInverseDocumentFrequency(TermFrequencyInverseDocumentFrequencyParams params)
+        + Dataset<Row> recommend(Dataset<Row> ratings, Dataset<Row> terms, String... userId)
+        # Dataset<Row> compute(Dataset<Row> ratingDS, Dataset<Row> termDS, Object[] ids)
+    }
+
+
+    TermFrequencyInverseDocumentFrequency o-right- TermFrequencyInverseDocumentFrequencyParams
+
+    CommonParams <|- - TermFrequencyInverseDocumentFrequencyParams
+
+    TermCol <|.[norank]. TermFrequencyInverseDocumentFrequencyParams
+
+    enum SimilarityMeasure {
+        COSINE
+        PEARSON
+        MANHATTAN
+        EUCLIDEAN
+        BINARY_SMC
+        BINARY_JACCARD
+        + SimilarityMeasure(String description)
+        + {abstract} UserDefinedFunction invoke(Boolean imputeZero, Boolean verbose)
+    }
+
+    SimilarityMeasure <.right. TermFrequencyInverseDocumentFrequencyParams
+
+
+
+}
+
+com.r4tings.recommender.common.ml -[hidden]- com.r4tings.recommender.model.tfidf
+
+@enduml
+
+PlantUML version 1.2022.1(Wed Feb 02 03:19:58 KST 2022)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: ko
+Country: KR
+-->
+    </g>
+</svg>

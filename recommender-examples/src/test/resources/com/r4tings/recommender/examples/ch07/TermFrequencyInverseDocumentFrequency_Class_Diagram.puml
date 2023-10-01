@@ -1,0 +1,140 @@
+@startuml
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam shadowing false
+
+skinparam linetype ortho
+left to right direction
+
+package org.apache.spark.ml {
+
+    abstract class JavaParams #Wheat {
+        + {abstract} Estimator copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+
+}
+
+package com.r4tings.recommender.common.ml {
+
+    package com.r4tings.recommender.common.ml.param {
+
+        interface RatingCol{
+            ~ Param<String> userCol()
+            ~ Param<String> itemCol()
+            ~ Param<String> ratingCol()
+            ~ String getUserCol()
+            ~ String getItemCol()
+            ~ String getRatingCol()
+            ~ RatingCol setUserCol(String value)
+            ~ RatingCol setItemCol(String value)
+            ~ RatingCol setRatingCol(String value)
+        }
+
+        interface OutputCol{
+            ~ Param<String> outputCol()
+            ~ String getOutputCol()
+            ~ OutputCol setOutputCol(String values)
+        }
+
+        interface Verbose{
+            ~ BooleanParam verbose()
+            ~ Boolean getVerbose()
+            ~ Verbose setVerbose(Boolean value)
+        }
+
+        interface TermCol{
+            ~ Param<String> termCol()
+            ~ String getTermCol()
+            ~ TermCol setTermCol(String values)
+        }
+    }
+
+    abstract class CommonParams<T extends CommonParams<T>>{
+        + CommonParams(String prefix)
+        + Estimator copy(ParamMap extra)
+        + String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setCriterion(Criterion value)
+        + T setCriterionCol(String value)
+        + T setImputeZero(Boolean value)
+        + T setIds(Object... value)
+        # {abstract} T self()
+    }
+
+    JavaParams <|-left- CommonParams
+
+    OutputCol <|.. CommonParams
+    Verbose <|.. CommonParams
+    RatingCol <|.. CommonParams
+
+}
+
+package com.r4tings.recommender.model.tfidf {
+
+    class TermFrequencyInverseDocumentFrequencyParams{
+        + TermFrequencyInverseDocumentFrequencyParams()
+        + Param<String> termCol()
+        + DoubleParam threshold()
+        + Param<UserDefinedFunction> similarityMeasure()
+        + String getTermCol()
+        + Double getThreshold()
+        + TermFrequencyInverseDocumentFrequencyParams setTermCol(String values)
+        + TermFrequencyInverseDocumentFrequencyParams setThreshold(Double value)
+        + TermFrequencyInverseDocumentFrequencyParams setSimilarityMeasure(UserDefinedFunction value)
+        # T self()
+    }
+
+    class TermFrequencyInverseDocumentFrequency{
+        + TermFrequencyInverseDocumentFrequency(TermFrequencyInverseDocumentFrequencyParams params)
+        + Dataset<Row> recommend(Dataset<Row> ratings, Dataset<Row> terms, String... userId)
+        # Dataset<Row> compute(Dataset<Row> ratingDS, Dataset<Row> termDS, Object[] ids)
+    }
+
+
+    TermFrequencyInverseDocumentFrequency o-right- TermFrequencyInverseDocumentFrequencyParams
+
+    CommonParams <|-- TermFrequencyInverseDocumentFrequencyParams
+
+    TermCol <|.[norank]. TermFrequencyInverseDocumentFrequencyParams
+
+    enum SimilarityMeasure {
+        COSINE
+        PEARSON
+        MANHATTAN
+        EUCLIDEAN
+        BINARY_SMC
+        BINARY_JACCARD
+        + SimilarityMeasure(String description)
+        + {abstract} UserDefinedFunction invoke(Boolean imputeZero, Boolean verbose)
+    }
+
+    SimilarityMeasure <.right. TermFrequencyInverseDocumentFrequencyParams
+
+
+
+}
+
+com.r4tings.recommender.common.ml -[hidden]- com.r4tings.recommender.model.tfidf
+
+@enduml

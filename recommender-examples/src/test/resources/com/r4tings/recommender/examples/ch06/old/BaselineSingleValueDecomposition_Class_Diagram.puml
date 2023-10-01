@@ -1,0 +1,200 @@
+@startuml
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+'skinparam linetype polyline
+skinparam linetype ortho
+left to right direction
+
+'title Association Rule Mining Recommender
+
+abstract class org.apache.spark.ml.JavaParams{
+    + {abstract} Estimator copy(ParamMap extra)
+    + {abstract} String uid()
+}
+
+interface com.r4tings.recommender.common.ml.param.Verbose{
+    ~ BooleanParam verbose()
+    ~ Boolean getVerbose()
+    ~ Verbose setVerbose(Boolean value)
+}
+
+interface com.r4tings.recommender.common.ml.param.OutputCol{
+    ~ Param<String> outputCol()
+    ~ String getOutputCol()
+    ~ OutputCol setOutputCol(String values)
+}
+
+interface com.r4tings.recommender.common.ml.param.RatingCol{
+    ~ Param<String> userCol()
+    ~ Param<String> itemCol()
+    ~ Param<String> ratingCol()
+    ~ String getUserCol()
+    ~ String getItemCol()
+    ~ String getRatingCol()
+    ~ RatingCol setUserCol(String value)
+    ~ RatingCol setItemCol(String value)
+    ~ RatingCol setRatingCol(String value)
+}
+
+org.apache.spark.ml.JavaParams <|-- com.r4tings.recommender.common.ml.CommonParams
+
+com.r4tings.recommender.common.ml.param.Verbose <|.. com.r4tings.recommender.common.ml.CommonParams
+com.r4tings.recommender.common.ml.param.OutputCol <|.. com.r4tings.recommender.common.ml.CommonParams
+com.r4tings.recommender.common.ml.param.RatingCol <|.. com.r4tings.recommender.common.ml.CommonParams
+
+'org.apache.spark.ml.JavaParams .[hidden]. com.r4tings.recommender.common.ml.AbstractRecommender
+
+
+abstract class com.r4tings.recommender.common.ml.CommonParams<T extends CommonParams<T>>{
+    + CommonParams(String prefix)
+    + Estimator copy(ParamMap extra)
+    + String uid()
+    + BooleanParam verbose()
+    + Param<String> outputCol()
+    + Param<String> userCol()
+    + Param<String> itemCol()
+    + Param<String> ratingCol()
+    + Boolean getVerbose()
+    + String getOutputCol()
+    + String getUserCol()
+    + String getItemCol()
+    + String getRatingCol()
+    + Boolean getVerbose()
+    + String getOutputCol()
+    + String getUserCol()
+    + String getItemCol()
+    + String getRatingCol()
+    + T setVerbose(Boolean value)
+    + T setOutputCol(String value)
+    + T setUserCol(String value)
+    + T setItemCol(String value)
+    + T setRatingCol(String value)
+    + T setCriterion(Criterion value)
+    + T setCriterionCol(String value)
+    + T setImputeZero(Boolean value)
+    + T setIds(Object... value)
+    # {abstract} T self()
+}
+
+com.r4tings.recommender.common.ml.CommonParams <|-- com.r4tings.recommender.model.svd.BaselineSingleValueDecompositionParams
+
+class com.r4tings.recommender.model.svd.BaselineSingleValueDecompositionParams{
+    + BaselineSingleValueDecompositionParams()
+    + Param<CommonEstimator> baselinePredictor()
+    + IntParam k()
+    + CommonEstimator getBaselinePredictor()
+    + Integer getK()
+    + BaselineSingleValueDecompositionParams setBaselinePredictor(CommonEstimator value)
+    + BaselineSingleValueDecompositionParams setK(Integer value)
+    # T self()
+}
+
+abstract class com.r4tings.recommender.common.ml.AbstractRecommender{
+    + AbstractRecommender(CommonParams<? extends CommonParams> params)
+    + Dataset<Row> recommend(Dataset<Row> ratings, int topN, Object... id)
+    # {abstract} Dataset<Row> compute(Dataset<Row> ratingDS, Object[] ids)
+}
+
+com.r4tings.recommender.common.ml.AbstractRecommender o-left- com.r4tings.recommender.common.ml.CommonParams
+
+class com.r4tings.recommender.model.svd.BaselineSingleValueDecomposition{
+    + BaselineSingleValueDecomposition(BaselineSingleValueDecompositionParams params)
+    # Dataset<Row> compute(Dataset<Row> ratingDS, Object[] ids)
+}
+
+com.r4tings.recommender.common.ml.AbstractRecommender <|-- com.r4tings.recommender.model.svd.BaselineSingleValueDecomposition
+
+com.r4tings.recommender.model.svd.BaselineSingleValueDecomposition o-left- com.r4tings.recommender.model.svd.BaselineSingleValueDecompositionParams
+
+
+
+abstract class org.apache.spark.ml.Estimator{
+
+}
+
+
+abstract class com.r4tings.recommender.common.ml.AbstractEstimator{
+
+}
+
+org.apache.spark.ml.Estimator <|-- com.r4tings.recommender.common.ml.AbstractEstimator
+
+
+abstract class com.r4tings.recommender.common.ml.CommonEstimator<T extends CommonEstimator<T>>{
+
+}
+
+com.r4tings.recommender.common.ml.param.Verbose <|.. com.r4tings.recommender.common.ml.CommonEstimator
+com.r4tings.recommender.common.ml.param.OutputCol <|.. com.r4tings.recommender.common.ml.CommonEstimator
+com.r4tings.recommender.common.ml.param.RatingCol <|.. com.r4tings.recommender.common.ml.CommonEstimator
+
+com.r4tings.recommender.common.ml.AbstractEstimator <|-- com.r4tings.recommender.common.ml.CommonEstimator
+
+
+class com.r4tings.recommender.model.svd.baseline.GeneralMeanRatingBaseline{
+
+}
+
+class com.r4tings.recommender.model.svd.baseline.SimpleMeanRatingBaseline{
+
+}
+
+
+com.r4tings.recommender.common.ml.CommonEstimator <|-- com.r4tings.recommender.model.svd.baseline.SimpleMeanRatingBaseline
+
+com.r4tings.recommender.common.ml.CommonEstimator <|-- com.r4tings.recommender.model.svd.baseline.GeneralMeanRatingBaseline
+
+
+abstract class org.apache.spark.ml.Model{
+
+}
+
+abstract class com.r4tings.recommender.common.ml.AbstractModel{
+
+}
+
+com.r4tings.recommender.common.ml.param.Verbose <|.. com.r4tings.recommender.common.ml.AbstractModel
+com.r4tings.recommender.common.ml.param.OutputCol <|.. com.r4tings.recommender.common.ml.AbstractModel
+com.r4tings.recommender.common.ml.param.RatingCol <|.. com.r4tings.recommender.common.ml.AbstractModel
+
+org.apache.spark.ml.Model <|-- com.r4tings.recommender.common.ml.AbstractModel
+
+
+abstract class com.r4tings.recommender.common.ml.CommonModel<T extends CommonModel<T>>{
+
+}
+
+com.r4tings.recommender.common.ml.AbstractModel <|-- com.r4tings.recommender.common.ml.CommonModel
+
+
+com.r4tings.recommender.common.ml.CommonModel <|-- com.r4tings.recommender.model.svd.baseline.MeanRatingBaselineModel
+
+
+class com.r4tings.recommender.model.svd.baseline.MeanRatingBaselineModel{
+
+}
+
+com.r4tings.recommender.model.svd.baseline.SimpleMeanRatingBaseline *-left- com.r4tings.recommender.model.svd.baseline.MeanRatingBaselineModel
+
+com.r4tings.recommender.model.svd.baseline.GeneralMeanRatingBaseline *-left- com.r4tings.recommender.model.svd.baseline.MeanRatingBaselineModel
+
+
+
+
+class com.r4tings.recommender.model.svd.mf.SingleValueDecomposition{
+
+}
+
+com.r4tings.recommender.common.ml.CommonEstimator <|-- com.r4tings.recommender.model.svd.mf.SingleValueDecomposition
+
+class com.r4tings.recommender.model.svd.mf.SingleValueDecompositionModel{
+
+}
+
+com.r4tings.recommender.common.ml.CommonModel <|-- com.r4tings.recommender.model.svd.mf.SingleValueDecompositionModel
+
+com.r4tings.recommender.model.svd.mf.SingleValueDecomposition *-left- com.r4tings.recommender.model.svd.mf.SingleValueDecompositionModel
+
+
+@enduml

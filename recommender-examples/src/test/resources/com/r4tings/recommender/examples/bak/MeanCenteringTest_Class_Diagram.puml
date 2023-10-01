@@ -1,0 +1,118 @@
+@startuml
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam linetype ortho
+left to right direction
+
+
+
+abstract class org.apache.spark.ml.Transformer{
+    + {abstract} Dataset<Row> transform(Dataset<?> ratings)
+    + {abstract} StructType transformSchema(StructType schema)
+    + {abstract} Transformer copy(ParamMap extra)
+    + {abstract} String uid()
+}
+
+interface com.r4tings.recommender.common.ml.param.RatingCol{
+    ~ Param<String> userCol()
+    ~ Param<String> itemCol()
+    ~ Param<String> ratingCol()
+    ~ String getUserCol()
+    ~ String getItemCol()
+    ~ String getRatingCol()
+    ~ RatingCol setUserCol(String value)
+    ~ RatingCol setItemCol(String value)
+    ~ RatingCol setRatingCol(String value)
+}
+
+interface com.r4tings.recommender.common.ml.param.OutputCol{
+    ~ Param<String> outputCol()
+    ~ String getOutputCol()
+    ~ OutputCol setOutputCol(String values)
+}
+
+interface com.r4tings.recommender.common.ml.param.Verbose{
+    ~ BooleanParam verbose()
+    ~ Boolean getVerbose()
+    ~ Verbose setVerbose(Boolean value)
+}
+
+abstract class com.r4tings.recommender.common.ml.AbstractTransformer{
+    + AbstractTransformer(String prefix)
+    + StructType transformSchema(StructType schema)
+    + Transformer copy(ParamMap extra)
+    + String uid()
+    + BooleanParam verbose()
+    + Param<String> outputCol()
+    + Param<String> userCol()
+    + Param<String> itemCol()
+    + Param<String> ratingCol()
+    + Boolean getVerbose()
+    + String getOutputCol()
+    + String getUserCol()
+    + String getItemCol()
+    + String getRatingCol()
+}
+
+com.r4tings.recommender.common.ml.param.Verbose <|.. com.r4tings.recommender.common.ml.AbstractTransformer
+com.r4tings.recommender.common.ml.param.OutputCol <|.. com.r4tings.recommender.common.ml.AbstractTransformer
+com.r4tings.recommender.common.ml.param.RatingCol <|.. com.r4tings.recommender.common.ml.AbstractTransformer
+
+org.apache.spark.ml.Transformer <|-left- com.r4tings.recommender.common.ml.AbstractTransformer
+
+abstract class com.r4tings.recommender.data.scale.RatingNormalizer<T extends RatingScaler<T>>{
+    + RatingScaler(String prefix)
+    + Dataset<Row> transform(Dataset<?> ratings)
+    + Param<Criterion> group()
+    + Criterion getCriterion()
+    + String getCriterionCol()
+    + T setVerbose(Boolean value)
+    + T setOutputCol(String value)
+    + T setUserCol(String value)
+    + T setItemCol(String value)
+    + T setRatingCol(String value)
+    + T setCriterion(Criterion value)
+    + T setCriterionCol(String value)
+    # {abstract} T self()
+    # {abstract} Dataset<Row> compute(Dataset<Row> ratingDS)
+    # {abstract} Dataset<Row> compute(Dataset<Row> ratingDS, String criterionCol)
+}
+
+com.r4tings.recommender.common.ml.AbstractTransformer <|-left- com.r4tings.recommender.data.scale.RatingNormalizer
+
+interface com.r4tings.recommender.common.ml.param.GroupCol{
+    ~ Param<Criterion> group()
+    ~ Criterion getCriterion()
+    ~ String getCriterionCol()
+    ~ CriterionCol setCriterion(Criterion value)
+    ~ CriterionCol setCriterionCol(String values)
+}
+
+com.r4tings.recommender.common.ml.param.GroupCol <|.. com.r4tings.recommender.data.scale.RatingNormalizer
+
+
+class com.r4tings.recommender.data.scale.MeanCenteringNormalizer{
+    + MeanCenteringScaler()
+    # T self()
+    # Dataset<Row> compute(Dataset<Row> ratingDS)
+    # Dataset<Row> compute(Dataset<Row> ratingDS, String criterionCol)
+}
+
+com.r4tings.recommender.data.scale.RatingNormalizer <|-left- com.r4tings.recommender.data.scale.MeanCenteringNormalizer
+
+enum com.r4tings.recommender.data.scale.NormalizeMethod {
+    MEAN_CENTERING
+    'MEAN_CENTERING_INVERSE
+    Z_SCORE
+    'Z_SCORE_INVERSE
+    MIN_MAX
+    'MIN_MAX_INVERSE
+    DECIMAL_SCALING
+    'DECIMAL_SCALING_INVERSE
+    BINARY_THRESHOLDING
+    + ScaleMethod(String description)
+    + {abstract} UserDefinedFunction invoke(Boolean verbose)
+}
+
+@enduml

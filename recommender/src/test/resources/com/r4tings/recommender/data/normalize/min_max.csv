@@ -1,0 +1,20 @@
+Ratings Data File                            ,Criterion,Lower,Upper,Verbose,User Column,Item Column,Rating Column,"User Id,    Item Id,    Expected"
+dataset/r4tings/ratings.csv                  ,         ,1d   ,5d   ,true   ,           ,           ,             ,"     u4,         i1,   3.2222222"
+dataset/r4tings/ratings.csv                  ,USER     ,1d   ,5d   ,true   ,           ,           ,             ,"     u4,         i1,   3.2222222"
+dataset/r4tings/ratings.csv                  ,ITEM     ,1d   ,5d   ,true   ,           ,           ,             ,"     u4,         i1,   5d       "
+
+dataset/Book-Crossing/BX-Book-Ratings.parquet,         ,1d   ,5d   ,       ,User-ID    ,ISBN       ,Book-Rating  ,"    254, 0590353403,   4.5555556"
+dataset/Book-Crossing/BX-Book-Ratings.parquet,USER     ,1d   ,5d   ,       ,User-ID    ,ISBN       ,Book-Rating  ,"    254, 0590353403,   4.3333333"
+dataset/Book-Crossing/BX-Book-Ratings.parquet,ITEM     ,1d   ,5d   ,       ,User-ID    ,ISBN       ,Book-Rating  ,"    254, 0590353403,   4.2000000"
+
+dataset/MovieLens/ml-latest-small/ratings.csv,         ,1d   ,5d   ,       ,userId     ,movieId    ,             ,"      1,        260,   5d       "
+dataset/MovieLens/ml-latest-small/ratings.csv,USER     ,1d   ,5d   ,       ,userId     ,movieId    ,             ,"      1,        260,   5d       "
+dataset/MovieLens/ml-latest-small/ratings.csv,ITEM     ,1d   ,5d   ,       ,userId     ,movieId    ,             ,"      1,        260,   5d       "
+
+dataset/MovieLens/ml-latest/ratings.csv      ,         ,1d   ,5d   ,       ,userId     ,movieId    ,             ,"      1,        260,   4.5555556"
+dataset/MovieLens/ml-latest/ratings.csv      ,USER     ,1d   ,5d   ,       ,userId     ,movieId    ,             ,"      1,        260,   4.3333333"
+dataset/MovieLens/ml-latest/ratings.csv      ,ITEM     ,1d   ,5d   ,       ,userId     ,movieId    ,             ,"      1,        260,   4.5555556"
+
+dataset/MovieLens/ml-coursera/ratings.csv    ,         ,1d   ,5d   ,       ,userId     ,movieId    ,             ,"  76630,       2571,   4.5555556"
+dataset/MovieLens/ml-coursera/ratings.csv    ,USER     ,1d   ,5d   ,       ,userId     ,movieId    ,             ,"  76630,       2571,   4.5555556"
+dataset/MovieLens/ml-coursera/ratings.csv    ,ITEM     ,1d   ,5d   ,       ,userId     ,movieId    ,             ,"  76630,       2571,   4.5555556"

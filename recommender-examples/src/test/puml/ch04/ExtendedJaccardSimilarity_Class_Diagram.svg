@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="931px" preserveAspectRatio="none"
+     style="width:1295px;height:931px;background:#FFFFFF;" version="1.1" viewBox="0 0 1295 931" width="1295px"
+     zoomAndPan="magnify">
+    <defs/>
+    <g><!--MD5=[36a01395821b2eaae4c1182ca71968d3]
+cluster org.apache.spark.ml-->
+        <polygon fill="#FFFFFF" points="368,6,488,6,495,24.7599,688,24.7599,688,149,368,149,368,6"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="368" x2="495" y1="24.7599" y2="24.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="114" x="372" y="18.2299">org.apache.spark.ml
+        </text><!--MD5=[5251f2a81915f14ce8a29227505cc9fd]
+cluster com.r4tings.recommender.common.ml-->
+        <polygon fill="#FFFFFF" points="16,173,220,173,227,191.7599,688,191.7599,688,871,16,871,16,173"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="227" y1="191.7599" y2="191.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="198" x="20" y="185.2299">com.r4tings.recommender.common.ml
+        </text><!--MD5=[06ed629ced50ca4162b5bd688d358b3c]
+cluster com.r4tings.recommender.common.ml.param-->
+        <polygon fill="#FFFFFF" points="48,220,288,220,295,238.7599,336,238.7599,336,839,48,839,48,220"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="48" x2="295" y1="238.7599" y2="238.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="234" x="52" y="232.2299">com.r4tings.recommender.common.ml.param
+        </text><!--MD5=[ad835846957950c2ae80e064171aee2c]
+cluster com.r4tings.recommender.model.measures.similarity-->
+        <polygon fill="#FFFFFF" points="720,194,1020,194,1027,212.7599,1278,212.7599,1278,924,720,924,720,194"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="720" x2="1027" y1="212.7599" y2="212.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="294" x="724" y="206.2299">com.r4tings.recommender.model.measures.similarity
+        </text><!--MD5=[71c385664aa3d34c75f719e0a7af1215]
+class Transformer-->
+        <rect codeLine="13" fill="#F5DEB3" height="95.0396" id="Transformer" style="stroke:#A80036;stroke-width:1.5;"
+              width="288" x="384" y="37.5"/>
+        <ellipse cx="491.25" cy="51.5" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M495.2813,55 L493.8281,55 L492.9844,53 L489.9063,53 L489.1094,55 L487.6563,55 L490.8125,46.5625 L492.125,46.5625 L495.2813,55 Z M492.5313,51.5625 L491.3906,48.3906 Q491.2969,48.1875 491.4375,47.8125 L491.4688,47.8125 Q491.6094,48.2188 491.5156,48.4063 L490.375,51.5625 L492.5313,51.5625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="66" x="508.75" y="55.35">Transformer
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="385" x2="671" y1="65.5" y2="65.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="385" x2="671" y1="73.5" y2="73.5"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="258" x="390" y="87.7299">+Dataset&lt;Row&gt; transform(Dataset&lt;?&gt; ratings)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="276" x="390" y="100.4898">+StructType transformSchema(StructType schema)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="198" x="390" y="113.2497">+Transformer copy(ParamMap extra)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="78" x="390" y="126.0096">+String uid()
+        </text><!--MD5=[1affa35e1d4698ba9960ad306753dc2e]
+class AbstractTransformer-->
+        <rect codeLine="58" fill="#FEFECE" height="222.6387" id="AbstractTransformer"
+              style="stroke:#A80036;stroke-width:1.5;" width="288" x="384" y="277.5"/>
+        <ellipse cx="467.25" cy="291.5" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M471.2813,295 L469.8281,295 L468.9844,293 L465.9063,293 L465.1094,295 L463.6563,295 L466.8125,286.5625 L468.125,286.5625 L471.2813,295 Z M468.5313,291.5625 L467.3906,288.3906 Q467.2969,288.1875 467.4375,287.8125 L467.4688,287.8125 Q467.6094,288.2188 467.5156,288.4063 L466.375,291.5625 L468.5313,291.5625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="114" x="484.75" y="295.35">AbstractTransformer
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="385" x2="671" y1="305.5" y2="305.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="385" x2="671" y1="313.5" y2="313.5"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="210"
+              x="390" y="327.7299">+AbstractTransformer(String prefix)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="276"
+              x="390" y="340.4898">+StructType transformSchema(StructType schema)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="198"
+              x="390" y="353.2497">+Transformer copy(ParamMap extra)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="78"
+              x="390" y="366.0096">+String uid()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="390" y="378.7695">+BooleanParam verbose()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="390" y="391.5294">+Param&lt;String&gt; outputCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="390" y="404.2894">+Param&lt;String&gt; userCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="390" y="417.0493">+Param&lt;String&gt; itemCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="390" y="429.8092">+Param&lt;String&gt; ratingCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="390" y="442.5691">+Boolean getVerbose()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="390" y="455.329">+String getOutputCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="390" y="468.0889">+String getUserCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="390" y="480.8488">+String getItemCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="390" y="493.6087">+String getRatingCol()
+        </text><!--MD5=[6e8b8349b871199d2f29f8f6b56a4806]
+class RatingCol-->
+        <rect codeLine="25" fill="#FEFECE" height="158.8391" id="RatingCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="234" x="75" y="493.5"/>
+        <ellipse cx="161.25" cy="507.5" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M162.1875,511.5 L160.75,511.5 L160.75,503.0625 L162.1875,503.0625 L162.1875,511.5 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="178.75" y="511.35">RatingCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="76" x2="308" y1="521.5" y2="521.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="76" x2="308" y1="529.5" y2="529.5"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="81" y="543.7299">~Param&lt;String&gt; userCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="81" y="556.4898">~Param&lt;String&gt; itemCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="81" y="569.2497">~Param&lt;String&gt; ratingCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="81" y="582.0096">~String getUserCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="81" y="594.7695">~String getItemCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="81" y="607.5294">~String getRatingCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="210"
+              x="81" y="620.2894">~RatingCol setUserCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="210"
+              x="81" y="633.0493">~RatingCol setItemCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="222"
+              x="81" y="645.8092">~RatingCol setRatingCol(String value)
+        </text><!--MD5=[986af0b77bb368f4644cf27d4dc3ce6a]
+class Verbose-->
+        <rect codeLine="37" fill="#FEFECE" height="82.2797" id="Verbose" style="stroke:#A80036;stroke-width:1.5;"
+              width="216" x="84" y="259"/>
+        <ellipse cx="167.25" cy="273" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M168.1875,277 L166.75,277 L166.75,268.5625 L168.1875,268.5625 L168.1875,277 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="42" x="184.75" y="276.85">Verbose
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="85" x2="299" y1="287" y2="287"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="85" x2="299" y1="295" y2="295"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="90" y="309.2299">~BooleanParam verbose()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="90" y="321.9898">~Boolean getVerbose()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="204"
+              x="90" y="334.7497">~Verbose setVerbose(Boolean value)
+        </text><!--MD5=[fb49fb28c4ef27686c59ea575820fdd8]
+class OutputCol-->
+        <rect codeLine="43" fill="#FEFECE" height="82.2797" id="OutputCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="240" x="72" y="376"/>
+        <ellipse cx="161.25" cy="390" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M162.1875,394 L160.75,394 L160.75,385.5625 L162.1875,385.5625 L162.1875,394 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="178.75" y="393.85">OutputCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="73" x2="311" y1="404" y2="404"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="73" x2="311" y1="412" y2="412"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="78" y="426.2299">~Param&lt;String&gt; outputCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="78" y="438.9898">~String getOutputCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="228"
+              x="78" y="451.7497">~OutputCol setOutputCol(String values)
+        </text><!--MD5=[2d8e3dec754c2fcf137e87e5dab5b8e2]
+class GroupCol-->
+        <rect codeLine="49" fill="#FEFECE" height="107.7995" id="GroupCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="228" x="78" y="688"/>
+        <ellipse cx="164.25" cy="702" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M165.1875,706 L163.75,706 L163.75,697.5625 L165.1875,697.5625 L165.1875,706 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="48" x="181.75" y="705.85">GroupCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="79" x2="305" y1="716" y2="716"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="79" x2="305" y1="724" y2="724"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="84" y="738.2299">~Param&lt;Group&gt; group()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="102"
+              x="84" y="750.9898">~Group getGroup()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="84" y="763.7497">~String getGroupCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="186"
+              x="84" y="776.5096">~GroupCol setGroup(Group value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="216"
+              x="84" y="789.2695">~GroupCol setGroupCol(String values)
+        </text><!--MD5=[a44c9ffca383664d675e522be2a87b74]
+class RatingSimilarityMeasurer-->
+        <rect codeLine="85" fill="#FEFECE" height="311.958" id="RatingSimilarityMeasurer"
+              style="stroke:#A80036;stroke-width:1.5;" width="510" x="744" y="233"/>
+        <ellipse cx="810.25" cy="247" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M814.2813,250.5 L812.8281,250.5 L811.9844,248.5 L808.9063,248.5 L808.1094,250.5 L806.6563,250.5 L809.8125,242.0625 L811.125,242.0625 L814.2813,250.5 Z M811.5313,247.0625 L810.3906,243.8906 Q810.2969,243.6875 810.4375,243.3125 L810.4688,243.3125 Q810.6094,243.7188 810.5156,243.9063 L809.375,247.0625 L811.5313,247.0625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="144" x="827.75" y="250.85">RatingSimilarityMeasurer
+        </text>
+        <rect fill="#FFFFFF" height="14.7599" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;"
+              width="224" x="1033" y="230"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="222" x="1034" y="241.2299">T extends RatingSimilarityMeasurer&lt;T&gt;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="745" x2="1253" y1="261" y2="261"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="745" x2="1253" y1="269" y2="269"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="240"
+              x="750" y="283.2299">+RatingSimilarityMeasurer(String prefix)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="258"
+              x="750" y="295.9898">+Dataset&lt;Row&gt; transform(Dataset&lt;?&gt; ratings)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="750" y="308.7497">+Param&lt;Group&gt; group()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="750" y="321.5096">+BooleanParam imputeZero()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="750" y="334.2695">+Param&lt;Object[]&gt; ids()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="102"
+              x="750" y="347.0294">+Group getGroup()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="750" y="359.7894">+String getGroupCol()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="750" y="372.5493">+Boolean getImputeZero()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="108"
+              x="750" y="385.3092">+Object[] getIds()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="168"
+              x="750" y="398.0691">+T setVerbose(Boolean value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="174"
+              x="750" y="410.829">+T setOutputCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="750" y="423.5889">+T setUserCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="750" y="436.3488">+T setItemCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="174"
+              x="750" y="449.1087">+T setRatingCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="144"
+              x="750" y="461.8686">+T setGroup(Group value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="168"
+              x="750" y="474.6285">+T setGroupCol(String value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="186"
+              x="750" y="487.3884">+T setImputeZero(Boolean value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="750" y="500.1483">+T setIds(Object... value)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="750" y="512.9082">#T self()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="264" x="750" y="525.6681">#Dataset&lt;Row&gt; execute(Dataset&lt;Row&gt; ratingDS)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="498"
+              x="750" y="538.428">#Dataset&lt;Row&gt; compute(Dataset&lt;Row&gt; ratingDS, UserDefinedFunction
+            similarityMeasure)
+        </text><!--MD5=[10749484a0a5b6850cece9f6c24b5c05]
+class ExtendedJaccardSimilarityMeasurer-->
+        <rect codeLine="109" fill="#FEFECE" height="82.2797" id="ExtendedJaccardSimilarityMeasurer"
+              style="stroke:#A80036;stroke-width:1.5;" width="306" x="846" y="580"/>
+        <ellipse cx="896.25" cy="594" fill="#ADD1B2" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M898.6875,596.8594 Q897.8281,598 896.625,598 Q895.0938,598 894.1719,596.8594 Q893.25,595.7031 893.25,593.9219 Q893.25,592.0469 894.25,590.8125 Q895.2656,589.5625 896.8906,589.5625 Q897.9688,589.5625 898.6875,590.7188 L898.6875,592.5 Q897.6875,591 896.9531,591 Q895.9219,591 895.2969,591.7969 Q894.6875,592.5938 894.6875,593.875 Q894.6875,595.0938 895.2656,595.8281 Q895.8438,596.5625 896.7969,596.5625 Q897.6563,596.5625 898.6875,595.0938 L898.6875,596.8594 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="198"
+              x="913.75" y="597.85">ExtendedJaccardSimilarityMeasurer
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="847" x2="1151" y1="608" y2="608"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="847" x2="1151" y1="616" y2="616"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="294"
+              x="852" y="630.2299">+ExtendedJaccardSimilarityMeasurer(String prefix)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="246"
+              x="852" y="642.9898">#ExtendedJaccardSimilarityMeasurer self()
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="264"
+              x="852" y="655.7497">#Dataset&lt;Row&gt; execute(Dataset&lt;Row&gt; ratingDS)
+        </text><!--MD5=[4605968b9c3c4175c5b371d1e167685a]
+class SimilarityMeasure-->
+        <rect codeLine="116" fill="#FEFECE" height="184.359" id="SimilarityMeasure"
+              style="stroke:#A80036;stroke-width:1.5;" width="396" x="801" y="697"/>
+        <ellipse cx="944.25" cy="711" fill="#EB937F" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M946.6875,715 L942.25,715 L942.25,706.5625 L946.6875,706.5625 L946.6875,708 L943.6875,708 L943.6875,709.5625 L946.6875,709.5625 L946.6875,711 L943.6875,711 L943.6875,713.5625 L946.6875,713.5625 L946.6875,715 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="102"
+              x="961.75" y="714.85">SimilarityMeasure
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="802" x2="1196" y1="725" y2="725"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="36"
+              x="807" y="739.2299">COSINE
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="42"
+              x="807" y="751.9898">PEARSON
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="54"
+              x="807" y="764.7497">MANHATTAN
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="108"
+              x="807" y="777.5096">WEIGHTED_MANHATTAN
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="54"
+              x="807" y="790.2695">EUCLIDEAN
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="108"
+              x="807" y="803.0294">WEIGHTED_EUCLIDEAN
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="60"
+              x="807" y="815.7894">BINARY_SMC
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="84"
+              x="807" y="828.5493">BINARY_JACCARD
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="807" y="841.3092">BINARY_EXTENDED_JACCARD
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="802" x2="1196" y1="847.8391" y2="847.8391"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="228"
+              x="807" y="862.0691">+SimilarityMeasure(String description)
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="384" x="807" y="874.829">+UserDefinedFunction invoke(Boolean imputeZero, Boolean verbose)
+        </text><!--MD5=[6774f54df99cac43ddb6fff0ace3469f]
+reverse link Verbose to AbstractTransformer-->
+        <path codeLine="75" d="M320.16,309.25 C320.16,309.25 383.88,309.25 383.88,309.25 " fill="none"
+              id="Verbose-backto-AbstractTransformer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="320.16,316.25,300.16,309.25,320.16,302.25,320.16,316.25"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[258137a0603eeda736fbe53390a98a50]
+reverse link OutputCol to AbstractTransformer-->
+        <path codeLine="76" d="M332.35,417 C332.35,417 383.82,417 383.82,417 " fill="none"
+              id="OutputCol-backto-AbstractTransformer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="332.35,424,312.35,417,332.35,410,332.35,424"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[a20e1c712b093f49e7c753873d9fe787]
+reverse link RatingCol to AbstractTransformer-->
+        <path codeLine="77" d="M329.04,497 C329.04,497 383.87,497 383.87,497 " fill="none"
+              id="RatingCol-backto-AbstractTransformer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="329.04,504,309.04,497,329.04,490,329.04,504"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[c0a34d83f952e41aff15ddd5add765cd]
+link AbstractTransformer to Transformer-->
+        <path codeLine="81" d="M528,277.1 C528,277.1 528,152.75 528,152.75 " fill="none"
+              id="AbstractTransformer-to-Transformer" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="521,152.75,528,132.75,535,152.75,521,152.75"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[ed01c84bbf9d6c64cb8980c3b9adc8ec]
+reverse link AbstractTransformer to RatingSimilarityMeasurer-->
+        <path codeLine="130" d="M692.2,389 C692.2,389 743.76,389 743.76,389 " fill="none"
+              id="AbstractTransformer-backto-RatingSimilarityMeasurer" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="692.2,396,672.2,389,692.2,382,692.2,396" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[40a87a718853b1f54bb4a0ac60baf8f5]
+reverse link GroupCol to RatingSimilarityMeasurer-->
+        <path codeLine="131" d="M326.09,692.5 C326.09,692.5 773,692.5 773,692.5 C773,692.5 773,619.56 773,545.2 "
+              fill="none" id="GroupCol-backto-RatingSimilarityMeasurer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="326.09,699.5,306.09,692.5,326.09,685.5,326.09,699.5"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[6f5812096b066cb65428b394edad1898]
+link ExtendedJaccardSimilarityMeasurer to RatingSimilarityMeasurer-->
+        <path codeLine="132" d="M999,579.79 C999,579.79 999,565.02 999,565.02 " fill="none"
+              id="ExtendedJaccardSimilarityMeasurer-to-RatingSimilarityMeasurer"
+              style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="992,565.02,999,545.02,1006,565.02,992,565.02"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[26f8e0f98b527b234a75b4680c315d5d]
+reverse link SimilarityMeasure to ExtendedJaccardSimilarityMeasurer-->
+        <path codeLine="133" d="M999,691.65 C999,691.65 999,662.2 999,662.2 " fill="none"
+              id="SimilarityMeasure-backto-ExtendedJaccardSimilarityMeasurer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036" points="999,696.65,1003,687.65,999,691.65,995,687.65,999,696.65"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[57834603613ffaf0c4d58a8e67b59fc5]
+link com.r4tings.recommender.common.ml.param to com.r4tings.recommender.model.measures.similarity--><!--MD5=[ad5273ca15db65af56e5fb8e1dafd0d5]
+@startuml
+
+scale 1
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+
+skinparam linetype ortho
+left to right direction
+
+package org.apache.spark.ml {
+    abstract class Transformer #Wheat {
+        + {abstract} Dataset<Row> transform(Dataset<?> ratings)
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Transformer copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+}
+
+package com.r4tings.recommender.common.ml {
+
+    package com.r4tings.recommender.common.ml.param {
+
+        interface RatingCol{
+            ~ Param<String> userCol()
+            ~ Param<String> itemCol()
+            ~ Param<String> ratingCol()
+            ~ String getUserCol()
+            ~ String getItemCol()
+            ~ String getRatingCol()
+            ~ RatingCol setUserCol(String value)
+            ~ RatingCol setItemCol(String value)
+            ~ RatingCol setRatingCol(String value)
+        }
+
+        interface Verbose{
+            ~ BooleanParam verbose()
+            ~ Boolean getVerbose()
+            ~ Verbose setVerbose(Boolean value)
+        }
+
+        interface OutputCol{
+            ~ Param<String> outputCol()
+            ~ String getOutputCol()
+            ~ OutputCol setOutputCol(String values)
+        }
+
+        interface GroupCol{
+            ~ Param<Group> group()
+            ~ Group getGroup()
+            ~ String getGroupCol()
+            ~ GroupCol setGroup(Group value)
+            ~ GroupCol setGroupCol(String values)
+        }
+    }
+
+    abstract class AbstractTransformer{
+        + AbstractTransformer(String prefix)
+        + StructType transformSchema(StructType schema)
+        + Transformer copy(ParamMap extra)
+        + String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+    }
+
+    Verbose <|.. AbstractTransformer
+    OutputCol <|.. AbstractTransformer
+    RatingCol <|.. AbstractTransformer
+
+}
+
+    Transformer <|-left- AbstractTransformer
+
+package com.r4tings.recommender.model.measures.similarity {
+
+    abstract class RatingSimilarityMeasurer<T extends RatingSimilarityMeasurer<T>>{
+        + RatingSimilarityMeasurer(String prefix)
+        + Dataset<Row> transform(Dataset<?> ratings)
+        + Param<Group> group()
+        + BooleanParam imputeZero()
+        + Param<Object[]> ids()
+        + Group getGroup()
+        + String getGroupCol()
+        + Boolean getImputeZero()
+        + Object[] getIds()
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setGroup(Group value)
+        + T setGroupCol(String value)
+        + T setImputeZero(Boolean value)
+        + T setIds(Object... value)
+        # {abstract} T self()
+        # {abstract} Dataset<Row> execute(Dataset<Row> ratingDS)
+        # Dataset<Row> compute(Dataset<Row> ratingDS, UserDefinedFunction similarityMeasure)
+    }
+
+    class ExtendedJaccardSimilarityMeasurer{
+        + ExtendedJaccardSimilarityMeasurer(String prefix)
+        # ExtendedJaccardSimilarityMeasurer self()
+        # Dataset<Row> execute(Dataset<Row> ratingDS)
+    }
+
+
+    enum SimilarityMeasure {
+        COSINE
+        PEARSON
+        MANHATTAN
+        WEIGHTED_MANHATTAN
+        EUCLIDEAN
+        WEIGHTED_EUCLIDEAN
+        BINARY_SMC
+        BINARY_JACCARD
+        BINARY_EXTENDED_JACCARD
+        + SimilarityMeasure(String description)
+        + {abstract} UserDefinedFunction invoke(Boolean imputeZero, Boolean verbose)
+    }
+
+    AbstractTransformer <|- - RatingSimilarityMeasurer
+    GroupCol <|.. RatingSimilarityMeasurer
+    RatingSimilarityMeasurer <|-left- ExtendedJaccardSimilarityMeasurer
+    SimilarityMeasure <.right. ExtendedJaccardSimilarityMeasurer
+
+
+}
+
+com.r4tings.recommender.common.ml.param -[hidden]- com.r4tings.recommender.model.measures.similarity
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 21:40:07 KST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: MS949
+Language: ko
+Country: KR
+-->
+    </g>
+</svg>

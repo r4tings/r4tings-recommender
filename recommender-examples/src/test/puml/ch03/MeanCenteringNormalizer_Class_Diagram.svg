@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     contentScriptType="application/ecmascript" contentStyleType="text/css" height="878px" preserveAspectRatio="none"
+     style="width:1181px;height:878px;background:#FFFFFF;" version="1.1" viewBox="0 0 1181 878" width="1181px"
+     zoomAndPan="magnify">
+    <defs/>
+    <g><!--MD5=[36a01395821b2eaae4c1182ca71968d3]
+cluster org.apache.spark.ml-->
+        <polygon fill="#FFFFFF" points="374,6,494,6,501,24.7599,700,24.7599,700,149,374,149,374,6"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="374" x2="501" y1="24.7599" y2="24.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="114" x="378" y="18.2299">org.apache.spark.ml
+        </text><!--MD5=[5251f2a81915f14ce8a29227505cc9fd]
+cluster com.r4tings.recommender.common.ml-->
+        <polygon fill="#FFFFFF" points="16,173,220,173,227,191.7599,700,191.7599,700,871,16,871,16,173"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="16" x2="227" y1="191.7599" y2="191.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="198" x="20" y="185.2299">com.r4tings.recommender.common.ml
+        </text><!--MD5=[06ed629ced50ca4162b5bd688d358b3c]
+cluster com.r4tings.recommender.common.ml.param-->
+        <polygon fill="#FFFFFF" points="48,220,288,220,295,238.7599,342,238.7599,342,839,48,839,48,220"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="48" x2="295" y1="238.7599" y2="238.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="234" x="52" y="232.2299">com.r4tings.recommender.common.ml.param
+        </text><!--MD5=[a80c11370e35f0633cc34b055c7a2ab2]
+cluster com.r4tings.recommender.data.normalize-->
+        <polygon fill="#FFFFFF" points="732,254,966,254,973,272.7599,1164,272.7599,1164,870,732,870,732,254"
+                 style="stroke:#000000;stroke-width:1.5;"/>
+        <line style="stroke:#000000;stroke-width:1.5;" x1="732" x2="973" y1="272.7599" y2="272.7599"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-weight="bold" lengthAdjust="spacing"
+              textLength="228" x="736" y="266.2299">com.r4tings.recommender.data.normalize
+        </text><!--MD5=[71c385664aa3d34c75f719e0a7af1215]
+class Transformer-->
+        <rect codeLine="10" fill="#F5DEB3" height="95.0396" id="Transformer" style="stroke:#A80036;stroke-width:1.5;"
+              width="294" x="390" y="37.5"/>
+        <ellipse cx="500.25" cy="51.5" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M504.2813,55 L502.8281,55 L501.9844,53 L498.9063,53 L498.1094,55 L496.6563,55 L499.8125,46.5625 L501.125,46.5625 L504.2813,55 Z M501.5313,51.5625 L500.3906,48.3906 Q500.2969,48.1875 500.4375,47.8125 L500.4688,47.8125 Q500.6094,48.2188 500.5156,48.4063 L499.375,51.5625 L501.5313,51.5625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="66" x="517.75" y="55.35">Transformer
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="391" x2="683" y1="65.5" y2="65.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="391" x2="683" y1="73.5" y2="73.5"/>
+        <ellipse cx="401" cy="84.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="252" x="408" y="87.7299">Dataset&lt;Row&gt; transform(Dataset&lt;?&gt; ratings)
+        </text>
+        <ellipse cx="401" cy="97.2599" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="270" x="408" y="100.4898">StructType transformSchema(StructType schema)
+        </text>
+        <ellipse cx="401" cy="110.0198" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="192" x="408" y="113.2497">Transformer copy(ParamMap extra)
+        </text>
+        <ellipse cx="401" cy="122.7797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="72" x="408" y="126.0096">String uid()
+        </text><!--MD5=[bd1fa395bbf24dfe17b71cfb3e066afe]
+class AbstractRatingTransformer-->
+        <rect codeLine="55" fill="#FEFECE" height="222.6387" id="AbstractRatingTransformer"
+              style="stroke:#A80036;stroke-width:1.5;" width="294" x="390" y="299.5"/>
+        <ellipse cx="458.25" cy="313.5" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M462.2813,317 L460.8281,317 L459.9844,315 L456.9063,315 L456.1094,317 L454.6563,317 L457.8125,308.5625 L459.125,308.5625 L462.2813,317 Z M459.5313,313.5625 L458.3906,310.3906 Q458.2969,310.1875 458.4375,309.8125 L458.4688,309.8125 Q458.6094,310.2188 458.5156,310.4063 L457.375,313.5625 L459.5313,313.5625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="150" x="475.75" y="317.35">AbstractRatingTransformer
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="391" x2="683" y1="327.5" y2="327.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="391" x2="683" y1="335.5" y2="335.5"/>
+        <ellipse cx="401" cy="346.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="240"
+              x="408" y="349.7299">AbstractRatingTransformer(String prefix)
+        </text>
+        <ellipse cx="401" cy="359.2599" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="270"
+              x="408" y="362.4898">StructType transformSchema(StructType schema)
+        </text>
+        <ellipse cx="401" cy="372.0198" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="192"
+              x="408" y="375.2497">Transformer copy(ParamMap extra)
+        </text>
+        <ellipse cx="401" cy="384.7797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="72"
+              x="408" y="388.0096">String uid()
+        </text>
+        <ellipse cx="401" cy="397.5396" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="408" y="400.7695">BooleanParam verbose()
+        </text>
+        <ellipse cx="401" cy="410.2995" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="150"
+              x="408" y="413.5294">Param&lt;String&gt; outputCol()
+        </text>
+        <ellipse cx="401" cy="423.0594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="408" y="426.2894">Param&lt;String&gt; userCol()
+        </text>
+        <ellipse cx="401" cy="435.8193" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="408" y="439.0493">Param&lt;String&gt; itemCol()
+        </text>
+        <ellipse cx="401" cy="448.5792" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="150"
+              x="408" y="451.8092">Param&lt;String&gt; ratingCol()
+        </text>
+        <ellipse cx="401" cy="461.3391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="408" y="464.5691">Boolean getVerbose()
+        </text>
+        <ellipse cx="401" cy="474.099" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="408" y="477.329">String getOutputCol()
+        </text>
+        <ellipse cx="401" cy="486.859" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="408" y="490.0889">String getUserCol()
+        </text>
+        <ellipse cx="401" cy="499.6189" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="408" y="502.8488">String getItemCol()
+        </text>
+        <ellipse cx="401" cy="512.3788" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="408" y="515.6087">String getRatingCol()
+        </text><!--MD5=[6e8b8349b871199d2f29f8f6b56a4806]
+class RatingCol-->
+        <rect codeLine="22" fill="#FEFECE" height="158.8391" id="RatingCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="240" x="75" y="493.5"/>
+        <ellipse cx="164.25" cy="507.5" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M165.1875,511.5 L163.75,511.5 L163.75,503.0625 L165.1875,503.0625 L165.1875,511.5 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="181.75" y="511.35">RatingCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="76" x2="314" y1="521.5" y2="521.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="76" x2="314" y1="529.5" y2="529.5"/>
+        <polygon fill="#4177AF" points="86,536.5,82,542.5,90,542.5" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="93" y="543.7299">Param&lt;String&gt; userCol()
+        </text>
+        <polygon fill="#4177AF" points="86,549.2599,82,555.2599,90,555.2599" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="93" y="556.4898">Param&lt;String&gt; itemCol()
+        </text>
+        <polygon fill="#4177AF" points="86,562.0198,82,568.0198,90,568.0198" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="150"
+              x="93" y="569.2497">Param&lt;String&gt; ratingCol()
+        </text>
+        <polygon fill="#4177AF" points="86,574.7797,82,580.7797,90,580.7797" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="93" y="582.0096">String getUserCol()
+        </text>
+        <polygon fill="#4177AF" points="86,587.5396,82,593.5396,90,593.5396" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="93" y="594.7695">String getItemCol()
+        </text>
+        <polygon fill="#4177AF" points="86,600.2995,82,606.2995,90,606.2995" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="93" y="607.5294">String getRatingCol()
+        </text>
+        <polygon fill="#4177AF" points="86,613.0594,82,619.0594,90,619.0594" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="204"
+              x="93" y="620.2894">RatingCol setUserCol(String value)
+        </text>
+        <polygon fill="#4177AF" points="86,625.8193,82,631.8193,90,631.8193" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="204"
+              x="93" y="633.0493">RatingCol setItemCol(String value)
+        </text>
+        <polygon fill="#4177AF" points="86,638.5792,82,644.5792,90,644.5792" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="216"
+              x="93" y="645.8092">RatingCol setRatingCol(String value)
+        </text><!--MD5=[fb49fb28c4ef27686c59ea575820fdd8]
+class OutputCol-->
+        <rect codeLine="34" fill="#FEFECE" height="82.2797" id="OutputCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="246" x="72" y="259"/>
+        <ellipse cx="164.25" cy="273" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M165.1875,277 L163.75,277 L163.75,268.5625 L165.1875,268.5625 L165.1875,277 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="54" x="181.75" y="276.85">OutputCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="73" x2="317" y1="287" y2="287"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="73" x2="317" y1="295" y2="295"/>
+        <polygon fill="#4177AF" points="83,302,79,308,87,308" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="150"
+              x="90" y="309.2299">Param&lt;String&gt; outputCol()
+        </text>
+        <polygon fill="#4177AF" points="83,314.7599,79,320.7599,87,320.7599" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="126"
+              x="90" y="321.9898">String getOutputCol()
+        </text>
+        <polygon fill="#4177AF" points="83,327.5198,79,333.5198,87,333.5198" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="222"
+              x="90" y="334.7497">OutputCol setOutputCol(String values)
+        </text><!--MD5=[986af0b77bb368f4644cf27d4dc3ce6a]
+class Verbose-->
+        <rect codeLine="40" fill="#FEFECE" height="82.2797" id="Verbose" style="stroke:#A80036;stroke-width:1.5;"
+              width="222" x="84" y="376"/>
+        <ellipse cx="170.25" cy="390" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M171.1875,394 L169.75,394 L169.75,385.5625 L171.1875,385.5625 L171.1875,394 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="42" x="187.75" y="393.85">Verbose
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="85" x2="305" y1="404" y2="404"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="85" x2="305" y1="412" y2="412"/>
+        <polygon fill="#4177AF" points="95,419,91,425,99,425" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="132"
+              x="102" y="426.2299">BooleanParam verbose()
+        </text>
+        <polygon fill="#4177AF" points="95,431.7599,91,437.7599,99,437.7599" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="102" y="438.9898">Boolean getVerbose()
+        </text>
+        <polygon fill="#4177AF" points="95,444.5198,91,450.5198,99,450.5198" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="198"
+              x="102" y="451.7497">Verbose setVerbose(Boolean value)
+        </text><!--MD5=[2d8e3dec754c2fcf137e87e5dab5b8e2]
+class GroupCol-->
+        <rect codeLine="46" fill="#FEFECE" height="107.7995" id="GroupCol" style="stroke:#A80036;stroke-width:1.5;"
+              width="234" x="78" y="688"/>
+        <ellipse cx="167.25" cy="702" fill="#B4A7E5" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M168.1875,706 L166.75,706 L166.75,697.5625 L168.1875,697.5625 L168.1875,706 Z " fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="48" x="184.75" y="705.85">GroupCol
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="79" x2="311" y1="716" y2="716"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="79" x2="311" y1="724" y2="724"/>
+        <polygon fill="#4177AF" points="89,731,85,737,93,737" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="96" y="738.2299">Param&lt;Group&gt; group()
+        </text>
+        <polygon fill="#4177AF" points="89,743.7599,85,749.7599,93,749.7599" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="96"
+              x="96" y="750.9898">Group getGroup()
+        </text>
+        <polygon fill="#4177AF" points="89,756.5198,85,762.5198,93,762.5198" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="96" y="763.7497">String getGroupCol()
+        </text>
+        <polygon fill="#4177AF" points="89,769.2797,85,775.2797,93,775.2797" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="180"
+              x="96" y="776.5096">GroupCol setGroup(Group value)
+        </text>
+        <polygon fill="#4177AF" points="89,782.0396,85,788.0396,93,788.0396" style="stroke:#1963A0;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="210"
+              x="96" y="789.2695">GroupCol setGroupCol(String values)
+        </text><!--MD5=[2660fd14a22e7bc0ab3b287b0f2c35a0]
+class RatingNormalizer-->
+        <rect codeLine="83" fill="#FEFECE" height="235.3986" id="RatingNormalizer"
+              style="stroke:#A80036;stroke-width:1.5;" width="384" x="756" y="293.5"/>
+        <ellipse cx="807.25" cy="307.5" fill="#A9DCDF" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M811.2813,311 L809.8281,311 L808.9844,309 L805.9063,309 L805.1094,311 L803.6563,311 L806.8125,302.5625 L808.125,302.5625 L811.2813,311 Z M808.5313,307.5625 L807.3906,304.3906 Q807.2969,304.1875 807.4375,303.8125 L807.4688,303.8125 Q807.6094,304.2188 807.5156,304.4063 L806.375,307.5625 L808.5313,307.5625 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="96" x="824.75" y="311.35">RatingNormalizer
+        </text>
+        <rect fill="#FFFFFF" height="14.7599" style="stroke:#000000;stroke-width:1.0;stroke-dasharray:2.0,2.0;"
+              width="176" x="967" y="290.5"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="174" x="968" y="301.7299">T extends RatingNormalizer&lt;T&gt;
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="757" x2="1139" y1="321.5" y2="321.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="757" x2="1139" y1="329.5" y2="329.5"/>
+        <ellipse cx="767" cy="340.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="186"
+              x="774" y="343.7299">RatingNormalizer(String prefix)
+        </text>
+        <ellipse cx="767" cy="353.2599" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="252"
+              x="774" y="356.4898">Dataset&lt;Row&gt; transform(Dataset&lt;?&gt; ratings)
+        </text>
+        <ellipse cx="767" cy="366.0198" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="774" y="369.2497">Param&lt;Group&gt; group()
+        </text>
+        <ellipse cx="767" cy="378.7797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="96"
+              x="774" y="382.0096">Group getGroup()
+        </text>
+        <ellipse cx="767" cy="391.5396" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="120"
+              x="774" y="394.7695">String getGroupCol()
+        </text>
+        <ellipse cx="767" cy="404.2995" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="774" y="407.5294">T setVerbose(Boolean value)
+        </text>
+        <ellipse cx="767" cy="417.0594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="168"
+              x="774" y="420.2894">T setOutputCol(String value)
+        </text>
+        <ellipse cx="767" cy="429.8193" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="774" y="433.0493">T setUserCol(String value)
+        </text>
+        <ellipse cx="767" cy="442.5792" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="156"
+              x="774" y="445.8092">T setItemCol(String value)
+        </text>
+        <ellipse cx="767" cy="455.3391" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="168"
+              x="774" y="458.5691">T setRatingCol(String value)
+        </text>
+        <ellipse cx="767" cy="468.099" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="774" y="471.329">T setGroup(Group value)
+        </text>
+        <ellipse cx="767" cy="480.859" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="162"
+              x="774" y="484.0889">T setGroupCol(String value)
+        </text>
+        <polygon fill="#FFFF44" points="767,488.6189,771,492.6189,767,496.6189,763,492.6189"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="48" x="774" y="496.8488">T self()
+        </text>
+        <polygon fill="#FFFF44" points="767,501.3788,771,505.3788,767,509.3788,763,505.3788"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="258" x="774" y="509.6087">Dataset&lt;Row&gt; compute(Dataset&lt;Row&gt; ratingDS)
+        </text>
+        <polygon fill="#FFFF44" points="767,514.1387,771,518.1387,767,522.1387,763,518.1387"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="360" x="774" y="522.3686">Dataset&lt;Row&gt; compute(Dataset&lt;Row&gt; ratingDS, String
+            GroupCol)
+        </text><!--MD5=[68c3d42b2788878f0e4948d10da4683c]
+class MeanCenteringNormalizer-->
+        <rect codeLine="101" fill="#FEFECE" height="95.0396" id="MeanCenteringNormalizer"
+              style="stroke:#A80036;stroke-width:1.5;" width="384" x="756" y="563.5"/>
+        <ellipse cx="875.25" cy="577.5" fill="#ADD1B2" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M877.6875,580.3594 Q876.8281,581.5 875.625,581.5 Q874.0938,581.5 873.1719,580.3594 Q872.25,579.2031 872.25,577.4219 Q872.25,575.5469 873.25,574.3125 Q874.2656,573.0625 875.8906,573.0625 Q876.9688,573.0625 877.6875,574.2188 L877.6875,576 Q876.6875,574.5 875.9531,574.5 Q874.9219,574.5 874.2969,575.2969 Q873.6875,576.0938 873.6875,577.375 Q873.6875,578.5938 874.2656,579.3281 Q874.8438,580.0625 875.7969,580.0625 Q876.6563,580.0625 877.6875,578.5938 L877.6875,580.3594 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="138"
+              x="892.75" y="581.35">MeanCenteringNormalizer
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="757" x2="1139" y1="591.5" y2="591.5"/>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="757" x2="1139" y1="599.5" y2="599.5"/>
+        <ellipse cx="767" cy="610.5" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="150"
+              x="774" y="613.7299">MeanCenteringNormalizer()
+        </text>
+        <polygon fill="#FFFF44" points="767,618.2599,771,622.2599,767,626.2599,763,622.2599"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="48"
+              x="774" y="626.4898">T self()
+        </text>
+        <polygon fill="#FFFF44" points="767,631.0198,771,635.0198,767,639.0198,763,635.0198"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="258"
+              x="774" y="639.2497">Dataset&lt;Row&gt; compute(Dataset&lt;Row&gt; ratingDS)
+        </text>
+        <polygon fill="#FFFF44" points="767,643.7797,771,647.7797,767,651.7797,763,647.7797"
+                 style="stroke:#B38D22;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="360"
+              x="774" y="652.0096">Dataset&lt;Row&gt; compute(Dataset&lt;Row&gt; ratingDS, String GroupCol)
+        </text><!--MD5=[179e863d019516dbb6463e80b8b315a4]
+class NormalizeMethod-->
+        <rect codeLine="108" fill="#FEFECE" height="133.3193" id="NormalizeMethod"
+              style="stroke:#A80036;stroke-width:1.5;" width="282" x="807" y="693.5"/>
+        <ellipse cx="899.25" cy="707.5" fill="#EB937F" rx="9" ry="9" style="stroke:#A80036;stroke-width:1.0;"/>
+        <path d="M901.6875,711.5 L897.25,711.5 L897.25,703.0625 L901.6875,703.0625 L901.6875,704.5 L898.6875,704.5 L898.6875,706.0625 L901.6875,706.0625 L901.6875,707.5 L898.6875,707.5 L898.6875,710.0625 L901.6875,710.0625 L901.6875,711.5 Z "
+              fill="#000000"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="90"
+              x="916.75" y="711.35">NormalizeMethod
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="808" x2="1088" y1="721.5" y2="721.5"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="84"
+              x="813" y="735.7299">MEAN_CENTERING
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="42"
+              x="813" y="748.4898">Z_SCORE
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="42"
+              x="813" y="761.2497">MIN_MAX
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="90"
+              x="813" y="774.0096">DECIMAL_SCALING
+        </text>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="114"
+              x="813" y="786.7695">BINARY_THRESHOLDING
+        </text>
+        <line style="stroke:#A80036;stroke-width:1.5;" x1="808" x2="1088" y1="793.2995" y2="793.2995"/>
+        <ellipse cx="818" cy="804.2995" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" lengthAdjust="spacing" textLength="210"
+              x="825" y="807.5294">NormalizeMethod(String description)
+        </text>
+        <ellipse cx="818" cy="817.0594" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/>
+        <text fill="#000000" font-family="D2Coding ligature" font-size="11" font-style="italic" lengthAdjust="spacing"
+              textLength="258" x="825" y="820.2894">UserDefinedFunction invoke(Boolean verbose)
+        </text><!--MD5=[2292e3020763aa697dfa95e9d98ac789]
+reverse link OutputCol to AbstractRatingTransformer-->
+        <path codeLine="72" d="M338.47,320.25 C338.47,320.25 389.82,320.25 389.82,320.25 " fill="none"
+              id="OutputCol-backto-AbstractRatingTransformer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="338.47,327.25,318.47,320.25,338.47,313.25,338.47,327.25"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[9e34adc3ef6f2889f4ba46baffe3205c]
+reverse link Verbose to AbstractRatingTransformer-->
+        <path codeLine="73" d="M326.04,417 C326.04,417 389.8,417 389.8,417 " fill="none"
+              id="Verbose-backto-AbstractRatingTransformer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="326.04,424,306.04,417,326.04,410,326.04,424"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[89f5995ebcdad68c2b4e4e878639b305]
+reverse link RatingCol to AbstractRatingTransformer-->
+        <path codeLine="74" d="M335.1,508 C335.1,508 389.85,508 389.85,508 " fill="none"
+              id="RatingCol-backto-AbstractRatingTransformer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="335.1,515,315.1,508,335.1,501,335.1,515" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[7707ec0572dc49f3795a9aaa216a52a4]
+link AbstractRatingTransformer to Transformer-->
+        <path codeLine="78" d="M537,299.27 C537,299.27 537,152.9 537,152.9 " fill="none"
+              id="AbstractRatingTransformer-to-Transformer" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="530,152.9,537,132.9,544,152.9,530,152.9" style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d8fe8470a714a0c67199d6c1b4365849]
+reverse link AbstractRatingTransformer to RatingNormalizer-->
+        <path codeLine="122" d="M704.22,373.83 C704.22,373.83 755.94,373.83 755.94,373.83 " fill="none"
+              id="AbstractRatingTransformer-backto-RatingNormalizer" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="704.22,380.83,684.22,373.83,704.22,366.83,704.22,380.83"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[67c941ed724c55388c08c768fb31768f]
+reverse link GroupCol to RatingNormalizer-->
+        <path codeLine="123"
+              d="M332.17,744.75 C332.17,744.75 720,744.75 720,744.75 C720,744.75 720,448.17 720,448.17 C720,448.17 734.36,448.17 755.88,448.17 "
+              fill="none" id="GroupCol-backto-RatingNormalizer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="none" points="332.17,751.75,312.17,744.75,332.17,737.75,332.17,751.75"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[cff5678702ac75ae76a343069b21cb0f]
+link MeanCenteringNormalizer to RatingNormalizer-->
+        <path codeLine="124" d="M948,563.35 C948,563.35 948,548.51 948,548.51 " fill="none"
+              id="MeanCenteringNormalizer-to-RatingNormalizer" style="stroke:#A80036;stroke-width:1.0;"/>
+        <polygon fill="none" points="941,548.51,948,528.51,955,548.51,941,548.51"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[25512ffa0c7e3c09c8fb159444bbe269]
+reverse link NormalizeMethod to MeanCenteringNormalizer-->
+        <path codeLine="125" d="M948,688.34 C948,688.34 948,658.85 948,658.85 " fill="none"
+              id="NormalizeMethod-backto-MeanCenteringNormalizer"
+              style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/>
+        <polygon fill="#A80036" points="948,693.34,952,684.34,948,688.34,944,684.34,948,693.34"
+                 style="stroke:#A80036;stroke-width:1.0;"/><!--MD5=[d955a81cc22c00d1c08124d7535a6c05]
+reverse link com.r4tings.recommender.common.ml.param to com.r4tings.recommender.data.normalize--><!--MD5=[1f0a8b4b3917ef2f2766807be1cc4a7d]
+@startuml
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam shadowing false
+
+skinparam linetype ortho
+left to right direction
+
+package org.apache.spark.ml {
+    abstract class Transformer #Wheat {
+        + {abstract} Dataset<Row> transform(Dataset<?> ratings)
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Transformer copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+}
+
+package com.r4tings.recommender.common.ml {
+
+    package com.r4tings.recommender.common.ml.param {
+
+        interface RatingCol{
+            ~ Param<String> userCol()
+            ~ Param<String> itemCol()
+            ~ Param<String> ratingCol()
+            ~ String getUserCol()
+            ~ String getItemCol()
+            ~ String getRatingCol()
+            ~ RatingCol setUserCol(String value)
+            ~ RatingCol setItemCol(String value)
+            ~ RatingCol setRatingCol(String value)
+        }
+
+        interface OutputCol{
+            ~ Param<String> outputCol()
+            ~ String getOutputCol()
+            ~ OutputCol setOutputCol(String values)
+        }
+
+        interface Verbose{
+            ~ BooleanParam verbose()
+            ~ Boolean getVerbose()
+            ~ Verbose setVerbose(Boolean value)
+        }
+
+        interface GroupCol{
+            ~ Param<Group> group()
+            ~ Group getGroup()
+            ~ String getGroupCol()
+            ~ GroupCol setGroup(Group value)
+            ~ GroupCol setGroupCol(String values)
+        }
+    }
+
+    abstract class AbstractRatingTransformer{
+        + AbstractRatingTransformer(String prefix)
+        + StructType transformSchema(StructType schema)
+        + Transformer copy(ParamMap extra)
+        + String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+    }
+
+    OutputCol <|.. AbstractRatingTransformer
+    Verbose <|.. AbstractRatingTransformer
+    RatingCol <|.. AbstractRatingTransformer
+
+}
+
+    Transformer <|-left- AbstractRatingTransformer
+
+
+package com.r4tings.recommender.data.normalize {
+
+    abstract class RatingNormalizer<T extends RatingNormalizer<T>>{
+        + RatingNormalizer(String prefix)
+        + Dataset<Row> transform(Dataset<?> ratings)
+        + Param<Group> group()
+        + Group getGroup()
+        + String getGroupCol()
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setGroup(Group value)
+        + T setGroupCol(String value)
+        # {abstract} T self()
+        # {abstract} Dataset<Row> compute(Dataset<Row> ratingDS)
+        # {abstract} Dataset<Row> compute(Dataset<Row> ratingDS, String GroupCol)
+    }
+
+    class MeanCenteringNormalizer{
+        + MeanCenteringNormalizer()
+        # T self()
+        # Dataset<Row> compute(Dataset<Row> ratingDS)
+        # Dataset<Row> compute(Dataset<Row> ratingDS, String GroupCol)
+    }
+
+    enum NormalizeMethod {
+        MEAN_CENTERING
+        'MEAN_CENTERING_INVERSE
+        Z_SCORE
+        'Z_SCORE_INVERSE
+        MIN_MAX
+        'MIN_MAX_INVERSE
+        DECIMAL_SCALING
+        'DECIMAL_SCALING_INVERSE
+        BINARY_THRESHOLDING
+        + NormalizeMethod(String description)
+        + {abstract} UserDefinedFunction invoke(Boolean verbose)
+    }
+
+    AbstractRatingTransformer <|-down- RatingNormalizer
+    GroupCol <|.. RatingNormalizer
+    RatingNormalizer <|-left- MeanCenteringNormalizer
+    NormalizeMethod <.right. MeanCenteringNormalizer
+
+}
+
+com.r4tings.recommender.common.ml.param <-[hidden]- com.r4tings.recommender.data.normalize
+
+@enduml
+
+@startuml
+
+skinparam defaultFontName "D2Coding ligature"
+skinparam defaultFontSize 11
+skinparam shadowing false
+
+skinparam linetype ortho
+left to right direction
+
+package org.apache.spark.ml {
+    abstract class Transformer #Wheat {
+        + {abstract} Dataset<Row> transform(Dataset<?> ratings)
+        + {abstract} StructType transformSchema(StructType schema)
+        + {abstract} Transformer copy(ParamMap extra)
+        + {abstract} String uid()
+    }
+}
+
+package com.r4tings.recommender.common.ml {
+
+    package com.r4tings.recommender.common.ml.param {
+
+        interface RatingCol{
+            ~ Param<String> userCol()
+            ~ Param<String> itemCol()
+            ~ Param<String> ratingCol()
+            ~ String getUserCol()
+            ~ String getItemCol()
+            ~ String getRatingCol()
+            ~ RatingCol setUserCol(String value)
+            ~ RatingCol setItemCol(String value)
+            ~ RatingCol setRatingCol(String value)
+        }
+
+        interface OutputCol{
+            ~ Param<String> outputCol()
+            ~ String getOutputCol()
+            ~ OutputCol setOutputCol(String values)
+        }
+
+        interface Verbose{
+            ~ BooleanParam verbose()
+            ~ Boolean getVerbose()
+            ~ Verbose setVerbose(Boolean value)
+        }
+
+        interface GroupCol{
+            ~ Param<Group> group()
+            ~ Group getGroup()
+            ~ String getGroupCol()
+            ~ GroupCol setGroup(Group value)
+            ~ GroupCol setGroupCol(String values)
+        }
+    }
+
+    abstract class AbstractRatingTransformer{
+        + AbstractRatingTransformer(String prefix)
+        + StructType transformSchema(StructType schema)
+        + Transformer copy(ParamMap extra)
+        + String uid()
+        + BooleanParam verbose()
+        + Param<String> outputCol()
+        + Param<String> userCol()
+        + Param<String> itemCol()
+        + Param<String> ratingCol()
+        + Boolean getVerbose()
+        + String getOutputCol()
+        + String getUserCol()
+        + String getItemCol()
+        + String getRatingCol()
+    }
+
+    OutputCol <|.. AbstractRatingTransformer
+    Verbose <|.. AbstractRatingTransformer
+    RatingCol <|.. AbstractRatingTransformer
+
+}
+
+    Transformer <|-left- AbstractRatingTransformer
+
+
+package com.r4tings.recommender.data.normalize {
+
+    abstract class RatingNormalizer<T extends RatingNormalizer<T>>{
+        + RatingNormalizer(String prefix)
+        + Dataset<Row> transform(Dataset<?> ratings)
+        + Param<Group> group()
+        + Group getGroup()
+        + String getGroupCol()
+        + T setVerbose(Boolean value)
+        + T setOutputCol(String value)
+        + T setUserCol(String value)
+        + T setItemCol(String value)
+        + T setRatingCol(String value)
+        + T setGroup(Group value)
+        + T setGroupCol(String value)
+        # {abstract} T self()
+        # {abstract} Dataset<Row> compute(Dataset<Row> ratingDS)
+        # {abstract} Dataset<Row> compute(Dataset<Row> ratingDS, String GroupCol)
+    }
+
+    class MeanCenteringNormalizer{
+        + MeanCenteringNormalizer()
+        # T self()
+        # Dataset<Row> compute(Dataset<Row> ratingDS)
+        # Dataset<Row> compute(Dataset<Row> ratingDS, String GroupCol)
+    }
+
+    enum NormalizeMethod {
+        MEAN_CENTERING
+        Z_SCORE
+        MIN_MAX
+        DECIMAL_SCALING
+        BINARY_THRESHOLDING
+        + NormalizeMethod(String description)
+        + {abstract} UserDefinedFunction invoke(Boolean verbose)
+    }
+
+    AbstractRatingTransformer <|-down- RatingNormalizer
+    GroupCol <|.. RatingNormalizer
+    RatingNormalizer <|-left- MeanCenteringNormalizer
+    NormalizeMethod <.right. MeanCenteringNormalizer
+
+}
+
+com.r4tings.recommender.common.ml.param <-[hidden]- com.r4tings.recommender.data.normalize
+
+@enduml
+
+PlantUML version 1.2021.7(Sun May 23 21:40:07 KST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: MS949
+Language: ko
+Country: KR
+-->
+    </g>
+</svg>

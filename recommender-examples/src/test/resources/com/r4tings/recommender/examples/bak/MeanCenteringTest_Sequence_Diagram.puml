@@ -1,0 +1,91 @@
+@startuml
+skinparam monochrome true
+skinparam defaultFontName "Trebuchet MS"
+skinparam defaultFontSize 12
+skinparam sequenceMessageAlign center
+
+box "Test Code" #White
+
+create RatingSimilarityMeasurerTest <<(C,#ADD1B2)>>
+[-> RatingSimilarityMeasurerTest: Do Test
+activate RatingSimilarityMeasurerTest
+
+end box
+
+box "Production Code" #White
+
+== Creating a SparkSession ==
+
+autonumber "<b> 1-0"
+
+RatingSimilarityMeasurerTest -> SparkSessionSingleton: getInstance()
+activate SparkSessionSingleton
+
+RatingSimilarityMeasurerTest<-[#0000FF]- SparkSessionSingleton : SparkSession
+deactivate SparkSessionSingleton
+
+autonumber stop
+
+== Load Datasets ==
+
+autonumber "<b> 2-0"
+
+RatingSimilarityMeasurerTest -[#red]> DataLoader: load()
+activate DataLoader
+
+RatingSimilarityMeasurerTest<-[#0000FF]- DataLoader : Dataset<Row>
+deactivate DataLoader
+
+autonumber stop
+
+== Normalze Rating ==
+
+autonumber "<b>3-0"
+
+RatingSimilarityMeasurerTest -[#red]> MeanCenteringNormalizer: normalize():Dataset<Row>
+activate MeanCenteringNormalizer
+
+RatingSimilarityMeasurerTest<-[#0000FF]- MeanCenteringNormalizer : Dataset<Row>
+deactivate MeanCenteringNormalizer
+
+autonumber stop
+
+== Measuring Similarity ==
+
+autonumber "<b>4-0"
+
+create EuclideanSimilarity<<(C,#ADD1B2)>>
+RatingSimilarityMeasurerTest  --[#green]>> EuclideanSimilarity: <<create>>
+
+create RatingSimilarityMeasurer<<(C,#ADD1B2)>>
+RatingSimilarityMeasurerTest  --[#green]>> RatingSimilarityMeasurer: <<create>>
+
+RatingSimilarityMeasurerTest -[#red]> RatingSimilarityMeasurer: compute(Dataset<Row> ratingDS, String criteria)
+
+activate RatingSimilarityMeasurerTest
+activate RatingSimilarityMeasurer
+
+
+create CollectMapUDF <<(U,#FF7700) UDF>>
+RatingSimilarityMeasurer --[#green]>> CollectMapUDF : <<register>>
+RatingSimilarityMeasurer -[#red]> CollectMapUDF : <<callUDF>>
+
+
+create SimilarityMeasureUDF <<(U,#FF7700) UDF>>
+RatingSimilarityMeasurer --[#green]>> SimilarityMeasureUDF : <<register>>
+RatingSimilarityMeasurer -[#red]> SimilarityMeasureUDF : <<callUDF>>
+
+
+RatingSimilarityMeasurerTest<-[#0000FF]- RatingSimilarityMeasurer : Dataset<Row>
+
+deactivate RatingSimilarityMeasurer
+deactivate RatingSimilarityMeasurerTest
+
+autonumber stop
+
+end box
+[<-- RatingSimilarityMeasurerTest : Done
+deactivate RatingSimilarityMeasurerTest
+
+
+@enduml
