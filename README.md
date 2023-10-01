@@ -43,8 +43,8 @@
 
 “R4tings Recommender 오픈 소스 추천 엔진”은 전통적인 통계나 기계 학습 기반의 추천 모델들의 기본 구현체인 “**recommender**”와 실행 예제들인 “**recommender-examples**"로 구성되어 있어 추천 처리 과정을 단계별로 분해하여 내부 흐름을 쉽게 이해하고, 추천을 위한 통계나 기계 학습 기법들을 손쉽게 수정하거나 확장 또는 재사용할 수 있습니다.
 
-- [recommender](https://github.com/r4tings/recommender/tree/main/r4tings-recommender)
-- [recommender-examples](https://github.com/r4tings/recommender/tree/main/r4tings-recommender-examples)
+- [recommender](https://github.com/r4tings/recommender/tree/main/recommender)
+- [recommender-examples](https://github.com/r4tings/recommender/tree/main/recommender-examples)
 
 “**R4tings Recommender 오픈 소스 추천 엔진**”의 최종 목표는 1) 전통적인 통계나 기계 학습 기반 추천 모델들의 구현체 제공을 통한 추천 시스템의 학습과 이해, 2) 시뮬레이터나 프로토타이핑을 통한 학술 연구 목적에서의 이론 검증, 3) 상용 수준의 추천 시스템 구현을 용이하게 하는 것입니다.
 
