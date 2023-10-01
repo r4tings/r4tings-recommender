@@ -41,7 +41,7 @@
 
 이러한 이유로 “R4tings Recommender 오픈 소스 추천 엔진”은 추천을 위한 통계나 기계 학습 기법들은 수정 없이 재사용 가능한 고차 함수로 제공하고, 수정되거나 새로운 기법을 적용하여 만들어진 고차 함수는 기존 고차 함수와 조합하거나, 컴포넌트로 제공되는 파이프라인을 통하여 다양한 도메인에 적용할 수 있도록, 추천하는 과정들을 단계별로 분해하여 하나의 파이프라인으로 연결하여 병렬 처리 할 수 있게 하는 것을 목표로 합니다.  
 
-“R4tings Recommender 오픈 소스 추천 엔진”은 전통적인 통계나 기계 학습 기반의 추천 모델들의 기본 구현체인 “**recommender**”와 실행 예제들인 “**recommender-examples**"로 구성되어 있어 추천 처리 과정을 단계별로 분해하여 내부 흐름을 쉽게 이해하고, 추천을 위한 통계나 기계 학습 기법들을 손쉽게 수정하거나 확장 또는 재사용할 수 있습니다.
+“R4tings Recommender 오픈 소스 추천 엔진”은 전통적인 통계나 기계 학습 기반의 추천 모델들의 기본 구현체인 “**recommender**”와 실행 예제들인 “**recommender-examples**" 프로젝트로 구성되어 있어 추천 처리 과정을 단계별로 분해하여 내부 흐름을 쉽게 이해하고, 추천을 위한 통계나 기계 학습 기법들을 손쉽게 수정하거나 확장 또는 재사용할 수 있습니다.
 
 - [recommender](https://github.com/r4tings/recommender/tree/main/recommender)
 - [recommender-examples](https://github.com/r4tings/recommender/tree/main/recommender-examples)
