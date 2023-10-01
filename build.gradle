@@ -1,0 +1,148 @@
+import org.gradle.api.tasks.testing.logging.TestExceptionFormat
+
+plugins {
+    id 'java'
+}
+
+
+configurations {
+    all {
+        exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
+    }
+}
+
+allprojects {
+
+    apply plugin: 'idea'
+    // to share test fixture
+    apply plugin: "java-library"
+    apply plugin: "java-test-fixtures"
+
+    group = "com.r4tings.recommender"
+    description = "R4tings Recommender - Open Source Recommendation Engine"
+    version = "0.1.0"
+
+    sourceCompatibility = '11'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        google()
+        gradlePluginPortal()
+        maven { url "https://repo1.maven.org/maven2/" }
+        maven { url "https://jitpack.io" }
+    }
+
+
+}
+
+subprojects {
+
+    dependencies {
+
+        /* Apache Spark */
+        implementation("org.apache.spark:spark-core_$scalaBinaryVersion:$sparkVersion")
+        implementation("org.apache.spark:spark-mllib_$scalaBinaryVersion:$sparkVersion")
+        implementation("org.apache.spark:spark-sql_$scalaBinaryVersion:$sparkVersion")
+
+        /* Logback Classic Module */
+        implementation("ch.qos.logback:logback-classic:1.2.3")
+
+        /* Lombok */
+        compileOnly("org.projectlombok:lombok:$lombokVersion")
+        annotationProcessor("org.projectlombok:lombok:$lombokVersion")
+        testCompileOnly("org.projectlombok:lombok:$lombokVersion")
+        testAnnotationProcessor("org.projectlombok:lombok:$lombokVersion")
+
+//        /* JUnit 5 */
+        testImplementation("org.junit.jupiter:junit-jupiter:$junitJupiterVersion")
+        testImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+        testImplementation("org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion")
+
+////    testImplementation("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
+////    testImplementation("org.junit.vintage:junit-vintage-engine:$junitVintageVersion")
+//
+        testImplementation("net.lingala.zip4j:zip4j:2.11.3")
+
+    }
+
+
+    test {
+        useJUnitPlatform()
+
+        environment("rootPath", "${project.rootDir}")
+        environment("nativePath", "${project.rootDir}\\lib\\hadoop-2.8.3")
+
+
+    }
+
+
+    tasks.withType(Test) {
+
+        // set heap size for the test JVM(s)
+        minHeapSize = "2g"
+        maxHeapSize = "16g"
+
+        dependsOn("cleanTest")
+        useJUnitPlatform()
+        testLogging {
+            showStandardStreams = true
+            showCauses = true
+            showExceptions = true
+            showStackTraces = true
+            exceptionFormat = TestExceptionFormat.FULL
+            events "passed", "skipped", "failed", "standardOut", "standardError"
+
+        }
+    }
+
+}
+
+project(':recommender') {
+
+
+    version '0.1.0-SNAPSHOT'
+
+
+    jar {
+        archiveBaseName = "r4tings-$project.name"
+    }
+    testFixturesJar {
+        archiveBaseName = "r4tings-$project.name"
+    }
+
+
+    dependencies {
+
+
+        testFixturesImplementation("org.apache.spark:spark-core_$scalaBinaryVersion:$sparkVersion")
+        testFixturesImplementation("org.apache.spark:spark-mllib_$scalaBinaryVersion:$sparkVersion")
+        testFixturesImplementation("org.apache.spark:spark-sql_$scalaBinaryVersion:$sparkVersion")
+
+        testFixturesImplementation("org.junit.jupiter:junit-jupiter-params:$junitJupiterVersion")
+        testFixturesImplementation("org.junit.jupiter:junit-jupiter-api:$junitJupiterVersion")
+
+        testFixturesImplementation 'org.projectlombok:lombok:1.18.22'
+        testFixturesAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+
+    }
+}
+
+project(':recommender-examples') {
+
+    version '0.1.0-SNAPSHOT'
+
+    jar {
+        enabled = false
+    }
+
+    testFixturesJar {
+        enabled = false
+    }
+
+    dependencies {
+        implementation(project(":recommender"))
+        testImplementation testFixtures(project(':recommender'))
+    }
+}

@@ -1,0 +1,17 @@
+#Gradle
+.gradle
+.idea
+
+**/*build*/
+**/*out*/
+**/*log*/
+**/*tmp*/
+**/*parquet*/
+**/*zip
+
+# Ignore GitHub LFS
+dataset/Book-Crossing
+dataset/MovieLens
+
+
+
