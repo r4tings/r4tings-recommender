@@ -49,7 +49,6 @@
 <!--
 참고: https://spring.io/guides/gs/gradle/
 -->
-<br/>
 
 ### 전제조건(Prerequisites)
 
