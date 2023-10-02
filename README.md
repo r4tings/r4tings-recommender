@@ -229,23 +229,7 @@ MeanCenteringNormalizer 클래스의 인스턴스에 설정 가능한 매개변�
 Dataset<Row> normalizedRatingDS = normalizer.transform(ratingDS);
 ```
 
-<br/>
-
-예제 테스트 클래스인 MeanCenteringNormalizerTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**MeanCenteringNormalizerTest**](./src/test/java/com/r4tings/recommender/data/normalize/MeanCenteringNormalizerTest.java) 클래스는 MeanCenteringNormalizer 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 MeanCenteringNormalizerTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.data.normalize.MeanCenteringNormalizerTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 (1) 전체 평균 중심화는 다음과 같이 정의됩니다.
 
@@ -265,7 +249,19 @@ $${\hat r_{u,i}} = {r_{u,i}} - {\mu _i}$$
 
 여기에서 ${r_{u,i}}$은 아이템 $i$를 평가한 사용자 $u$의 평점, ${\mu _i}$은 아이템 $i$를 평가한 사용자 집합 ${U_i}$의 평점 평균입니다.
 
-<br/>
+#### 예제 살펴보기
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b7651-94b4-4d9c-94e4-1dbf87f37b83
+
+예제 테스트 클래스인 MeanCenteringTest 클래스의 테스트 메서드인 meanCenteringExamples 실행 결과를 살펴봅니다.
+
+- [**MeanCenteringTest**](./src/test/java/com/r4tings/recommender/examples/ch03/MeanCenteringTest.java) 클래스는 평균 중심 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 MeanCenteringTest 클래스의 테스트 메서드인 meanCenteringExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples
+```
 
 ### Z점수 정규화
 
@@ -307,24 +303,7 @@ ZScoreNormalizer 클래스의 인스턴스에 설정 가능한 매개변수는 �
 Dataset<Row> normalizedRatingDS = normalizer.transform(ratingDS);
 ```
 
-
-<br/>
-
-예제 테스트 클래스인 ZScoreNormalizerTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**ZScoreNormalizerTest**](./src/test/java/com/r4tings/recommender/data/normalize/ZScoreNormalizerTest.java) 클래스는 ZScoreNormalizer 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 ZScoreNormalizerTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.data.normalize.ZScoreNormalizerTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 (1) 전체 Z점수화는 다음과 같이 정의됩니다.
 
@@ -344,7 +323,19 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {\mu _i}}}{{{\sigma _i}}}$$
 
 여기에서 ${r_{u,i}}$은 사용자 $u$가 아이템 $i$에 매긴 평점, ${\mu _i}$와 ${\sigma _i}$는 아이템 집합 ${U_i}$의 평점 평균과 표준편차입니다.
 
-<br/>
+#### 예제 살펴보기
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a7-0b61-4446-832e-347c9b71ffe5
+
+예제 테스트 클래스인 ZScoreTest 클래스의 테스트 메서드인 zScoreExamples 실행 결과를 살펴봅니다.
+
+- [**ZScoreTest**](./src/test/java/com/r4tings/recommender/examples/ch03/ZScoreTest.java) 클래스는 Z점수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 ZScoreTest 클래스의 테스트 메서드인 zScoreExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples
+```
 
 ### 최소-최대 정규화
 
