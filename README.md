@@ -86,11 +86,11 @@
 
 ④ C:에 "mkdir r4tings"를 입력하여 실행하여 r4tings 폴더를 생성하고 생성된 폴더로 이동하기 위해 "cd r4tings"를 입력하여 실행합니다.
 
-⑤ R4tings Recommender 리파지토리의 GitHub 소스 코드 보관 파일을 내려받기 위해 "Invoke-WebRequest https://github.com/r4tings/r4tings-recommender/archive/refs/heads/master.zip utFile r4tings-recommender-master.zip"를 입력하여 실행합니다.
+⑤ R4tings Recommender 리파지토리의 GitHub 소스 코드 보관 파일을 내려받기 위해 "Invoke-WebRequest https://github.com/r4tings/recommender/archive/refs/heads/main.zip -OutFile r4tings-recommender-main.zip"를 입력하여 실행합니다.
 
-⑥ 내려받은 소스 코드 보관 파일의 압축 해제를 위해 "Expand-Archive -LiteralPath r4tings-recommender-master.zip -DestinationPath ."를 입력하여 실행합니다.
+⑥ 내려받은 소스 코드 보관 파일의 압축 해제를 위해 "Expand-Archive -LiteralPath r4tings-recommender-main.zip -DestinationPath ."를 입력하여 실행합니다.
 
-⑦ 압축이 해제된 폴더의 이름을 변경하기 위해 "Rename-Item -Path r4tings-recommender-master -NewName r4tings-recommender"를 입력하여 실행합니다.
+⑦ 압축이 해제된 폴더의 이름을 변경하기 위해 "Rename-Item -Path recommender-main -NewName r4tings-recommender"를 입력하여 실행합니다.
 
 ⑧ 마지막으로 "cd r4tings-recommender"를 입력하여 프로젝트 폴더로 이동하고 "ls"를 입력하고 실행하여 r4tings-recommender-master 폴더의 내용을 확인합니다.
 
