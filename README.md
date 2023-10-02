@@ -53,21 +53,13 @@
 
 ### 전제조건(Prerequisites)
 
-<br/>
-
 #### 필수(Mandatory)
-
-<br/>
 
 |소프트웨어|버전|설명|
 |------|---|---|
 |JDK|11| <p>OpenJDK 또는 Oracle JDK <p>* OpenJDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/) 를 참고하세요 <p>* Oracle JDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/)를 참고하세요|
 
-<br/>
-
 #### 선택(Optional)
-
-<br/>
 
 |소프트웨어|버전|설명|
 |------|---|---|
@@ -78,15 +70,9 @@
 |R|Latest|R을 내려받고 구성하는 방법은 [링크](https://www.r-project.org/)를 참고하세요|
 |RStudio Desktop|Latest|IntelliJ를 내려받고 구성하는 방법은 [링크](https://posit.co/products/open-source/rstudio/)를 참고하세요|
 
-<br/>
-
 ### 프로젝트 구성하기(Project settings)
 
-<br/>
-
 #### GitHub 소스 코드 아카이브 내려받기(Downloading GitHub source code archive)
-
-<br/>
 
 > **Note**
 > 필수 소프트웨어인 JDK 11의 설치와 구성이 사전에 완료되었다고 가정합니다.
