@@ -145,8 +145,6 @@ PS C:\r4tings\r4tings-recommender> ./gradlew clean build -x test
 PS C:\r4tings\r4tings-recommender>
 ```
 
-<br/>
-
 **R4tings Recommender 오픈 소스 추천 엔진**의 디렉토리 구조는 다음과 같습니다
 
 ```
@@ -187,11 +185,7 @@ TBD
 
 ## 평점 정규화
 
-<br/>
-
 ### 평균 중심 정규화
-
-<br/>
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/MeanCenteringNormalizer_Class_Diagram.svg)
 
@@ -266,8 +260,6 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b765
 
 ### Z점수 정규화
 
-<br/>
-
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/ZScoreNormalizer_Class_Diagram.svg)
 
 - Z점수 정규화 구현체인[**ZScoreNormalizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/ZScoreNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 Z점수화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. ZScoreNormalizer 클래스는 Z점수 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요할 때는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
@@ -339,8 +331,6 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {\mu _i}}}{{{\sigma _i}}}$$
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a7-0b61-4446-832e-347c9b71ffe5
 
 ### 최소-최대 정규화
-
-<br/>
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/MinMaxNormalizer_Class_Diagram.svg)
 
@@ -418,8 +408,6 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9c81180
 
 ### 소수 자릿수 정규화 
 
-<br/>
-
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/DecimalScaling_Class_Diagram.svg)
 
 - 소수 자릿수 정규화 구현체인 [**DecimalScalingNormalizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/DecimalScalingNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 소수 자릿수화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. DecimalScalingNormalizer 클래스는 소수 자릿수 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
@@ -479,8 +467,6 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}}}}{{{{10}^j}}}$$
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/740b46c4-b8a5-408d-bcb6-fb311fdc6523
 
 ### 이진 임계 이진화 
-
-<br/>
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/ThresholdBinarizer_Class_Diagram.svg)
 
@@ -542,14 +528,9 @@ Dataset<Row> binarizedRatingDS = binarizer.transform(ratingDS);
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/e9e5cb9d-4c2c-4365-86a0-ac7f27e19876
 
-
 ## 유사도 계산
 
-<br/>
-
 ### 코사인 유사도
-
-<br/>
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/CosineSimilarity_Class_Diagram.svg)
 
@@ -628,8 +609,6 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/2cb51994-4ebf-436f-9153-8e298269b828
 
 ### 피어슨 상관계수와 유사도
-
-<br/>
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/PearsonSimilarity_Class_Diagram.svg)
 
@@ -947,8 +926,6 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/dad07ff
 
 ## 이웃 기반 협업 필터링 추천
 
-<br/>
-
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch05/KNearestNeighbors_Class_Diagram.svg)
 
 KNearestNeighborsParams 클래스와 KNearestNeighbors 클래스는 이웃 기반 협업 필터링 구현체입니다. KNearestNeighborsParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 KNearestNeighbors 클래스의 생성자에 매개변수를 전달합니다. 
@@ -1031,8 +1008,6 @@ KNearestNeighbors 클래스의 recommend 메서드에 설정 가능한 매개변
 
 ##### 유사도 가중 평균 기반 평점 예측
 
-<br/>
-
 (1) 사용자 $u$가 평가하지 않은 아이템 $i$에 대한 예측 평점(사용자 기반 추천)은 다음과 같이 정의됩니다.
 
 $${\hat r_{u,i}} = \frac{{\sum\nolimits_{v \in {N_i}(u)} {{w_{u,v}}{r_{v,i}}} }}{{\sum\nolimits_{v \in {N_i}(u)} {\left| {{w_{u,v}}} \right|} }} = \frac{{\sum\nolimits_{v \in {N_i}(u)} {{\mathop{\rm sim}\nolimits} (u,v) \cdot {r_{v,i}}} }}{{\sum\nolimits_{v \in {N_i}(u)} {\left| {{\mathop{\rm sim}\nolimits} (u,v)} \right|} }}$$
@@ -1045,11 +1020,7 @@ $${\hat r_{u,i}} = \frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_{i,j}}{r_{u,j}}} }}
 
 여기에서, ${N_u}(i)$는 사용자 $u$가 평가한 아이템 $i$와 가장 유사한 k개의 아이템 집합(k-근접 이웃), ${w_{i,j}}$는 아이템 $i$와 이웃 아이템 $j$의 유사도($i \ne j$), ${r_{u,j}}$은 사용자 $u$가 아이템 $j$에 매긴 평점입니다.
 
-<br/>
-
 ##### 평점 평균과 유사도 평균 중심 가중 평균 기반 평점 예측
-
-<br/>
 
 (1) 사용자 $u$가 평가하지 않은 아이템 $i$에 대한 예측 평점(사용자 기반 추천)은 다음과 같이 정의됩니다.
 
@@ -1075,11 +1046,7 @@ $${\hat r_{ui}} = {\mu_i} + \frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_{i,j}}{s_{
 
 여기에서, ${\mu_i}$는 아이템 $i$에 매겨진 사용자 집합 ${U_i}$의 평점 평균, ${N_u}(i)$는 사용자 $u$가 평가한 아이템 $i$와 가장 유사한 k개의 아이템 집합(k-근접 이웃), ${w_{i,j}}$는 아이템 $i$와 이웃 아이템 $j$의 유사도($i \ne j$), ${s_{u,j}}$는 아이템 평균 중심으로 정규화된 평점, ${r_{u,j}}$은 사용자 $u$가 아이템 $j$에 매긴 평점, ${\mu _j}$는 이웃 아이템 $j$에 매겨진 사용자 집합 ${U_i}$의 평점 평균입니다.
 
-<br/>
-
 ##### 평점 평균과 유사도 Z점수 가중 평균 기반 평점 예측
-
-<br/>
 
 (1) 사용자 $u$가 평가하지 않은 아이템 $i$에 대한 예측 평점(사용자 기반 추천)은 다음과 같이 정의됩니다.
 
@@ -1122,8 +1089,6 @@ $${\hat r_{ui}} = {\mu_i} + {\sigma_i}\frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9922b101-6563-4a83-ac51-085216db5079
 
 ## 특잇값 분해 기반 협업 필터링 추천
-
-<br/>
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch06/BaselineSVD_Class_Diagram.svg)
 
@@ -1283,8 +1248,6 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/f96428c
 
 ## TF-IDF 기반 콘텐츠 기반 필터링 추천
 
-<br/>
-
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch07/TermFrequencyInverseDocumentFrequency_Class_Diagram.svg)
 
 TermFrequencyInverseDocumentFrequencyParams 클래스와 TermFrequencyInverseDocumentFrequency 클래스는 TF-IDF 콘텐츠 기반 필터링 구현체입니다. TermFrequencyInverseDocumentFrequencyParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 TermFrequencyInverseDocumentFrequency 클래스의 생성자에 매개변수를 전달합니다.
@@ -1416,8 +1379,6 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/10aed1f
 
 ## 연관규칙 기반 추천
 
-<br/>
-
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch08/AssociationRuleMining_Class_Diagram.svg)
 
 AssociationRuleMiningParams 클래스와 AssociationRuleMining 클래스는 연관규칙 기반 필터링 구현체입니다. AssociationRuleMiningParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 AssociationRuleMining 클래스의 생성자에 매개변수를 전달합니다. 
@@ -1539,17 +1500,11 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b9cbba7
 
 ## 피드백과 기여
 
-<br/>
-
 기능 요청이 있는 경우 **[ISSUES](https://github.com/r4tings/r4tings-recommender-examples/issues/)** 에 등록하세요. **[DISCUSSIONS](https://github.com/r4tings/r4tings-recommender-examples/discussions/)** 을 통해서도 질문하실 수 있습니다. 
 
 R4tings Recommender 프로젝트의 참여나 기여도 환영합니다. 자세한 정보는 **[여기](CONTRIBUTORS.md)** 에서 확인할 수 있습니다. 
 
-<br/>
-
 ## 라이선스
-
-<br/>
 
 Released under the Open Publication License, v1.0 or later.
 
