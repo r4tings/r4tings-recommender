@@ -251,8 +251,6 @@ $${\hat r_{u,i}} = {r_{u,i}} - {\mu _i}$$
 
 #### 예제 살펴보기
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b7651-94b4-4d9c-94e4-1dbf87f37b83
-
 예제 테스트 클래스인 MeanCenteringTest 클래스의 테스트 메서드인 meanCenteringExamples 실행 결과를 살펴봅니다.
 
 - [**MeanCenteringTest**](./src/test/java/com/r4tings/recommender/examples/ch03/MeanCenteringTest.java) 클래스는 평균 중심 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
@@ -262,6 +260,8 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b765
 ```
 ./gradlew :test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples
 ```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b7651-94b4-4d9c-94e4-1dbf87f37b83
 
 ### Z점수 정규화
 
@@ -325,8 +325,6 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {\mu _i}}}{{{\sigma _i}}}$$
 
 #### 예제 살펴보기
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a7-0b61-4446-832e-347c9b71ffe5
-
 예제 테스트 클래스인 ZScoreTest 클래스의 테스트 메서드인 zScoreExamples 실행 결과를 살펴봅니다.
 
 - [**ZScoreTest**](./src/test/java/com/r4tings/recommender/examples/ch03/ZScoreTest.java) 클래스는 Z점수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
@@ -336,6 +334,8 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a
 ```
 ./gradlew :test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples
 ```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a7-0b61-4446-832e-347c9b71ffe5
 
 ### 최소-최대 정규화
 
@@ -381,24 +381,7 @@ MinMaxNormalizer 클래스의 인스턴스에 설정 가능한 매개변수는 �
 Dataset<Row> normalizedRatingDS = normalizer.transform(ratingDS);
 ```
 
-
-<br/>
-
-예제 테스트 클래스인 MinMaxNormalizerTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**MinMaxNormalizerTest**](./src/test/java/com/r4tings/recommender/data/normalize/MinMaxNormalizerTest.java) 클래스는 MinMaxNormalizer 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 MinMaxNormalizerTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.data.normalize.MinMaxNormalizerTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 (1) 전체 최소-최대화는 다음과 같이 정의됩니다.
 
@@ -418,7 +401,19 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {r_{\min }}}}{{{r_{\max }} - {r_{\min }}}}
 
 여기에서 ${r_{u,i}}$은 사용자 $u$가 아이템 $i$에 매긴 평점, ${r_i}{{\min}}$과 ${r_i}{{\max}}$는 사용자 집합 ${U_i}$의 평점 최솟값과 최댓값, ${r_{new\_\min }}$과 ${r_{new\_\max }}$는 새로운 평점 최솟값과 최댓값입니다.
 
-<br/>
+#### 예제 살펴보기
+
+예제 테스트 클래스인 MinMaxTest 클래스의 테스트 메서드인 minMaxExamples 실행 결과를 살펴봅니다.
+
+- [**MinMaxTest**](./src/test/java/com/r4tings/recommender/examples/ch03/MinMaxTest.java) 클래스는 최소-최대 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 MinMaxTest 클래스의 테스트 메서드인 minMaxExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch03.MinMaxTest.minMaxExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9c811808-0dc7-4068-8109-c92d1f278bf5
 
 ### 소수 자릿수 정규화 
 
@@ -460,24 +455,7 @@ DecimalScalingNormalizer 클래스의 인스턴스에 설정 가능한 매개변
 Dataset<Row> normalizedRatingDS = normalizer.transform(ratingDS);
 ```
 
-
-<br/>
-
-예제 테스트 클래스인 DecimalScalingNormalizerTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**DecimalScalingNormalizerTest**](./src/test/java/com/r4tings/recommender/data/normalize/DecimalScalingNormalizerTest.java) 클래스는 DecimalScalingNormalizer 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DecimalScalingNormalizerTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.data.normalize.DecimalScalingNormalizerTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 소수 자릿수 정규화는 다음과 같이 정의됩니다.
 
@@ -485,7 +463,19 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}}}}{{{{10}^j}}}$$
 
 여기에서 ${r_{u,i}}$은 사용자 $u$가 아이템 $i$에 매긴 평점, $j$는 새로운 평점 집합 $R'$에서 $\max \left| {R'} \right| < 1$ 이 성립되는 가장 가까운 정수입니다.
 
-<br/>
+#### 예제 살펴보기
+
+예제 테스트 클래스인 DecimalScalingTest 클래스의 테스트 메서드인 decimalScalingExamples 실행 결과를 살펴봅니다.
+
+- [**DecimalScalingTest**](./src/test/java/com/r4tings/recommender/examples/ch03/DecimalScalingTest.java) 클래스는 소수 자릿수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DecimalScalingTest 클래스의 테스트 메서드인 decimalScalingExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/740b46c4-b8a5-408d-bcb6-fb311fdc6523
 
 ### 이진 임계 이진화 
 
@@ -529,24 +519,7 @@ ThresholdBinarizer 클래스의 인스턴스에 설정 가능한 매개변수는
 Dataset<Row> binarizedRatingDS = binarizer.transform(ratingDS);
 ```
 
-
-<br/>
-
-예제 테스트 클래스인 ThresholdBinarizerTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**ThresholdBinarizerTest**](./src/test/java/com/r4tings/recommender/data/normalize/ThresholdBinarizerTest.java) 클래스는 ThresholdBinarizer 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 ThresholdBinarizerTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.data.normalize.ThresholdBinarizerTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 이진 임계 이진화는 다음과 같이 정의됩니다.
 
@@ -554,7 +527,20 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e5
 
 여기에서 ${r_{u,i}}$은 사용자 $u$가 아이템 $i$에 매긴 평점, $\gamma $는 임곗값입니다.
 
-<br/>
+#### 예제 살펴보기
+
+예제 테스트 클래스인 BinaryThresholdingTest 클래스의 테스트 메서드인 binaryThresholdingExamples 실행 결과를 살펴봅니다.
+
+- [**BinaryThresholdingTest**](./src/test/java/com/r4tings/recommender/examples/ch03/BinaryThresholdingTest.java) 클래스는 이진 임계 이진화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 BinaryThresholdingTest 클래스의 테스트 메서드인 binaryThresholdingExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch03.BinaryThresholdingTest.binaryThresholdingExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/e9e5cb9d-4c2c-4365-86a0-ac7f27e19876
+
 
 ## 유사도 계산
 
@@ -606,24 +592,7 @@ CosineSimilarityMeasurer 클래스의 인스턴스에 설정 가능한 매개변
 Dataset<Row> similarityDS = measurer.transform(ratingDS);
 ```
 
-
-<br/>
-
-예제 테스트 클래스인 CosineSimilarityMeasurerTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**CosineSimilarityMeasurerTest**](./src/test/java/com/r4tings/recommender/model/measures/similarity/CosineSimilarityMeasurerTest.java) 클래스는 CosineSimilarityMeasurer 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 CosineSimilarityMeasurerTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.model.measures.similarity.CosineSimilarityMeasurerTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 (1) 코사인 유사도는 다음과 같이 정의됩니다.
 
@@ -643,7 +612,19 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e5
 
 여기에서, ${U_i} \cap {U_j}$는 아이템 $i$와 아이템 $j$를 모두 평가한 사용자 집합, ${r_{u,i}}$와 ${r_{u,j}}$는 사용자 $u$가 아이템 $i$와 아이템 $j$에 매긴 평점입니다.
 
-<br/>
+#### 예제 살펴보기
+
+예제 테스트 클래스인 CosineSimilarityTest 클래스의 테스트 메서드인 cosineSimilarityExamples 실행 결과를 살펴봅니다.
+
+- [**CosineSimilarityTest**](./src/test/java/com/r4tings/recommender/examples/ch04/CosineSimilarityTest.java) 클래스는 코사인 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 CosineSimilarityTest 클래스의 테스트 메서드인 cosineSimilarityExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch04.CosineSimilarityTest.cosineSimilarityExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/2cb51994-4ebf-436f-9153-8e298269b828
 
 ### 피어슨 상관계수와 유사도
 
@@ -691,24 +672,7 @@ PearsonSimilarityMeasurer 클래스의 인스턴스에 설정 가능한 매개�
 Dataset<Row> similarityDS = measurer.transform(ratingDS);
 ```
 
-
-<br/>
-
-예제 테스트 클래스인 PearsonSimilarityMeasurerTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**PearsonSimilarityMeasurerTest**](./src/test/java/com/r4tings/recommender/model/measures/similarity/PearsonSimilarityMeasurerTest.java) 클래스는 PearsonSimilarityMeasurer 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 PearsonSimilarityMeasurerTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.model.measures.similarity.PearsonSimilarityMeasurerTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 (1) 피어슨 상관계수는 다음과 같이 정의됩니다.
 
@@ -748,7 +712,19 @@ $$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{
 
 여기에서 ${\mathop{\rm pearson}\nolimits} (i,j)$는 아이템 $i$와 아이템 $j$의 피어슨 상관계수입니다.
 
-<br/>
+#### 예제 살펴보기
+
+예제 테스트 클래스인 PearsonSimilarityTest 클래스의 테스트 메서드인 pearsonSimilarityExamples 실행 결과를 살펴봅니다.
+
+- [PearsonSimilarityTest](./src/test/java/com/r4tings/recommender/examples/ch04/PearsonSimilarityTest.java) 클래스는 피어슨 상관계수와 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 PearsonSimilarityTest 클래스의 테스트 메서드인 pearsonSimilarityExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/850d7868-eaa0-49c5-9f96-f771da31d322
 
 ### 유클리드 거리와 유사도
 
@@ -796,24 +772,7 @@ EuclideanSimilarityMeasurer 클래스의 인스턴스에 설정 가능한 매개
 Dataset<Row> similarityDS = measurer.transform(ratingDS);
 ```
 
-
-<br/>
-
-예제 테스트 클래스인 EuclideanSimilarityMeasurerTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**EuclideanSimilarityMeasurerTest**](./src/test/java/com/r4tings/recommender/model/measures/similarity/EuclideanSimilarityMeasurerTest.java) 클래스는 EuclideanSimilarityMeasurer 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 EuclideanSimilarityMeasurerTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.model.measures.similarity.EuclideanSimilarityMeasurerTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 (1) 임의의 벡터 ${{\bf{x}}_a}$와 ${{\bf{x}}_b}$간의 유클리드 거리는 다음과 같이 정의됩니다.
 
@@ -843,7 +802,19 @@ $$SF = \frac{{AS}}{{PS}}$$
 
 여기에서 ${{\mathop{\rm dist}\nolimits} _{euclidean}}(i,j)$는 아이템 $i$와 아이템 $j$의 유클리드 거리입니다.
 
-<br/>
+#### 예제 살펴보기
+
+예제 테스트 클래스인 EuclideanSimilarityTest 클래스의 테스트 메서드인 euclideanSimilarityExamples 실행 결과를 살펴봅니다.
+
+- [EuclideanSimilarityTest](./src/test/java/com/r4tings/recommender/examples/ch04/EuclideanSimilarityTest.java) 클래스는 유클리드 거리와 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 EuclideanSimilarityTest 클래스의 테스트 메서드인 euclideanSimilarityExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/c37b999c-1298-431b-a2b0-9808f37277be
 
 ### 이진 속성과 유사도
 
@@ -889,24 +860,7 @@ ExtendedJaccardSimilarityMeasurer 클래스의 인스턴스에 설정 가능한 
 Dataset<Row> similarityDS = measurer.transform(ratingDS);
 ```
 
-
-<br/>
-
-예제 테스트 클래스인 ExtendedJaccardSimilarityMeasurerTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**ExtendedJaccardSimilarityMeasurerTest**](./src/test/java/com/r4tings/recommender/model/measures/similarity/binary/ExtendedJaccardSimilarityMeasurerTest.java) 클래스는 ExtendedJaccardSimilarityMeasurer 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 EuclideanSimilarityMeasurerTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.model.measures.similarity.binary.ExtendedJaccardSimilarityMeasurerTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 다음은 임의의 벡터 ${{\bf{x}}_i}$와 ${{\bf{x}}_j}$의 값을 비교하여 분할표로 나타낸 것입니다. 
 
@@ -976,7 +930,19 @@ $${\rm{ExtendedJaccard}}({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\bf{x}}_a^{\rm T}{
 > **Note**
 > 확장 자카드 계수는 타니모토 계수(Tanimoto Coefficient)라고도 지칭합니다. 집합 개념의 자카드 계수와 달리 이진 속성에만 적용할 수 있는 코사인 유사도를 확장한 확장 자카드 계수는 두 데이터 포인트의 각도와 상대적인 거리를 모두 고려하며 자카드 계수와는 다른 개념으로 내용이 다소 혼란스러울 수 있어 유의해서 사용해야 합니다
 
-<br/>
+#### 예제 살펴보기
+
+예제 테스트 클래스인 ExtendedJaccardSimilarityTest 클래스의 테스트 메서드인 extendedJaccardSimilarityExamples 실행 결과를 살펴봅니다.
+
+- [ExtendedJaccardSimilarityTest](./src/test/java/com/r4tings/recommender/examples/ch04/binary/ExtendedJaccardSimilarityTest.java) 클래스는 이진 속성과 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 ExtendedJaccardSimilarityTest 클래스의 테스트 메서드인 extendedJaccardSimilarityExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/dad07ffb-9e85-4170-9777-90f7a2b2f6a2
 
 ## 이웃 기반 협업 필터링 추천
 
@@ -1060,27 +1026,9 @@ KNearestNeighbors 클래스의 recommend 메서드에 설정 가능한 매개변
 | userId   | Object         | O        | \-     | 추천 받을 사용자 ID                         |
 
 
-<br/>
+#### 수식 살펴보기
 
-예제 테스트 클래스인 KNearestNeighborsTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**KNearestNeighborsTest**](./src/test/java/com/r4tings/recommender/model/knn/KNearestNeighborsTest.java) 클래스는 KNearestNeighbors 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 KNearestNeighborsTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.model.knn.KNearestNeighborsTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
-
-<br/>
-
-### 유사도 가중 평균 기반 평점 예측
+##### 유사도 가중 평균 기반 평점 예측
 
 <br/>
 
@@ -1098,7 +1046,7 @@ $${\hat r_{u,i}} = \frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_{i,j}}{r_{u,j}}} }}
 
 <br/>
 
-### 평점 평균과 유사도 평균 중심 가중 평균 기반 평점 예측
+##### 평점 평균과 유사도 평균 중심 가중 평균 기반 평점 예측
 
 <br/>
 
@@ -1128,7 +1076,7 @@ $${\hat r_{ui}} = {\mu_i} + \frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_{i,j}}{s_{
 
 <br/>
 
-### 평점 평균과 유사도 Z점수 가중 평균 기반 평점 예측
+##### 평점 평균과 유사도 Z점수 가중 평균 기반 평점 예측
 
 <br/>
 
@@ -1158,7 +1106,19 @@ $${\hat r_{ui}} = {\mu_i} + {\sigma_i}\frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_
 
 여기에서, ${\mu_i}$와 ${\sigma_i}$는 아이템 $i$에 매겨진 사용자 집합 ${U_i}$의 평점 평균과 표준편차, ${N_u}(i)$는 사용자 $u$가 평가한 아이템 $i$와 가장 유사한 k개의 아이템 집합(k-근접 이웃), ${w_{i,j}}$는 아이템 $i$와 이웃 아이템 $j$의 유사도($i \ne j$), ${z_{u,j}}$는 아이템 Z점수화된 평점, ${r_{u,j}}$은 사용자 $u$가 아이템 $j$에 매긴 평점, ${\mu_j}$는 이웃 아이템 $j$에 매겨진 사용자 집합 ${U_i}$의 평점 평균, ${\mu_j}$와 ${\sigma_j}$는 이웃 아이템 $v$에 매겨진 사용자 집합 ${U_i}$의 평점 평균과 표준편차입니다
 
-<br/>
+#### 예제 살펴보기
+
+예제 테스트 클래스인 KNearestNeighborsTest 클래스의 테스트 메서드인 kNearestNeighborsExamples 실행 결과를 살펴봅니다
+
+- [KNearestNeighborsTest](./src/test/java/com/r4tings/recommender/examples/ch05/KNearestNeighborsTest.java) 클래스는 이웃 기반 협업 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 KNearestNeighborsTest 클래스의 테스트 메서드인 kNearestNeighborsExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9922b101-6563-4a83-ac51-085216db5079
 
 ## 특잇값 분해 기반 협업 필터링 추천
 
@@ -1226,26 +1186,7 @@ BaselineSingleValueDecomposition 클래스의 recommend 메서드에 설정 가�
 | topN     | Integer        | O        | \-     | 추천 아이템 수                              |
 | userId   | Object         | O        | \-     | 추천 받을 사용자 ID                         |
 
-
-<br/>
-
-<br/>
-
-예제 테스트 클래스인 BaselineSingleValueDecompositionTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**BaselineSingleValueDecompositionTest**](./src/test/java/com/r4tings/recommender/model/svd/BaselineSingleValueDecompositionTest.java) 클래스는 BaselineSingleValueDecomposition 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 BaselineSingleValueDecompositionTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.model.svd.BaselineSingleValueDecompositionTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 (1) 사용자 $u$가 아이템 $i$에 매긴 평점의 기준선 추정값은 다음과 같이 정의됩니다.
 
@@ -1324,7 +1265,20 @@ $${\hat r_{ui}} = {b_{ui}} + ({p_{u}} \times {\sigma }) \cdot {q_{i}} = {b_{ui}}
 >   * ##### [6.2 기준선 추정과 특잇값 분해 기반 평점 예측](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-02)
 >   * ##### [6.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-03)
 -->
-<br/>
+
+#### 예제 살펴보기
+
+예제 테스트 클래스인 BaselineSingleValueDecompositionTest 클래스의 테스트 메서드인 baselineSingleValueDecompositionExamples 실행 결과를 살펴봅니다
+
+- [BaselineSingleValueDecompositionTest](./src/test/java/com/r4tings/recommender/examples/ch06/BaselineSingleValueDecompositionTest.java) 클래스는 특잇값 분해 기반 협업 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 BaselineSingleValueDecompositionTest 클래스의 테스트 메서드인 baselineSingleValueDecompositionExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/f96428cd-e177-45cc-8c9b-d46651957ccd
 
 ## TF-IDF 기반 콘텐츠 기반 필터링 추천
 
@@ -1396,24 +1350,7 @@ TermFrequencyInverseDocumentFrequency 클래스의 recommend 메서드에 설정
 | topN     | Integer        | O        | \-     | 추천 아이템 수                              |
 | userId   | Object         | O        | \-     | 추천 받을 사용자 ID                         |
 
-
-<br/>
-
-예제 테스트 클래스인 TermFrequencyInverseDocumentFrequencyTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**TermFrequencyInverseDocumentFrequencyTest**](./src/test/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequencyTest.java) 클래스는 TermFrequencyInverseDocumentFrequency 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 TermFrequencyInverseDocumentFrequencyTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.model.tfidf.TermFrequencyInverseDocumentFrequencyTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 문서 단어 행렬(Document-Term Matrix, DTM)은 문서(아이템)는 행, 단어(태그)는 열로 나타낸 이원 도수 분포표입니다.
 
@@ -1462,7 +1399,19 @@ $${\mathop{\rm sim}\nolimits} ({{\bf{x}}_a},{{\bf{x}}_b}) = cos({{\bf{x}}_a},{{\
 
 여기에서 ${\bf{x}}_a^{\rm T}{{\bf{x}}_b} = \sum\nolimits_1^n {{a_i}{b_i}} = {a_1}{b_1} + {a_2}{b_2} + \cdots {a_n}{b_n}$로 두 벡터의 내적(Dot Product), ${\left\| {{{\bf{x}}_a}} \right\|_2}$와 ${\left\| {{{\bf{x}}_b}} \right\|_2}$는 각 벡터의 유클리드 노름(L2 Norm)입니다.
 
-<br/>
+#### 예제 살펴보기
+
+예제 테스트 클래스인 TermFrequencyInverseDocumentFrequencyTest 클래스의 테스트 메서드인 termFrequencyInverseDocumentFrequencyExamples 실행 결과를 살펴봅니다
+
+- [TermFrequencyInverseDocumentFrequencyTest](./src/test/java/com/r4tings/recommender/examples/ch07/TermFrequencyInverseDocumentFrequencyTest.java) 클래스는 TF-IDF 기반 콘텐츠 기반 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 TermFrequencyInverseDocumentFrequencyTest 클래스의 테스트 메서드인 termFrequencyInverseDocumentFrequencyExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/10aed1f7-8057-4d20-a6d3-19d2c4064326
 
 ## 연관규칙 기반 추천
 
@@ -1531,23 +1480,7 @@ AssociationRuleMining 클래스의 recommend 메서드에 설정 가능한 매�
 | itemId   | Object         | O        | \-     | 추천 받을 아이템 ID                         |
 
 
-<br/>
-
-예제 테스트 클래스인 AssociationRuleMiningTest 클래스의 테스트 메서드인 testWithExample 실행 결과를 살펴봅니다.
-
-- [**AssociationRuleMiningTest**](./src/test/java/com/r4tings/recommender/model/arm/AssociationRuleMiningTest.java) 클래스는 AssociationRuleMining 클래스를 테스트하기 위한 JUnit으로 작성된 예제 소스 코드입니다.
-
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 AssociationRuleMiningTest 클래스의 테스트 메서드인 testWithExample 실행해 봅니다.
-
-```
-./gradlew :test --tests com.r4tings.recommender.model.arm.AssociationRuleMiningTest.testWithExample
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-> **Note**
-> 구현 수식
+#### 수식 살펴보기
 
 (1) 항목 집합(Itemset)은 다음과 같이 정의됩니다.
 
@@ -1589,7 +1522,19 @@ $${\mathop{\rm lift}\nolimits} (X \Rightarrow Y) = \frac{{P(Y|X)}}{{P(Y)}} = \fr
 
 여기에서 ${\mathop{\rm confidence}\nolimits} (X \Rightarrow Y)$는 연관규칙 $X \Rightarrow Y$의 신뢰도, ${\mathop{\rm support}\nolimits} (Y)$는 항목 집합 $Y$의 지지도입니다.
 
-<br/>
+#### 예제 살펴보기
+
+예제 테스트 클래스인 AssociationRuleMiningTest 클래스의 테스트 메서드인 associationRuleMiningExamples 실행 결과를 살펴봅니다
+
+- [**AssociationRuleMiningTest**](./src/test/java/com/r4tings/recommender/examples/ch08/AssociationRuleMiningTest.java) 클래스는 연관규칙 기반 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 AssociationRuleMiningTest 클래스의 테스트 메서드인 associationRuleMiningExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
+```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b9cbba76-47aa-473d-9a25-d528b64685ef
 
 ## 피드백과 기여
 
