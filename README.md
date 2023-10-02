@@ -14,9 +14,9 @@
 ## TOC
 
 - [개요](#개요)
-- [시작하기(Getting Started)](#시작하기getting-started)
-  - [전제조건(Prerequisites)](#전제조건prerequisites)
-  - [프로젝트 구성하기(Project settings)](#프로젝트-구성하기project-settings)
+- [전제조건(Prerequisites)](#전제조건prerequisites)  
+  - [필수 및 선택 소프트웨어(Required and optional software)](#필수-및-선택-소프트웨어required-and-optional-software)
+  - [프로젝트 구성하기(Set up the project)](#프로젝트-구성하기set-up-the-project)
 - [평점 정규화](#평점-정규화)
   - [평균 중심 정규화](#평균-중심-정규화)
   - [Z점수 정규화](#z점수-정규화)
@@ -45,12 +45,12 @@
 
 “**R4tings Recommender 오픈 소스 추천 엔진**”의 최종 목표는 1) 전통적인 통계나 기계 학습 기반 추천 모델들의 구현체 제공을 통한 추천 시스템의 학습과 이해, 2) 시뮬레이터나 프로토타이핑을 통한 학술 연구 목적에서의 이론 검증, 3) 상용 수준의 추천 시스템 구현을 용이하게 하는 것입니다.
 
-## 시작하기(Getting Started)
+## 전제조건(Prerequisites)  
 <!--
 참고: https://spring.io/guides/gs/gradle/
 -->
 
-### 전제조건(Prerequisites)
+### 필수 및 선택 소프트웨어(Required and optional software)
 
 #### 필수(Mandatory)
 
@@ -69,7 +69,7 @@
 |R|Latest|R을 내려받고 구성하는 방법은 [링크](https://www.r-project.org/)를 참고하세요|
 |RStudio Desktop|Latest|IntelliJ를 내려받고 구성하는 방법은 [링크](https://posit.co/products/open-source/rstudio/)를 참고하세요|
 
-### 프로젝트 구성하기(Project settings)
+### 프로젝트 구성하기(Set up the project)
 
 > **Note**
 > 필수 소프트웨어인 JDK 11의 설치와 구성이 사전에 완료되었다고 가정합니다.
