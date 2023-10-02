@@ -76,8 +76,6 @@
 > 
 > 프로젝트 구성하기의 설명은 MS Windows 10 기준으로 작성되었습니다.
  
-#### GitHub 소스 코드 아카이브 내려받기(Downloading GitHub source code archive)
-
 ① Windows + R 단축키를 이용 해 실행 창을 열어 줍니다.
 
 ② powershell 이라고 타이핑 후 확인을 클릭합니다.
@@ -92,7 +90,9 @@
 
 ⑦ 압축이 해제된 폴더의 이름을 변경하기 위해 "Rename-Item -Path recommender-main -NewName r4tings-recommender"를 입력하여 실행합니다.
 
-⑧ 마지막으로 "cd r4tings-recommender"를 입력하여 프로젝트 폴더로 이동하고 "ls"를 입력하고 실행하여 r4tings-recommender-master 폴더의 내용을 확인합니다.
+⑧ "cd r4tings-recommender"를 입력하여 프로젝트 폴더로 이동하고 "ls"를 입력하고 실행하여 r4tings-recommender-master 폴더의 내용을 확인합니다.
+
+⑨ 마지막으로 "./gradlew clean build -x test"를 입력하여 프로젝트를 빌드합니다.
 
 ```powershell
 
@@ -171,28 +171,13 @@ C:\r4tings
 ```
 > **Warning**
 > 
-> 프로젝트 디렉토리 명에는 **-master**가 없습니다.
+> 프로젝트 폴더 명에는 **-main**이 없습니다.
 > 
-> 프로젝트 디렉토리는 r4tings-recommender 폴더입니다.
+> 프로젝트 폴더는 r4tings-recommender 입니다.
 > 
 > Microsoft Windows용 Hadoop 바이너리는 [링크](https://github.com/cdarlint/winutils/)를 참고하세요.
 > 
 > 리포지토리 뷰에서 소스 코드 보관 파일 다운로드하는 자세한 내용은 [링크](https://docs.github.com/ko/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)를 참고하세요.
-
-<br/>
-
-#### Gradle로 프로젝트 빌드하기(Building Projects with Gradle)
-
-<br/>
-
-```
-./gradlew clean build -x test
-```
-<!--
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
--->
-
-<br/>
 
 #### 공개 데이터셋 내려받기(Download Public Datasets)
 
