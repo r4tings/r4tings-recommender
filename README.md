@@ -71,13 +71,13 @@
 
 ### 프로젝트 구성하기(Project settings)
 
-#### GitHub 소스 코드 아카이브 내려받기(Downloading GitHub source code archive)
-
 > **Note**
 > 필수 소프트웨어인 JDK 11의 설치와 구성이 사전에 완료되었다고 가정합니다.
 > 
 > 프로젝트 구성하기의 설명은 MS Windows 10 기준으로 작성되었습니다.
  
+#### GitHub 소스 코드 아카이브 내려받기(Downloading GitHub source code archive)
+
 ① Windows + R 단축키를 이용 해 실행 창을 열어 줍니다.
 
 ② powershell 이라고 타이핑 후 확인을 클릭합니다.
