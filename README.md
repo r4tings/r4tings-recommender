@@ -55,8 +55,6 @@
 참고: https://spring.io/guides/gs/gradle/
 -->
 
-</br>
-
 ### 필수 및 선택 소프트웨어(Required and optional software)
 
 #### 필수(Mandatory)
@@ -190,8 +188,6 @@ C:\r4tings
 </br>
 
 ## 시작하기(Getting Started)
-
-</br>
 
 ### R4tings Recommender 프로젝트
 
@@ -356,8 +352,6 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb
 </br>
 
 ## 평점 정규화
-
-</br>
 
 ### 평균 중심 정규화
 
@@ -713,8 +707,6 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/e9e5cb9
 </br>
 
 ## 유사도 계산
-
-</br>
 
 ### 코사인 유사도
 
