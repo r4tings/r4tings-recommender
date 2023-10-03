@@ -179,9 +179,165 @@ C:\r4tings
 > 
 > 리포지토리 뷰에서 소스 코드 보관 파일 다운로드하는 자세한 내용은 [링크](https://docs.github.com/ko/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)를 참고하세요.
 
-### 데이터셋 준비하기(Prepare Dataset)
 
-TBD
+### R4tings Recommender 프로젝트
+
+#### 공개 데이터셋 내려받기(Download Public Datasets)
+
+<br/>
+
+여기에서는 테스트 클래스인 [**DatasetLoadTest**](src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
+
+* [downloadPublicDatasets](./src/test/java/com/r4tings/recommender/examples/ch02/DatasetLoadTest.java#L39)
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 downloadPublicDatasets 실행하고 실행 결과를 살펴봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.DatasetLoadTest.downloadPublicDatasets
+```
+<!--
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
+-->
+
+Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 downloadPublicDatasets 실행 후, R4tings Recommender 프로젝트의 dataset 디렉토리 구조는 다음과 같습니다
+
+```
+├── r4tings-recommender
+    ├── dataset                                      <- 예제 데이터셋
+    │   ├── Book-Crossing                            <- Book-Crossing 데이터셋
+    │   │   ├── BX-CSV-Dump.zip                      <- Book-Crossing 데이터셋 압축 파일
+    │   │   └── ⋯ - 일부 생략 -    
+    │   └── MovieLens                                <- MovieLens 데이터셋
+    │        ├── ml-coursera                          <- MovieLens Coursera 예제 데이터셋 
+    │        ├── ml-latest                            <- MovieLens Latest 데이터셋 
+    │        ├── ml-latest-samll                      <- MovieLens Latest(Small) 데이터셋   
+    │        ├── ml-latest.zip                        <- MovieLens Latest 데이터셋 압축 파일
+    │        └── ml-latest-samll.zip                  <- MovieLens Latest(Small) 데이터셋 압축 파일
+    │
+    │   ⋯ - 일부 생략 - 
+```
+
+<br/>
+
+#### Book-Crossing 데이터셋 Parquet 유형으로 변환하기
+
+<br/>
+
+CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식으로 저장합니다.
+
+> Apache Spark는 CSV와 Parquet 파일 형식 모두 지원하지만, 여기에서는 Raw 데이터를 전처리하기 위해 CSV 형식의 데이터셋 파일을 읽어들여 Parquet 형식으로 변환합니다.
+
+예제 테스트 클래스인 DatasetLoadTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples 실행 결과를 살펴봅니다.
+
+* [bookCrossingDatasetExamples](./src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java#L61)
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.DatasetLoadTest.bookCrossingDatasetExamples
+```
+
+### R4tings Recommender Examples 프로젝트 
+
+#### 예제 데이터셋 Parquet 유형으로 변환하기
+
+예제 테스트 클래스인 DatasetLoadTest 클래스의 테스트 메서드인 r4tingsDatasetExamples 실행 결과를 살펴봅니다.
+
+* [r4tingsDatasetExamples](./src/test/java/com/r4tings/recommender/examples/ch02/DatasetLoadTest.java#L161)
+
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 r4tingsDatasetExamples를 실행해 봅니다.
+
+```
+./gradlew :test --tests com.r4tings.recommender.examples.ch02.DatasetLoadTest.r4tingsDatasetExamples
+```
+
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/fce48a50-2503-4e76-ad09-619319fe829a
+
+
+Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 r4tingsDatasetExamples 실행 하여, 예제 데이터셋을 Parquet 형식으로 변환 후 dataset/r4tings 폴더 구조는 다음과 같습니다
+
+```
+├── r4tings-recommender-examples
+    ├── dataset                                      <- 예제 데이터셋
+    │   ├── r4tings                                  <- r4tings 데이터셋
+    │   │   ├── items.parquet                        <- 아이템 데이터 (Parquet 형식)
+    │   │   ├── ratings.parquet                      <- 평점   데이터 (Parquet 형식)  
+    │   │   ├── tags.parquet                         <- 태그   데이터 (Parquet 형식)
+    │   │   ├── terms.parquet                        <- 단어   데이터 (Parquet 형식)  
+    │   │   ├── items.csv                            <- 아이템 데이터 
+    │   │   ├── ratings.csv                          <- 평점   데이터  
+    │   │   ├── tags.csv                             <- 태그   데이터   
+    │   │   └── terms.csv                            <- 단어   데이터     
+    │   │    
+    │   ⋯ - 일부 생략 - 
+```
+
+#### 예제 컨텐츠
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb-6a81-468f-b5b3-39fe5943f64d
+
+```powershell
+######################################
+# 평점 정규화                         # 
+######################################
+
+# 평균 중심 정규화
+./gradlew :test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples
+
+# Z점수 정규화
+./gradlew :test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples
+
+# 최소-최대 정규화
+./gradlew :test --tests com.r4tings.recommender.examples.ch03.MinMaxTest.minMaxExamples
+
+# 소수 자릿수 정규화
+./gradlew :test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples
+
+# 이진 임계 이진화
+./gradlew :test --tests com.r4tings.recommender.examples.ch03.BinaryThresholdingTest.binaryThresholdingExamples
+
+######################################
+# 유사도 계산                         # 
+######################################
+
+# 코사인 유사도
+./gradlew :test --tests com.r4tings.recommender.examples.ch04.CosineSimilarityTest.cosineSimilarityExamples
+
+# 피어슨 상관계수와 유사도
+./gradlew :test --tests com.r4tings.recommender.examples.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
+
+# 유클리드 거리와 유사도
+./gradlew :test --tests com.r4tings.recommender.examples.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
+
+# 이진 속성과 유사도
+./gradlew :test --tests com.r4tings.recommender.examples.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
+
+######################################
+# 이웃 기반 협업 필터링 추천         # 
+######################################
+
+./gradlew :test --tests com.r4tings.recommender.examples.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
+
+######################################
+# 특잇값 분해 기반 협업 필터링 추천  # 
+######################################
+
+./gradlew :test --tests com.r4tings.recommender.examples.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
+
+######################################
+# TF-IDF 기반 콘텐츠 기반 필터링 추천# 
+######################################
+
+./gradlew :test --tests com.r4tings.recommender.examples.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
+
+######################################
+# 연관규칙 기반 추천                 # 
+######################################
+
+./gradlew :test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
+```
+
 
 ## 평점 정규화
 
