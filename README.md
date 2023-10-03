@@ -56,6 +56,8 @@
 참고: https://spring.io/guides/gs/gradle/
 -->
 
+</br>
+
 ### 필수 및 선택 소프트웨어(Required and optional software)
 
 #### 필수(Mandatory)
@@ -74,6 +76,8 @@
 |IntelliJ|Latest|IntelliJ를 내려받고 구성하는 방법은 [링크](https://www.jetbrains.com/idea/)를 참고하세요|
 |R|Latest|R을 내려받고 구성하는 방법은 [링크](https://www.r-project.org/)를 참고하세요|
 |RStudio Desktop|Latest|IntelliJ를 내려받고 구성하는 방법은 [링크](https://posit.co/products/open-source/rstudio/)를 참고하세요|
+
+</br>
 
 ### 프로젝트 구성하기(Set up the project)
 
@@ -188,6 +192,8 @@ C:\r4tings
 
 ## 시작하기(Getting Started)
 
+</br>
+
 ### R4tings Recommender 프로젝트
 
 #### 공개 데이터셋 내려받기(Download Public Datasets)
@@ -244,6 +250,8 @@ CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식�
 ```
 ./gradlew :test --tests com.r4tings.recommender.examples.DatasetLoadTest.bookCrossingDatasetExamples
 ```
+
+</br>
 
 ### R4tings Recommender Examples 프로젝트 
 
@@ -350,6 +358,8 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb
 
 ## 평점 정규화
 
+</br>
+
 ### 평균 중심 정규화
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/MeanCenteringNormalizer_Class_Diagram.svg)
@@ -423,6 +433,8 @@ $${\hat r_{u,i}} = {r_{u,i}} - {\mu _i}$$
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b7651-94b4-4d9c-94e4-1dbf87f37b83
 
+</br>
+
 ### Z점수 정규화
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/ZScoreNormalizer_Class_Diagram.svg)
@@ -494,6 +506,8 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {\mu _i}}}{{{\sigma _i}}}$$
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a7-0b61-4446-832e-347c9b71ffe5
+
+</br>
 
 ### 최소-최대 정규화
 
@@ -571,6 +585,8 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {r_{\min }}}}{{{r_{\max }} - {r_{\min }}}}
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9c811808-0dc7-4068-8109-c92d1f278bf5
 
+</br>
+
 ### 소수 자릿수 정규화 
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/DecimalScaling_Class_Diagram.svg)
@@ -630,6 +646,8 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}}}}{{{{10}^j}}}$$
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/740b46c4-b8a5-408d-bcb6-fb311fdc6523
+
+</br>
 
 ### 이진 임계 이진화 
 
@@ -696,6 +714,8 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/e9e5cb9
 </br>
 
 ## 유사도 계산
+
+</br>
 
 ### 코사인 유사도
 
@@ -774,6 +794,8 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/2cb51994-4ebf-436f-9153-8e298269b828
+
+</br>
 
 ### 피어슨 상관계수와 유사도
 
@@ -873,6 +895,8 @@ $$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/850d7868-eaa0-49c5-9f96-f771da31d322
 
+</br>
+
 ### 유클리드 거리와 유사도
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/EuclideanSimilarity_Class_Diagram.svg)
@@ -963,6 +987,8 @@ $$SF = \frac{{AS}}{{PS}}$$
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/c37b999c-1298-431b-a2b0-9808f37277be
 
+</br>
+
 ### 이진 속성과 유사도
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/ExtendedJaccardSimilarity_Class_Diagram.svg)
@@ -1007,7 +1033,7 @@ ExtendedJaccardSimilarityMeasurer 클래스의 인스턴스에 설정 가능한 
 Dataset<Row> similarityDS = measurer.transform(ratingDS);
 ```
 
-#### 수식 살펴보기
+#수식 살펴보기
 
 다음은 임의의 벡터 ${{\bf{x}}_i}$와 ${{\bf{x}}_j}$의 값을 비교하여 분할표로 나타낸 것입니다. 
 
@@ -1077,7 +1103,7 @@ $${\rm{ExtendedJaccard}}({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\bf{x}}_a^{\rm T}{
 > **Note**
 > 확장 자카드 계수는 타니모토 계수(Tanimoto Coefficient)라고도 지칭합니다. 집합 개념의 자카드 계수와 달리 이진 속성에만 적용할 수 있는 코사인 유사도를 확장한 확장 자카드 계수는 두 데이터 포인트의 각도와 상대적인 거리를 모두 고려하며 자카드 계수와는 다른 개념으로 내용이 다소 혼란스러울 수 있어 유의해서 사용해야 합니다
 
-#### 예제 살펴보기
+#예제 살펴보기
 
 예제 테스트 클래스인 ExtendedJaccardSimilarityTest 클래스의 테스트 메서드인 extendedJaccardSimilarityExamples 실행 결과를 살펴봅니다.
 
@@ -1173,9 +1199,9 @@ KNearestNeighbors 클래스의 recommend 메서드에 설정 가능한 매개변
 | userId   | Object         | O        | \-     | 추천 받을 사용자 ID                         |
 
 
-#### 수식 살펴보기
+#수식 살펴보기
 
-##### 유사도 가중 평균 기반 평점 예측
+##유사도 가중 평균 기반 평점 예측
 
 (1) 사용자 $u$가 평가하지 않은 아이템 $i$에 대한 예측 평점(사용자 기반 추천)은 다음과 같이 정의됩니다.
 
@@ -1189,7 +1215,7 @@ $${\hat r_{u,i}} = \frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_{i,j}}{r_{u,j}}} }}
 
 여기에서, ${N_u}(i)$는 사용자 $u$가 평가한 아이템 $i$와 가장 유사한 k개의 아이템 집합(k-근접 이웃), ${w_{i,j}}$는 아이템 $i$와 이웃 아이템 $j$의 유사도($i \ne j$), ${r_{u,j}}$은 사용자 $u$가 아이템 $j$에 매긴 평점입니다.
 
-##### 평점 평균과 유사도 평균 중심 가중 평균 기반 평점 예측
+##평점 평균과 유사도 평균 중심 가중 평균 기반 평점 예측
 
 (1) 사용자 $u$가 평가하지 않은 아이템 $i$에 대한 예측 평점(사용자 기반 추천)은 다음과 같이 정의됩니다.
 
@@ -1215,7 +1241,7 @@ $${\hat r_{ui}} = {\mu_i} + \frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_{i,j}}{s_{
 
 여기에서, ${\mu_i}$는 아이템 $i$에 매겨진 사용자 집합 ${U_i}$의 평점 평균, ${N_u}(i)$는 사용자 $u$가 평가한 아이템 $i$와 가장 유사한 k개의 아이템 집합(k-근접 이웃), ${w_{i,j}}$는 아이템 $i$와 이웃 아이템 $j$의 유사도($i \ne j$), ${s_{u,j}}$는 아이템 평균 중심으로 정규화된 평점, ${r_{u,j}}$은 사용자 $u$가 아이템 $j$에 매긴 평점, ${\mu _j}$는 이웃 아이템 $j$에 매겨진 사용자 집합 ${U_i}$의 평점 평균입니다.
 
-##### 평점 평균과 유사도 Z점수 가중 평균 기반 평점 예측
+##평점 평균과 유사도 Z점수 가중 평균 기반 평점 예측
 
 (1) 사용자 $u$가 평가하지 않은 아이템 $i$에 대한 예측 평점(사용자 기반 추천)은 다음과 같이 정의됩니다.
 
@@ -1243,7 +1269,7 @@ $${\hat r_{ui}} = {\mu_i} + {\sigma_i}\frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_
 
 여기에서, ${\mu_i}$와 ${\sigma_i}$는 아이템 $i$에 매겨진 사용자 집합 ${U_i}$의 평점 평균과 표준편차, ${N_u}(i)$는 사용자 $u$가 평가한 아이템 $i$와 가장 유사한 k개의 아이템 집합(k-근접 이웃), ${w_{i,j}}$는 아이템 $i$와 이웃 아이템 $j$의 유사도($i \ne j$), ${z_{u,j}}$는 아이템 Z점수화된 평점, ${r_{u,j}}$은 사용자 $u$가 아이템 $j$에 매긴 평점, ${\mu_j}$는 이웃 아이템 $j$에 매겨진 사용자 집합 ${U_i}$의 평점 평균, ${\mu_j}$와 ${\sigma_j}$는 이웃 아이템 $v$에 매겨진 사용자 집합 ${U_i}$의 평점 평균과 표준편차입니다
 
-#### 예제 살펴보기
+#예제 살펴보기
 
 예제 테스트 클래스인 KNearestNeighborsTest 클래스의 테스트 메서드인 kNearestNeighborsExamples 실행 결과를 살펴봅니다
 
@@ -1323,7 +1349,7 @@ BaselineSingleValueDecomposition 클래스의 recommend 메서드에 설정 가�
 | topN     | Integer        | O        | \-     | 추천 아이템 수                              |
 | userId   | Object         | O        | \-     | 추천 받을 사용자 ID                         |
 
-#### 수식 살펴보기
+#수식 살펴보기
 
 (1) 사용자 $u$가 아이템 $i$에 매긴 평점의 기준선 추정값은 다음과 같이 정의됩니다.
 
@@ -1397,13 +1423,13 @@ $${\hat r_{ui}} = {b_{ui}} + ({p_{u}} \times {\sigma }) \cdot {q_{i}} = {b_{ui}}
 <!--
 > **Note**
 > 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender-examples/wiki/)_** 를 참고하세요.
-> * #### [6. 특잇값 분해 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06)
->   * ##### [6.1 모델 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-01)
->   * ##### [6.2 기준선 추정과 특잇값 분해 기반 평점 예측](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-02)
->   * ##### [6.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-03)
+> * #[6. 특잇값 분해 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06)
+>   * ##[6.1 모델 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-01)
+>   * ##[6.2 기준선 추정과 특잇값 분해 기반 평점 예측](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-02)
+>   * ##[6.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-03)
 -->
 
-#### 예제 살펴보기
+#예제 살펴보기
 
 예제 테스트 클래스인 BaselineSingleValueDecompositionTest 클래스의 테스트 메서드인 baselineSingleValueDecompositionExamples 실행 결과를 살펴봅니다
 
@@ -1487,7 +1513,7 @@ TermFrequencyInverseDocumentFrequency 클래스의 recommend 메서드에 설정
 | topN     | Integer        | O        | \-     | 추천 아이템 수                              |
 | userId   | Object         | O        | \-     | 추천 받을 사용자 ID                         |
 
-#### 수식 살펴보기
+#수식 살펴보기
 
 문서 단어 행렬(Document-Term Matrix, DTM)은 문서(아이템)는 행, 단어(태그)는 열로 나타낸 이원 도수 분포표입니다.
 
@@ -1536,7 +1562,7 @@ $${\mathop{\rm sim}\nolimits} ({{\bf{x}}_a},{{\bf{x}}_b}) = cos({{\bf{x}}_a},{{\
 
 여기에서 ${\bf{x}}_a^{\rm T}{{\bf{x}}_b} = \sum\nolimits_1^n {{a_i}{b_i}} = {a_1}{b_1} + {a_2}{b_2} + \cdots {a_n}{b_n}$로 두 벡터의 내적(Dot Product), ${\left\| {{{\bf{x}}_a}} \right\|_2}$와 ${\left\| {{{\bf{x}}_b}} \right\|_2}$는 각 벡터의 유클리드 노름(L2 Norm)입니다.
 
-#### 예제 살펴보기
+#예제 살펴보기
 
 예제 테스트 클래스인 TermFrequencyInverseDocumentFrequencyTest 클래스의 테스트 메서드인 termFrequencyInverseDocumentFrequencyExamples 실행 결과를 살펴봅니다
 
@@ -1617,7 +1643,7 @@ AssociationRuleMining 클래스의 recommend 메서드에 설정 가능한 매�
 | itemId   | Object         | O        | \-     | 추천 받을 아이템 ID                         |
 
 
-#### 수식 살펴보기
+#수식 살펴보기
 
 (1) 항목 집합(Itemset)은 다음과 같이 정의됩니다.
 
@@ -1659,7 +1685,7 @@ $${\mathop{\rm lift}\nolimits} (X \Rightarrow Y) = \frac{{P(Y|X)}}{{P(Y)}} = \fr
 
 여기에서 ${\mathop{\rm confidence}\nolimits} (X \Rightarrow Y)$는 연관규칙 $X \Rightarrow Y$의 신뢰도, ${\mathop{\rm support}\nolimits} (Y)$는 항목 집합 $Y$의 지지도입니다.
 
-#### 예제 살펴보기
+#예제 살펴보기
 
 예제 테스트 클래스인 AssociationRuleMiningTest 클래스의 테스트 메서드인 associationRuleMiningExamples 실행 결과를 살펴봅니다
 
