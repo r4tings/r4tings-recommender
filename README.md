@@ -16,8 +16,7 @@
 - [개요](#개요)
 - [전제조건(Prerequisites)](#전제조건prerequisites)  
   - [필수 및 선택 소프트웨어(Required and optional software)](#필수-및-선택-소프트웨어required-and-optional-software)
-  - [프로젝트 구성하기(Set up the project)](#프로젝트-구성하기set-up-the-project)
-  - [데이터셋 준비하기(Prepare Dataset)](#데이터셋-준비하기prepare-dataset)
+  - [프로젝트 구성하기(Set up the project)](#프로젝트-구성하기set-up-the-project)  
 - [시작하기(Getting Started)](#시작하기getting-started)
   -  [R4tings Recommender 프로젝트](#r4tings-recommender-프로젝트)
   -  [R4tings Recommender Examples 프로젝트](#r4tings-recommender-examples-프로젝트)
@@ -196,7 +195,9 @@ C:\r4tings
 
 ### R4tings Recommender 프로젝트
 
-#### 공개 데이터셋 내려받기(Download Public Datasets)
+#### 데이터셋 준비하기(Prepare Dataset)
+
+##### 공개 데이터셋 내려받기(Download Public Datasets)
 
 <br/>
 
@@ -233,7 +234,7 @@ Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 downloadPu
 
 <br/>
 
-#### Book-Crossing 데이터셋 Parquet 유형으로 변환하기
+##### Book-Crossing 데이터셋 Parquet 유형으로 변환하기
 
 <br/>
 
@@ -267,9 +268,7 @@ CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식�
 ./gradlew :test --tests com.r4tings.recommender.examples.ch02.DatasetLoadTest.r4tingsDatasetExamples
 ```
 
-
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/fce48a50-2503-4e76-ad09-619319fe829a
-
 
 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 r4tingsDatasetExamples 실행 하여, 예제 데이터셋을 Parquet 형식으로 변환 후 dataset/r4tings 폴더 구조는 다음과 같습니다
 
