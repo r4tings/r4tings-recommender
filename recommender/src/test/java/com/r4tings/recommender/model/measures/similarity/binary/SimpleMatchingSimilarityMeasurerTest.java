@@ -47,7 +47,7 @@ class SimpleMatchingSimilarityMeasurerTest extends AbstractSparkTests {
   @SMCSimilarityCsvFileSource
   @Tag("Similarity")
   @DisplayName("Binary SMC Similarity")
-  void testWithSimilarity(
+  void testWithExample(
       @ConvertDataset Dataset<Row> ratingDS,
       @ConvertRatingNormalizer RatingNormalizer normalizer,
       Group group,
