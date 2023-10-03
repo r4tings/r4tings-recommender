@@ -17,7 +17,10 @@
 - [전제조건(Prerequisites)](#전제조건prerequisites)  
   - [필수 및 선택 소프트웨어(Required and optional software)](#필수-및-선택-소프트웨어required-and-optional-software)
   - [프로젝트 구성하기(Set up the project)](#프로젝트-구성하기set-up-the-project)
-  - [데이터셋 준비하기(Prepare Dataset)](#데이터셋-준비하기prepare-dataset))
+  - [데이터셋 준비하기(Prepare Dataset)](#데이터셋-준비하기prepare-dataset)
+- [시작하기(Getting Started)](#시작하기getting-started)
+  -  [R4tings Recommender 프로젝트](#r4tings-recommender-프로젝트)
+  -  [R4tings Recommender Examples 프로젝트](#r4tings-recommender-examples-프로젝트)
 - [평점 정규화](#평점-정규화)
   - [평균 중심 정규화](#평균-중심-정규화)
   - [Z점수 정규화](#z점수-정규화)
@@ -179,6 +182,8 @@ C:\r4tings
 > 
 > 리포지토리 뷰에서 소스 코드 보관 파일 다운로드하는 자세한 내용은 [링크](https://docs.github.com/ko/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)를 참고하세요.
 
+
+## 시작하기(Getting Started)
 
 ### R4tings Recommender 프로젝트
 
