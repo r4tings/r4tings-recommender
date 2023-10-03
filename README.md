@@ -38,8 +38,6 @@
 - [피드백과 기여](#피드백과-기여)
 - [라이선스](#라이선스)
 
-</br>
-
 ## 개요
 
 추천 시스템은 많은 양의 정보 안에서 사용자가 적합한 정보를 선택할 수 있도록 도와주는 시스템으로, GroupLens Research의 [LensKit](https://lenskit.org/), 아파치 소프트웨어 재단의 [Apache Mahout](https://mahout.apache.org/)과 [Apache PredictionIO](https://predictionio.apache.org/) 등, 다양한 형태의 추천 컴포넌트나 시스템들이 오픈 소스로도 제공되고 있으나, 추천 모델이 기본 수식만 구현되어 있거나, 블랙박스(black-box)로 제공되는 등 학술 연구나 상용화 목적의 개념 증명(PoC, Proof of Concept)을 위한 프로토타입 설계 및 구현 단계에서, 적용 영역에 따라 수식과 데이터의 내부 흐름을 미세 조정하고 유연하게 대응하기가 쉽지 않습니다. 또한, 웹 기반의 Notebook을 제공하는 Apache Zeppelin이나 Jupyter Notebook, 또는 Rmarkdown으로 추천 시스템을 구현해볼 수 있으나, 이는 분석가의 업무 흐름에 따라 하나의 Notebook에서 데이터와 처리를 표현하게 하는 목적으로 실제로 독립 시스템으로 구현하기에는 고려할 사항이 적지 않습니다. 
@@ -73,8 +71,6 @@
 |IntelliJ|Latest|IntelliJ를 내려받고 구성하는 방법은 [링크](https://www.jetbrains.com/idea/)를 참고하세요|
 |R|Latest|R을 내려받고 구성하는 방법은 [링크](https://www.r-project.org/)를 참고하세요|
 |RStudio Desktop|Latest|IntelliJ를 내려받고 구성하는 방법은 [링크](https://posit.co/products/open-source/rstudio/)를 참고하세요|
-
-</br>
 
 ### 프로젝트 구성하기(Set up the project)
 
@@ -185,8 +181,6 @@ C:\r4tings
 > 
 > 리포지토리 뷰에서 소스 코드 보관 파일 다운로드하는 자세한 내용은 [링크](https://docs.github.com/ko/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)를 참고하세요.
 
-</br>
-
 ## 시작하기(Getting Started)
 
 ### R4tings Recommender 프로젝트
@@ -194,8 +188,6 @@ C:\r4tings
 #### 데이터셋 준비하기(Prepare Dataset)
 
 ##### 공개 데이터셋 내려받기(Download Public Datasets)
-
-<br/>
 
 여기에서는 테스트 클래스인 [**DatasetLoadTest**](src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
 
@@ -228,11 +220,7 @@ Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 downloadPu
     │   ⋯ - 일부 생략 - 
 ```
 
-<br/>
-
 ##### Book-Crossing 데이터셋 Parquet 유형으로 변환하기
-
-<br/>
 
 CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식으로 저장합니다.
 
@@ -247,8 +235,6 @@ CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식�
 ```
 ./gradlew :test --tests com.r4tings.recommender.examples.DatasetLoadTest.bookCrossingDatasetExamples
 ```
-
-</br>
 
 ### R4tings Recommender Examples 프로젝트 
 
@@ -349,8 +335,6 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb
 ./gradlew :test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
 ```
 
-</br>
-
 ## 평점 정규화
 
 ### 평균 중심 정규화
@@ -426,8 +410,6 @@ $${\hat r_{u,i}} = {r_{u,i}} - {\mu _i}$$
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b7651-94b4-4d9c-94e4-1dbf87f37b83
 
-</br>
-
 ### Z점수 정규화
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/ZScoreNormalizer_Class_Diagram.svg)
@@ -499,8 +481,6 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {\mu _i}}}{{{\sigma _i}}}$$
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a7-0b61-4446-832e-347c9b71ffe5
-
-</br>
 
 ### 최소-최대 정규화
 
@@ -578,8 +558,6 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {r_{\min }}}}{{{r_{\max }} - {r_{\min }}}}
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9c811808-0dc7-4068-8109-c92d1f278bf5
 
-</br>
-
 ### 소수 자릿수 정규화 
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/DecimalScaling_Class_Diagram.svg)
@@ -639,8 +617,6 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}}}}{{{{10}^j}}}$$
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/740b46c4-b8a5-408d-bcb6-fb311fdc6523
-
-</br>
 
 ### 이진 임계 이진화 
 
@@ -703,8 +679,6 @@ Dataset<Row> binarizedRatingDS = binarizer.transform(ratingDS);
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/e9e5cb9d-4c2c-4365-86a0-ac7f27e19876
-
-</br>
 
 ## 유사도 계산
 
@@ -785,8 +759,6 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/2cb51994-4ebf-436f-9153-8e298269b828
-
-</br>
 
 ### 피어슨 상관계수와 유사도
 
@@ -886,8 +858,6 @@ $$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/850d7868-eaa0-49c5-9f96-f771da31d322
 
-</br>
-
 ### 유클리드 거리와 유사도
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/EuclideanSimilarity_Class_Diagram.svg)
@@ -977,8 +947,6 @@ $$SF = \frac{{AS}}{{PS}}$$
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/c37b999c-1298-431b-a2b0-9808f37277be
-
-</br>
 
 ### 이진 속성과 유사도
 
@@ -1107,8 +1075,6 @@ $${\rm{ExtendedJaccard}}({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\bf{x}}_a^{\rm T}{
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/dad07ffb-9e85-4170-9777-90f7a2b2f6a2
-
-</br>
 
 ## 이웃 기반 협업 필터링 추천
 
@@ -1274,8 +1240,6 @@ $${\hat r_{ui}} = {\mu_i} + {\sigma_i}\frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9922b101-6563-4a83-ac51-085216db5079
 
-</br>
-
 ## 특잇값 분해 기반 협업 필터링 추천
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch06/BaselineSVD_Class_Diagram.svg)
@@ -1434,8 +1398,6 @@ $${\hat r_{ui}} = {b_{ui}} + ({p_{u}} \times {\sigma }) \cdot {q_{i}} = {b_{ui}}
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/f96428cd-e177-45cc-8c9b-d46651957ccd
 
-</br>
-
 ## TF-IDF 기반 콘텐츠 기반 필터링 추천
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch07/TermFrequencyInverseDocumentFrequency_Class_Diagram.svg)
@@ -1567,8 +1529,6 @@ $${\mathop{\rm sim}\nolimits} ({{\bf{x}}_a},{{\bf{x}}_b}) = cos({{\bf{x}}_a},{{\
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/10aed1f7-8057-4d20-a6d3-19d2c4064326
 
-</br>
-
 ## 연관규칙 기반 추천
 
 ![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch08/AssociationRuleMining_Class_Diagram.svg)
@@ -1690,15 +1650,11 @@ $${\mathop{\rm lift}\nolimits} (X \Rightarrow Y) = \frac{{P(Y|X)}}{{P(Y)}} = \fr
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b9cbba76-47aa-473d-9a25-d528b64685ef
 
-</br>
-
 ## 피드백과 기여
 
 기능 요청이 있는 경우 **[ISSUES](https://github.com/r4tings/r4tings-recommender-examples/issues/)** 에 등록하세요. **[DISCUSSIONS](https://github.com/r4tings/r4tings-recommender-examples/discussions/)** 을 통해서도 질문하실 수 있습니다. 
 
 R4tings Recommender 프로젝트의 참여나 기여도 환영합니다. 자세한 정보는 **[여기](CONTRIBUTORS.md)** 에서 확인할 수 있습니다. 
-
-</br>
 
 ## 라이선스
 
