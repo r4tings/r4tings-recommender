@@ -17,9 +17,9 @@
 - [전제조건(Prerequisites)](#전제조건prerequisites)  
   - [필수 및 선택 소프트웨어(Required and optional software)](#필수-및-선택-소프트웨어required-and-optional-software)
   - [프로젝트 구성하기(Set up the project)](#프로젝트-구성하기set-up-the-project)  
-- [데이터셋 준비하기(Prepare Dataset)](#데이터셋-준비하기prepare-dataset)
-  -  [R4tings Recommender 프로젝트](#r4tings-recommender-프로젝트)
-  -  [R4tings Recommender Examples 프로젝트](#r4tings-recommender-examples-프로젝트)
+  - [데이터셋 준비하기(Prepare Dataset)](#데이터셋-준비하기prepare-dataset)
+    -  [R4tings Recommender 프로젝트](#r4tings-recommender-프로젝트)
+    -  [R4tings Recommender Examples 프로젝트](#r4tings-recommender-examples-프로젝트)
 - [평점 정규화](#평점-정규화)
   - [평균 중심 정규화](#평균-중심-정규화)
   - [Z점수 정규화](#z점수-정규화)
@@ -181,7 +181,7 @@ C:\r4tings
 > 
 > 리포지토리 뷰에서 소스 코드 보관 파일 다운로드하는 자세한 내용은 [링크](https://docs.github.com/ko/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)를 참고하세요.
 
-## 데이터셋 준비하기(Prepare Dataset)
+### 데이터셋 준비하기(Prepare Dataset)
 
 > **Note**
 > 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
@@ -191,9 +191,9 @@ C:\r4tings
 >   * ##### [2.3 예제 데이터셋](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02-sec-03)
 >   * ##### [2.4 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02-sec-04)
 
-### R4tings Recommender 프로젝트
+#### R4tings Recommender 프로젝트
 
-#### 공개 데이터셋 내려받기(Download Public Datasets)
+##### 공개 데이터셋 내려받기(Download Public Datasets)
 
 여기에서는 테스트 클래스인 [**DatasetLoadTest**](./recommender/src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
 
@@ -237,7 +237,7 @@ C:\r4tings
        └── ⋯ -일부 생략 -  
 ```
 
-#### Book-Crossing 데이터셋 Parquet 유형으로 변환하기
+##### Book-Crossing 데이터셋 Parquet 유형으로 변환하기
 
 CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식으로 저장합니다.
 
@@ -271,7 +271,7 @@ C:\r4tings
        └── ⋯ -일부 생략 -  
 ```
 
-#### 테스트 케이스
+##### 테스트 케이스
 
 ```powershell
 ######################################
@@ -339,9 +339,9 @@ C:\r4tings
 ./gradlew :recommender:test --tests com.r4tings.recommender.model.arm.AssociationRuleMiningTest.testWithExample
 ```
 
-### R4tings Recommender Examples 프로젝트 
+#### R4tings Recommender Examples 프로젝트 
 
-#### r4tings 데이터셋 Parquet 유형으로 변환하기
+##### r4tings 데이터셋 Parquet 유형으로 변환하기
 
 예제 테스트 클래스인 DatasetLoadTest 클래스의 테스트 메서드인 convertCsvToParquet 실행 결과를 살펴봅니다.
 
@@ -377,7 +377,7 @@ C:\r4tings
        └── ⋯ -일부 생략 -  
 ```
 
-#### 예제 컨텐츠(테스트 케이스)
+##### 예제 컨텐츠(테스트 케이스)
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb-6a81-468f-b5b3-39fe5943f64d
 
