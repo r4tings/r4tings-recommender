@@ -302,9 +302,9 @@ C:\r4tings
 ./gradlew :recommender:test --tests com.r4tings.recommender.model.measures.similarity.EuclideanSimilarityMeasurerTest.testWithExample
 
 # 이진 속성과 유사도
-./gradlew :recommender:test --tests com.r4tings.recommender.examples.ch04.binary.SimpleMatchingSimilarityMeasurerTest.testWithExample
-./gradlew :recommender:test --tests com.r4tings.recommender.examples.ch04.binary.JaccardSimilarityMeasurerTest.testWithExample
-./gradlew :recommender:test --tests com.r4tings.recommender.examples.ch04.binary.ExtendedJaccardSimilarityTest.testWithExample
+./gradlew :recommender:test --tests com.r4tings.recommender.model.measures.similarity.binary.SimpleMatchingSimilarityMeasurerTest.testWithExample
+./gradlew :recommender:test --tests com.r4tings.recommender.model.measures.similarity.binary.JaccardSimilarityMeasurerTest.testWithExample
+./gradlew :recommender:test --tests com.r4tings.recommender.model.measures.similarity.binary.ExtendedJaccardSimilarityMeasurerTest.testWithExample
 
 ######################################
 # 이웃 기반 협업 필터링 추천           # 
@@ -318,7 +318,7 @@ C:\r4tings
 
 ./gradlew :recommender:test --tests com.r4tings.recommender.model.svd.baseline.SimpleMeanRatingBaselineTest.testWithExample
 ./gradlew :recommender:test --tests com.r4tings.recommender.model.svd.baseline.GeneralMeanRatingBaselineTest.testWithExample
-./gradlew :recommender:test --tests com.r4tings.recommender.model.svd.BaselineSingleValueDecompositionTest.testWithExample
+./gradlew :recommender:test --tests com.r4tings.recommender.model.svd.mf.BaselineSingleValueDecompositionTest.testWithExample
 
 ######################################
 # TF-IDF 기반 콘텐츠 기반 필터링 추천  # 
