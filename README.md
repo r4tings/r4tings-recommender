@@ -443,7 +443,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb
 
 ### 평균 중심 정규화
 
-![Download](./src/test/puml/ch03/MeanCenteringNormalizer_Class_Diagram.svg)
+![Download](./r4tings-recommender-examples/src/test/puml/ch03/MeanCenteringNormalizer_Class_Diagram.svg)
 
 - 평균 중심 정규화 구현체인 [**MeanCenteringNormalizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/MeanCenteringNormalizer.java)  클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 평균 중심화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. MeanCenteringNormalizer 클래스는 평균 중심 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음의 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
