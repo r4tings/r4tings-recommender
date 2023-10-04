@@ -340,14 +340,14 @@ C:\r4tings
 
 ##### r4tings 데이터셋 Parquet 유형으로 변환하기
 
-예제 테스트 클래스인 DatasetLoadTest 클래스의 테스트 메서드인 r4tingsDatasetExamples 실행 결과를 살펴봅니다.
+예제 테스트 클래스인 DatasetLoadTest 클래스의 테스트 메서드인 convertCsvToParquet 실행 결과를 살펴봅니다.
 
 * [r4tingsDatasetExamples](./src/test/java/com/r4tings/recommender/examples/ch02/DatasetLoadTest.java#L161)
 
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 r4tingsDatasetExamples를 실행해 봅니다.
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 convertCsvToParquet를 실행해 봅니다.
 
 ```
-./gradlew :test --tests com.r4tings.recommender.examples.ch02.DatasetLoadTest.r4tingsDatasetExamples
+PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetLoadTest.convertCsvToParquet
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/fce48a50-2503-4e76-ad09-619319fe829a
@@ -384,59 +384,59 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb
 ######################################
 
 # 평균 중심 정규화
-./gradlew :test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples
 
 # Z점수 정규화
-./gradlew :test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples
 
 # 최소-최대 정규화
-./gradlew :test --tests com.r4tings.recommender.examples.ch03.MinMaxTest.minMaxExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MinMaxTest.minMaxExamples
 
 # 소수 자릿수 정규화
-./gradlew :test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples
 
 # 이진 임계 이진화
-./gradlew :test --tests com.r4tings.recommender.examples.ch03.BinaryThresholdingTest.binaryThresholdingExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.BinaryThresholdingTest.binaryThresholdingExamples
 
 ######################################
 # 유사도 계산                         # 
 ######################################
 
 # 코사인 유사도
-./gradlew :test --tests com.r4tings.recommender.examples.ch04.CosineSimilarityTest.cosineSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.CosineSimilarityTest.cosineSimilarityExamples
 
 # 피어슨 상관계수와 유사도
-./gradlew :test --tests com.r4tings.recommender.examples.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
 
 # 유클리드 거리와 유사도
-./gradlew :test --tests com.r4tings.recommender.examples.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
 
 # 이진 속성과 유사도
-./gradlew :test --tests com.r4tings.recommender.examples.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
 
 ######################################
 # 이웃 기반 협업 필터링 추천           # 
 ######################################
 
-./gradlew :test --tests com.r4tings.recommender.examples.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
 
 ######################################
 # 특잇값 분해 기반 협업 필터링 추천     # 
 ######################################
 
-./gradlew :test --tests com.r4tings.recommender.examples.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
 
 ######################################
 # TF-IDF 기반 콘텐츠 기반 필터링 추천  # 
 ######################################
 
-./gradlew :test --tests com.r4tings.recommender.examples.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
 
 ######################################
 # 연관규칙 기반 추천                   # 
 ######################################
 
-./gradlew :test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
 ```
 
 ## 평점 정규화
