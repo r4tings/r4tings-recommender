@@ -7,10 +7,10 @@
 **/*log*/
 **/*tmp*/
 **/*parquet*/
-**/*zip
+#**/*zip
 
 # Ignore GitHub LFS
-dataset/Book-Crossing
+#dataset/Book-Crossing
 dataset/MovieLens
 
 
