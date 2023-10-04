@@ -196,7 +196,7 @@ C:\r4tings
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 downloadPublicDatasets 실행하고 실행 결과를 살펴봅니다.
 
 ```powershell
-PS C:\r4tings\r4tings-recommender> ./gradlew recommender:recommender-examples:test --tests com.r4tings.recommender.examples.DatasetLoadTest.downloadPublicDatasets
+PS C:\r4tings\r4tings-recommender> ./gradlew :recommender:test --tests com.r4tings.recommender.examples.DatasetLoadTest.downloadPublicDatasets
 ```
 <!--
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
@@ -244,7 +244,7 @@ CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식�
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples를 실행해 봅니다.
 
 ```powershell
-PS C:\r4tings\r4tings-recommender> ./gradlew recommender:recommender-examples:test --tests com.r4tings.recommender.examples.DatasetLoadTest.bookCrossingDatasetExamples
+PS C:\r4tings\r4tings-recommender> ./gradlew :recommender:test --tests com.r4tings.recommender.examples.DatasetLoadTest.bookCrossingDatasetExamples
 ```
 
 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples 실행 후, R4tings Recommender 오픈 소스 추천 엔진의 dataset 디렉토리 구조는 다음과 같습니다.
