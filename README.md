@@ -189,9 +189,9 @@ C:\r4tings
 
 ##### 공개 데이터셋 내려받기(Download Public Datasets)
 
-여기에서는 테스트 클래스인 [**DatasetLoadTest**](src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
+여기에서는 테스트 클래스인 [**DatasetLoadTest**](./recommender/src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
 
-* [downloadPublicDatasets](./src/test/java/com/r4tings/recommender/examples/ch02/DatasetLoadTest.java#L39)
+* [downloadPublicDatasets](./recommender/src/test/java/com/r4tings/recommender/examples/ch02/DatasetLoadTest.java#L39)
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 downloadPublicDatasets 실행하고 실행 결과를 살펴봅니다.
 
@@ -239,7 +239,7 @@ CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식�
 
 예제 테스트 클래스인 DatasetLoadTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples 실행 결과를 살펴봅니다.
 
-* [bookCrossingDatasetExamples](./src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java#L61)
+* [bookCrossingDatasetExamples](./recommender/src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java#L61)
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples를 실행해 봅니다.
 
@@ -342,7 +342,7 @@ C:\r4tings
 
 예제 테스트 클래스인 DatasetLoadTest 클래스의 테스트 메서드인 convertCsvToParquet 실행 결과를 살펴봅니다.
 
-* [r4tingsDatasetExamples](./src/test/java/com/r4tings/recommender/examples/ch02/DatasetLoadTest.java#L161)
+* [r4tingsDatasetExamples](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch02/DatasetLoadTest.java#L161)
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 convertCsvToParquet를 실행해 봅니다.
 
@@ -504,7 +504,7 @@ $${\hat r_{u,i}} = {r_{u,i}} - {\mu _i}$$
 
 예제 테스트 클래스인 MeanCenteringTest 클래스의 테스트 메서드인 meanCenteringExamples 실행 결과를 살펴봅니다.
 
-- [**MeanCenteringTest**](./src/test/java/com/r4tings/recommender/examples/ch03/MeanCenteringTest.java) 클래스는 평균 중심 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**MeanCenteringTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch03/MeanCenteringTest.java) 클래스는 평균 중심 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 MeanCenteringTest 클래스의 테스트 메서드인 meanCenteringExamples를 실행해 봅니다.
 
@@ -576,7 +576,7 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {\mu _i}}}{{{\sigma _i}}}$$
 
 예제 테스트 클래스인 ZScoreTest 클래스의 테스트 메서드인 zScoreExamples 실행 결과를 살펴봅니다.
 
-- [**ZScoreTest**](./src/test/java/com/r4tings/recommender/examples/ch03/ZScoreTest.java) 클래스는 Z점수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**ZScoreTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch03/ZScoreTest.java) 클래스는 Z점수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 ZScoreTest 클래스의 테스트 메서드인 zScoreExamples를 실행해 봅니다.
 
@@ -652,7 +652,7 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {r_{\min }}}}{{{r_{\max }} - {r_{\min }}}}
 
 예제 테스트 클래스인 MinMaxTest 클래스의 테스트 메서드인 minMaxExamples 실행 결과를 살펴봅니다.
 
-- [**MinMaxTest**](./src/test/java/com/r4tings/recommender/examples/ch03/MinMaxTest.java) 클래스는 최소-최대 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**MinMaxTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch03/MinMaxTest.java) 클래스는 최소-최대 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 MinMaxTest 클래스의 테스트 메서드인 minMaxExamples를 실행해 봅니다.
 
@@ -712,7 +712,7 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}}}}{{{{10}^j}}}$$
 
 예제 테스트 클래스인 DecimalScalingTest 클래스의 테스트 메서드인 decimalScalingExamples 실행 결과를 살펴봅니다.
 
-- [**DecimalScalingTest**](./src/test/java/com/r4tings/recommender/examples/ch03/DecimalScalingTest.java) 클래스는 소수 자릿수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**DecimalScalingTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch03/DecimalScalingTest.java) 클래스는 소수 자릿수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DecimalScalingTest 클래스의 테스트 메서드인 decimalScalingExamples를 실행해 봅니다.
 
@@ -774,7 +774,7 @@ Dataset<Row> binarizedRatingDS = binarizer.transform(ratingDS);
 
 예제 테스트 클래스인 BinaryThresholdingTest 클래스의 테스트 메서드인 binaryThresholdingExamples 실행 결과를 살펴봅니다.
 
-- [**BinaryThresholdingTest**](./src/test/java/com/r4tings/recommender/examples/ch03/BinaryThresholdingTest.java) 클래스는 이진 임계 이진화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**BinaryThresholdingTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch03/BinaryThresholdingTest.java) 클래스는 이진 임계 이진화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 BinaryThresholdingTest 클래스의 테스트 메서드인 binaryThresholdingExamples를 실행해 봅니다.
 
@@ -854,7 +854,7 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 
 예제 테스트 클래스인 CosineSimilarityTest 클래스의 테스트 메서드인 cosineSimilarityExamples 실행 결과를 살펴봅니다.
 
-- [**CosineSimilarityTest**](./src/test/java/com/r4tings/recommender/examples/ch04/CosineSimilarityTest.java) 클래스는 코사인 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**CosineSimilarityTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch04/CosineSimilarityTest.java) 클래스는 코사인 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 CosineSimilarityTest 클래스의 테스트 메서드인 cosineSimilarityExamples를 실행해 봅니다.
 
@@ -952,7 +952,7 @@ $$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{
 
 예제 테스트 클래스인 PearsonSimilarityTest 클래스의 테스트 메서드인 pearsonSimilarityExamples 실행 결과를 살펴봅니다.
 
-- [PearsonSimilarityTest](./src/test/java/com/r4tings/recommender/examples/ch04/PearsonSimilarityTest.java) 클래스는 피어슨 상관계수와 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [PearsonSimilarityTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch04/PearsonSimilarityTest.java) 클래스는 피어슨 상관계수와 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 PearsonSimilarityTest 클래스의 테스트 메서드인 pearsonSimilarityExamples를 실행해 봅니다.
 
@@ -1042,7 +1042,7 @@ $$SF = \frac{{AS}}{{PS}}$$
 
 예제 테스트 클래스인 EuclideanSimilarityTest 클래스의 테스트 메서드인 euclideanSimilarityExamples 실행 결과를 살펴봅니다.
 
-- [EuclideanSimilarityTest](./src/test/java/com/r4tings/recommender/examples/ch04/EuclideanSimilarityTest.java) 클래스는 유클리드 거리와 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [EuclideanSimilarityTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch04/EuclideanSimilarityTest.java) 클래스는 유클리드 거리와 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 EuclideanSimilarityTest 클래스의 테스트 메서드인 euclideanSimilarityExamples를 실행해 봅니다.
 
@@ -1170,7 +1170,7 @@ $${\rm{ExtendedJaccard}}({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\bf{x}}_a^{\rm T}{
 
 예제 테스트 클래스인 ExtendedJaccardSimilarityTest 클래스의 테스트 메서드인 extendedJaccardSimilarityExamples 실행 결과를 살펴봅니다.
 
-- [ExtendedJaccardSimilarityTest](./src/test/java/com/r4tings/recommender/examples/ch04/binary/ExtendedJaccardSimilarityTest.java) 클래스는 이진 속성과 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [ExtendedJaccardSimilarityTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch04/binary/ExtendedJaccardSimilarityTest.java) 클래스는 이진 속성과 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 ExtendedJaccardSimilarityTest 클래스의 테스트 메서드인 extendedJaccardSimilarityExamples를 실행해 봅니다.
 
@@ -1334,7 +1334,7 @@ $${\hat r_{ui}} = {\mu_i} + {\sigma_i}\frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_
 
 예제 테스트 클래스인 KNearestNeighborsTest 클래스의 테스트 메서드인 kNearestNeighborsExamples 실행 결과를 살펴봅니다
 
-- [KNearestNeighborsTest](./src/test/java/com/r4tings/recommender/examples/ch05/KNearestNeighborsTest.java) 클래스는 이웃 기반 협업 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [KNearestNeighborsTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch05/KNearestNeighborsTest.java) 클래스는 이웃 기반 협업 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 KNearestNeighborsTest 클래스의 테스트 메서드인 kNearestNeighborsExamples를 실행해 봅니다.
 
@@ -1492,7 +1492,7 @@ $${\hat r_{ui}} = {b_{ui}} + ({p_{u}} \times {\sigma }) \cdot {q_{i}} = {b_{ui}}
 
 예제 테스트 클래스인 BaselineSingleValueDecompositionTest 클래스의 테스트 메서드인 baselineSingleValueDecompositionExamples 실행 결과를 살펴봅니다
 
-- [BaselineSingleValueDecompositionTest](./src/test/java/com/r4tings/recommender/examples/ch06/BaselineSingleValueDecompositionTest.java) 클래스는 특잇값 분해 기반 협업 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [BaselineSingleValueDecompositionTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch06/BaselineSingleValueDecompositionTest.java) 클래스는 특잇값 분해 기반 협업 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 BaselineSingleValueDecompositionTest 클래스의 테스트 메서드인 baselineSingleValueDecompositionExamples를 실행해 봅니다.
 
@@ -1623,7 +1623,7 @@ $${\mathop{\rm sim}\nolimits} ({{\bf{x}}_a},{{\bf{x}}_b}) = cos({{\bf{x}}_a},{{\
 
 예제 테스트 클래스인 TermFrequencyInverseDocumentFrequencyTest 클래스의 테스트 메서드인 termFrequencyInverseDocumentFrequencyExamples 실행 결과를 살펴봅니다
 
-- [TermFrequencyInverseDocumentFrequencyTest](./src/test/java/com/r4tings/recommender/examples/ch07/TermFrequencyInverseDocumentFrequencyTest.java) 클래스는 TF-IDF 기반 콘텐츠 기반 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [TermFrequencyInverseDocumentFrequencyTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch07/TermFrequencyInverseDocumentFrequencyTest.java) 클래스는 TF-IDF 기반 콘텐츠 기반 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 TermFrequencyInverseDocumentFrequencyTest 클래스의 테스트 메서드인 termFrequencyInverseDocumentFrequencyExamples를 실행해 봅니다.
 
@@ -1744,7 +1744,7 @@ $${\mathop{\rm lift}\nolimits} (X \Rightarrow Y) = \frac{{P(Y|X)}}{{P(Y)}} = \fr
 
 예제 테스트 클래스인 AssociationRuleMiningTest 클래스의 테스트 메서드인 associationRuleMiningExamples 실행 결과를 살펴봅니다
 
-- [**AssociationRuleMiningTest**](./src/test/java/com/r4tings/recommender/examples/ch08/AssociationRuleMiningTest.java) 클래스는 연관규칙 기반 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**AssociationRuleMiningTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch08/AssociationRuleMiningTest.java) 클래스는 연관규칙 기반 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 AssociationRuleMiningTest 클래스의 테스트 메서드인 associationRuleMiningExamples를 실행해 봅니다.
 
