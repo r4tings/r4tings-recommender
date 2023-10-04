@@ -17,7 +17,7 @@
 - [전제조건(Prerequisites)](#전제조건prerequisites)  
   - [필수 및 선택 소프트웨어(Required and optional software)](#필수-및-선택-소프트웨어required-and-optional-software)
   - [프로젝트 구성하기(Set up the project)](#프로젝트-구성하기set-up-the-project)  
-- [시작하기(Getting Started)](#시작하기getting-started)
+- [데이터셋 준비하기(Prepare Dataset)](#데이터셋-준비하기prepare-dataset)
   -  [R4tings Recommender 프로젝트](#r4tings-recommender-프로젝트)
   -  [R4tings Recommender Examples 프로젝트](#r4tings-recommender-examples-프로젝트)
 - [평점 정규화](#평점-정규화)
@@ -181,13 +181,19 @@ C:\r4tings
 > 
 > 리포지토리 뷰에서 소스 코드 보관 파일 다운로드하는 자세한 내용은 [링크](https://docs.github.com/ko/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)를 참고하세요.
 
-## 시작하기(Getting Started)
+## 데이터셋 준비하기(Prepare Dataset)
+
+> **Note**
+> 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
+> * #### [2. 데이터셋 살펴보기](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02)
+>   * ##### [2.1 북크로싱 데이터셋](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02-sec-01)
+>   * ##### [2.2 무비렌즈 데이터셋](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02-sec-02)
+>   * ##### [2.3 예제 데이터셋](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02-sec-03)
+>   * ##### [2.4 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02-sec-04)
 
 ### R4tings Recommender 프로젝트
 
-#### 데이터셋 준비하기(Prepare Dataset)
-
-##### 공개 데이터셋 내려받기(Download Public Datasets)
+#### 공개 데이터셋 내려받기(Download Public Datasets)
 
 여기에서는 테스트 클래스인 [**DatasetLoadTest**](./recommender/src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
 
@@ -231,7 +237,7 @@ C:\r4tings
        └── ⋯ -일부 생략 -  
 ```
 
-##### Book-Crossing 데이터셋 Parquet 유형으로 변환하기
+#### Book-Crossing 데이터셋 Parquet 유형으로 변환하기
 
 CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식으로 저장합니다.
 
@@ -333,12 +339,9 @@ C:\r4tings
 ./gradlew :recommender:test --tests com.r4tings.recommender.model.arm.AssociationRuleMiningTest.testWithExample
 ```
 
-
 ### R4tings Recommender Examples 프로젝트 
 
-#### 데이터셋 준비하기(Prepare Dataset)
-
-##### r4tings 데이터셋 Parquet 유형으로 변환하기
+#### r4tings 데이터셋 Parquet 유형으로 변환하기
 
 예제 테스트 클래스인 DatasetLoadTest 클래스의 테스트 메서드인 convertCsvToParquet 실행 결과를 살펴봅니다.
 
@@ -784,6 +787,17 @@ Dataset<Row> binarizedRatingDS = binarizer.transform(ratingDS);
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/e9e5cb9d-4c2c-4365-86a0-ac7f27e19876
 
+> **Note**
+> 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
+> * #### [3. 평점 정규화](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-03)
+>   * ##### [3.1 평점 정규화와 이진화](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-03-sec-01)
+>   * ##### [3.2 평균 중심 정규화](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-03-sec-02)
+>   * ##### [3.3 Z점수 정규화](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-03-sec-03)
+>   * ##### [3.4 최소-최대 정규화](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-03-sec-04)
+>   * ##### [3.5 소수 자릿수 정규화](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-03-sec-05)
+>   * ##### [3.6 이진 임계 이진화](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-03-sec-06)
+>   * ##### [3.7 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-03-sec-07)
+
 ## 유사도 계산
 
 ### 코사인 유사도
@@ -1180,6 +1194,16 @@ $${\rm{ExtendedJaccard}}({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\bf{x}}_a^{\rm T}{
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/dad07ffb-9e85-4170-9777-90f7a2b2f6a2
 
+> **Note**
+> 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
+> * #### [5. 이웃 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05)
+>   * ##### [5.1 메모리 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-01)
+>   * ##### [5.2 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-02)
+>   * ##### [5.3 평균 중심 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-03)
+>   * ##### [5.4 Z점수 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-04)
+>   * ##### [5.5 예제 코드 실행해보기](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-05)
+>   * ##### [5.6 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-06)
+
 ## 이웃 기반 협업 필터링 추천
 
 ![Download](./recommender-examples/src/test/puml/ch05/KNearestNeighbors_Class_Diagram.svg)
@@ -1344,6 +1368,16 @@ $${\hat r_{ui}} = {\mu_i} + {\sigma_i}\frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9922b101-6563-4a83-ac51-085216db5079
 
+> **Note**
+> 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
+> * #### [5. 이웃 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05)
+>   * ##### [5.1 메모리 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-01)
+>   * ##### [5.2 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-02)
+>   * ##### [5.3 평균 중심 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-03)
+>   * ##### [5.4 Z점수 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-04)
+>   * ##### [5.5 예제 코드 실행해보기](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-05)
+>   * ##### [5.6 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-05-sec-06)
+
 ## 특잇값 분해 기반 협업 필터링 추천
 
 ![Download](./recommender-examples/src/test/puml/ch06/BaselineSVD_Class_Diagram.svg)
@@ -1502,6 +1536,13 @@ $${\hat r_{ui}} = {b_{ui}} + ({p_{u}} \times {\sigma }) \cdot {q_{i}} = {b_{ui}}
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/f96428cd-e177-45cc-8c9b-d46651957ccd
 
+> **Note**
+> 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
+> * #### [6. 특잇값 분해 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06)
+>   * ##### [6.1 모델 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06-sec-01)
+>   * ##### [6.2 기준선 추정과 특잇값 분해 기반 평점 예측](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06-sec-02)
+>   * ##### [6.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06-sec-03)
+
 ## TF-IDF 기반 콘텐츠 기반 필터링 추천
 
 ![Download](./recommender-examples/src/test/puml/ch07/TermFrequencyInverseDocumentFrequency_Class_Diagram.svg)
@@ -1633,6 +1674,13 @@ $${\mathop{\rm sim}\nolimits} ({{\bf{x}}_a},{{\bf{x}}_b}) = cos({{\bf{x}}_a},{{\
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/10aed1f7-8057-4d20-a6d3-19d2c4064326
 
+> **Note**
+> 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
+> * #### [7. TF-IDF 콘텐츠 기반 필터링 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-07)
+>   * ##### [7.1 TF-IDF와 콘텐츠 기반 필터링](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-07-sec-01)
+>   * ##### [7.2 TF-IDF와 코사인 유사도 기반 아이템 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-07-sec-02)
+>   * ##### [7.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06-sec-07)
+
 ## 연관규칙 기반 추천
 
 ![Download](./recommender-examples/src/test/puml/ch08/AssociationRuleMining_Class_Diagram.svg)
@@ -1753,6 +1801,13 @@ $${\mathop{\rm lift}\nolimits} (X \Rightarrow Y) = \frac{{P(Y|X)}}{{P(Y)}} = \fr
 ```
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b9cbba76-47aa-473d-9a25-d528b64685ef
+
+> **Note**
+> 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
+> * #### [8. 연관규칙 기반 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-08)
+>   * ##### [8.1 연관규칙](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-07-sec-08)
+>   * ##### [8.2 연관규칙 기반 아이템 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-08-sec-02)
+>   * ##### [8.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06-sec-08)
 
 ## 피드백과 기여
 
