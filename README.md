@@ -197,7 +197,7 @@ C:\r4tings
 
 여기에서는 테스트 클래스인 [**DatasetLoadTest**](./recommender/src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
 
-* [downloadPublicDatasets](./recommender/src/test/java/com/r4tings/recommender/examples/ch02/DatasetLoadTest.java#L39)
+* [downloadPublicDatasets](./recommender/src/test/java/com/r4tings/recommender/examples/DatasetLoadTest.java#L39)
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 downloadPublicDatasets 실행하고 실행 결과를 살펴봅니다.
 
