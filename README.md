@@ -516,7 +516,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b765
 
 ### Z점수 정규화
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/ZScoreNormalizer_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch03/ZScoreNormalizer_Class_Diagram.svg)
 
 - Z점수 정규화 구현체인[**ZScoreNormalizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/ZScoreNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 Z점수화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. ZScoreNormalizer 클래스는 Z점수 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요할 때는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -588,7 +588,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a
 
 ### 최소-최대 정규화
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/MinMaxNormalizer_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch03/MinMaxNormalizer_Class_Diagram.svg)
 
 - 최소-최대 정규화 구현체인 [**MinMaxNormalizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/MinMaxNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 최소-최대화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. MinMaxNormalizer 클래스는 최소-최대 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -638,13 +638,13 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {r_{\min }}}}{{{r_{\max }} - {r_{\min }}}}
 
 (2) 사용자 최소-최대화는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/minMaxExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch03/minMaxExamples01.svg">
 
 여기에서 ${r_{u,i}}$은 사용자 $u$가 아이템 $i$에 매긴 평점, ${r_u}{{\min}}$과 ${r_u}{{\max}}$는 아이템 집합 ${I_u}$의 평점 최솟값과 최댓값, ${r_{new\_\min }}$과 ${r_{new\_\max }}$는 새로운 평점 최솟값과 최댓값입니다.
 
 (3) 아이템 최소-최대화는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/minMaxExamples02.svg">
+<img src="./recommender-examples/src/test/puml/ch03/minMaxExamples02.svg">
 
 여기에서 ${r_{u,i}}$은 사용자 $u$가 아이템 $i$에 매긴 평점, ${r_i}{{\min}}$과 ${r_i}{{\max}}$는 사용자 집합 ${U_i}$의 평점 최솟값과 최댓값, ${r_{new\_\min }}$과 ${r_{new\_\max }}$는 새로운 평점 최솟값과 최댓값입니다.
 
@@ -664,7 +664,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9c81180
 
 ### 소수 자릿수 정규화 
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/DecimalScaling_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch03/DecimalScaling_Class_Diagram.svg)
 
 - 소수 자릿수 정규화 구현체인 [**DecimalScalingNormalizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/DecimalScalingNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 소수 자릿수화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. DecimalScalingNormalizer 클래스는 소수 자릿수 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -724,7 +724,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/740b46c
 
 ### 이진 임계 이진화 
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/ThresholdBinarizer_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch03/ThresholdBinarizer_Class_Diagram.svg)
 
 -  이진 임계 이진화 구현체인 [**ThresholdBinarizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/ThresholdBinarizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 이진 임계화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. ThresholdBinarizer 클래스는 이진 임계 이진화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -766,7 +766,7 @@ Dataset<Row> binarizedRatingDS = binarizer.transform(ratingDS);
 
 이진 임계 이진화는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch03/binaryThresholdingExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch03/binaryThresholdingExamples01.svg">
 
 여기에서 ${r_{u,i}}$은 사용자 $u$가 아이템 $i$에 매긴 평점, $\gamma $는 임곗값입니다.
 
@@ -788,7 +788,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/e9e5cb9
 
 ### 코사인 유사도
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/CosineSimilarity_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch04/CosineSimilarity_Class_Diagram.svg)
 
 - 코사인 유사도 구현체인 [**CosineSimilarityMeasurer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/model/measures/similarity/CosineSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
 
@@ -834,19 +834,19 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 
 (1) 코사인 유사도는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/cosineSimilarityExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch04/cosineSimilarityExamples01.svg">
 
 여기에서, ${I_u} \cap {I_v}$는 사용자 $u$와 사용자 $v$ 모두에게 평가된 아이템 집합, ${r_{u,i}}$와 ${r_{v,i}}$는 사용자 $u$와 사용자 $v$가 아이템 $i$에 매긴 평점입니다.
 
 (2) 사용자 코사인 유사도는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/cosineSimilarityExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch04/cosineSimilarityExamples01.svg">
 
 여기에서, ${I_u} \cap {I_v}$는 사용자 $u$와 사용자 $v$ 모두에게 평가된 아이템 집합, ${r_{u,i}}$와 ${r_{v,i}}$는 사용자 $u$와 사용자 $v$가 아이템 $i$에 매긴 평점입니다.
 
 (3) 아이템 코사인 유사도는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/cosineSimilarityExamples02.svg">
+<img src="./recommender-examples/src/test/puml/ch04/cosineSimilarityExamples02.svg">
 
 여기에서, ${U_i} \cap {U_j}$는 아이템 $i$와 아이템 $j$를 모두 평가한 사용자 집합, ${r_{u,i}}$와 ${r_{u,j}}$는 사용자 $u$가 아이템 $i$와 아이템 $j$에 매긴 평점입니다.
 
@@ -866,7 +866,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/2cb5199
 
 ### 피어슨 상관계수와 유사도
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/PearsonSimilarity_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch04/PearsonSimilarity_Class_Diagram.svg)
 
 피어슨 상관계수와 유사도 구현체인 [**PearsonSimilarityMeasurer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/model/measures/similarity/PearsonSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. 
 
@@ -918,7 +918,7 @@ $$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{
 
 두 벡터 ${{\bf{x}}_a}$와 ${{\bf{x}}_b}$간의 피어슨 유사도는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/pearsonSimilarityExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch04/pearsonSimilarityExamples01.svg">
 
 여기에서 $pearson({{\bf{x}}_a},{{\bf{x}}_b})$는 두 벡터 간의 피어슨 상관계수로 0보다 큰 값(양의 상관관계)입니다.
 
@@ -926,25 +926,25 @@ $$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{
 
 (2) 사용자 피어슨 유사도는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/pearsonSimilarityExamples02.svg">
+<img src="./recommender-examples/src/test/puml/ch04/pearsonSimilarityExamples02.svg">
 
 여기에서 ${N_{{I_u} \cap {I_v}}}$ $n$은 아이템 집합 ${I_u} \cap {I_v}$의 원소 개수, ${r_{u,i}}$와 ${r_{v,i}}$는 사용자 $u$와 사용자 $v$가 아이템 $i$에 매긴 평점입니다. 
 
 임의의 사용자 $u$와 사용자 $v$의 사용자 피어슨 유사도는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/pearsonSimilarityExamples03.svg">
+<img src="./recommender-examples/src/test/puml/ch04/pearsonSimilarityExamples03.svg">
 
 여기에서 ${\mathop{\rm pearson}\nolimits} (u,v)$는 사용자 $u$와 사용자 $v$의 피어슨 상관계수입니다.
 
 (3) 아이템 피어슨 유사도는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/pearsonSimilarityExamples04.svg">
+<img src="./recommender-examples/src/test/puml/ch04/pearsonSimilarityExamples04.svg">
 
 여기에서 ${U_i} \cap {U_j}$는 아이템 $i$와 $j$를 모두 평가한 사용자 평점 집합, ${r_{u,i}}$와 ${r_{u,j}}$는 사용자 $u$가 아이템 $i$와 아이템 $j$에 매긴 평점, ${\mu _i}$은 아이템 $i$를 평가한 사용자 집합 ${U_i}$의 평점 평균, ${\mu_j}$는 아이템 $i$를 평가한 사용자 ${U_j}$집합의 평점 평균입니다.
 
 임의의 아이템 $i$와 아이템 $j$의 아이템 피어슨 유사도는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/pearsonSimilarityExamples05.svg">
+<img src="./recommender-examples/src/test/puml/ch04/pearsonSimilarityExamples05.svg">
 
 여기에서 ${\mathop{\rm pearson}\nolimits} (i,j)$는 아이템 $i$와 아이템 $j$의 피어슨 상관계수입니다.
 
@@ -964,7 +964,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/850d786
 
 ### 유클리드 거리와 유사도
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/EuclideanSimilarity_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch04/EuclideanSimilarity_Class_Diagram.svg)
 
 - 유클리드 거리와 유사도 구현체인 [**EuclideanSimilarityMeasurer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/model/measures/similarity/EuclideanSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
 
@@ -1028,13 +1028,13 @@ $$SF = \frac{{AS}}{{PS}}$$
 
 (2) 사용자 유클리드 유사도는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/euclideanSimilarityExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch04/euclideanSimilarityExamples01.svg">
 
 여기에서 ${{\mathop{\rm dist}\nolimits} _{euclidean}}(u,v)$는 사용자 $u$와 사용자 $v$의 유클리드 거리입니다.
 
 (3) 아이템 유클리드 유사도는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/euclideanSimilarityExamples02.svg">
+<img src="./recommender-examples/src/test/puml/ch04/euclideanSimilarityExamples02.svg">
 
 여기에서 ${{\mathop{\rm dist}\nolimits} _{euclidean}}(i,j)$는 아이템 $i$와 아이템 $j$의 유클리드 거리입니다.
 
@@ -1054,7 +1054,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/c37b999
 
 ### 이진 속성과 유사도
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/ExtendedJaccardSimilarity_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch04/ExtendedJaccardSimilarity_Class_Diagram.svg)
 
 - 이진 속성과 유사도 구현체인 [**ExtendedJaccardSimilarityMeasurer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/model/measures/similarity/ExtendedJaccardSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
 
@@ -1147,11 +1147,11 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 
 (1) 임의의 벡터 ${{\bf{x}}_a}$와 ${{\bf{x}}_b}$ 간의 단순 일치 계수(Simple matching coefficient)는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/extendedJaccardSimilarityExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch04/extendedJaccardSimilarityExamples01.svg">
 
 (2) 임의의 벡터 ${{\bf{x}}_a}$와 ${{\bf{x}}_b}$ 간의 자카드 계수(Jaccard Coefficient)는 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch04/extendedJaccardSimilarityExamples02.svg">
+<img src="./recommender-examples/src/test/puml/ch04/extendedJaccardSimilarityExamples02.svg">
 
 또한 다음과 같이 이진 속성에만 적용할 수 있는 확장로 두 벡터 간의 자카드 계수를 좀더 간단하게 계산할 수 있습니다.
 
@@ -1182,7 +1182,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/dad07ff
 
 ## 이웃 기반 협업 필터링 추천
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch05/KNearestNeighbors_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch05/KNearestNeighbors_Class_Diagram.svg)
 
 KNearestNeighborsParams 클래스와 KNearestNeighbors 클래스는 이웃 기반 협업 필터링 구현체입니다. KNearestNeighborsParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 KNearestNeighbors 클래스의 생성자에 매개변수를 전달합니다. 
 
@@ -1346,7 +1346,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9922b10
 
 ## 특잇값 분해 기반 협업 필터링 추천
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch06/BaselineSVD_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch06/BaselineSVD_Class_Diagram.svg)
 
 BaselineSingleValueDecompositionParams 클래스와 BaselineSingleValueDecomposition 클래스는 특잇값 분해 기반 협업 필터링 구현체입니다. BaselineSingleValueDecompositionParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 BaselineSingleValueDecomposition 클래스의 생성자에 매개변수를 전달합니다.
 
@@ -1504,7 +1504,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/f96428c
 
 ## TF-IDF 기반 콘텐츠 기반 필터링 추천
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch07/TermFrequencyInverseDocumentFrequency_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch07/TermFrequencyInverseDocumentFrequency_Class_Diagram.svg)
 
 TermFrequencyInverseDocumentFrequencyParams 클래스와 TermFrequencyInverseDocumentFrequency 클래스는 TF-IDF 콘텐츠 기반 필터링 구현체입니다. TermFrequencyInverseDocumentFrequencyParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 TermFrequencyInverseDocumentFrequency 클래스의 생성자에 매개변수를 전달합니다.
 
@@ -1605,7 +1605,7 @@ $${\mathop{\rm idf}\nolimits} ({t_i},D) = \log_{10}(\frac{|D|}{n_{t_i}})$$
 
 벡터 ${\bf{x}}$의 ${L_2}$ 노름은 다음과 같이 정의됩니다.
 
-<img src="https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch07/termFrequencyInverseDocumentFrequencyExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch07/termFrequencyInverseDocumentFrequencyExamples01.svg">
 
 벡터 길이 정규화는 다음과 같이 정의됩니다.
 
@@ -1635,7 +1635,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/10aed1f
 
 ## 연관규칙 기반 추천
 
-![Download](https://github.com/r4tings/r4tings-recommender-examples/raw/master/src/test/puml/ch08/AssociationRuleMining_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch08/AssociationRuleMining_Class_Diagram.svg)
 
 AssociationRuleMiningParams 클래스와 AssociationRuleMining 클래스는 연관규칙 기반 필터링 구현체입니다. AssociationRuleMiningParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 AssociationRuleMining 클래스의 생성자에 매개변수를 전달합니다. 
 
