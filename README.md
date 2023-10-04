@@ -195,8 +195,8 @@ C:\r4tings
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetLoadTest 클래스의 테스트 메서드인 downloadPublicDatasets 실행하고 실행 결과를 살펴봅니다.
 
-```
-./gradlew :test --tests com.r4tings.recommender.examples.DatasetLoadTest.downloadPublicDatasets
+```powershell
+PS C:\r4tings\r4tings-recommender> ./gradlew recommender:test --tests com.r4tings.recommender.examples.DatasetLoadTest.downloadPublicDatasets
 ```
 <!--
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
