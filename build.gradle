@@ -1,9 +1,6 @@
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-
 plugins {
     id 'java'
 }
-
 
 configurations {
     all {
@@ -12,7 +9,6 @@ configurations {
 }
 
 allprojects {
-
     apply plugin: 'idea'
     // to share test fixture
     apply plugin: "java-library"
@@ -32,14 +28,11 @@ allprojects {
         maven { url "https://repo1.maven.org/maven2/" }
         maven { url "https://jitpack.io" }
     }
-
-
 }
 
 subprojects {
 
     dependencies {
-
         /* Apache Spark */
         implementation("org.apache.spark:spark-core_$scalaBinaryVersion:$sparkVersion")
         implementation("org.apache.spark:spark-mllib_$scalaBinaryVersion:$sparkVersion")
@@ -63,9 +56,7 @@ subprojects {
 ////    testImplementation("org.junit.vintage:junit-vintage-engine:$junitVintageVersion")
 //
         testImplementation("net.lingala.zip4j:zip4j:$zip4jVersion")
-
     }
-
 
     test {
         useJUnitPlatform()
@@ -73,36 +64,24 @@ subprojects {
         environment("rootPath", "${project.rootDir}")
         environment("nativePath", "${project.rootDir}\\lib\\hadoop-2.8.3")
 
-
-    }
-
-
-    tasks.withType(Test) {
-
-        // set heap size for the test JVM(s)
         minHeapSize = "2g"
         maxHeapSize = "16g"
 
         dependsOn("cleanTest")
         useJUnitPlatform()
-        testLogging {
-            showStandardStreams = true
-            showCauses = true
-            showExceptions = true
-            showStackTraces = true
-            exceptionFormat = TestExceptionFormat.FULL
-            events "passed", "skipped", "failed", "standardOut", "standardError"
-
-        }
+//        testLogging {
+//            showStandardStreams = true
+//            showCauses = true
+//            showExceptions = true
+//            showStackTraces = true
+//            exceptionFormat = 'full'
+//            events "passed", "skipped", "failed", "standardOut", "standardError"
+//        }
     }
-
 }
 
 project(':recommender') {
-
-
     version '0.1.0-SNAPSHOT'
-
 
     jar {
         archiveBaseName = "r4tings-$project.name"
@@ -111,9 +90,7 @@ project(':recommender') {
         archiveBaseName = "r4tings-$project.name"
     }
 
-
     dependencies {
-
 
         testFixturesImplementation("org.apache.spark:spark-core_$scalaBinaryVersion:$sparkVersion")
         testFixturesImplementation("org.apache.spark:spark-mllib_$scalaBinaryVersion:$sparkVersion")
@@ -124,13 +101,10 @@ project(':recommender') {
 
         testFixturesImplementation 'org.projectlombok:lombok:1.18.22'
         testFixturesAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
-
-
     }
 }
 
 project(':recommender-examples') {
-
     version '0.1.0-SNAPSHOT'
 
     jar {

@@ -20,7 +20,7 @@ import static org.apache.spark.sql.functions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @Slf4j
-class SingleValueDecompositionTest extends AbstractSparkTests {
+class BaselineSingleValueDecompositionTest extends AbstractSparkTests {
 
   @Retention(RetentionPolicy.RUNTIME)
   @ParameterizedTest(name = "#{index} run with [{arguments}]")
