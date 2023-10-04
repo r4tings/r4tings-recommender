@@ -69,14 +69,14 @@ subprojects {
 
         dependsOn("cleanTest")
         useJUnitPlatform()
-//        testLogging {
-//            showStandardStreams = true
-//            showCauses = true
-//            showExceptions = true
-//            showStackTraces = true
-//            exceptionFormat = 'full'
-//            events "passed", "skipped", "failed", "standardOut", "standardError"
-//        }
+        testLogging {
+            showStandardStreams = true
+            showCauses = true
+            showExceptions = true
+            showStackTraces = true
+            exceptionFormat = 'full'
+            events "passed", "skipped", "failed", "standardOut", "standardError"
+        }
     }
 }
 
