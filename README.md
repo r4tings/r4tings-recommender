@@ -445,7 +445,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb
 
 ![Download](./recommender-examples/src/test/puml/ch03/MeanCenteringNormalizer_Class_Diagram.svg)
 
-- 평균 중심 정규화 구현체인 [**MeanCenteringNormalizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/MeanCenteringNormalizer.java)  클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 평균 중심화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. MeanCenteringNormalizer 클래스는 평균 중심 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음의 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
+- 평균 중심 정규화 구현체인 [**MeanCenteringNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/MeanCenteringNormalizer.java)  클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 평균 중심화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. MeanCenteringNormalizer 클래스는 평균 중심 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음의 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
 ```java
 MeanCenteringNormalizer normalizer =
@@ -518,7 +518,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b765
 
 ![Download](./recommender-examples/src/test/puml/ch03/ZScoreNormalizer_Class_Diagram.svg)
 
-- Z점수 정규화 구현체인[**ZScoreNormalizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/ZScoreNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 Z점수화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. ZScoreNormalizer 클래스는 Z점수 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요할 때는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
+- Z점수 정규화 구현체인[**ZScoreNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/ZScoreNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 Z점수화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. ZScoreNormalizer 클래스는 Z점수 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요할 때는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
 ```java
 ZScoreNormalizer normalizer =
@@ -590,7 +590,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a
 
 ![Download](./recommender-examples/src/test/puml/ch03/MinMaxNormalizer_Class_Diagram.svg)
 
-- 최소-최대 정규화 구현체인 [**MinMaxNormalizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/MinMaxNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 최소-최대화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. MinMaxNormalizer 클래스는 최소-최대 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
+- 최소-최대 정규화 구현체인 [**MinMaxNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/MinMaxNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 최소-최대화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. MinMaxNormalizer 클래스는 최소-최대 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
 ```java
 MinMaxNormalizer normalizer =
@@ -666,7 +666,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9c81180
 
 ![Download](./recommender-examples/src/test/puml/ch03/DecimalScaling_Class_Diagram.svg)
 
-- 소수 자릿수 정규화 구현체인 [**DecimalScalingNormalizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/DecimalScalingNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 소수 자릿수화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. DecimalScalingNormalizer 클래스는 소수 자릿수 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
+- 소수 자릿수 정규화 구현체인 [**DecimalScalingNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/DecimalScalingNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 소수 자릿수화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. DecimalScalingNormalizer 클래스는 소수 자릿수 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
 ```java
 DecimalScalingNormalizer normalizer =
@@ -726,7 +726,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/740b46c
 
 ![Download](./recommender-examples/src/test/puml/ch03/ThresholdBinarizer_Class_Diagram.svg)
 
--  이진 임계 이진화 구현체인 [**ThresholdBinarizer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/data/normalize/ThresholdBinarizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 이진 임계화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. ThresholdBinarizer 클래스는 이진 임계 이진화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
+-  이진 임계 이진화 구현체인 [**ThresholdBinarizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/ThresholdBinarizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 이진 임계화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. ThresholdBinarizer 클래스는 이진 임계 이진화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
 ```java
 ThresholdBinarizer binarizer =
@@ -790,7 +790,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/e9e5cb9
 
 ![Download](./recommender-examples/src/test/puml/ch04/CosineSimilarity_Class_Diagram.svg)
 
-- 코사인 유사도 구현체인 [**CosineSimilarityMeasurer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/model/measures/similarity/CosineSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
+- 코사인 유사도 구현체인 [**CosineSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/CosineSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
 
 CosineSimilarityMeasurer 클래스는 유사도 계산을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다
 
@@ -868,7 +868,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/2cb5199
 
 ![Download](./recommender-examples/src/test/puml/ch04/PearsonSimilarity_Class_Diagram.svg)
 
-피어슨 상관계수와 유사도 구현체인 [**PearsonSimilarityMeasurer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/model/measures/similarity/PearsonSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. 
+피어슨 상관계수와 유사도 구현체인 [**PearsonSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/PearsonSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. 
 
 PearsonSimilarityMeasurer 클래스는 유사도 계산을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -966,7 +966,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/850d786
 
 ![Download](./recommender-examples/src/test/puml/ch04/EuclideanSimilarity_Class_Diagram.svg)
 
-- 유클리드 거리와 유사도 구현체인 [**EuclideanSimilarityMeasurer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/model/measures/similarity/EuclideanSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
+- 유클리드 거리와 유사도 구현체인 [**EuclideanSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/EuclideanSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
 
 EuclideanSimilarityMeasurer 클래스는 유사도 계산을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -1056,7 +1056,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/c37b999
 
 ![Download](./recommender-examples/src/test/puml/ch04/ExtendedJaccardSimilarity_Class_Diagram.svg)
 
-- 이진 속성과 유사도 구현체인 [**ExtendedJaccardSimilarityMeasurer**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/model/measures/similarity/ExtendedJaccardSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
+- 이진 속성과 유사도 구현체인 [**ExtendedJaccardSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/ExtendedJaccardSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
 
 ExtendedJaccardSimilarityMeasurer 클래스는 유사도 계산을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -1481,11 +1481,11 @@ $${\hat r_{ui}} = {b_{ui}} + ({p_{u}} \times {\sigma }) \cdot {q_{i}} = {b_{ui}}
 여기에서 ${b_{ui}}$는 평점 기준선 추정값, ${p_{uk}}$는 사용자 $u$의 사용자 특징 벡터 ${p_{u}}$의 $k$번째 값, $\sigma_k$는 특잇값 벡터 $\sigma$의 $k$번째 값, ${q_{ik}}$는 아이템 $i$의 아이템 특징 벡터 ${{q}_i}$의 $k$번째 값입니다.
 <!--
 > **Note**
-> 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender-examples/wiki/)_** 를 참고하세요.
-> * #[6. 특잇값 분해 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06)
->   * ##[6.1 모델 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-01)
->   * ##[6.2 기준선 추정과 특잇값 분해 기반 평점 예측](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-02)
->   * ##[6.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-03)
+> 이 예제의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
+> * #[6. 특잇값 분해 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06)
+>   * ##[6.1 모델 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06-sec-01)
+>   * ##[6.2 기준선 추정과 특잇값 분해 기반 평점 예측](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06-sec-02)
+>   * ##[6.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06-sec-03)
 -->
 
 #예제 살펴보기
@@ -1639,9 +1639,9 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/10aed1f
 
 AssociationRuleMiningParams 클래스와 AssociationRuleMining 클래스는 연관규칙 기반 필터링 구현체입니다. AssociationRuleMiningParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 AssociationRuleMining 클래스의 생성자에 매개변수를 전달합니다. 
 
-- [**AssociationRuleMining**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMining.java) 클래스는 AbstractRecommender 클래스를 상속받아 평점 데이터(사용자/아이템/평점)를 사용자 기반 또는 아이템 기반의 추천 결과로 변환하는 recommend 메서드를 구현하고 있는 추천을 처리하는 추천기(Recommender)입니다.
+- [**AssociationRuleMining**](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMining.java) 클래스는 AbstractRecommender 클래스를 상속받아 평점 데이터(사용자/아이템/평점)를 사용자 기반 또는 아이템 기반의 추천 결과로 변환하는 recommend 메서드를 구현하고 있는 추천을 처리하는 추천기(Recommender)입니다.
 
-- [**AssociationRuleMiningParams**](https://github.com/r4tings/r4tings-recommender/blob/master/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMiningParams.java) 클래스는 연관규칙 기반 필터링 추천을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
+- [**AssociationRuleMiningParams**](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMiningParams.java) 클래스는 연관규칙 기반 필터링 추천을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
 ```java
 AssociationRuleMiningParams params =
@@ -1756,9 +1756,9 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b9cbba7
 
 ## 피드백과 기여
 
-기능 요청이 있는 경우 **[ISSUES](https://github.com/r4tings/r4tings-recommender-examples/issues/)** 에 등록하세요. **[DISCUSSIONS](https://github.com/r4tings/r4tings-recommender-examples/discussions/)** 을 통해서도 질문하실 수 있습니다. 
+기능 요청이 있는 경우 **[ISSUES](https://github.com/r4tings/r4tings-recommender/issues/)** 에 등록하세요. **[DISCUSSIONS](https://github.com/r4tings/r4tings-recommender/discussions/)** 을 통해서도 질문하실 수 있습니다. 
 
-R4tings Recommender 프로젝트의 참여나 기여도 환영합니다. 자세한 정보는 **[여기](CONTRIBUTORS.md)** 에서 확인할 수 있습니다. 
+"R4tings Recommender 오픈 소스 추천 엔진" 프로젝트의 참여나 기여도 환영합니다. 자세한 정보는 **[여기](CONTRIBUTORS.md)** 에서 확인할 수 있습니다. 
 
 ## 라이선스
 
@@ -1774,7 +1774,7 @@ Released under the Open Publication License, v1.0 or later.
 
 <!--
 
-“**R4tings Recommender 오픈 소스 추천 엔진 패키지**”는 JVM(Java와 Scala)과 [Apache Spark](https://spark.apache.org/) 기반의 학술 연구/상용 목적의 추천 시스템을 구현하기 위한 오픈 소스 추천 엔진 패키지로 통계나 기계 학습 기반 추천 모델들의 기본 구현체인 “**[R4tings Recommender](https://github.com/r4tings/r4tings-recommender)**”와 응용 예제들인 “**R4tings Recommender Examples**”를 통해 추천 과정을 단계별로 분해하여 흐름을 쉽게 파악하고, 어느 도메인에서도 손쉽게 수정하거나 확장 또는 재사용할 수 있고, 이를 하나의 파이프라인으로 연결하여 병렬 처리 할 수 있습니다.
+“**R4tings Recommender 오픈 소스 추천 엔진**”는 JVM(Java와 Scala)과 [Apache Spark](https://spark.apache.org/) 기반의 학술 연구/상용 목적의 추천 시스템을 구현하기 위한 오픈 소스 추천 엔진로 통계나 기계 학습 기반 추천 모델들의 기본 구현체인 “**[R4tings Recommender](https://github.com/r4tings/r4tings-recommender)**”와 응용 예제들인 “**R4tings Recommender Examples**”를 통해 추천 과정을 단계별로 분해하여 흐름을 쉽게 파악하고, 어느 도메인에서도 손쉽게 수정하거나 확장 또는 재사용할 수 있고, 이를 하나의 파이프라인으로 연결하여 병렬 처리 할 수 있습니다.
 
 R4tings Recommender는 데이터의 이해와 전처리 과정에서 사용하는 모듈과 추천 모델 생성과 추천 예측을 위해 사용하는 모듈로 구성되어있다.
 전자는 데이터 로딩, 평점 표준화, (비)유사도 측정에 사용한다. 후자는 여러 알고리즘을 이용해 추천 및 예측 모델 생성을 위해 사용한다.
