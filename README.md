@@ -304,7 +304,7 @@ C:\r4tings
 # 이진 속성과 유사도
 ./gradlew :recommender:test --tests com.r4tings.recommender.model.measures.similarity.binary.SimpleMatchingSimilarityMeasurerTest.testWithExample
 ./gradlew :recommender:test --tests com.r4tings.recommender.model.measures.similarity.binary.JaccardSimilarityMeasurerTest.testWithExample
-./gradlew :recommender:test --tests com.r4tings.recommender.model.measures.similarity.binary.ExtendedJaccardSimilarityTest.testWithExample
+./gradlew :recommender:test --tests com.r4tings.recommender.model.measures.similarity.binary.ExtendedJaccardSimilarityMeasurerTest.testWithExample
 
 ######################################
 # 이웃 기반 협업 필터링 추천           # 
