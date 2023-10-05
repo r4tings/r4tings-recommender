@@ -177,6 +177,8 @@ C:\r4tings
 > 
 > 프로젝트 폴더는 r4tings-recommender 입니다.
 > 
+> 프로젝트의 [JavaDoc](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/javadoc/index.html)과 [TestFixturesJavadoc](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/testFixturesjavadoc/index.html)를 참고하세요. 
+> 
 > Microsoft Windows용 Hadoop 바이너리는 [링크](https://github.com/cdarlint/winutils/)를 참고하세요.
 > 
 > 리포지토리 뷰에서 소스 코드 보관 파일 다운로드하는 자세한 내용은 [링크](https://docs.github.com/ko/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)를 참고하세요.
