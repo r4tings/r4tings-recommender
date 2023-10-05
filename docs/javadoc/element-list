@@ -1,0 +1,11 @@
+com.r4tings.recommender.common
+com.r4tings.recommender.common.ml
+com.r4tings.recommender.common.ml.param
+com.r4tings.recommender.data.normalize
+com.r4tings.recommender.model.arm
+com.r4tings.recommender.model.knn
+com.r4tings.recommender.model.measures.similarity
+com.r4tings.recommender.model.svd
+com.r4tings.recommender.model.svd.baseline
+com.r4tings.recommender.model.svd.mf
+com.r4tings.recommender.model.tfidf

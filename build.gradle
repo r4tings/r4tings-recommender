@@ -6,7 +6,7 @@ allprojects {
 
     group = "com.r4tings.recommender"
     description = "R4tings Recommender - Open Source Recommendation Engine"
-    version = "0.1.0"
+    version = "0.0.1"
 
     java {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -20,7 +20,6 @@ allprojects {
         maven { url "https://repo1.maven.org/maven2/" }
         maven { url "https://jitpack.io" }
     }
-
 
 }
 
@@ -77,7 +76,7 @@ subprojects {
 }
 
 project(':recommender') {
-    version '0.1.0-SNAPSHOT'
+    version '0.0.1-SNAPSHOT'
 
     jar {
         archiveBaseName = "r4tings-$project.name"
@@ -85,6 +84,37 @@ project(':recommender') {
     testFixturesJar {
         archiveBaseName = "r4tings-$project.name"
     }
+
+    javadoc {
+        description = "Generates aggregated Javadoc API documentation."
+
+        title = "R4tings Recommender $version"
+
+        options.author = true
+        options.header = "$project.name"
+        // options.stylesheetFile = file("$rootDir/docs/stylesheet.css")
+        options.memberLevel = JavadocMemberLevel.PROTECTED
+
+        options.addStringOption("locale","ko_KR");
+        options.addStringOption("encoding","UTF-8");
+        options.addStringOption("charset","UTF-8");
+        options.addStringOption("docencoding","UTF-8");
+
+        destinationDir = file("${project.rootDir}/docs/javadoc")
+        // include 'com/r4tings/recommender/**'
+        exclude 'com/r4tings/recommender/common/util/**'
+    }
+
+
+    testFixturesJavadoc {
+        options.addStringOption("locale","ko_KR");
+        options.addStringOption("encoding","UTF-8");
+        options.addStringOption("charset","UTF-8");
+        options.addStringOption("docencoding","UTF-8");
+
+        destinationDir = file("${project.rootDir}/docs/testFixturesjavadoc")
+    }
+
 
     dependencies {
 
@@ -101,7 +131,7 @@ project(':recommender') {
 }
 
 project(':recommender-examples') {
-    version '0.1.0-SNAPSHOT'
+    version '0.0.1-SNAPSHOT'
 
     jar {
         enabled = false
