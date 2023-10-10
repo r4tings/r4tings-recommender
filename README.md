@@ -38,6 +38,14 @@
 - [피드백과 기여](#피드백과-기여)
 - [라이선스](#라이선스)
 
+### References
+- [Apache Spark](https://spark.apache.org). The Apache Software Foundation.
+- [Recommender Systems Specialization](https://www.coursera.org/specializations/recommender-systems). Coursera.
+- [recommenderlab: An R framework for developing and testing recommendation algorithms](https://doi.org/10.48550/arXiv.2205.12371). Michael Hahsler. (2022).
+- [recommenderlab: An R framework for developing and testing recommendation algorithms](https://doi.org/10.48550/arXiv.2205.12371). Michael Hahsler. (2022).
+- [Recommender systems handbook](https://link.springer.com/book/10.1007/978-0-387-85820-3). Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantor. (2011).
+- [Recommender Systems - The Textbook](https://link.springer.com/book/10.1007/978-3-319-29659-3). Charu C. Aggarwal. (2016).
+
 ## 개요
 
 추천 시스템은 많은 양의 정보 안에서 사용자가 적합한 정보를 선택할 수 있도록 도와주는 시스템으로, GroupLens Research의 [LensKit](https://lenskit.org/), 아파치 소프트웨어 재단의 [Apache Mahout](https://mahout.apache.org/)과 [Apache PredictionIO](https://predictionio.apache.org/) 등, 다양한 형태의 추천 컴포넌트나 시스템들이 오픈 소스로도 제공되고 있으나, 추천 모델이 기본 수식만 구현되어 있거나, 블랙박스(black-box)로 제공되는 등 학술 연구나 상용화 목적의 개념 증명(PoC, Proof of Concept)을 위한 프로토타입 설계 및 구현 단계에서, 적용 영역에 따라 수식과 데이터의 내부 흐름을 미세 조정하고 유연하게 대응하기가 쉽지 않습니다. 또한, 웹 기반의 Notebook을 제공하는 Apache Zeppelin이나 Jupyter Notebook, 또는 Rmarkdown으로 추천 시스템을 구현해볼 수 있으나, 이는 분석가의 업무 흐름에 따라 하나의 Notebook에서 데이터와 처리를 표현하게 하는 목적으로 실제로 독립 시스템으로 구현하기에는 고려할 사항이 적지 않습니다. 
@@ -47,15 +55,6 @@
 “R4tings Recommender 오픈 소스 추천 엔진”은 전통적인 통계나 기계 학습 기반의 추천 모델들의 기본 구현체인 “[R4tings Recommender](https://github.com/r4tings/recommender/tree/main/recommender)”와 실행 예제들인 “[R4tings Recommender Examples](https://github.com/r4tings/recommender/tree/main/recommender-examples)"의 두 개의 프로젝트를 포함하고 있어 추천 처리 과정을 단계별로 분해하여 내부 흐름을 쉽게 이해하고, 추천을 위한 통계나 기계 학습 기법들을 손쉽게 수정하거나 확장 또는 재사용할 수 있습니다.
 
 “**R4tings Recommender 오픈 소스 추천 엔진**”의 최종 목표는 1) 전통적인 통계나 기계 학습 기반 추천 모델들의 구현체 제공을 통한 추천 시스템의 학습과 이해, 2) 시뮬레이터나 프로토타이핑을 통한 학술 연구 목적에서의 이론 검증, 3) 상용 수준의 추천 시스템 구현을 용이하게 하는 것입니다.
-
-### References
-- [Apache Spark](https://spark.apache.org). The Apache Software Foundation.
-- [Recommender Systems Specialization](https://www.coursera.org/specializations/recommender-systems). Coursera.
-- [recommenderlab: An R framework for developing and testing recommendation algorithms](https://doi.org/10.48550/arXiv.2205.12371). Michael Hahsler. (2022).
-- [recommenderlab: An R framework for developing and testing recommendation algorithms](https://doi.org/10.48550/arXiv.2205.12371). Michael Hahsler. (2022).
-- [Recommender systems handbook](https://link.springer.com/book/10.1007/978-0-387-85820-3). Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantor. (2011).
-- [Recommender Systems - The Textbook](https://link.springer.com/book/10.1007/978-3-319-29659-3). Charu C. Aggarwal. (2016).
-
 
 > **Note**
 > "추천과 추천 기법"의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
