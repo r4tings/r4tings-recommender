@@ -48,6 +48,14 @@
 
 “**R4tings Recommender 오픈 소스 추천 엔진**”의 최종 목표는 1) 전통적인 통계나 기계 학습 기반 추천 모델들의 구현체 제공을 통한 추천 시스템의 학습과 이해, 2) 시뮬레이터나 프로토타이핑을 통한 학술 연구 목적에서의 이론 검증, 3) 상용 수준의 추천 시스템 구현을 용이하게 하는 것입니다.
 
+### References
+- [Apache Spark](https://spark.apache.org). The Apache Software Foundation.
+- [Recommender Systems Specialization](https://www.coursera.org/specializations/recommender-systems). Coursera.
+- [recommenderlab: An R framework for developing and testing recommendation algorithms](https://doi.org/10.48550/arXiv.2205.12371). Michael Hahsler. (2022).
+- [recommenderlab: An R framework for developing and testing recommendation algorithms](https://doi.org/10.48550/arXiv.2205.12371). Michael Hahsler. (2022).
+- [Recommender systems handbook](https://link.springer.com/book/10.1007/978-0-387-85820-3). Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantor. (2011).
+- [Recommender Systems - The Textbook](https://link.springer.com/book/10.1007/978-3-319-29659-3). Charu C. Aggarwal. (2016).
+
 
 > **Note**
 > "추천과 추천 기법"의 자세한 설명은 **_[WIKI](https://github.com/r4tings/r4tings-recommender/wiki/)_** 를 참고하세요.
