@@ -39,12 +39,12 @@
 - [라이선스](#라이선스)
 
 ### References
-- [Apache Spark](https://spark.apache.org). The Apache Software Foundation.
-- [Recommender Systems Specialization](https://www.coursera.org/specializations/recommender-systems). Coursera.
-- [recommenderlab: An R framework for developing and testing recommendation algorithms](https://doi.org/10.48550/arXiv.2205.12371). Michael Hahsler. (2022).
-- [recommenderlab: An R framework for developing and testing recommendation algorithms](https://doi.org/10.48550/arXiv.2205.12371). Michael Hahsler. (2022).
+
 - [Recommender systems handbook](https://link.springer.com/book/10.1007/978-0-387-85820-3). Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantor. (2011).
 - [Recommender Systems - The Textbook](https://link.springer.com/book/10.1007/978-3-319-29659-3). Charu C. Aggarwal. (2016).
+- [recommenderlab: An R framework for developing and testing recommendation algorithms](https://doi.org/10.48550/arXiv.2205.12371). Michael Hahsler. (2022).
+- [Recommender Systems Specialization](https://www.coursera.org/specializations/recommender-systems). Coursera.
+- [Apache Spark](https://spark.apache.org). The Apache Software Foundation.
 
 ## 개요
 
