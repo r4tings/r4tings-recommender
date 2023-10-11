@@ -388,7 +388,7 @@ C:\r4tings
        └── ⋯ -일부 생략 -  
 ```
 
-##### 예제 컨텐츠(테스트 케이스)
+##### 테스트 케이스
 
 https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb-6a81-468f-b5b3-39fe5943f64d
 
@@ -453,7 +453,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
 ```
 
-##### [R4tings Recommender: 워크북](https://github.com/r4tings/r4tings-recommender-examples/wiki/)
+##### 예제 컨텐츠 
 
 - [1. 추천과 추천 기법](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-01)
   - [1.1 주요 용어와 개념](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02-sec-01)
