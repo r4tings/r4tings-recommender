@@ -1,2 +1,2 @@
 rootProject.name = "r4tings-recommender"
-include("recommender", "recommender-examples")
+include("recommender", "recommender-workbook")

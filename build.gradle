@@ -130,7 +130,7 @@ project(':recommender') {
     }
 }
 
-project(':recommender-examples') {
+project(':recommender-workbook') {
     version '0.0.1-SNAPSHOT'
 
     jar {
