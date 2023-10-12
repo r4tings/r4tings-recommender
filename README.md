@@ -124,6 +124,7 @@ Copyright (C) Microsoft Corporation. All rights reserved.
 새로운 크로스 플랫폼 PowerShell 사용 https://aka.ms/pscore6
 
 PS C:\Users\r4tings> cd /
+PS C:\Users\r4tings> # Remove-Item -path /r4tings -recurse -confirm
 PS C:\> mkdir r4tings
 
 
