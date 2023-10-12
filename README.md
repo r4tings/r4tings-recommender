@@ -209,14 +209,14 @@ C:\r4tings
 
 ##### 공개 데이터셋 내려받기(Download Public Datasets)
 
-여기에서는 테스트 클래스인 [**DatasetPrepareTest**](./recommender/src/test/java/com/r4tings/recommender/workbook/DatasetPrepareTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
+여기에서는 테스트 클래스인 [**DatasetPrepareTest**](./recommender/src/test/java/com/r4tings/recommender/workbook/ch02/DatasetPrepareTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
 
-* [downloadPublicDatasets](./recommender/src/test/java/com/r4tings/recommender/workbook/DatasetPrepareTest.java#L39)
+* [downloadPublicDatasets](./recommender/src/test/java/com/r4tings/recommender/workbook/ch02/DatasetPrepareTest.java#L74)
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 downloadPublicDatasets 실행하고 실행 결과를 살펴봅니다.
 
 ```powershell
-PS C:\r4tings\r4tings-recommender> ./gradlew :recommender:test --tests com.r4tings.recommender.workbook.DatasetPrepareTest.downloadPublicDatasets
+PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.downloadPublicDatasets
 ```
 <!--
 https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
@@ -259,12 +259,12 @@ CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식�
 
 예제 테스트 클래스인 DatasetPrepareTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples 실행 결과를 살펴봅니다.
 
-* [bookCrossingDatasetExamples](./recommender/src/test/java/com/r4tings/recommender/workbook/DatasetPrepareTest.java#L61)
+* [bookCrossingDatasetExamples](./recommender/src/test/java/com/r4tings/recommender/workbook/ch02/DatasetPrepareTest.java#L96)
 
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples를 실행해 봅니다.
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 bookCrossingDataset 실행해 봅니다.
 
 ```powershell
-PS C:\r4tings\r4tings-recommender> ./gradlew :recommender:test --tests com.r4tings.recommender.workbook.DatasetPrepareTest.bookCrossingDatasetExamples
+PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.bookCrossingDataset
 ```
 
 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples 실행 후, R4tings Recommender 오픈소스 추천엔진의 dataset 디렉토리 구조는 다음과 같습니다.
@@ -359,12 +359,12 @@ C:\r4tings
 
 예제 테스트 클래스인 DatasetPrepareTest 클래스의 테스트 메서드인 convertCsvToParquet 실행 결과를 살펴봅니다.
 
-* [r4tingsDatasetExamples](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch02/DatasetPrepareTest.java#L161)
+* [r4tingsDatasetExamples](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch02/DatasetPrepareTest.java#L43)
 
-다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 convertCsvToParquet를 실행해 봅니다.
+다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 r4tingsDataset 실행해 봅니다.
 
 ```
-PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.convertCsvToParquet
+PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.r4tingsDataset
 ```
 
 https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/fce48a50-2503-4e76-ad09-619319fe829a
