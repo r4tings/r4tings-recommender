@@ -11,7 +11,6 @@ import org.apache.spark.sql.types.DataTypes;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
 import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -33,12 +32,39 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @Slf4j
 public class DatasetPrepareTest extends AbstractSparkTests {
 
-  @Test
-  public void test() {
+  // @Disabled
+  @ParameterizedTest
+  @CsvSource({
+    "dataset/r4tings/items.csv   , true",
+    "dataset/r4tings/ratings.csv , true",
+    "dataset/r4tings/terms.csv   , true",
+    "dataset/r4tings/tags.csv    , true",
+  })
+  public void r4tingsDataset(@ConvertPathString String path, Boolean parquetSave) {
 
-    System.getProperties().forEach((key, value) -> System.out.println(key + ": " + value));
+    Map<String, String> options =
+        Stream.of(
+                new SimpleEntry<>("header", "true"),
+                new SimpleEntry<>("inferSchema", "true"),
+                new SimpleEntry<>("ignoreLeadingWhiteSpace", "true"),
+                new SimpleEntry<>("ignoreTrailingWhiteSpace", "true"))
+            .collect(Collectors.toMap(SimpleEntry::getKey, SimpleEntry::getValue));
+
+    Dataset<Row> csvDS = spark.read().options(options).csv(path);
+
+    log.info("count: {}", csvDS.count());
+    csvDS.schema().printTreeString();
+    csvDS.show();
+
+    String parquetPath = path.replace("csv", "parquet");
+    if (parquetSave) {
+      csvDS.repartition(1).write().mode(SaveMode.Overwrite).parquet(parquetPath);
+
+      assertEquals(0, csvDS.except(spark.read().load(parquetPath)).count());
+    }
   }
 
+  // @Disabled
   @ParameterizedTest
   @CsvSource({
     "http://www2.informatik.uni-freiburg.de/~cziegler/BX/BX-CSV-Dump.zip, /dataset/Book-Crossing/, BX-CSV-Dump.zip",
@@ -64,42 +90,10 @@ public class DatasetPrepareTest extends AbstractSparkTests {
   // @Disabled
   @ParameterizedTest
   @CsvSource({
-    "dataset/r4tings/items.csv   , true",
-    "dataset/r4tings/ratings.csv , true",
-    "dataset/r4tings/terms.csv   , true",
-    "dataset/r4tings/tags.csv    , true",
-  })
-  public void convertCsvToParquet(@ConvertPathString String path, Boolean parquetSave) {
-
-    Map<String, String> options =
-        Stream.of(
-                new SimpleEntry<>("header", "true"),
-                new SimpleEntry<>("inferSchema", "true"),
-                new SimpleEntry<>("ignoreLeadingWhiteSpace", "true"),
-                new SimpleEntry<>("ignoreTrailingWhiteSpace", "true"))
-            .collect(Collectors.toMap(SimpleEntry::getKey, SimpleEntry::getValue));
-
-    Dataset<Row> csvDS = spark.read().options(options).csv(path);
-
-    log.info("count: {}", csvDS.count());
-    csvDS.schema().printTreeString();
-    csvDS.show();
-
-    String parquetPath = path.replace("csv", "parquet");
-    if (parquetSave) {
-      csvDS.repartition(1).write().mode(SaveMode.Overwrite).parquet(parquetPath);
-
-      assertEquals(0, csvDS.except(spark.read().load(parquetPath)).count());
-    }
-  }
-
-  @Disabled
-  @ParameterizedTest
-  @CsvSource({
     "dataset/Book-Crossing/BX-Books.csv       ,",
     "dataset/Book-Crossing/BX-Book-Ratings.csv,",
   })
-  public void bookCrossingDatasetExamples(@ConvertPathString String path) {
+  public void bookCrossingDataset(@ConvertPathString String path) {
 
     Map<String, String> options =
         Stream.of(
@@ -156,14 +150,14 @@ public class DatasetPrepareTest extends AbstractSparkTests {
     assertEquals(0, csvDS.except(spark.read().load(parquetPath)).count());
   }
 
-  @Disabled
+  // @Disabled
   @ParameterizedTest
   @CsvSource({
     "dataset/MovieLens/ml-latest/movies.csv , true",
     "dataset/MovieLens/ml-latest/ratings.csv, true",
     "dataset/MovieLens/ml-latest/tags.csv   , true",
   })
-  public void movieLensDatasetExamples(@ConvertPathString String path, Boolean parquetSave) {
+  public void movieLensDataset(@ConvertPathString String path, Boolean parquetSave) {
 
     Map<String, String> options =
         Stream.of(
