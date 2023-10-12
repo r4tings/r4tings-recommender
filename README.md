@@ -1838,7 +1838,9 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b9cbba7
 
 ## 라이선스
 
-Released under the Open Publication License, v1.0 or later.
+If not otherwise stated  
+All the source code of this project is distributed under [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).  
+All the documentation of this project is distributed under [CC-BY-NC-SA 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 <br/>
 
