@@ -1,16 +1,26 @@
+import com.github.jk1.license.filter.ExcludeTransitiveDependenciesFilter
+import com.github.jk1.license.filter.LicenseBundleNormalizer
+import com.github.jk1.license.render.InventoryMarkdownReportRenderer
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'com.github.jk1.dependency-license-report:com.github.jk1.dependency-license-report.gradle.plugin:2.+'
+    }
+}
+
+
 allprojects {
     apply plugin: 'idea'
     // to share test fixture
     apply plugin: "java-library"
     apply plugin: "java-test-fixtures"
-
-    group = "com.r4tings.recommender"
-    description = "R4tings Recommender - Open Source Recommendation Engine"
-    version = "0.0.1"
-
-    java {
-        sourceCompatibility = JavaVersion.VERSION_11
-    }
+    apply plugin: 'com.github.jk1.dependency-license-report'
 
     repositories {
         mavenLocal()
@@ -19,6 +29,15 @@ allprojects {
         gradlePluginPortal()
         maven { url "https://repo1.maven.org/maven2/" }
         maven { url "https://jitpack.io" }
+    }
+
+    group = "com.r4tings.recommender"
+    description = "R4tings Recommender - Open Source Recommendation Engine"
+    version = "0.0.1"
+
+
+    java {
+        sourceCompatibility = JavaVersion.VERSION_11
     }
 
 }
@@ -73,48 +92,10 @@ subprojects {
             events "passed", "skipped", "failed", "standardOut", "standardError"
         }
     }
+
 }
 
 project(':recommender') {
-    version '0.0.1-SNAPSHOT'
-
-    jar {
-        archiveBaseName = "r4tings-$project.name"
-    }
-    testFixturesJar {
-        archiveBaseName = "r4tings-$project.name"
-    }
-
-    javadoc {
-        description = "Generates aggregated Javadoc API documentation."
-
-        title = "R4tings Recommender $version"
-
-        options.author = true
-        options.header = "$project.name"
-        // options.stylesheetFile = file("$rootDir/docs/stylesheet.css")
-        options.memberLevel = JavadocMemberLevel.PROTECTED
-
-        options.addStringOption("locale","ko_KR");
-        options.addStringOption("encoding","UTF-8");
-        options.addStringOption("charset","UTF-8");
-        options.addStringOption("docencoding","UTF-8");
-
-        destinationDir = file("${project.rootDir}/docs/javadoc")
-        // include 'com/r4tings/recommender/**'
-        exclude 'com/r4tings/recommender/common/util/**'
-    }
-
-
-    testFixturesJavadoc {
-        options.addStringOption("locale","ko_KR");
-        options.addStringOption("encoding","UTF-8");
-        options.addStringOption("charset","UTF-8");
-        options.addStringOption("docencoding","UTF-8");
-
-        destinationDir = file("${project.rootDir}/docs/testFixturesjavadoc")
-    }
-
 
     dependencies {
 
@@ -128,10 +109,73 @@ project(':recommender') {
         testFixturesImplementation 'org.projectlombok:lombok:1.18.22'
         testFixturesAnnotationProcessor 'org.projectlombok:lombok:1.18.22'
     }
+
+    version '0.1.0-SNAPSHOT'
+
+    jar {
+        archiveBaseName = "r4tings-$project.name"
+    }
+    testFixturesJar {
+        archiveBaseName = "r4tings-$project.name"
+    }
+
+    javadoc {
+        description = "Generates aggregated Javadoc API documentation."
+
+        title = "R4tings Recommender v$version"
+
+        options.author = true
+        options.header = "$project.name"
+        // options.stylesheetFile = file("$rootDir/docs/stylesheet.css")
+        options.memberLevel = JavadocMemberLevel.PROTECTED
+
+        options.addStringOption("locale", "ko_KR");
+        options.addStringOption("encoding", "UTF-8");
+        options.addStringOption("charset", "UTF-8");
+        options.addStringOption("docencoding", "UTF-8");
+
+        destinationDir = file("${project.rootDir}/docs/javadoc")
+        // include 'com/r4tings/recommender/**'
+        exclude 'com/r4tings/recommender/common/util/**'
+    }
+
+
+    testFixturesJavadoc {
+        options.addStringOption("locale", "ko_KR");
+        options.addStringOption("encoding", "UTF-8");
+        options.addStringOption("charset", "UTF-8");
+        options.addStringOption("docencoding", "UTF-8");
+
+        destinationDir = file("${project.rootDir}/docs/testFixturesjavadoc")
+    }
+
+
+    licenseReport {
+        //outputDir = "$projectDir/licenses"
+        renderers = [new InventoryMarkdownReportRenderer('RECOMMENDER_CREDITS.md', "R4tings Recommender v$version")]
+
+        //renderers = [new InventoryMarkdownReportRenderer()]
+        // 보고서에 첫 번째 수준 종속성만 표기
+        filters = [new LicenseBundleNormalizer(), new ExcludeTransitiveDependenciesFilter()]
+        configurations = ALL
+    }
+
+    task copyLicenseReport(type: Copy) {
+        dependsOn 'clean'
+        dependsOn 'generateLicenseReport'
+        from layout.buildDirectory.file("$projectDir/build/reports/dependency-license/RECOMMENDER_CREDITS.md")
+        into layout.buildDirectory.dir("$projectDir")
+    }
+
 }
 
 project(':recommender-workbook') {
-    version '0.0.1-SNAPSHOT'
+    dependencies {
+        implementation(project(":recommender"))
+        testImplementation testFixtures(project(':recommender'))
+    }
+
+    version '0.1.0-SNAPSHOT'
 
     jar {
         enabled = false
@@ -141,8 +185,20 @@ project(':recommender-workbook') {
         enabled = false
     }
 
-    dependencies {
-        implementation(project(":recommender"))
-        testImplementation testFixtures(project(':recommender'))
+    licenseReport {
+        //outputDir = "$projectDir/licenses"
+        renderers = [new InventoryMarkdownReportRenderer('RECOMMENDER_WORKBOOK_CREDITS.md', "R4tings Recommender Workbook v$version")]
+
+        //renderers = [new InventoryMarkdownReportRenderer()]
+        // 보고서에 첫 번째 수준 종속성만 표기
+        filters = [new LicenseBundleNormalizer(), new ExcludeTransitiveDependenciesFilter()]
+        configurations = ALL
+    }
+
+    task copyLicenseReport(type: Copy) {
+        dependsOn 'clean'
+        dependsOn 'generateLicenseReport'
+        from layout.buildDirectory.file("$projectDir/build/reports/dependency-license/RECOMMENDER_WORKBOOK_CREDITS.md")
+        into layout.buildDirectory.dir("$projectDir")
     }
 }
