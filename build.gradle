@@ -188,7 +188,6 @@ project(':recommender-workbook') {
     licenseReport {
         outputDir = "$projectDir/build/licenses"
         renderers = [new InventoryMarkdownReportRenderer('CREDITS.md', "R4tings Recommender Workbook v$version")]
-
         //renderers = [new InventoryMarkdownReportRenderer()]
         // 보고서에 첫 번째 수준 종속성만 표기
         filters = [new LicenseBundleNormalizer(), new ExcludeTransitiveDependenciesFilter()]
