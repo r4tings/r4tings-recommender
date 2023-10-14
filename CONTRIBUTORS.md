@@ -1,12 +1,10 @@
-# Contributing to "R4tings Recommender - Open Source Recommendation Engine"
+# Contributing to "R4tings Recommender"
 
 Thanks for your interest in R4tings Recommender.
 
 ## Getting Started
 
 Here are R4tings Recommender's [open issues are here](https://github.com/r4tings/r4tings-recommender/issues). In time, we'll tag issues that would make a good first pull request for new contributors. An easy way to get started helping the project is to *file an issue*. You can do that on the R4tings Recommender issues page by clicking on the green button at the right. Issues can include bugs to fix, features to add, or documentation that looks outdated.
-
-For some tips on contributing to open source, this [post is helpful](http://blog.smartbear.com/programming/14-ways-to-contribute-to-open-source-without-being-a-programming-genius-or-a-rock-star/).
 
 ## Contributions
 
