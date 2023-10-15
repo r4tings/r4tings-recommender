@@ -1855,11 +1855,9 @@ Further details are available in the file [`/recommender/CREDITS.md`](/recommend
 <br/>
 
 <div align="right">
-      
-~~[EN]~~ | **KO** |  ~~JP~~
-
+   <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 </div>
-
+ 
 <!--
 
 “**R4tings Recommender 오픈소스 추천엔진**”는 JVM(Java와 Scala)과 [Apache Spark](https://spark.apache.org/) 기반의 학술 연구/상용 목적의 추천 시스템을 구현하기 위한 오픈소스 추천엔진로 통계나 기계 학습 기반 추천 모델들의 기본 구현체인 “**[R4tings Recommender](https://github.com/r4tings/r4tings-recommender)**”와 응용 예제들인 “**R4tings Recommender Workbook**”를 통해 추천 과정을 단계별로 분해하여 흐름을 쉽게 파악하고, 어느 도메인에서도 손쉽게 수정하거나 확장 또는 재사용할 수 있고, 이를 하나의 파이프라인으로 연결하여 병렬 처리 할 수 있습니다.
