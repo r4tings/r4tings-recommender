@@ -1,3 +1,7 @@
+/*
+ * The Apache License 2.0  Copyright (c) 2023 r4tings.com
+ * https://github.com/r4tings/r4tings-recommender/LICENSE.md
+ */
 package com.r4tings.recommender.workbook.ch02;
 
 import com.r4tings.recommender.test.AbstractSparkTests;
@@ -10,7 +14,6 @@ import org.apache.spark.sql.SaveMode;
 import org.apache.spark.sql.types.DataTypes;
 import org.apache.spark.sql.types.StructField;
 import org.apache.spark.sql.types.StructType;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
