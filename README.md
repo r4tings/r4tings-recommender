@@ -1841,7 +1841,6 @@ This project is dual-licensed under [Apache License 2.0][apache] and [Creative C
 
 See [`LICENSE.md`](/LICENSE.md) file for details.
 
-
 [apache]: https://www.apache.org/licenses/LICENSE-2.0
 [cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
