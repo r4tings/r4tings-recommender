@@ -986,7 +986,7 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 
 (1) 피어슨 상관계수는 다음과 같이 정의됩니다.
 
-$$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{{\bf{x}}_b})}}{{{\sigma _{{{\bf{x}}_a}}}{\sigma _{{{\bf{x}}_b}}}}} = \frac{{\frac{{\sum\nolimits_i^n {({a_i} - {\mu _a})({b_i} - {\mu _b})} }}{{n - 1}}}}{{\sqrt {\frac{{\sum\nolimits_1^n {{{({a_i} - {\mu _a})}^2}} }}{{n - 1}}} \sqrt {\frac{{\sum\nolimits_1^n {{{({b_i} - {\mu _b})}^2}} }}{{n - 1}}} }} = \frac{{\sum\nolimits_1^n {({a_i} - {\mu _a})({b_i} - {\mu _b})} }}{{\sqrt {\sum\nolimits_1^n {{{({a_i} - {\mu _a})}^2}} } \sqrt {\sum\nolimits_1^n {{{({b_i} - {\mu _b})}^2}} } }}$$
+$$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{{\bf{x}}_b})}}{{{\sigma _{{{\bf{x}}_a}}}{\sigma _{{{\bf{x}}_b}}}}} = \frac{{\sum\nolimits_1^n {({a_i} - {\mu _a})({b_i} - {\mu _b})} }}{{\sqrt {\sum\nolimits_1^n {{{({a_i} - {\mu _a})}^2}} } \sqrt {\sum\nolimits_1^n {{{({b_i} - {\mu _b})}^2}} } }}$$
 
 여기에서 ${{\bf{x}}_a}$와 ${{\bf{x}}_b}$는 벡터인 ${{\bf{x}}_a} = ({a_1},{a_2}, \cdots ,{a_n})$와 ${{\bf{x}}_b} = ({b_1},{b_2}, \cdots ,{b_n})$이고, ${\mathop{\rm cov}} ({{\bf{x}}_a},{{\bf{x}}_b})$은 ${{\bf{x}}_a}$가 변할 때 ${{\bf{x}}_b}$가 변하는 정도를 나타내는 표본 공분산(Covariance), ${\sigma _{{{\bf{x}}_a}}}$와 ${\sigma _{{{\bf{x}}_b}}}$는 표본 표준 편차입니다.
 
