@@ -37,7 +37,6 @@
 - [연관규칙 기반 추천](#연관규칙-기반-추천)
 - [피드백과 기여](#피드백과-기여)
 - [License](#license)
-- [Credits](#credits)
 
 ## R4tings Recommender 오픈소스 추천엔진
 
@@ -986,7 +985,7 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 
 (1) 피어슨 상관계수는 다음과 같이 정의됩니다.
 
-$$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{{\bf{x}}_b})}}{{{\sigma _{{{\bf{x}}_a}}}{\sigma _{{{\bf{x}}_b}}}}} = \frac{{\sum\nolimits_1^n {({a_i} - {\mu _a})({b_i} - {\mu _b})} }}{{\sqrt {\sum\nolimits_1^n {{{({a_i} - {\mu _a})}^2}} } \sqrt {\sum\nolimits_1^n {{{({b_i} - {\mu _b})}^2}} } }}$$
+$$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{{\bf{x}}_b})}}{{{\sigma _{{{\bf{x}}_a}}}{\sigma _{{{\bf{x}}_b}}}}} = \frac{{\frac{{\sum\nolimits_i^n {({a_i} - {\mu _a})({b_i} - {\mu _b})} }}{{n - 1}}}}{{\sqrt {\frac{{\sum\nolimits_1^n {{{({a_i} - {\mu _a})}^2}} }}{{n - 1}}} \sqrt {\frac{{\sum\nolimits_1^n {{{({b_i} - {\mu _b})}^2}} }}{{n - 1}}} }} = \frac{{\sum\nolimits_1^n {({a_i} - {\mu _a})({b_i} - {\mu _b})} }}{{\sqrt {\sum\nolimits_1^n {{{({a_i} - {\mu _a})}^2}} } \sqrt {\sum\nolimits_1^n {{{({b_i} - {\mu _b})}^2}} } }}$$
 
 여기에서 ${{\bf{x}}_a}$와 ${{\bf{x}}_b}$는 벡터인 ${{\bf{x}}_a} = ({a_1},{a_2}, \cdots ,{a_n})$와 ${{\bf{x}}_b} = ({b_1},{b_2}, \cdots ,{b_n})$이고, ${\mathop{\rm cov}} ({{\bf{x}}_a},{{\bf{x}}_b})$은 ${{\bf{x}}_a}$가 변할 때 ${{\bf{x}}_b}$가 변하는 정도를 나타내는 표본 공분산(Covariance), ${\sigma _{{{\bf{x}}_a}}}$와 ${\sigma _{{{\bf{x}}_b}}}$는 표본 표준 편차입니다.
 
@@ -1836,21 +1835,15 @@ https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/b9cbba7
 
 "R4tings Recommender 오픈소스 추천엔진" 프로젝트의 참여나 기여도 환영합니다. 자세한 정보는 **[여기](CONTRIBUTORS.md)** 에서 확인할 수 있습니다. 
 
-
-
 ## License
 
-If not otherwise stated
-All the source code of this repository is distributed under the [Apache License 2.0][apache], a copy of which can be found in the file [`LICENSE.Apache-2.0`](/LICENSE.Apache-2.0).
-All the documentation(as defined and linked in the main [readme document](/README.md)) of this repository is distributed under are licensed under the [Creative Commons BY-NC-SA 4.0][cc-by-nc-sa] license, a copy of which can be found in the file [`LICENSE.CC-BY-NC-SA-4.0`](/LICENSE.CC-BY-NC-SA-4.0).
+This project is dual-licensed under [Apache License 2.0][apache] and [Creative Commons BY-NC-SA 4.0][cc-by-nc-sa]. Copyright (c) 2023 r4tings.com 
+
+See [`LICENSE.md`](/LICENSE.md) file for details.
+
 
 [apache]: https://www.apache.org/licenses/LICENSE-2.0
 [cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-
-## Credits
-This project uses Open source software (OSS). You can find the source code of their open source projects along with license information below. We acknowledge and are grateful to these developers for their contributions to open source.
-Further details are available in the file [`/recommender/CREDITS.md`](/recommender/CREDITS.md) and [`/recommender-workbook/CREDITS.md`](/recommender-workbook/CREDITS.md).
 
 <br/>
 
