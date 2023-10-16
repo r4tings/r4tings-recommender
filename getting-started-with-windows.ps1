@@ -13,69 +13,69 @@ ls
 ./gradlew clean build -x test
 
 ######################################
-# ¿¹Á¦ µ¥ÀÌÅÍ¼Â ±¸¼º (»çÀüÁØºñ)          # 
+# ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½Øºï¿½)          # 
 ######################################
 
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.downloadPublicDatasets
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.bookCrossingDataset
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.movieLensDataset
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.r4tingsDataset
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.downloadPublicDatasets
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.bookCrossingDataset
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.movieLensDataset
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.r4tingsDataset
 
 ######################################
-# ÆòÁ¡ Á¤±ÔÈ­                          # 
+# ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­                          # 
 ######################################
 
-# Æò±Õ Áß½É Á¤±ÔÈ­
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.MeanCenteringTest.meanCenteringExamples
+# ï¿½ï¿½ï¿½ ï¿½ß½ï¿½ ï¿½ï¿½ï¿½ï¿½È­
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples
 
-# ZÁ¡¼ö Á¤±ÔÈ­
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.ZScoreTest.zScoreExamples
+# Zï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples
 
-# ÃÖ¼Ò-ÃÖ´ë Á¤±ÔÈ­
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.MinMaxTest.minMaxExamples
+# ï¿½Ö¼ï¿½-ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½ï¿½È­
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MinMaxTest.minMaxExamples
 
-# ¼Ò¼ö ÀÚ¸´¼ö Á¤±ÔÈ­
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.DecimalScalingTest.decimalScalingExamples
+# ï¿½Ò¼ï¿½ ï¿½Ú¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½È­
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples
 
-# ÀÌÁø ÀÓ°è ÀÌÁøÈ­
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.BinaryThresholdingTest.binaryThresholdingExamples
-
-######################################
-# À¯»çµµ °è»ê                          # 
-######################################
-
-# ÄÚ»çÀÎ À¯»çµµ
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.CosineSimilarityTest.cosineSimilarityExamples
-
-# ÇÇ¾î½¼ »ó°ü°è¼ö¿Í À¯»çµµ
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
-
-# À¯Å¬¸®µå °Å¸®¿Í À¯»çµµ
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
-
-# ÀÌÁø ¼Ó¼º°ú À¯»çµµ
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
+# ï¿½ï¿½ï¿½ï¿½ ï¿½Ó°ï¿½ ï¿½ï¿½ï¿½ï¿½È­
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.BinaryThresholdingTest.binaryThresholdingExamples
 
 ######################################
-# ÀÌ¿ô ±â¹Ý Çù¾÷ ÇÊÅÍ¸µ ÃßÃµ             # 
+# ï¿½ï¿½ï¿½çµµ ï¿½ï¿½ï¿½                          # 
 ######################################
 
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
+# ï¿½Ú»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½çµµ
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.CosineSimilarityTest.cosineSimilarityExamples
+
+# ï¿½Ç¾î½¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½çµµ
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
+
+# ï¿½ï¿½Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½çµµ
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
+
+# ï¿½ï¿½ï¿½ï¿½ ï¿½Ó¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½çµµ
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
 
 ######################################
-# Æ¯ÀÕ°ª ºÐÇØ ±â¹Ý Çù¾÷ ÇÊÅÍ¸µ ÃßÃµ       # 
+# ï¿½Ì¿ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½Ãµ             # 
 ######################################
 
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
 
 ######################################
-# TF-IDF ±â¹Ý ÄÜÅÙÃ÷ ±â¹Ý ÇÊÅÍ¸µ ÃßÃµ    # 
+# Æ¯ï¿½Õ°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½Ãµ       # 
 ######################################
 
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
 
 ######################################
-# ¿¬°ü±ÔÄ¢ ±â¹Ý ÃßÃµ                    # 
+# TF-IDF ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½Ãµ    # 
 ######################################
 
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
+
+######################################
+# ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¢ ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµ                    # 
+######################################
+
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples

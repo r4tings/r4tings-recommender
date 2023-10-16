@@ -7,7 +7,7 @@ If not otherwise stated
 
 This project uses Open source software (OSS). You can find the source code of their open source projects along with license information below. We acknowledge and are grateful to these developers for their contributions to open source.
 
-See [`/recommender/CREDITS.md`](/recommender/CREDITS.md) and [`/recommender-workbook/CREDITS.md`](/recommender-workbook/CREDITS.md) files for details.
+See [`/recommender/CREDITS.md`](/recommender/CREDITS.md) and [`/recommender-examples/CREDITS.md`](/recommender-examples/CREDITS.md) files for details.
 
 [apache]: https://www.apache.org/licenses/LICENSE-2.0
 [cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/
