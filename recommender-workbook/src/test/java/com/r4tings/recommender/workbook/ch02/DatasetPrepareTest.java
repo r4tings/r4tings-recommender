@@ -7,6 +7,7 @@ package com.r4tings.recommender.workbook.ch02;
 import com.r4tings.recommender.test.AbstractSparkTests;
 import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.ZipFile;
+import net.lingala.zip4j.exception.ZipException;
 import org.apache.commons.io.FileUtils;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -75,13 +76,17 @@ public class DatasetPrepareTest extends AbstractSparkTests {
     "https://files.grouplens.org/datasets/movielens/ml-latest.zip       , /dataset/MovieLens/    , ml-latest.zip  ",
   })
   public void downloadPublicDatasets(
-      String source, @ConvertPathString String path, String downloadFile) throws IOException {
+      String source, @ConvertPathString String path, String downloadFile) throws ZipException {
 
     File destination = new File(path + downloadFile);
 
     log.info("\nCopy [{}] to [{}]", source, destination);
 
-    FileUtils.copyURLToFile(new URL(source), destination);
+    try {
+      FileUtils.copyURLToFile(new URL(source), destination);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
 
     new ZipFile(destination).extractAll(path);
 

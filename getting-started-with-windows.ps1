@@ -2,7 +2,7 @@
 # Get Started with Windows
 
 cd /
-# Remove-Item -path /r4tings -recurse -confirm
+Remove-Item -path /r4tings -recurse -confirm
 mkdir r4tings
 cd r4tings
 Invoke-WebRequest https://github.com/r4tings/r4tings-recommender/archive/refs/heads/main.zip -OutFile r4tings-recommender-main.zip
