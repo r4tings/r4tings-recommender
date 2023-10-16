@@ -79,13 +79,11 @@ public class DatasetPrepareTest extends AbstractSparkTests {
 
     File destination = new File(path + downloadFile);
 
-    if (!destination.exists()) {
-      log.info("\nCopy [{}] to [{}]", source, destination);
+    log.info("\nCopy [{}] to [{}]", source, destination);
 
-      FileUtils.copyURLToFile(new URL(source), destination);
+    FileUtils.copyURLToFile(new URL(source), destination);
 
-      new ZipFile(destination).extractAll(path);
-    }
+    new ZipFile(destination).extractAll(path);
 
     assertTrue(destination.exists());
   }
