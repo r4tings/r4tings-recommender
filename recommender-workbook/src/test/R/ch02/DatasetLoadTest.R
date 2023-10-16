@@ -3,7 +3,7 @@ if (!require('dlookr')) install.packages('dlookr'); library('dlookr')
 if (!require('dplyr')) install.packages('dplyr'); library('dplyr')  # alternative installation of the %>%
 
 
-filePath <- file.path("C:/Users/user/Documents/r4tings-recommender-workbook/dataset")
+filePath <- file.path("C:/Users/user/Documents/r4tings-recommender-examples/dataset")
 list.files(filePath)
 setwd(filePath)
 

@@ -19,7 +19,7 @@
   - [프로젝트 구성하기(Set up the project)](#프로젝트-구성하기set-up-the-project)  
   - [데이터셋 준비하기(Prepare Dataset)](#데이터셋-준비하기prepare-dataset)
     - [R4tings Recommender 프로젝트](#r4tings-recommender-프로젝트)
-    - [R4tings Recommender Workbook 프로젝트](#r4tings-recommender-workbook-프로젝트)
+    - [R4tings Recommender Examples 프로젝트](#r4tings-recommender-examples-프로젝트)
 - [평점 정규화](#평점-정규화)
   - [평균 중심 정규화](#평균-중심-정규화)
   - [Z점수 정규화](#z점수-정규화)
@@ -44,7 +44,7 @@
 
 이러한 이유로 “R4tings Recommender 오픈소스 추천엔진”은 추천을 위한 통계나 기계 학습 기법들은 수정 없이 재사용 가능한 고차 함수로 제공하고, 수정되거나 새로운 기법을 적용하여 만들어진 고차 함수는 기존 고차 함수와 조합하거나, 컴포넌트로 제공되는 파이프라인을 통하여 다양한 도메인에 적용할 수 있도록, 추천하는 과정들을 단계별로 분해하여 하나의 파이프라인으로 연결하여 병렬 처리 할 수 있게 하는 것을 목표로 합니다.  
 
-“R4tings Recommender 오픈소스 추천엔진”은 전통적인 통계나 기계 학습 기반의 추천 모델들의 기본 구현체인 “[R4tings Recommender](https://github.com/r4tings/recommender/tree/main/recommender)”와 실행 예제들인 “[R4tings Recommender Workbook](https://github.com/r4tings/recommender/tree/main/recommender-workbook)"의 두 개의 프로젝트를 포함하고 있어 추천 처리 과정을 단계별로 분해하여 내부 흐름을 쉽게 이해하고, 추천을 위한 통계나 기계 학습 기법들을 손쉽게 수정하거나 확장 또는 재사용할 수 있습니다.
+“R4tings Recommender 오픈소스 추천엔진”은 전통적인 통계나 기계 학습 기반의 추천 모델들의 기본 구현체인 “[R4tings Recommender](https://github.com/r4tings/recommender/tree/main/recommender)”와 실행 예제들인 “[R4tings Recommender Examples](https://github.com/r4tings/recommender/tree/main/recommender-examples)"의 두 개의 프로젝트를 포함하고 있어 추천 처리 과정을 단계별로 분해하여 내부 흐름을 쉽게 이해하고, 추천을 위한 통계나 기계 학습 기법들을 손쉽게 수정하거나 확장 또는 재사용할 수 있습니다.
 
 “**R4tings Recommender 오픈소스 추천엔진**”의 최종 목표는 1) 전통적인 통계나 기계 학습 기반 추천 모델들의 구현체 제공을 통한 추천 시스템의 학습과 이해, 2) 시뮬레이터나 프로토타이핑을 통한 학술 연구 목적에서의 이론 검증, 3) 상용 수준의 추천 시스템 구현을 용이하게 하는 것입니다.
 
@@ -152,7 +152,7 @@ d-----      2023-10-01  오전 11:40                dataset
 d-----      2023-10-01  오전 11:40                gradle
 d-----      2023-10-01  오전 11:40                lib
 d-----      2023-10-01  오전 11:40                recommender
-d-----      2023-10-01  오전 11:40                recommender-workbook
+d-----      2023-10-01  오전 11:40                recommender-examples
 -a----      2023-10-01   오후 6:58            151 .gitignore
 -a----      2023-10-01   오후 6:58            275 .whitesource
 -a----      2023-10-01   오후 6:58           3857 build.gradle
@@ -181,7 +181,7 @@ C:\r4tings
        │   └── hadoop-2.8.3                        <- Microsoft Windows용 Hadoop 바이너리
        ├── recommender                             <- R4tings Recommender 프로젝트
        │   └── src
-       ├── recommender-workbook                    <- R4tings Recommender Workbook 프로젝트 
+       ├── recommender-examples                    <- R4tings Recommender Examples 프로젝트 
        │   └── src
        ├── ⋯                                       <- 일부 생략  
        ├── build.gradle                            <- Gradle 구성 파일
@@ -209,17 +209,17 @@ C:\r4tings
 
 ##### 공개 데이터셋 내려받기(Download Public Datasets)
 
-여기에서는 테스트 클래스인 [**DatasetPrepareTest**](./recommender/src/test/java/com/r4tings/recommender/workbook/ch02/DatasetPrepareTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
+여기에서는 테스트 클래스인 [**DatasetPrepareTest**](./recommender/src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java) 클래스의 테스트 메서드인 downloadExtenalDatasets를 실행하여 외부 데이터셋을 내려받고 압축을 해제합니다. 
 
-* [downloadPublicDatasets](./recommender/src/test/java/com/r4tings/recommender/workbook/ch02/DatasetPrepareTest.java#L74)
+* [downloadPublicDatasets](./recommender/src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java#L74)
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 downloadPublicDatasets 실행하고 실행 결과를 살펴봅니다.
 
 ```powershell
-PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.downloadPublicDatasets
+PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.downloadPublicDatasets
 ```
 <!--
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
 -->
 
 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 downloadPublicDatasets 실행 후, R4tings Recommender 오픈소스 추천엔진의 dataset 디렉토리 구조는 다음과 같습니다
@@ -259,12 +259,12 @@ CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식�
 
 예제 테스트 클래스인 DatasetPrepareTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples 실행 결과를 살펴봅니다.
 
-* [bookCrossingDatasetExamples](./recommender/src/test/java/com/r4tings/recommender/workbook/ch02/DatasetPrepareTest.java#L96)
+* [bookCrossingDatasetExamples](./recommender/src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java#L96)
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 bookCrossingDataset 실행해 봅니다.
 
 ```powershell
-PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.bookCrossingDataset
+PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.bookCrossingDataset
 ```
 
 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples 실행 후, R4tings Recommender 오픈소스 추천엔진의 dataset 디렉토리 구조는 다음과 같습니다.
@@ -353,21 +353,21 @@ C:\r4tings
 ./gradlew :recommender:test --tests com.r4tings.recommender.model.arm.AssociationRuleMiningTest.testWithExample
 ```
 
-#### R4tings Recommender Workbook 프로젝트 
+#### R4tings Recommender Examples 프로젝트 
 
 ##### r4tings 데이터셋 Parquet 유형으로 변환하기
 
 예제 테스트 클래스인 DatasetPrepareTest 클래스의 테스트 메서드인 convertCsvToParquet 실행 결과를 살펴봅니다.
 
-* [r4tingsDatasetExamples](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch02/DatasetPrepareTest.java#L43)
+* [r4tingsDatasetExamples](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java#L43)
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 r4tingsDataset 실행해 봅니다.
 
 ```
-PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch02.DatasetPrepareTest.r4tingsDataset
+PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.r4tingsDataset
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/fce48a50-2503-4e76-ad09-619319fe829a
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/fce48a50-2503-4e76-ad09-619319fe829a
 
 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 r4tingsDatasetExamples 실행 후, R4tings Recommender 오픈소스 추천엔진의 dataset 디렉토리 구조는 다음과 같습니다.
 
@@ -393,7 +393,7 @@ C:\r4tings
 
 ##### 테스트 케이스
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/31362557/6be8f7fb-6a81-468f-b5b3-39fe5943f64d
+https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb-6a81-468f-b5b3-39fe5943f64d
 
 ```powershell
 ######################################
@@ -401,59 +401,59 @@ https://github.com/r4tings/r4tings-recommender-workbook/assets/31362557/6be8f7fb
 ######################################
 
 # 평균 중심 정규화
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.MeanCenteringTest.meanCenteringExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples
 
 # Z점수 정규화
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.ZScoreTest.zScoreExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples
 
 # 최소-최대 정규화
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.MinMaxTest.minMaxExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MinMaxTest.minMaxExamples
 
 # 소수 자릿수 정규화
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.DecimalScalingTest.decimalScalingExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples
 
 # 이진 임계 이진화
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.BinaryThresholdingTest.binaryThresholdingExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.BinaryThresholdingTest.binaryThresholdingExamples
 
 ######################################
 # 유사도 계산                         # 
 ######################################
 
 # 코사인 유사도
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.CosineSimilarityTest.cosineSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.CosineSimilarityTest.cosineSimilarityExamples
 
 # 피어슨 상관계수와 유사도
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
 
 # 유클리드 거리와 유사도
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
 
 # 이진 속성과 유사도
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
 
 ######################################
 # 이웃 기반 협업 필터링 추천           # 
 ######################################
 
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
 
 ######################################
 # 특잇값 분해 기반 협업 필터링 추천     # 
 ######################################
 
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
 
 ######################################
 # TF-IDF 기반 콘텐츠 기반 필터링 추천  # 
 ######################################
 
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
 
 ######################################
 # 연관규칙 기반 추천                   # 
 ######################################
 
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
 ```
 
 ##### 예제 컨텐츠 
@@ -462,45 +462,45 @@ https://github.com/r4tings/r4tings-recommender-workbook/assets/31362557/6be8f7fb
   - [1.1 주요 용어와 개념](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02-sec-01)
   - [1.2 협업 필터링과 콘텐츠 기반 필터링](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-01-sec-02)
   - [1.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-01-sec-03)
-- [2. 데이터셋 살펴보기](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-02)
-  - [2.1 북크로싱 데이터셋](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-02-sec-01)
-  - [2.2 무비렌즈 데이터셋](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-02-sec-02)
-  - [2.3 예제 데이터셋](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-02-sec-03)
-  - [2.4 요약(Summary)](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-02-sec-04)
-- [3. 평점 정규화](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-03)
-  - [3.1 평점 정규화와 이진화](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-03-sec-01)
-  - [3.2 평균 중심 정규화](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-03-sec-02)
-  - [3.3 Z점수 정규화](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-03-sec-03)
-  - [3.4 최소-최대 정규화](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-03-sec-04)
-  - [3.5 소수 자릿수 정규화](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-03-sec-05)
-  - [3.6 이진 임계 이진화](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-03-sec-06)
-  - [3.7 요약(Summary)](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-03-sec-07)
-- [4. 유사도](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-04)
-  - [4.1 유사도와 거리](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-04-sec-01)
-  - [4.2 코사인 유사도](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-04-sec-02)
-  - [4.3 피어슨 상관계수와 유사도](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-04-sec-03)
-  - [4.4 유클리드 거리와 유사도](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-04-sec-04)
-  - [4.5 이진 속성과 유사도](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-04-sec-05)
-  - [4.6 요약(Summary)](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-04-sec-06)
-- [5. 이웃 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-05)
-  - [5.1 메모리 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-05-sec-01)
-  - [5.2 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-05-sec-02)
-  - [5.3 평균 중심 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-05-sec-03)
-  - [5.4 Z점수 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-05-sec-04)
-  - [5.5 예제 코드 실행해보기](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-05-sec-05)
-  - [5.6 요약(Summary)](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-05-sec-06)
-- [6. 특잇값 분해 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-06)
-  - [6.1 모델 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-06-sec-01)
-  - [6.2 기준선 추정과 특잇값 분해 기반 평점 예측](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-06-sec-02)
-  - [6.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-06-sec-03)
-- [7. TF-IDF 콘텐츠 기반 필터링 추천](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-07)
-  - [7.1 TF-IDF와 콘텐츠 기반 필터링](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-07-sec-01)
-  - [7.2 TF-IDF와 코사인 유사도 기반 아이템 추천](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-07-sec-02)
-  - [7.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-06-sec-07)
-- [8. 연관규칙 기반 추천](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-08)
-  - [8.1 연관규칙](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-07-sec-08)
-  - [8.2 연관규칙 기반 아이템 추천](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-08-sec-02)
-  - [8.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender-workbook/wiki/[Korean]-ch-06-sec-08)
+- [2. 데이터셋 살펴보기](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-02)
+  - [2.1 북크로싱 데이터셋](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-02-sec-01)
+  - [2.2 무비렌즈 데이터셋](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-02-sec-02)
+  - [2.3 예제 데이터셋](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-02-sec-03)
+  - [2.4 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-02-sec-04)
+- [3. 평점 정규화](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-03)
+  - [3.1 평점 정규화와 이진화](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-03-sec-01)
+  - [3.2 평균 중심 정규화](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-03-sec-02)
+  - [3.3 Z점수 정규화](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-03-sec-03)
+  - [3.4 최소-최대 정규화](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-03-sec-04)
+  - [3.5 소수 자릿수 정규화](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-03-sec-05)
+  - [3.6 이진 임계 이진화](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-03-sec-06)
+  - [3.7 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-03-sec-07)
+- [4. 유사도](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-04)
+  - [4.1 유사도와 거리](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-04-sec-01)
+  - [4.2 코사인 유사도](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-04-sec-02)
+  - [4.3 피어슨 상관계수와 유사도](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-04-sec-03)
+  - [4.4 유클리드 거리와 유사도](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-04-sec-04)
+  - [4.5 이진 속성과 유사도](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-04-sec-05)
+  - [4.6 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-04-sec-06)
+- [5. 이웃 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-05)
+  - [5.1 메모리 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-05-sec-01)
+  - [5.2 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-05-sec-02)
+  - [5.3 평균 중심 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-05-sec-03)
+  - [5.4 Z점수 가중 평균 유사도 평점 예측](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-05-sec-04)
+  - [5.5 예제 코드 실행해보기](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-05-sec-05)
+  - [5.6 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-05-sec-06)
+- [6. 특잇값 분해 기반 협업 필터링 추천](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06)
+  - [6.1 모델 기반 협업 필터링](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-01)
+  - [6.2 기준선 추정과 특잇값 분해 기반 평점 예측](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-02)
+  - [6.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-03)
+- [7. TF-IDF 콘텐츠 기반 필터링 추천](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-07)
+  - [7.1 TF-IDF와 콘텐츠 기반 필터링](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-07-sec-01)
+  - [7.2 TF-IDF와 코사인 유사도 기반 아이템 추천](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-07-sec-02)
+  - [7.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-07)
+- [8. 연관규칙 기반 추천](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-08)
+  - [8.1 연관규칙](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-07-sec-08)
+  - [8.2 연관규칙 기반 아이템 추천](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-08-sec-02)
+  - [8.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender-examples/wiki/[Korean]-ch-06-sec-08)
 - References
   - [Recommender systems handbook](https://link.springer.com/book/10.1007/978-0-387-85820-3). Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantor. (2011).
   - [Recommender Systems  - The Textbook](https://link.springer.com/book/10.1007/978-3-319-29659-3). Charu C. Aggarwal. (2016).
@@ -514,7 +514,7 @@ https://github.com/r4tings/r4tings-recommender-workbook/assets/31362557/6be8f7fb
 
 ### 평균 중심 정규화
 
-![Download](./recommender-workbook/src/test/puml/ch03/MeanCenteringNormalizer_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch03/MeanCenteringNormalizer_Class_Diagram.svg)
 
 - 평균 중심 정규화 구현체인 [**MeanCenteringNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/MeanCenteringNormalizer.java)  클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 평균 중심화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. MeanCenteringNormalizer 클래스는 평균 중심 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음의 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -575,19 +575,19 @@ $${\hat r_{u,i}} = {r_{u,i}} - {\mu _i}$$
 
 예제 테스트 클래스인 MeanCenteringTest 클래스의 테스트 메서드인 meanCenteringExamples 실행 결과를 살펴봅니다.
 
-- [**MeanCenteringTest**](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch03/MeanCenteringTest.java) 클래스는 평균 중심 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**MeanCenteringTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch03/MeanCenteringTest.java) 클래스는 평균 중심 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 MeanCenteringTest 클래스의 테스트 메서드인 meanCenteringExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.MeanCenteringTest.meanCenteringExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/096b7651-94b4-4d9c-94e4-1dbf87f37b83
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b7651-94b4-4d9c-94e4-1dbf87f37b83
 
 ### Z점수 정규화
 
-![Download](./recommender-workbook/src/test/puml/ch03/ZScoreNormalizer_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch03/ZScoreNormalizer_Class_Diagram.svg)
 
 - Z점수 정규화 구현체인[**ZScoreNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/ZScoreNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 Z점수화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. ZScoreNormalizer 클래스는 Z점수 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요할 때는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -647,19 +647,19 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {\mu _i}}}{{{\sigma _i}}}$$
 
 예제 테스트 클래스인 ZScoreTest 클래스의 테스트 메서드인 zScoreExamples 실행 결과를 살펴봅니다.
 
-- [**ZScoreTest**](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch03/ZScoreTest.java) 클래스는 Z점수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**ZScoreTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch03/ZScoreTest.java) 클래스는 Z점수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 ZScoreTest 클래스의 테스트 메서드인 zScoreExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.ZScoreTest.zScoreExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/64e1f6a7-0b61-4446-832e-347c9b71ffe5
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a7-0b61-4446-832e-347c9b71ffe5
 
 ### 최소-최대 정규화
 
-![Download](./recommender-workbook/src/test/puml/ch03/MinMaxNormalizer_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch03/MinMaxNormalizer_Class_Diagram.svg)
 
 - 최소-최대 정규화 구현체인 [**MinMaxNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/MinMaxNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 최소-최대화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. MinMaxNormalizer 클래스는 최소-최대 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -709,13 +709,13 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {r_{\min }}}}{{{r_{\max }} - {r_{\min }}}}
 
 (2) 사용자 최소-최대화는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch03/minMaxExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch03/minMaxExamples01.svg">
 
 여기에서 ${r_{u,i}}$은 사용자 $u$가 아이템 $i$에 매긴 평점, ${r_u}{{\min}}$과 ${r_u}{{\max}}$는 아이템 집합 ${I_u}$의 평점 최솟값과 최댓값, ${r_{new\_\min }}$과 ${r_{new\_\max }}$는 새로운 평점 최솟값과 최댓값입니다.
 
 (3) 아이템 최소-최대화는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch03/minMaxExamples02.svg">
+<img src="./recommender-examples/src/test/puml/ch03/minMaxExamples02.svg">
 
 여기에서 ${r_{u,i}}$은 사용자 $u$가 아이템 $i$에 매긴 평점, ${r_i}{{\min}}$과 ${r_i}{{\max}}$는 사용자 집합 ${U_i}$의 평점 최솟값과 최댓값, ${r_{new\_\min }}$과 ${r_{new\_\max }}$는 새로운 평점 최솟값과 최댓값입니다.
 
@@ -723,19 +723,19 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {r_{\min }}}}{{{r_{\max }} - {r_{\min }}}}
 
 예제 테스트 클래스인 MinMaxTest 클래스의 테스트 메서드인 minMaxExamples 실행 결과를 살펴봅니다.
 
-- [**MinMaxTest**](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch03/MinMaxTest.java) 클래스는 최소-최대 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**MinMaxTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch03/MinMaxTest.java) 클래스는 최소-최대 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 MinMaxTest 클래스의 테스트 메서드인 minMaxExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.MinMaxTest.minMaxExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MinMaxTest.minMaxExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/9c811808-0dc7-4068-8109-c92d1f278bf5
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9c811808-0dc7-4068-8109-c92d1f278bf5
 
 ### 소수 자릿수 정규화 
 
-![Download](./recommender-workbook/src/test/puml/ch03/DecimalScaling_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch03/DecimalScaling_Class_Diagram.svg)
 
 - 소수 자릿수 정규화 구현체인 [**DecimalScalingNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/DecimalScalingNormalizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 소수 자릿수화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. DecimalScalingNormalizer 클래스는 소수 자릿수 정규화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -783,19 +783,19 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}}}}{{{{10}^j}}}$$
 
 예제 테스트 클래스인 DecimalScalingTest 클래스의 테스트 메서드인 decimalScalingExamples 실행 결과를 살펴봅니다.
 
-- [**DecimalScalingTest**](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch03/DecimalScalingTest.java) 클래스는 소수 자릿수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**DecimalScalingTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch03/DecimalScalingTest.java) 클래스는 소수 자릿수 정규화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DecimalScalingTest 클래스의 테스트 메서드인 decimalScalingExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.DecimalScalingTest.decimalScalingExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/740b46c4-b8a5-408d-bcb6-fb311fdc6523
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/740b46c4-b8a5-408d-bcb6-fb311fdc6523
 
 ### 이진 임계 이진화 
 
-![Download](./recommender-workbook/src/test/puml/ch03/ThresholdBinarizer_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch03/ThresholdBinarizer_Class_Diagram.svg)
 
 -  이진 임계 이진화 구현체인 [**ThresholdBinarizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/ThresholdBinarizer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 이진 임계화된 평점 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. ThresholdBinarizer 클래스는 이진 임계 이진화를 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
@@ -837,7 +837,7 @@ Dataset<Row> binarizedRatingDS = binarizer.transform(ratingDS);
 
 이진 임계 이진화는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch03/binaryThresholdingExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch03/binaryThresholdingExamples01.svg">
 
 여기에서 ${r_{u,i}}$은 사용자 $u$가 아이템 $i$에 매긴 평점, $\gamma $는 임곗값입니다.
 
@@ -845,15 +845,15 @@ Dataset<Row> binarizedRatingDS = binarizer.transform(ratingDS);
 
 예제 테스트 클래스인 BinaryThresholdingTest 클래스의 테스트 메서드인 binaryThresholdingExamples 실행 결과를 살펴봅니다.
 
-- [**BinaryThresholdingTest**](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch03/BinaryThresholdingTest.java) 클래스는 이진 임계 이진화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**BinaryThresholdingTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch03/BinaryThresholdingTest.java) 클래스는 이진 임계 이진화를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 BinaryThresholdingTest 클래스의 테스트 메서드인 binaryThresholdingExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch03.BinaryThresholdingTest.binaryThresholdingExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.BinaryThresholdingTest.binaryThresholdingExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/e9e5cb9d-4c2c-4365-86a0-ac7f27e19876
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/e9e5cb9d-4c2c-4365-86a0-ac7f27e19876
 
 
 
@@ -861,7 +861,7 @@ https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/e9e5cb9
 
 ### 코사인 유사도
 
-![Download](./recommender-workbook/src/test/puml/ch04/CosineSimilarity_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch04/CosineSimilarity_Class_Diagram.svg)
 
 - 코사인 유사도 구현체인 [**CosineSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/CosineSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
 
@@ -907,19 +907,19 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 
 (1) 코사인 유사도는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/cosineSimilarityExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch04/cosineSimilarityExamples01.svg">
 
 여기에서, ${I_u} \cap {I_v}$는 사용자 $u$와 사용자 $v$ 모두에게 평가된 아이템 집합, ${r_{u,i}}$와 ${r_{v,i}}$는 사용자 $u$와 사용자 $v$가 아이템 $i$에 매긴 평점입니다.
 
 (2) 사용자 코사인 유사도는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/cosineSimilarityExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch04/cosineSimilarityExamples01.svg">
 
 여기에서, ${I_u} \cap {I_v}$는 사용자 $u$와 사용자 $v$ 모두에게 평가된 아이템 집합, ${r_{u,i}}$와 ${r_{v,i}}$는 사용자 $u$와 사용자 $v$가 아이템 $i$에 매긴 평점입니다.
 
 (3) 아이템 코사인 유사도는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/cosineSimilarityExamples02.svg">
+<img src="./recommender-examples/src/test/puml/ch04/cosineSimilarityExamples02.svg">
 
 여기에서, ${U_i} \cap {U_j}$는 아이템 $i$와 아이템 $j$를 모두 평가한 사용자 집합, ${r_{u,i}}$와 ${r_{u,j}}$는 사용자 $u$가 아이템 $i$와 아이템 $j$에 매긴 평점입니다.
 
@@ -927,19 +927,19 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 
 예제 테스트 클래스인 CosineSimilarityTest 클래스의 테스트 메서드인 cosineSimilarityExamples 실행 결과를 살펴봅니다.
 
-- [**CosineSimilarityTest**](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch04/CosineSimilarityTest.java) 클래스는 코사인 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**CosineSimilarityTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch04/CosineSimilarityTest.java) 클래스는 코사인 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 CosineSimilarityTest 클래스의 테스트 메서드인 cosineSimilarityExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.CosineSimilarityTest.cosineSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.CosineSimilarityTest.cosineSimilarityExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/2cb51994-4ebf-436f-9153-8e298269b828
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/2cb51994-4ebf-436f-9153-8e298269b828
 
 ### 피어슨 상관계수와 유사도
 
-![Download](./recommender-workbook/src/test/puml/ch04/PearsonSimilarity_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch04/PearsonSimilarity_Class_Diagram.svg)
 
 피어슨 상관계수와 유사도 구현체인 [**PearsonSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/PearsonSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다. 
 
@@ -991,7 +991,7 @@ $$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{
 
 두 벡터 ${{\bf{x}}_a}$와 ${{\bf{x}}_b}$간의 피어슨 유사도는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/pearsonSimilarityExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch04/pearsonSimilarityExamples01.svg">
 
 여기에서 $pearson({{\bf{x}}_a},{{\bf{x}}_b})$는 두 벡터 간의 피어슨 상관계수로 0보다 큰 값(양의 상관관계)입니다.
 
@@ -999,25 +999,25 @@ $$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{
 
 (2) 사용자 피어슨 유사도는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/pearsonSimilarityExamples02.svg">
+<img src="./recommender-examples/src/test/puml/ch04/pearsonSimilarityExamples02.svg">
 
 여기에서 ${N_{{I_u} \cap {I_v}}}$ $n$은 아이템 집합 ${I_u} \cap {I_v}$의 원소 개수, ${r_{u,i}}$와 ${r_{v,i}}$는 사용자 $u$와 사용자 $v$가 아이템 $i$에 매긴 평점입니다. 
 
 임의의 사용자 $u$와 사용자 $v$의 사용자 피어슨 유사도는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/pearsonSimilarityExamples03.svg">
+<img src="./recommender-examples/src/test/puml/ch04/pearsonSimilarityExamples03.svg">
 
 여기에서 ${\mathop{\rm pearson}\nolimits} (u,v)$는 사용자 $u$와 사용자 $v$의 피어슨 상관계수입니다.
 
 (3) 아이템 피어슨 유사도는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/pearsonSimilarityExamples04.svg">
+<img src="./recommender-examples/src/test/puml/ch04/pearsonSimilarityExamples04.svg">
 
 여기에서 ${U_i} \cap {U_j}$는 아이템 $i$와 $j$를 모두 평가한 사용자 평점 집합, ${r_{u,i}}$와 ${r_{u,j}}$는 사용자 $u$가 아이템 $i$와 아이템 $j$에 매긴 평점, ${\mu _i}$은 아이템 $i$를 평가한 사용자 집합 ${U_i}$의 평점 평균, ${\mu_j}$는 아이템 $i$를 평가한 사용자 ${U_j}$집합의 평점 평균입니다.
 
 임의의 아이템 $i$와 아이템 $j$의 아이템 피어슨 유사도는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/pearsonSimilarityExamples05.svg">
+<img src="./recommender-examples/src/test/puml/ch04/pearsonSimilarityExamples05.svg">
 
 여기에서 ${\mathop{\rm pearson}\nolimits} (i,j)$는 아이템 $i$와 아이템 $j$의 피어슨 상관계수입니다.
 
@@ -1025,19 +1025,19 @@ $$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{
 
 예제 테스트 클래스인 PearsonSimilarityTest 클래스의 테스트 메서드인 pearsonSimilarityExamples 실행 결과를 살펴봅니다.
 
-- [PearsonSimilarityTest](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch04/PearsonSimilarityTest.java) 클래스는 피어슨 상관계수와 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [PearsonSimilarityTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch04/PearsonSimilarityTest.java) 클래스는 피어슨 상관계수와 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 PearsonSimilarityTest 클래스의 테스트 메서드인 pearsonSimilarityExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/850d7868-eaa0-49c5-9f96-f771da31d322
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/850d7868-eaa0-49c5-9f96-f771da31d322
 
 ### 유클리드 거리와 유사도
 
-![Download](./recommender-workbook/src/test/puml/ch04/EuclideanSimilarity_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch04/EuclideanSimilarity_Class_Diagram.svg)
 
 - 유클리드 거리와 유사도 구현체인 [**EuclideanSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/EuclideanSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
 
@@ -1101,13 +1101,13 @@ $$SF = \frac{{AS}}{{PS}}$$
 
 (2) 사용자 유클리드 유사도는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/euclideanSimilarityExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch04/euclideanSimilarityExamples01.svg">
 
 여기에서 ${{\mathop{\rm dist}\nolimits} _{euclidean}}(u,v)$는 사용자 $u$와 사용자 $v$의 유클리드 거리입니다.
 
 (3) 아이템 유클리드 유사도는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/euclideanSimilarityExamples02.svg">
+<img src="./recommender-examples/src/test/puml/ch04/euclideanSimilarityExamples02.svg">
 
 여기에서 ${{\mathop{\rm dist}\nolimits} _{euclidean}}(i,j)$는 아이템 $i$와 아이템 $j$의 유클리드 거리입니다.
 
@@ -1115,19 +1115,19 @@ $$SF = \frac{{AS}}{{PS}}$$
 
 예제 테스트 클래스인 EuclideanSimilarityTest 클래스의 테스트 메서드인 euclideanSimilarityExamples 실행 결과를 살펴봅니다.
 
-- [EuclideanSimilarityTest](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch04/EuclideanSimilarityTest.java) 클래스는 유클리드 거리와 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [EuclideanSimilarityTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch04/EuclideanSimilarityTest.java) 클래스는 유클리드 거리와 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 EuclideanSimilarityTest 클래스의 테스트 메서드인 euclideanSimilarityExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/c37b999c-1298-431b-a2b0-9808f37277be
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/c37b999c-1298-431b-a2b0-9808f37277be
 
 ### 이진 속성과 유사도
 
-![Download](./recommender-workbook/src/test/puml/ch04/ExtendedJaccardSimilarity_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch04/ExtendedJaccardSimilarity_Class_Diagram.svg)
 
 - 이진 속성과 유사도 구현체인 [**ExtendedJaccardSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/ExtendedJaccardSimilarityMeasurer.java) 클래스는 Apache Spark ML 패키지의 추상 클래스인 Transformer 클래스를 상속받아 평점 데이터를 유사도 데이터로 변환하는 transform 메서드를 구현한 클래스입니다.
 
@@ -1220,11 +1220,11 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 
 (1) 임의의 벡터 ${{\bf{x}}_a}$와 ${{\bf{x}}_b}$ 간의 단순 일치 계수(Simple matching coefficient)는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/extendedJaccardSimilarityExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch04/extendedJaccardSimilarityExamples01.svg">
 
 (2) 임의의 벡터 ${{\bf{x}}_a}$와 ${{\bf{x}}_b}$ 간의 자카드 계수(Jaccard Coefficient)는 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch04/extendedJaccardSimilarityExamples02.svg">
+<img src="./recommender-examples/src/test/puml/ch04/extendedJaccardSimilarityExamples02.svg">
 
 또한 다음과 같이 이진 속성에만 적용할 수 있는 확장로 두 벡터 간의 자카드 계수를 좀더 간단하게 계산할 수 있습니다.
 
@@ -1243,21 +1243,21 @@ $${\rm{ExtendedJaccard}}({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\bf{x}}_a^{\rm T}{
 
 예제 테스트 클래스인 ExtendedJaccardSimilarityTest 클래스의 테스트 메서드인 extendedJaccardSimilarityExamples 실행 결과를 살펴봅니다.
 
-- [ExtendedJaccardSimilarityTest](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch04/binary/ExtendedJaccardSimilarityTest.java) 클래스는 이진 속성과 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [ExtendedJaccardSimilarityTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch04/binary/ExtendedJaccardSimilarityTest.java) 클래스는 이진 속성과 유사도를 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 ExtendedJaccardSimilarityTest 클래스의 테스트 메서드인 extendedJaccardSimilarityExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/dad07ffb-9e85-4170-9777-90f7a2b2f6a2
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/dad07ffb-9e85-4170-9777-90f7a2b2f6a2
 
 
 
 ## 이웃 기반 협업 필터링 추천
 
-![Download](./recommender-workbook/src/test/puml/ch05/KNearestNeighbors_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch05/KNearestNeighbors_Class_Diagram.svg)
 
 KNearestNeighborsParams 클래스와 KNearestNeighbors 클래스는 이웃 기반 협업 필터링 구현체입니다. KNearestNeighborsParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 KNearestNeighbors 클래스의 생성자에 매개변수를 전달합니다. 
 
@@ -1409,21 +1409,21 @@ $${\hat r_{ui}} = {\mu_i} + {\sigma_i}\frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_
 
 예제 테스트 클래스인 KNearestNeighborsTest 클래스의 테스트 메서드인 kNearestNeighborsExamples 실행 결과를 살펴봅니다
 
-- [KNearestNeighborsTest](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch05/KNearestNeighborsTest.java) 클래스는 이웃 기반 협업 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [KNearestNeighborsTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch05/KNearestNeighborsTest.java) 클래스는 이웃 기반 협업 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 KNearestNeighborsTest 클래스의 테스트 메서드인 kNearestNeighborsExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/9922b101-6563-4a83-ac51-085216db5079
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9922b101-6563-4a83-ac51-085216db5079
 
 
 
 ## 특잇값 분해 기반 협업 필터링 추천
 
-![Download](./recommender-workbook/src/test/puml/ch06/BaselineSVD_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch06/BaselineSVD_Class_Diagram.svg)
 
 BaselineSingleValueDecompositionParams 클래스와 BaselineSingleValueDecomposition 클래스는 특잇값 분해 기반 협업 필터링 구현체입니다. BaselineSingleValueDecompositionParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 BaselineSingleValueDecomposition 클래스의 생성자에 매개변수를 전달합니다.
 
@@ -1561,21 +1561,21 @@ $${\hat r_{ui}} = {b_{ui}} + ({p_{u}} \times {\sigma }) \cdot {q_{i}} = {b_{ui}}
 
 예제 테스트 클래스인 BaselineSingleValueDecompositionTest 클래스의 테스트 메서드인 baselineSingleValueDecompositionExamples 실행 결과를 살펴봅니다
 
-- [BaselineSingleValueDecompositionTest](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch06/BaselineSingleValueDecompositionTest.java) 클래스는 특잇값 분해 기반 협업 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [BaselineSingleValueDecompositionTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch06/BaselineSingleValueDecompositionTest.java) 클래스는 특잇값 분해 기반 협업 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 BaselineSingleValueDecompositionTest 클래스의 테스트 메서드인 baselineSingleValueDecompositionExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/f96428cd-e177-45cc-8c9b-d46651957ccd
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/f96428cd-e177-45cc-8c9b-d46651957ccd
 
 
 
 ## TF-IDF 기반 콘텐츠 기반 필터링 추천
 
-![Download](./recommender-workbook/src/test/puml/ch07/TermFrequencyInverseDocumentFrequency_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch07/TermFrequencyInverseDocumentFrequency_Class_Diagram.svg)
 
 TermFrequencyInverseDocumentFrequencyParams 클래스와 TermFrequencyInverseDocumentFrequency 클래스는 TF-IDF 콘텐츠 기반 필터링 구현체입니다. TermFrequencyInverseDocumentFrequencyParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 TermFrequencyInverseDocumentFrequency 클래스의 생성자에 매개변수를 전달합니다.
 
@@ -1676,7 +1676,7 @@ $${\mathop{\rm idf}\nolimits} ({t_i},D) = \log_{10}(\frac{|D|}{n_{t_i}})$$
 
 벡터 ${\bf{x}}$의 ${L_2}$ 노름은 다음과 같이 정의됩니다.
 
-<img src="./recommender-workbook/src/test/puml/ch07/termFrequencyInverseDocumentFrequencyExamples01.svg">
+<img src="./recommender-examples/src/test/puml/ch07/termFrequencyInverseDocumentFrequencyExamples01.svg">
 
 벡터 길이 정규화는 다음과 같이 정의됩니다.
 
@@ -1694,21 +1694,21 @@ $${\mathop{\rm sim}\nolimits} ({{\bf{x}}_a},{{\bf{x}}_b}) = cos({{\bf{x}}_a},{{\
 
 예제 테스트 클래스인 TermFrequencyInverseDocumentFrequencyTest 클래스의 테스트 메서드인 termFrequencyInverseDocumentFrequencyExamples 실행 결과를 살펴봅니다
 
-- [TermFrequencyInverseDocumentFrequencyTest](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch07/TermFrequencyInverseDocumentFrequencyTest.java) 클래스는 TF-IDF 기반 콘텐츠 기반 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [TermFrequencyInverseDocumentFrequencyTest](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch07/TermFrequencyInverseDocumentFrequencyTest.java) 클래스는 TF-IDF 기반 콘텐츠 기반 필터링 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 TermFrequencyInverseDocumentFrequencyTest 클래스의 테스트 메서드인 termFrequencyInverseDocumentFrequencyExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/10aed1f7-8057-4d20-a6d3-19d2c4064326
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/10aed1f7-8057-4d20-a6d3-19d2c4064326
 
 
 
 ## 연관규칙 기반 추천
 
-![Download](./recommender-workbook/src/test/puml/ch08/AssociationRuleMining_Class_Diagram.svg)
+![Download](./recommender-examples/src/test/puml/ch08/AssociationRuleMining_Class_Diagram.svg)
 
 AssociationRuleMiningParams 클래스와 AssociationRuleMining 클래스는 연관규칙 기반 필터링 구현체입니다. AssociationRuleMiningParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 AssociationRuleMining 클래스의 생성자에 매개변수를 전달합니다. 
 
@@ -1817,15 +1817,15 @@ $${\mathop{\rm lift}\nolimits} (X \Rightarrow Y) = \frac{{P(Y|X)}}{{P(Y)}} = \fr
 
 예제 테스트 클래스인 AssociationRuleMiningTest 클래스의 테스트 메서드인 associationRuleMiningExamples 실행 결과를 살펴봅니다
 
-- [**AssociationRuleMiningTest**](./recommender-workbook/src/test/java/com/r4tings/recommender/workbook/ch08/AssociationRuleMiningTest.java) 클래스는 연관규칙 기반 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
+- [**AssociationRuleMiningTest**](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch08/AssociationRuleMiningTest.java) 클래스는 연관규칙 기반 추천을 확인하기 위해 JUnit으로 작성된 예제 소스 코드입니다.
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 AssociationRuleMiningTest 클래스의 테스트 메서드인 associationRuleMiningExamples를 실행해 봅니다.
 
 ```
-./gradlew :recommender-workbook:test --tests com.r4tings.recommender.workbook.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-workbook/assets/123946859/b9cbba76-47aa-473d-9a25-d528b64685ef
+https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b9cbba76-47aa-473d-9a25-d528b64685ef
 
 
 
@@ -1852,7 +1852,7 @@ See [`LICENSE.md`](/LICENSE.md) file for details.
  
 <!--
 
-“**R4tings Recommender 오픈소스 추천엔진**”는 JVM(Java와 Scala)과 [Apache Spark](https://spark.apache.org/) 기반의 학술 연구/상용 목적의 추천 시스템을 구현하기 위한 오픈소스 추천엔진로 통계나 기계 학습 기반 추천 모델들의 기본 구현체인 “**[R4tings Recommender](https://github.com/r4tings/r4tings-recommender)**”와 응용 예제들인 “**R4tings Recommender Workbook**”를 통해 추천 과정을 단계별로 분해하여 흐름을 쉽게 파악하고, 어느 도메인에서도 손쉽게 수정하거나 확장 또는 재사용할 수 있고, 이를 하나의 파이프라인으로 연결하여 병렬 처리 할 수 있습니다.
+“**R4tings Recommender 오픈소스 추천엔진**”는 JVM(Java와 Scala)과 [Apache Spark](https://spark.apache.org/) 기반의 학술 연구/상용 목적의 추천 시스템을 구현하기 위한 오픈소스 추천엔진로 통계나 기계 학습 기반 추천 모델들의 기본 구현체인 “**[R4tings Recommender](https://github.com/r4tings/r4tings-recommender)**”와 응용 예제들인 “**R4tings Recommender Examples**”를 통해 추천 과정을 단계별로 분해하여 흐름을 쉽게 파악하고, 어느 도메인에서도 손쉽게 수정하거나 확장 또는 재사용할 수 있고, 이를 하나의 파이프라인으로 연결하여 병렬 처리 할 수 있습니다.
 
 R4tings Recommender는 데이터의 이해와 전처리 과정에서 사용하는 모듈과 추천 모델 생성과 추천 예측을 위해 사용하는 모듈로 구성되어있다.
 전자는 데이터 로딩, 평점 표준화, (비)유사도 측정에 사용한다. 후자는 여러 알고리즘을 이용해 추천 및 예측 모델 생성을 위해 사용한다.

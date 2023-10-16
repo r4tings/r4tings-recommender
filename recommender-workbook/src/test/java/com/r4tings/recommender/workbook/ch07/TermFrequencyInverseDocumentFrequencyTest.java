@@ -2,7 +2,7 @@
  * The Apache License 2.0 Copyright (c) 2023 r4tings.com and contributors
  * https://github.com/r4tings/r4tings-recommender/LICENSE.md
  */
-package com.r4tings.recommender.workbook.ch07;
+package com.r4tings.recommender.examples.ch07;
 
 import com.r4tings.recommender.model.tfidf.TermFrequencyInverseDocumentFrequency;
 import com.r4tings.recommender.model.tfidf.TermFrequencyInverseDocumentFrequencyParams;

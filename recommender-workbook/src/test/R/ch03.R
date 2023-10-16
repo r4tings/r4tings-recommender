@@ -13,7 +13,7 @@ spark_install(version = "2.4")
 library(sparklyr)
 
 
-print(Sys.setenv(DATASET_HOME = "C:/DEV/SCM/GitHub/r4tings-recommender-workbook/dataset"))
+print(Sys.setenv(DATASET_HOME = "C:/DEV/SCM/GitHub/r4tings-recommender-examples/dataset"))
 Sys.getenv("DATASET_HOME")
 filePath <- file.path(Sys.getenv("DATASET_HOME"))
 list.files(filePath)

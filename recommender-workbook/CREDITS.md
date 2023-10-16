@@ -1,5 +1,5 @@
 
-# R4tings Recommender Workbook v0.1.0-SNAPSHOT
+# R4tings Recommender Examples v0.1.0-SNAPSHOT
 ## Dependency License Report
 _2023-10-14 09:17:24 KST_
 ## Apache License, Version 2.0

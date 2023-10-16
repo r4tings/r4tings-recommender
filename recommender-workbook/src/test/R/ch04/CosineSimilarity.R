@@ -2,7 +2,7 @@ if (!require('data.table')) install.packages('data.table'); library('data.table'
 if (!require('recommenderlab')) install.packages('recommenderlab'); library('recommenderlab')
 if (!require('gtools')) install.packages('gtools'); library('gtools')
 
-filePath <- file.path("C:/Users/user/Documents/r4tings-recommender-workbook/dataset") # filePath <- file.path("C:/GitHub/r4tings-recommender-workbook/dataset")
+filePath <- file.path("C:/Users/user/Documents/r4tings-recommender-examples/dataset") # filePath <- file.path("C:/GitHub/r4tings-recommender-examples/dataset")
 
 list.files(filePath)
 setwd(filePath)
