@@ -95,7 +95,7 @@
 > 
 > 프로젝트 구성하기의 설명은 MS Windows 10 기준으로 작성되었습니다.
 > 
-> Windows OS에서의 전체 예제 실행은 [`getting-started-r4tings-recommender-on-windows.ps1`](r4tings-recommender/getting-started-r4tings-recommender-on-windows.ps1) 를 참고하세요.
+> Windows OS에서의 전체 예제 실행은 [`getting-started-r4tings-recommender-on-windows.ps1`](./getting-started-r4tings-recommender-on-windows.ps1) 를 참고하세요.
  
 ① Windows + R 단축키를 이용 해 실행 창을 열어 줍니다.
 
