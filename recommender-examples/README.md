@@ -103,10 +103,9 @@ Windows OS에서의 전체 예제 실행은 [`getting-started-recommender-exampl
 # 연관규칙 기반 추천 
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
 ```
+
 <br/>
 
 <div align="right">
    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 </div>
- 
-
