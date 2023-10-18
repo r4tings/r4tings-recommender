@@ -11,7 +11,7 @@
 
 ## 데이터셋 준비하기(Prepare Dataset)
 
-예제 테스트 클래스인 DatasetPrepareTest 클래스의 테스트 메서드인 r4tingsDataset 실행 결과를 살펴봅니다.
+예제 테스트 클래스인 [**DatasetPrepareTest**](/recommender-examples/src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java) 클래스의 테스트 메서드인 r4tingsDataset 실행 결과를 살펴봅니다.
 
 * [r4tingsDatasetExamples](/recommender-examples/src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java#L47)
 
