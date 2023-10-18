@@ -7,7 +7,7 @@
 
 ## 프로젝트 구성하기(Set up the project)
 
-프로젝트 구성하기는 [링크](https://github.com/r4tings/r4tings-recommender/README.md#프로젝트-구성하기set-up-the-project) 를 참고하세요
+프로젝트 구성하기는 [링크](https://github.com/r4tings/r4tings-recommender/#프로젝트-구성하기set-up-the-project) 를 참고하세요
 
 ## 데이터셋 준비하기(Prepare Dataset)
 
