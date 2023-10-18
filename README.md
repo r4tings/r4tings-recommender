@@ -459,7 +459,7 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb
 ##### 예제 컨텐츠 
 
 - [1. 추천과 추천 기법](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-01)
-  - [1.1 주요 용어와 개념](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02-sec-01)
+  - [1.1 주요 용어와 개념](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-01-sec-01)
   - [1.2 협업 필터링과 콘텐츠 기반 필터링](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-01-sec-02)
   - [1.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-01-sec-03)
 - [2. 데이터셋 살펴보기](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-02)
@@ -496,11 +496,11 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb
 - [7. TF-IDF 콘텐츠 기반 필터링 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-07)
   - [7.1 TF-IDF와 콘텐츠 기반 필터링](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-07-sec-01)
   - [7.2 TF-IDF와 코사인 유사도 기반 아이템 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-07-sec-02)
-  - [7.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06-sec-07)
+  - [7.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-07-sec-03)
 - [8. 연관규칙 기반 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-08)
-  - [8.1 연관규칙](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-07-sec-08)
+  - [8.1 연관규칙](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-08-sec-01)
   - [8.2 연관규칙 기반 아이템 추천](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-08-sec-02)
-  - [8.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-06-sec-08)
+  - [8.3 요약(Summary)](https://github.com/r4tings/r4tings-recommender/wiki/[Korean]-ch-08-sec-03)
 - References
   - [Recommender systems handbook](https://link.springer.com/book/10.1007/978-0-387-85820-3). Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantor. (2011).
   - [Recommender Systems  - The Textbook](https://link.springer.com/book/10.1007/978-3-319-29659-3). Charu C. Aggarwal. (2016).
