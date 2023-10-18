@@ -47,7 +47,7 @@ C:\r4tings
 
 ## 예제 실행하기(Executing Examples)
 
-Windows OS에서의 전체 예제 실행은 [`getting-started-recommender-examples-with-windows.ps1`](/recommender-examples/getting-started-recommender-examples-with-windows.ps1) 를 참고하세요.
+Windows OS에서의 전체 예제 실행은 [`getting-started-recommender-examples-on-windows.ps1`](/recommender-examples/getting-started-recommender-examples-on-windows.ps1) 를 참고하세요.
 
 ```powershell
 ##############################################################################
