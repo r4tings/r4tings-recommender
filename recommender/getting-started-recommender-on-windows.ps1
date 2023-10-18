@@ -1,36 +1,7 @@
 
-Write-Host -Foregroundcolor black -backgroundcolor white "`n Get started r4tings recommender with windows"
-pause
-Write-Host -Foregroundcolor black -backgroundcolor white "`n Deleting a exist project folder"
-pause
-Remove-Item -path /r4tings -recurse -confirm
-Write-Host -Foregroundcolor black -backgroundcolor white "`n Setting up R4tings Recommender project"
-pause
+../getting-started-r4tings-recommender-on-windows.ps1
 
-#########################
-# 프로젝트 구성
-#########################
-
-cd /
-mkdir r4tings
-cd r4tings
-Invoke-WebRequest https://github.com/r4tings/r4tings-recommender/archive/refs/heads/main.zip -OutFile r4tings-recommender-main.zip
-Expand-Archive -LiteralPath r4tings-recommender-main.zip -DestinationPath .
-Rename-Item -Path r4tings-recommender-main -NewName r4tings-recommender
-cd r4tings-recommender
-ls
-pwd
-
-pause
-Write-Host -Foregroundcolor black -backgroundcolor white "`n R4tings Recommender project requires java 11 to run"
-java -version
-pause
-Write-Host -Foregroundcolor black -backgroundcolor white "`n Build gradle project"
-pause
-./gradlew clean build -x test
-pause
-Write-Host -Foregroundcolor black -backgroundcolor white "`n Prepare Datasets"
-pause
+Write-Host -Foregroundcolor black -backgroundcolor white "`n Get started recommender on windows"
 
 #########################
 # 데이터셋 준비
@@ -38,8 +9,7 @@ pause
 
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.downloadPublicDatasets
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.bookCrossingDataset
-# ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.movieLensDataset
-# ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.r4tingsDataset
+./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.movieLensDataset
 
 #########################
 # 평점 정규화
@@ -122,7 +92,7 @@ pause
 
 pause
 
-Write-Host -Foregroundcolor black -backgroundcolor white "`n Calculate Euclidean Similarity"
+Write-Host -Foregroundcolor black -backgroundcolor white "`n Calculate Distance & Similarity"
 
 pause
 
