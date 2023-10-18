@@ -1,7 +1,5 @@
 # R4tings Recommender Examples
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb-6a81-468f-b5b3-39fe5943f64d
-
 ## 필수 소프트웨어(Required software)
 |소프트웨어|버전|설명|
 |------|---|---|
@@ -103,6 +101,8 @@ Windows OS에서의 전체 예제 실행은 [`getting-started-recommender-exampl
 # 연관규칙 기반 추천 
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
 ```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb-6a81-468f-b5b3-39fe5943f64d
 
 <br/>
 
