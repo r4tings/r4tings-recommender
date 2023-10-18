@@ -1,13 +1,15 @@
 # Get Started
 
-## 필수 소프트웨어(Required software)
+## 전제조건(Prerequisites)
+
+### 필수 소프트웨어(Required software)
 |소프트웨어|버전|설명|
 |------|---|---|
 |JDK|11| <p>OpenJDK 또는 Oracle JDK <p>* OpenJDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/) 를 참고하세요 <p>* Oracle JDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/)를 참고하세요|
 
-## 프로젝트 구성하기(Set up the project)
+### 프로젝트 구성하기(Set up the project)
 
-프로젝트 구성하기는 [링크](https://github.com/r4tings/r4tings-recommender/#프로젝트-구성하기set-up-the-project) 를 참고하세요
+프로젝트 구성하기는 [링크](https://github.com/r4tings/r4tings-recommender#프로젝트-구성하기set-up-the-project) 를 참고하세요
 
 ## 데이터셋 준비하기(Prepare Dataset)
 
