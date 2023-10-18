@@ -1,7 +1,5 @@
 # R4tings Recommender Examples
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb-6a81-468f-b5b3-39fe5943f64d
-
 ## 필수 소프트웨어(Required software)
 |소프트웨어|버전|설명|
 |------|---|---|
@@ -9,13 +7,13 @@ https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb
 
 ## 프로젝트 구성하기(Set up the project)
 
-프로젝트 구성하기는 [링크](/Readme.md#프로젝트-구성하기set-up-the-project) 를 참고하세요
+프로젝트 구성하기는 [링크](https://github.com/r4tings/r4tings-recommender/#프로젝트-구성하기set-up-the-project) 를 참고하세요
 
 ## 데이터셋 준비하기(Prepare Dataset)
 
 예제 테스트 클래스인 DatasetPrepareTest 클래스의 테스트 메서드인 r4tingsDataset 실행 결과를 살펴봅니다.
 
-* [r4tingsDatasetExamples](./recommender-examples/src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java#L43)
+* [r4tingsDatasetExamples](./src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java#L43)
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 r4tingsDataset 실행해 봅니다.
 
@@ -103,6 +101,8 @@ Windows OS에서의 전체 예제 실행은 [`getting-started-recommender-exampl
 # 연관규칙 기반 추천 
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
 ```
+
+https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb-6a81-468f-b5b3-39fe5943f64d
 
 <br/>
 
