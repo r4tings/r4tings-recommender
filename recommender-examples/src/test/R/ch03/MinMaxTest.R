@@ -2,8 +2,8 @@ if (!require('data.table')) install.packages('data.table'); library('data.table'
 if (!require('recommenderlab')) install.packages('recommenderlab'); library('recommenderlab')
 if (!require('scales')) install.packages('scales'); library('scales')
 
-filePath <- file.path("C:/Users/user/Documents/r4tings-recommender-examples/dataset")
-# filePath <- file.path("C:/GitHub/r4tings-recommender-examples/dataset")
+filePath <- file.path("C:/r4tings/r4tings-recommender/dataset")
+# filePath <- file.path("C:/GitHub/r4tings-recommender/dataset")
 
 list.files(filePath)
 setwd(filePath)

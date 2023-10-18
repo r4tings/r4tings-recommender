@@ -16,7 +16,7 @@ if (!require(dplyr)) {
 library(kableExtra)
 
 
-print(Sys.setenv(DATASET_HOME = " C:\Users\user\Documents\r4tings-recommender-examples\data"))
+print(Sys.setenv(DATASET_HOME = " C:\r4tings\r4tings-recommender\data"))
 Sys.getenv("DATASET_HOME")
 filePath <- file.path(Sys.getenv("DATASET_HOME"))
 list.files(filePath)
