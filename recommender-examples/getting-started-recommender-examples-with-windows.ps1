@@ -181,3 +181,5 @@ pause
 
 # 연관규칙 기반
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
+
+pause
