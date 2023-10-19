@@ -198,29 +198,24 @@ C:\r4tings
 > 
 > 프로젝트 폴더는 r4tings-recommender 입니다.
 > 
-> 프로젝트의 API 문서는 [JavaDoc](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/javadoc/index.html)과 [TestFixturesJavadoc](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/testFixturesjavadoc/index.html)를 참고하세요. 
-> 
 > Microsoft Windows용 Hadoop 바이너리는 [링크](https://github.com/cdarlint/winutils/)를 참고하세요.
 > 
 > 리포지토리 뷰에서 소스 코드 보관 파일 다운로드하는 자세한 내용은 [링크](https://docs.github.com/ko/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)를 참고하세요.
 
 ### 데이터셋 준비하기(Prepare Dataset)
 
-#### R4tings Recommender 프로젝트
-
-R4tings Recommender 프로젝트의 데이터셋 준비하기는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender/README.md#데이터셋-준비하기prepare-dataset) 를 참고하세요
-
-#### R4tings Recommender Examples 프로젝트 
-
-R4tings Recommender Examples 프로젝트의 데이터셋 준비하기는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#데이터셋-준비하기prepare-dataset) 를 참고하세요
+- R4tings Recommender 프로젝트의 데이터셋 준비하기는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender/README.md#데이터셋-준비하기prepare-dataset) 를 참고하세요.
+- R4tings Recommender Examples 프로젝트의 데이터셋 준비하기는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#데이터셋-준비하기prepare-dataset) 를 참고하세요.
 
 ## 예제 컨텐츠(Example Content) 
 
-R4tings Recommender 오픈소스 추천엔진의 예제 컨텐츠는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#예제-컨텐츠example-content) 를 참고하세요
+- R4tings Recommender 오픈소스 추천엔진의 예제 컨텐츠는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#예제-컨텐츠example-content) 를 참고하세요
+
+- R4tings Recommender 오픈소스 추천엔진의 API 문서는 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/javadoc/index.html) 와 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/testFixturesjavadoc/index.html) 를 참고하세요.
 
 ## 평점 정규화
 
-### 평균 중심 정규화
+#### 평균 중심 정규화
 
 ![Download](./recommender-examples/src/test/puml/ch03/MeanCenteringNormalizer_Class_Diagram.svg)
 
