@@ -564,8 +564,8 @@ Dataset<Row> binarizedRatingDS = binarizer.transform(ratingDS);
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.BinaryThresholdingTest.binaryThresholdingExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/e9e5cb9d-4c2c-4365-86a0-ac7f27e19876
 
+https://github.com/r4tings/r4tings-recommender/assets/123946859/09a794a1-b44b-4f8a-b815-4e7a1e8461d4
 
 
 ## 유사도 계산
