@@ -646,7 +646,9 @@ Dataset<Row> similarityDS = measurer.transform(ratingDS);
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.CosineSimilarityTest.cosineSimilarityExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/2cb51994-4ebf-436f-9153-8e298269b828
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/b9099c42-f215-437f-bce7-0d690c809952
+
 
 ### 피어슨 상관계수와 유사도
 
@@ -744,7 +746,9 @@ $$pearson({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\mathop{\rm cov}} ({{\bf{x}}_a},{
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.PearsonSimilarityTest.pearsonSimilarityExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/850d7868-eaa0-49c5-9f96-f771da31d322
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/25330bfa-076d-439a-89f5-3126403482de
+
 
 ### 유클리드 거리와 유사도
 
@@ -834,7 +838,9 @@ $$SF = \frac{{AS}}{{PS}}$$
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.EuclideanSimilarityTest.euclideanSimilarityExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/c37b999c-1298-431b-a2b0-9808f37277be
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/51a23f54-1317-4a23-a900-d6909d831b1f
+
 
 ### 이진 속성과 유사도
 
@@ -962,8 +968,8 @@ $${\rm{ExtendedJaccard}}({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\bf{x}}_a^{\rm T}{
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch04.binary.ExtendedJaccardSimilarityTest.extendedJaccardSimilarityExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/dad07ffb-9e85-4170-9777-90f7a2b2f6a2
 
+https://github.com/r4tings/r4tings-recommender/assets/123946859/f4ebd13d-e2ac-4aa6-86fc-ca3d1ceff256
 
 
 ## 이웃 기반 협업 필터링 추천
@@ -1128,8 +1134,8 @@ $${\hat r_{ui}} = {\mu_i} + {\sigma_i}\frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch05.KNearestNeighborsTest.kNearestNeighborsExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9922b101-6563-4a83-ac51-085216db5079
 
+https://github.com/r4tings/r4tings-recommender/assets/123946859/3e65c90c-b621-47ca-9307-1f607b487b7a
 
 
 ## 특잇값 분해 기반 협업 필터링 추천
@@ -1280,8 +1286,8 @@ $${\hat r_{ui}} = {b_{ui}} + ({p_{u}} \times {\sigma }) \cdot {q_{i}} = {b_{ui}}
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch06.BaselineSingleValueDecompositionTest.baselineSingleValueDecompositionExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/f96428cd-e177-45cc-8c9b-d46651957ccd
 
+https://github.com/r4tings/r4tings-recommender/assets/123946859/23cf0e27-ce7f-4ebe-b977-c900ab9b350c
 
 
 ## TF-IDF 기반 콘텐츠 기반 필터링 추천
@@ -1413,8 +1419,8 @@ $${\mathop{\rm sim}\nolimits} ({{\bf{x}}_a},{{\bf{x}}_b}) = cos({{\bf{x}}_a},{{\
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch07.TermFrequencyInverseDocumentFrequencyTest.termFrequencyInverseDocumentFrequencyExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/10aed1f7-8057-4d20-a6d3-19d2c4064326
 
+https://github.com/r4tings/r4tings-recommender/assets/123946859/4e36efc3-6741-4aa7-983c-4c7123b78f9c
 
 
 ## 연관규칙 기반 추천
@@ -1536,7 +1542,9 @@ $${\mathop{\rm lift}\nolimits} (X \Rightarrow Y) = \frac{{P(Y|X)}}{{P(Y)}} = \fr
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b9cbba76-47aa-473d-9a25-d528b64685ef
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/69249c3e-8042-430f-861a-4111ed90e4da
+
 
 ## 피드백과 기여(Feedback and Contributions)
 
