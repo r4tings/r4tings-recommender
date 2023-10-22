@@ -286,7 +286,9 @@ $${\hat r_{u,i}} = {r_{u,i}} - {\mu _i}$$
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/096b7651-94b4-4d9c-94e4-1dbf87f37b83
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/df6e3854-2204-4091-8b6e-2c1b0f6c2a3c
+
 
 ### Z점수 정규화
 
