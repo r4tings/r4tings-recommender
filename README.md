@@ -438,7 +438,9 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {r_{\min }}}}{{{r_{\max }} - {r_{\min }}}}
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MinMaxTest.minMaxExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/9c811808-0dc7-4068-8109-c92d1f278bf5
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/e2fbc1a7-5317-439c-953d-4097b367a79a
+
 
 ### 소수 자릿수 정규화 
 
