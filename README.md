@@ -166,7 +166,9 @@ PS C:\r4tings\r4tings-recommender> ./gradlew clean build -x test
 PS C:\r4tings\r4tings-recommender>
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/6639a38a-e20d-45b0-ad7a-047bff745f8e
+
 
 **R4tings Recommender 오픈소스 추천엔진**의 디렉토리 구조는 다음과 같습니다
 
