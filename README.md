@@ -360,7 +360,9 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}} - {\mu _i}}}{{{\sigma _i}}}$$
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/64e1f6a7-0b61-4446-832e-347c9b71ffe5
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/1978f45b-88b0-4a18-bc7c-f8ae93bfa63a
+
 
 ### 최소-최대 정규화
 
