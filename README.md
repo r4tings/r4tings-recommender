@@ -500,7 +500,9 @@ $${\hat r_{u,i}} = \frac{{{r_{u,i}}}}{{{{10}^j}}}$$
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples
 ```
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/740b46c4-b8a5-408d-bcb6-fb311fdc6523
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/f0675e1d-f4fc-4669-97d8-9e5e6375111c
+
 
 ### 이진 임계 이진화 
 
