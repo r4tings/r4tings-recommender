@@ -15,11 +15,11 @@
 ## TOC
 
 - [R4tings Recommender 오픈소스 추천엔진](#r4tings-recommender-오픈소스-추천엔진)
+- [예제 컨텐츠(Example Content)](#예제-컨텐츠example-content)
 - [전제조건(Prerequisites)](#전제조건prerequisites)  
   - [필수 및 선택 소프트웨어(Required and optional software)](#필수-및-선택-소프트웨어required-and-optional-software)
   - [프로젝트 구성하기(Set up the project)](#프로젝트-구성하기set-up-the-project)  
   - [데이터셋 준비하기(Prepare Dataset)](#데이터셋-준비하기prepare-dataset)
-- [예제 컨텐츠(Example Content)](#예제-컨텐츠example-content)
 - [평점 정규화](#평점-정규화)
   - [평균 중심 정규화](#평균-중심-정규화)
   - [Z점수 정규화](#z점수-정규화)
@@ -64,6 +64,12 @@
 - **특잇값 분해 기반 협업 필터링 추천** (BaselineSingleValueDecomposition Class)
 - **TF-IDF 콘텐츠 기반 필터링 추천** (TermFrequencyInverseDocumentFrequency Class)
 - **연관규칙 기반 추천** (AssociationRuleMining Class)
+
+## 예제 컨텐츠(Example Content) 
+
+- R4tings Recommender 오픈소스 추천엔진의 예제 컨텐츠는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#예제-컨텐츠example-content) 를 참고하세요
+
+- R4tings Recommender 오픈소스 추천엔진의 API 문서는 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/javadoc/index.html) 와 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/testFixturesjavadoc/index.html) 를 참고하세요.
 
 ## 전제조건(Prerequisites)  
 <!--
@@ -209,12 +215,6 @@ C:\r4tings
 
 - R4tings Recommender 프로젝트의 데이터셋 준비하기는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender/README.md#데이터셋-준비하기prepare-dataset) 를 참고하세요.
 - R4tings Recommender Examples 프로젝트의 데이터셋 준비하기는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#데이터셋-준비하기prepare-dataset) 를 참고하세요.
-
-## 예제 컨텐츠(Example Content) 
-
-- R4tings Recommender 오픈소스 추천엔진의 예제 컨텐츠는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#예제-컨텐츠example-content) 를 참고하세요
-
-- R4tings Recommender 오픈소스 추천엔진의 API 문서는 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/javadoc/index.html) 와 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/testFixturesjavadoc/index.html) 를 참고하세요.
 
 ## 평점 정규화
 
