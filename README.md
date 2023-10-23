@@ -15,7 +15,6 @@
 ## TOC
 
 - [R4tings Recommender 오픈소스 추천엔진](#r4tings-recommender-오픈소스-추천엔진)
-- [예제 컨텐츠(Example Content)](#예제-컨텐츠example-content)
 - [전제조건(Prerequisites)](#전제조건prerequisites)  
   - [필수 및 선택 소프트웨어(Required and optional software)](#필수-및-선택-소프트웨어required-and-optional-software)
   - [프로젝트 구성하기(Set up the project)](#프로젝트-구성하기set-up-the-project)  
@@ -65,7 +64,7 @@
 - **TF-IDF 콘텐츠 기반 필터링 추천** (TermFrequencyInverseDocumentFrequency Class)
 - **연관규칙 기반 추천** (AssociationRuleMining Class)
 
-## 예제 컨텐츠(Example Content) 
+### 예제 컨텐츠(Example Content) 
 
 - R4tings Recommender 오픈소스 추천엔진의 예제 컨텐츠는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#예제-컨텐츠example-content) 를 참고하세요
 
