@@ -30,10 +30,11 @@
   - [피어슨 상관계수와 유사도](#피어슨-상관계수와-유사도)
   - [유클리드 거리와 유사도](#유클리드-거리와-유사도)
   - [이진 속성과 유사도](#이진-속성과-유사도)
-- [이웃 기반 협업 필터링 추천](#이웃-기반-협업-필터링-추천)
-- [특잇값 분해 기반 협업 필터링 추천](#특잇값-분해-기반-협업-필터링-추천)
-- [TF-IDF 콘텐츠 기반 필터링 추천](#tf-idf-기반-콘텐츠-기반-필터링-추천)
-- [연관규칙 기반 추천](#연관규칙-기반-추천)
+[평점 예측과 아이템 추천](#평점-예측과-아이템-추천)  
+  - [이웃 기반 협업 필터링 추천](#이웃-기반-협업-필터링-추천)
+  - [특잇값 분해 기반 협업 필터링 추천](#특잇값-분해-기반-협업-필터링-추천)
+  - [TF-IDF 콘텐츠 기반 필터링 추천](#tf-idf-기반-콘텐츠-기반-필터링-추천)
+  - [연관규칙 기반 추천](#연관규칙-기반-추천)
 - [피드백과 기여(Feedback and Contributions)](#피드백과-기여feedback-and-contributions)
 - [라이선스(License)](#라이선스license)
 
@@ -973,8 +974,9 @@ $${\rm{ExtendedJaccard}}({{\bf{x}}_a},{{\bf{x}}_b}) = \frac{{{\bf{x}}_a^{\rm T}{
 
 https://github.com/r4tings/r4tings-recommender/assets/123946859/f4ebd13d-e2ac-4aa6-86fc-ca3d1ceff256
 
+## 평점 예측과 아이템 추천
 
-## 이웃 기반 협업 필터링 추천
+### 이웃 기반 협업 필터링 추천
 
 ![Download](./recommender-examples/src/test/puml/ch05/KNearestNeighbors_Class_Diagram.svg)
 
@@ -1140,7 +1142,7 @@ $${\hat r_{ui}} = {\mu_i} + {\sigma_i}\frac{{\sum\nolimits_{j \in {N_u}(i)} {{w_
 https://github.com/r4tings/r4tings-recommender/assets/123946859/3e65c90c-b621-47ca-9307-1f607b487b7a
 
 
-## 특잇값 분해 기반 협업 필터링 추천
+### 특잇값 분해 기반 협업 필터링 추천
 
 ![Download](./recommender-examples/src/test/puml/ch06/BaselineSVD_Class_Diagram.svg)
 
@@ -1292,7 +1294,7 @@ $${\hat r_{ui}} = {b_{ui}} + ({p_{u}} \times {\sigma }) \cdot {q_{i}} = {b_{ui}}
 https://github.com/r4tings/r4tings-recommender/assets/123946859/23cf0e27-ce7f-4ebe-b977-c900ab9b350c
 
 
-## TF-IDF 기반 콘텐츠 기반 필터링 추천
+### TF-IDF 기반 콘텐츠 기반 필터링 추천
 
 ![Download](./recommender-examples/src/test/puml/ch07/TermFrequencyInverseDocumentFrequency_Class_Diagram.svg)
 
@@ -1425,7 +1427,7 @@ $${\mathop{\rm sim}\nolimits} ({{\bf{x}}_a},{{\bf{x}}_b}) = cos({{\bf{x}}_a},{{\
 https://github.com/r4tings/r4tings-recommender/assets/123946859/4e36efc3-6741-4aa7-983c-4c7123b78f9c
 
 
-## 연관규칙 기반 추천
+### 연관규칙 기반 추천
 
 ![Download](./recommender-examples/src/test/puml/ch08/AssociationRuleMining_Class_Diagram.svg)
 
