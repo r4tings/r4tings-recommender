@@ -60,10 +60,11 @@
   - **피어슨 상관계수와 유사도** (PearsonSimilarityMeasurer Class)
   - **유클리드 거리와 유사도** (EuclideanSimilarityMeasurer Class)
   - **이진 속성과 유사도** (ExtendedJaccardSimilarityMeasurer Class)
-- **이웃 기반 협업 필터링 추천** (KNearestNeighbors Class)
-- **특잇값 분해 기반 협업 필터링 추천** (BaselineSingleValueDecomposition Class)
-- **TF-IDF 콘텐츠 기반 필터링 추천** (TermFrequencyInverseDocumentFrequency Class)
-- **연관규칙 기반 추천** (AssociationRuleMining Class)
+- 평점 예측과 아이템 추천
+  - **이웃 기반 협업 필터링 추천** (KNearestNeighbors Class)
+  - **특잇값 분해 기반 협업 필터링 추천** (BaselineSingleValueDecomposition Class)
+  - **TF-IDF 콘텐츠 기반 필터링 추천** (TermFrequencyInverseDocumentFrequency Class)
+  - **연관규칙 기반 추천** (AssociationRuleMining Class)
 
 ### 예제 컨텐츠(Example Content) 
 
