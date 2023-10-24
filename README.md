@@ -50,21 +50,21 @@
 
 ### 지원 알고리즘 및 클래스
 - 평점 정규화 
-  - **평균 중심화** ([**MeanCenteringNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/MeanCenteringNormalizer.java) Class)
-  - **Z점수화** ([**ZScoreNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/ZScoreNormalizer.java) Class)
-  - **최소-최대화** ([**MinMaxNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/MinMaxNormalizer.java) Class)
-  - **소수 자릿수화** ([**DecimalScalingNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/DecimalScalingNormalizer.java) Class)
-  - **이진 임계화** ([**ThresholdBinarizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/ThresholdBinarizer.java) Class)
+  - **평균 중심화** ([**MeanCenteringNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/MeanCenteringNormalizer.java) 클래스)
+  - **Z점수화** ([**ZScoreNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/ZScoreNormalizer.java) 클래스)
+  - **최소-최대화** ([**MinMaxNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/MinMaxNormalizer.java) 클래스)
+  - **소수 자릿수화** ([**DecimalScalingNormalizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/DecimalScalingNormalizer.java) 클래스)
+  - **이진 임계화** ([**ThresholdBinarizer**](./recommender/src/main/java/com/r4tings/recommender/data/normalize/ThresholdBinarizer.java) 클래스)
 - 유사도 계산
-  - **코사인 유사도** ([**CosineSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/CosineSimilarityMeasurer.java) Class)
-  - **피어슨 상관계수와 유사도** ([**PearsonSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/PearsonSimilarityMeasurer.java) Class)
-  - **유클리드 거리와 유사도** ([**EuclideanSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/EuclideanSimilarityMeasurer.java) Class)
-  - **이진 속성과 유사도** ([**ExtendedJaccardSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/ExtendedJaccardSimilarityMeasurer.java) Class)
+  - **코사인 유사도** ([**CosineSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/CosineSimilarityMeasurer.java) 클래스)
+  - **피어슨 상관계수와 유사도** ([**PearsonSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/PearsonSimilarityMeasurer.java) 클래스)
+  - **유클리드 거리와 유사도** ([**EuclideanSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/EuclideanSimilarityMeasurer.java) 클래스)
+  - **이진 속성과 유사도** ([**ExtendedJaccardSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/ExtendedJaccardSimilarityMeasurer.java) 클래스)
 - 평점 예측과 아이템 추천
-  - **이웃 기반 협업 필터링 추천** (KNearestNeighborsParams과 KNearestNeighbors Class)
-  - **특잇값 분해 기반 협업 필터링 추천** (BaselineSingleValueDecompositionParams과 BaselineSingleValueDecomposition Class)
-  - **TF-IDF 콘텐츠 기반 필터링 추천** (TermFrequencyInverseDocumentFrequencyParams과 TermFrequencyInverseDocumentFrequency Class)
-  - **연관규칙 기반 추천** ([**AssociationRuleMiningParams**](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMiningParams.java) [**AssociationRuleMining**](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMining.java) Class)
+  - **이웃 기반 협업 필터링 추천** (KNearestNeighborsParams 클래스와 KNearestNeighbors 클래스)
+  - **특잇값 분해 기반 협업 필터링 추천** (BaselineSingleValueDecompositionParams 클래스와 BaselineSingleValueDecomposition 클래스)
+  - **TF-IDF 콘텐츠 기반 필터링 추천** (TermFrequencyInverseDocumentFrequencyParams 클래스와 TermFrequencyInverseDocumentFrequency 클래스)
+  - **연관규칙 기반 추천** ([**AssociationRuleMiningParams**](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMiningParams.java) 클래스와 [**AssociationRuleMining**](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMining.java) 클래스)
 
 ### 예제 컨텐츠(Example Content) 
 
