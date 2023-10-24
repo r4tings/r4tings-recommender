@@ -61,10 +61,10 @@
   - **유클리드 거리와 유사도** ([**EuclideanSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/EuclideanSimilarityMeasurer.java) 클래스)
   - **이진 속성과 유사도** ([**ExtendedJaccardSimilarityMeasurer**](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/ExtendedJaccardSimilarityMeasurer.java) 클래스)
 - 평점 예측과 아이템 추천
-  - **이웃 기반 협업 필터링 추천** (KNearestNeighborsParams 클래스와 KNearestNeighbors 클래스)
-  - **특잇값 분해 기반 협업 필터링 추천** (BaselineSingleValueDecompositionParams 클래스와 BaselineSingleValueDecomposition 클래스)
-  - **TF-IDF 콘텐츠 기반 필터링 추천** (TermFrequencyInverseDocumentFrequencyParams 클래스와 TermFrequencyInverseDocumentFrequency 클래스)
-  - **연관규칙 기반 추천** ([**AssociationRuleMiningParams**](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMiningParams.java) 클래스와 [**AssociationRuleMining**](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMining.java) 클래스)
+  - **이웃 기반 협업 필터링 추천** ([**KNearestNeighbors**](./recommender/src/main/java/com/r4tings/recommender/model/knn/KNearestNeighbors.java) 클래스와 [**KNearestNeighborsParams**](./recommender/src/main/java/com/r4tings/recommender/model/knn/KNearestNeighborsParams.java) 클래스)
+  - **특잇값 분해 기반 협업 필터링 추천** ([**BaselineSingleValueDecomposition**](./recommender/src/main/java/com/r4tings/recommender/model/svd/BaselineSingleValueDecomposition.java) 클래스와 [**BaselineSingleValueDecompositionParams**](./recommender/src/main/java/com/r4tings/recommender/model/svd/BaselineSingleValueDecompositionParams.java) 클래스)
+  - **TF-IDF 콘텐츠 기반 필터링 추천** ([**TermFrequencyInverseDocumentFrequency**](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequency.java) 클래스와 [**TermFrequencyInverseDocumentFrequencyParams**](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequencyParams.java) 클래스)
+  - **연관규칙 기반 추천** ([**AssociationRuleMining**](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMining.java) 클래스와 [**AssociationRuleMiningParams**](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMiningParams.java) 클래스)
 
 ### 예제 컨텐츠(Example Content) 
 
