@@ -984,9 +984,9 @@ https://github.com/r4tings/r4tings-recommender/assets/123946859/f4ebd13d-e2ac-4a
 
 KNearestNeighborsParams 클래스와 KNearestNeighbors 클래스는 이웃 기반 협업 필터링 구현체입니다. KNearestNeighborsParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 KNearestNeighbors 클래스의 생성자에 매개변수를 전달합니다. 
 
-- KNearestNeighbors 클래스는 AbstractRecommender 클래스를 상속받아 평점 데이터(사용자/아이템/평점)를 사용자 기반 또는 아이템 기반의 추천 결과로 변환하는 recommend 메서드를 구현하고 있는 협업 필터링 추천을 처리하는 추천기(Recommender)입니다.
+- [**KNearestNeighbors**](./recommender/src/main/java/com/r4tings/recommender/model/knn/KNearestNeighbors.java) 클래스는 AbstractRecommender 클래스를 상속받아 평점 데이터(사용자/아이템/평점)를 사용자 기반 또는 아이템 기반의 추천 결과로 변환하는 recommend 메서드를 구현하고 있는 협업 필터링 추천을 처리하는 추천기(Recommender)입니다.
 
-- KNearestNeighborsParams 클래스는 이웃 기반 협업 필터링 추천을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
+- [**KNearestNeighborsParams**](./recommender/src/main/java/com/r4tings/recommender/model/knn/KNearestNeighborsParams.java) 클래스는 이웃 기반 협업 필터링 추천을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
 ```java
 KNearestNeighborsParams params =
@@ -1150,9 +1150,9 @@ https://github.com/r4tings/r4tings-recommender/assets/123946859/3e65c90c-b621-47
 
 BaselineSingleValueDecompositionParams 클래스와 BaselineSingleValueDecomposition 클래스는 특잇값 분해 기반 협업 필터링 구현체입니다. BaselineSingleValueDecompositionParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 BaselineSingleValueDecomposition 클래스의 생성자에 매개변수를 전달합니다.
 
-- BaselineSingleValueDecomposition 클래스는 AbstractRecommender 클래스를 상속받아 평점 데이터(사용자/아이템/평점)를 특잇값 분해 기반의 추천 결과로 변환하는 recommend 메서드를 구현하고 있는 협업 필터링 추천을 처리하는 추천기(Recommender)입니다.
+- [**BaselineSingleValueDecomposition**](./recommender/src/main/java/com/r4tings/recommender/model/svd/BaselineSingleValueDecomposition.java) 클래스는 AbstractRecommender 클래스를 상속받아 평점 데이터(사용자/아이템/평점)를 특잇값 분해 기반의 추천 결과로 변환하는 recommend 메서드를 구현하고 있는 협업 필터링 추천을 처리하는 추천기(Recommender)입니다.
 
-- BaselineSingleValueDecompositionParams 클래스는 이웃 기반 협업 필터링 추천을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
+- [**BaselineSingleValueDecompositionParams**](./recommender/src/main/java/com/r4tings/recommender/model/svd/BaselineSingleValueDecompositionParams.java) 클래스는 이웃 기반 협업 필터링 추천을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
 ```java
 BaselineSingleValueDecompositionParams params =
@@ -1302,9 +1302,9 @@ https://github.com/r4tings/r4tings-recommender/assets/123946859/23cf0e27-ce7f-4e
 
 TermFrequencyInverseDocumentFrequencyParams 클래스와 TermFrequencyInverseDocumentFrequency 클래스는 TF-IDF 콘텐츠 기반 필터링 구현체입니다. TermFrequencyInverseDocumentFrequencyParams 클래스는 Apache Spark ML 패키지의 추상 클래스인 JavaParams 클래스를 상속받는 CommonParams 클래스를 구현하고 있는 클래스로 TermFrequencyInverseDocumentFrequency 클래스의 생성자에 매개변수를 전달합니다.
 
-- TermFrequencyInverseDocumentFrequency 클래스는 AbstractRecommender 클래스를 상속받아 평점 데이터(사용자/아이템/평점)를 사용자 기반 또는 아이템 기반의 추천 결과로 변환하는 recommend 메서드를 구현하고 있는 협업 필터링 추천을 처리하는 추천기(Recommender)입니다.
+- [**TermFrequencyInverseDocumentFrequency**](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequency.java) 클래스는 AbstractRecommender 클래스를 상속받아 평점 데이터(사용자/아이템/평점)를 사용자 기반 또는 아이템 기반의 추천 결과로 변환하는 recommend 메서드를 구현하고 있는 협업 필터링 추천을 처리하는 추천기(Recommender)입니다.
 
-- TermFrequencyInverseDocumentFrequencyParams 클래스는 TF-IDF 콘텐츠 기반 필터링 추천을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
+- [**TermFrequencyInverseDocumentFrequencyParams**](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequencyParams.java) 클래스는 TF-IDF 콘텐츠 기반 필터링 추천을 위해 필요한 매개변수의 설정이나 기본값 변경이 필요한 경우에는 필요에 따라 다음 코드와 같이 빌더 패턴을 사용하여 인스턴스를 생성할 수 있습니다.
 
 ```java
 TermFrequencyInverseDocumentFrequencyParams params =
