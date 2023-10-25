@@ -105,8 +105,24 @@ Windows OS에서의 전체 예제 실행은 [`getting-started-recommender-exampl
 # 연관규칙 기반 추천 
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch08.AssociationRuleMiningTest.associationRuleMiningExamples
 ```
+### 평점 정규화
 
-https://github.com/r4tings/r4tings-recommender-examples/assets/31362557/6be8f7fb-6a81-468f-b5b3-39fe5943f64d
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/ceab3963-c27e-4617-a3b3-d9a0dcd71891
+
+
+### 유사도 계산
+
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/03a122d3-c094-44d7-8b6d-4fb7280ae616
+
+
+### 평점 예측과 아이템 추천
+
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/71763280-ad25-4517-b2e6-3f0fc4008e18
+
+
 
 ## 예제 컨텐츠(Example Content)
 
