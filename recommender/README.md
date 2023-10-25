@@ -61,7 +61,7 @@ CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식�
 
 예제 테스트 클래스인 [**DatasetPrepareTest**](/recommender-examples/src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java) 클래스의 테스트 메서드인 bookCrossingDatasetExamples 실행 결과를 살펴봅니다.
 
-* [bookCrossingDatasetExamples](./recommender/src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java#L102)
+* [bookCrossingDatasetExamples](/recommender/src/test/java/com/r4tings/recommender/examples/ch02/DatasetPrepareTest.java#L102)
 
 다음과 같이 명령줄 인터페이스(CLI, Command line interface)에서 빌드 도구인 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 bookCrossingDataset 실행해 봅니다.
 
