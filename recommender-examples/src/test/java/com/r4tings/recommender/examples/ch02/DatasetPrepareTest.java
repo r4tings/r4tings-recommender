@@ -149,8 +149,6 @@ public class DatasetPrepareTest extends AbstractSparkTests {
 
     String parquetPath = path.replace("csv", "parquet");
 
-    log.info("\n[{}]\n[{}]", path, parquetPath);
-
     csvDS.repartition(1).write().mode(SaveMode.Overwrite).parquet(parquetPath);
 
     assertEquals(0, csvDS.except(spark.read().load(parquetPath)).count());

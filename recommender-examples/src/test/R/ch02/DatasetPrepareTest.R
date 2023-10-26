@@ -2,15 +2,13 @@ if (!require('data.table')) install.packages('data.table'); library('data.table'
 if (!require('dlookr')) install.packages('dlookr'); library('dlookr')
 if (!require('dplyr')) install.packages('dplyr'); library('dplyr')  # alternative installation of the %>%
 
-
 filePath <- file.path("C:/r4tings/r4tings-recommender/dataset")
 list.files(filePath)
 setwd(filePath)
 
-
 #########################
 # Book-Crossing dataset # 
-########################
+#########################
 
 system.time(
   bx_books.dt <-
@@ -90,7 +88,6 @@ ml_tags.dt
 dlookr::diagnose(ml_tags.dt)
 
 # ml_tags.dt %>% diagnose_report(output_format = "html")
-
 
 ###################
 # r4tings dataset # 

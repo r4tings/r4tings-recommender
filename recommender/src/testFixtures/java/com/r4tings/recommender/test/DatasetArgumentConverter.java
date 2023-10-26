@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.spark.api.java.StorageLevels;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 
+import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -27,7 +28,7 @@ public class DatasetArgumentConverter extends SimpleArgumentConverter {
             .collect(Collectors.toList());
 
     String path =
-        Stream.concat(Stream.of(System.getenv("rootPath")), paramList.stream())
+        Stream.concat(Stream.of(Paths.get("").toAbsolutePath().getParent()), paramList.stream())
             .map(Object::toString)
             .collect(Collectors.joining("/"));
 

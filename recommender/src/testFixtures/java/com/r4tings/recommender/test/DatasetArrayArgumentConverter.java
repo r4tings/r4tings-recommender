@@ -10,6 +10,8 @@ import org.apache.spark.sql.Dataset;
 import org.junit.jupiter.params.converter.ArgumentConversionException;
 import org.junit.jupiter.params.converter.SimpleArgumentConverter;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -37,6 +39,8 @@ public class DatasetArrayArgumentConverter extends SimpleArgumentConverter {
 
     log.info("source: {}  params: {}", source, Arrays.toString(params));
 
+    Path rootPath = Paths.get("").toAbsolutePath().getParent();
+
     return Arrays.stream(Arrays.copyOfRange(params, 1, params.length))
         .map(
             e -> {
@@ -54,13 +58,13 @@ public class DatasetArrayArgumentConverter extends SimpleArgumentConverter {
                 return AbstractSparkTests.spark
                     .read()
                     .options(options)
-                    .csv(String.join("/", System.getenv("rootPath"), params[0], e))
+                    .csv(String.join("/", rootPath.toString(), params[0], e))
                     .persist(StorageLevels.MEMORY_ONLY);
               } else {
                 return AbstractSparkTests.spark
                     .read()
                     .options(options)
-                    .load(String.join("/", System.getenv("rootPath"), params[0], e))
+                    .load(String.join("/", rootPath.toString(), params[0], e))
                     .persist(StorageLevels.MEMORY_ONLY);
               }
             })
