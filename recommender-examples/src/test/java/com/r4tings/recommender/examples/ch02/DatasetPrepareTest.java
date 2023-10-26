@@ -7,7 +7,6 @@ package com.r4tings.recommender.examples.ch02;
 import com.r4tings.recommender.test.AbstractSparkTests;
 import lombok.extern.slf4j.Slf4j;
 import net.lingala.zip4j.ZipFile;
-import net.lingala.zip4j.exception.ZipException;
 import org.apache.commons.io.FileUtils;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
@@ -19,7 +18,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
 import java.util.AbstractMap.SimpleEntry;
 import java.util.Map;
@@ -76,21 +74,23 @@ public class DatasetPrepareTest extends AbstractSparkTests {
     "https://files.grouplens.org/datasets/movielens/ml-latest.zip       , /dataset/MovieLens/    , ml-latest.zip  ",
   })
   public void downloadPublicDatasets(
-      String source, @ConvertPathString String path, String downloadFile) throws ZipException {
-
-    File destination = new File(path + downloadFile);
-
-    log.info("\nCopy [{}] to [{}]", source, destination);
+      String source, @ConvertPathString String path, String downloadFile) {
 
     try {
-      FileUtils.copyURLToFile(new URL(source), destination);
-    } catch (IOException e) {
-      e.printStackTrace();
+      File destination = new File(path + downloadFile);
+
+      if (!destination.exists()) {
+        log.info("\nCopy [{}] to [{}]", source, destination);
+        FileUtils.copyURLToFile(new URL(source), destination);
+      }
+
+      new ZipFile(destination).extractAll(path);
+
+      assertTrue(destination.exists());
+
+    } catch (Exception e) {
+      log.error("{}: {}", e.getClass().getSimpleName(), e.getMessage());
     }
-
-    new ZipFile(destination).extractAll(path);
-
-    assertTrue(destination.exists());
   }
 
   // @Disabled
