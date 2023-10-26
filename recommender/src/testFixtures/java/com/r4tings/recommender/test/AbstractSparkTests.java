@@ -5,6 +5,7 @@
 package com.r4tings.recommender.test;
 
 // import com.r4tings.recommender.common.util.SysPathUtils;
+
 import com.r4tings.recommender.common.util.SysPathUtils;
 import com.r4tings.recommender.model.measures.similarity.SimilarityMeasure;
 import lombok.extern.slf4j.Slf4j;
@@ -70,28 +71,18 @@ public abstract class AbstractSparkTests {
   @BeforeEach
   protected void setUp(TestInfo testInfo, TestReporter testReporter) throws Exception {
 
-    if (SystemUtils.IS_OS_WINDOWS
-        && StringUtils.isEmpty(System.getenv("HADOOP_HOME"))
-        && StringUtils.isNotEmpty(System.getenv("nativePath"))) {
+    Path rootPath = Paths.get("").toAbsolutePath().getParent();
+
+    if (SystemUtils.IS_OS_WINDOWS && StringUtils.isEmpty(System.getenv("HADOOP_HOME"))) {
 
       if (StringUtils.isEmpty(System.getenv("HADOOP_HOME"))) {
         log.warn(
-            "Problems running Hadoop on Windows\nUnable to find native drivers in HADOOP_HOME. Please, refer to <a href=\\\"https://cwiki.apache.org/confluence/display/HADOOP2/WindowsProblems\\\">Hadoop Wiki</a> for more details.\nApache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.");
+            "Problems running Hadoop on Windows\nUnable to find native drivers in HADOOP_HOME. Please, refer to <a href=\\\"https://wiki.apache.org/hadoop/WindowsProblems\\\">Hadoop Wiki</a> for more details.\nApache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.");
+        SysPathUtils.addLibraryPath(rootPath + "\\lib\\hadoop-2.8.3\\bin");
       }
-
-      SysPathUtils.addLibraryPath(System.getenv("nativePath") + "\\bin");
-      // System.setProperty("PATH", System.getenv("PATH") + ";" +  System.getenv("HADOOP_HOME") +
-      // "
-      // \\bin");
-
-      log.info(
-          "OS:{} HADOOP_HOME: {} nativePath: {}",
-          SystemUtils.OS_NAME,
-          System.getenv("HADOOP_HOME"),
-          System.getenv("nativePath"));
     }
 
-    Path tempPath = Paths.get(System.getenv("rootPath") + "\\tmp\\local");
+    Path tempPath = Paths.get(rootPath + "\\tmp\\local");
 
     if (Files.exists(tempPath)) {
 
@@ -233,7 +224,7 @@ public abstract class AbstractSparkTests {
   static class DatasetPathStringConverter extends SimpleArgumentConverter {
     @Override
     protected Object convert(Object source, Class<?> targetType) {
-      log.debug("source:{}", source);
+
       // assertEquals(Dataset.class, targetType, "Can only convert to Dataset");
       // TODO 공통화
       List<String> paramList =
@@ -241,7 +232,8 @@ public abstract class AbstractSparkTests {
               .map(s -> s.length() == 0 ? null : s)
               .collect(Collectors.toList());
 
-      return Stream.concat(Stream.of(System.getenv("rootPath")), paramList.stream())
+      return Stream.concat(
+              Stream.of(Paths.get("").toAbsolutePath().getParent().toString()), paramList.stream())
           .map(Object::toString)
           .collect(Collectors.joining("/"));
       // return String.join("/", System.getenv("rootPath"), params[0], params[1]);

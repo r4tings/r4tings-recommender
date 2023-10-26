@@ -2,15 +2,13 @@ if (!require('data.table')) install.packages('data.table'); library('data.table'
 if (!require('dlookr')) install.packages('dlookr'); library('dlookr')
 if (!require('dplyr')) install.packages('dplyr'); library('dplyr')  # alternative installation of the %>%
 
-
 filePath <- file.path("C:/r4tings/r4tings-recommender/dataset")
 list.files(filePath)
 setwd(filePath)
 
-
 #########################
 # Book-Crossing dataset # 
-########################
+#########################
 
 system.time(
   bx_books.dt <-
@@ -91,7 +89,6 @@ dlookr::diagnose(ml_tags.dt)
 
 # ml_tags.dt %>% diagnose_report(output_format = "html")
 
-
 ###################
 # r4tings dataset # 
 ###################
@@ -126,16 +123,31 @@ dlookr::diagnose(r4_ratings.dt)
 # r4_ratings.dt %>% diagnose_report(output_format = "html")
 
 system.time(
-  r4_keywords.dt <-
+  r4_tags.dt <-
     fread(
-      "r4tings/keywords.csv",
+      "r4tings/tags.csv",
       verbose = FALSE,
       encoding = "UTF-8"
     )
 )
 
-r4_keywords.dt
+r4_tags.dt
 
-dlookr::diagnose(r4_keywords.dt)
+dlookr::diagnose(r4_tags.dt)
 
-# r4_keywords.dt %>% diagnose_report(output_format = "html")
+# r4_tags.dt %>% diagnose_report(output_format = "html")
+
+system.time(
+  r4_terms.dt <-
+    fread(
+      "r4tings/terms.csv",
+      verbose = FALSE,
+      encoding = "UTF-8"
+    )
+)
+
+r4_terms.dt
+
+dlookr::diagnose(r4_terms.dt)
+
+# r4_terms.dt %>% diagnose_report(output_format = "html")
