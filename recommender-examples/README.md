@@ -40,7 +40,6 @@ C:\r4tings
        │       ├── items.parquet                   <- 아이템 데이터 (Parquet 형식)
        │       ├── ratings.parquet                 <- 평점 데이터 (Parquet 형식)
        │       ├── tags.parquet                    <- 태그 데이터 (Parquet 형식)
-       │       ├── terms.parquet                   <- 단어 데이터 (Parquet 형식)
        │       ├── items.csv                       <- 아이템 데이터
        │       ├── ratings.csv                     <- 평점 데이터
        │       ├── tags.csv                        <- 태그 데이터

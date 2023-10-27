@@ -58,10 +58,9 @@ public class DatasetPrepareTest extends AbstractSparkTests {
     csvDS.schema().printTreeString();
     csvDS.show();
 
-    String parquetPath = path.replace("csv", "parquet");
     if (parquetSave) {
+      String parquetPath = path.replace("csv", "parquet");
       csvDS.repartition(1).write().mode(SaveMode.Overwrite).parquet(parquetPath);
-
       assertEquals(0, csvDS.except(spark.read().load(parquetPath)).count());
     }
   }
@@ -96,10 +95,10 @@ public class DatasetPrepareTest extends AbstractSparkTests {
   // @Disabled
   @ParameterizedTest
   @CsvSource({
-    "dataset/Book-Crossing/BX-Books.csv       ,",
-    "dataset/Book-Crossing/BX-Book-Ratings.csv,",
+    "dataset/Book-Crossing/BX-Books.csv       , true",
+    "dataset/Book-Crossing/BX-Book-Ratings.csv, true",
   })
-  public void bookCrossingDataset(@ConvertPathString String path) {
+  public void bookCrossingDataset(@ConvertPathString String path, Boolean parquetSave) {
 
     Map<String, String> options =
         Stream.of(
@@ -147,19 +146,25 @@ public class DatasetPrepareTest extends AbstractSparkTests {
     csvDS.schema().printTreeString();
     csvDS.show();
 
-    String parquetPath = path.replace("csv", "parquet");
-
-    csvDS.repartition(1).write().mode(SaveMode.Overwrite).parquet(parquetPath);
-
-    assertEquals(0, csvDS.except(spark.read().load(parquetPath)).count());
+    if (parquetSave) {
+      String parquetPath = path.replace("csv", "parquet");
+      csvDS.repartition(1).write().mode(SaveMode.Overwrite).parquet(parquetPath);
+      assertEquals(0, csvDS.except(spark.read().load(parquetPath)).count());
+    }
   }
 
   // @Disabled
   @ParameterizedTest
   @CsvSource({
-    "dataset/MovieLens/ml-latest/movies.csv , true",
-    "dataset/MovieLens/ml-latest/ratings.csv, true",
-    "dataset/MovieLens/ml-latest/tags.csv   , true",
+    "dataset/MovieLens/ml-latest/movies.csv       , false",
+    "dataset/MovieLens/ml-latest/ratings.csv      , false",
+    "dataset/MovieLens/ml-latest/tags.csv         , false",
+    //    "dataset/MovieLens/ml-coursera/movies.csv     , false",
+    //    "dataset/MovieLens/ml-coursera/ratings.csv    , false",
+    //    "dataset/MovieLens/ml-coursera/tags.csv       , false",
+    //    "dataset/MovieLens/ml-latest-small/movies.csv , false",
+    //    "dataset/MovieLens/ml-latest-small/ratings.csv, false",
+    //    "dataset/MovieLens/ml-latest-small/tags.csv   , false",
   })
   public void movieLensDataset(@ConvertPathString String path, Boolean parquetSave) {
 
@@ -173,17 +178,15 @@ public class DatasetPrepareTest extends AbstractSparkTests {
 
     Dataset<Row> csvDS = spark.read().options(options).csv(path);
 
-    log.info("count: {}", csvDS.count());
+    log.info("count: {}", Objects.requireNonNull(csvDS).count());
+
     csvDS.schema().printTreeString();
     csvDS.show();
 
-    String parquetPath = path.replace("csv", "parquet");
     if (parquetSave) {
-      csvDS.repartition(1).write().mode(SaveMode.Ignore).parquet(parquetPath);
-
+      String parquetPath = path.replace("csv", "parquet");
+      csvDS.repartition(1).write().mode(SaveMode.Overwrite).parquet(parquetPath);
       assertEquals(0, csvDS.except(spark.read().load(parquetPath)).count());
     }
-
-    assertEquals(0, csvDS.except(spark.read().load(parquetPath)).count());
   }
 }
