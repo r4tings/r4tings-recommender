@@ -16,9 +16,7 @@ if (!require(dplyr)) {
 library(kableExtra)
 
 
-print(Sys.setenv(DATASET_HOME = " C:\r4tings\r4tings-recommender\data"))
-Sys.getenv("DATASET_HOME")
-filePath <- file.path(Sys.getenv("DATASET_HOME"))
+filePath <- file.path("C:/r4tings/r4tings-recommender/dataset")
 list.files(filePath)
 setwd(filePath)
 
@@ -45,15 +43,26 @@ r4_ratings.dt %>%
   eda_report(output_format = "html")
 
 
-system.time(r4_keywords.dt <- fread("r4tings/keywords.csv", verbose = TRUE, encoding = "UTF-8"))
+system.time(r4_tags.dt <- fread("r4tings/tags.csv", verbose = TRUE, encoding = "UTF-8"))
 
-dlookr::diagnose(r4_keywords.dt)
+dlookr::diagnose(r4_tags.dt)
 
-r4_keywords.dt %>%
+r4_tags.dt %>%
   diagnose_report(output_format = "html")
 
-r4_keywords.dt %>%
+r4_tags.dt %>%
   eda_report(output_format = "html")
+
+system.time(r4_terms.dt <- fread("r4tings/terms.csv", verbose = TRUE, encoding = "UTF-8"))
+
+dlookr::diagnose(r4_terms.dt)
+
+r4_terms.dt %>%
+  diagnose_report(output_format = "html")
+
+r4_terms.dt %>%
+  eda_report(output_format = "html")
+
 
 
 system.time(ml_movies.dt <- fread("MovieLens/ml-latest/movies.csv", na.strings = "NA", verbose = TRUE, encoding = "UTF-8"))
