@@ -1,31 +1,31 @@
-item,user,tag
-i1  ,u1  ,Thriller
-i1  ,u2  ,Mystery
-i1  ,u2  ,Sci-Fi
-i1  ,u3  ,Adventure
-i1  ,u5  ,Adventure
-i2  ,u2  ,Adventure
-i2  ,u3  ,Fantasy
-i3  ,u1  ,Sci-Fi
-i3  ,u2  ,Sci-Fi
-i3  ,u2  ,Thriller
-i3  ,u3  ,Horror
-i4  ,u3  ,Comedy
-i4  ,u3  ,Sci-Fi
-i5  ,u2  ,Comedy
-i5  ,u4  ,Fantasy
-i6  ,u2  ,Action
-i6  ,u5  ,Mystery
-i7  ,u2  ,Crime
-i7  ,u2  ,Sci-Fi
-i7  ,u2  ,Thriller
-i7  ,u3  ,Crime
-i7  ,u3  ,Fantasy
-i8  ,u1  ,Sci-Fi
-i9  ,u4  ,Mystery
-i10 ,u2  ,Action
-i10 ,u2  ,Crime
-i10 ,u2  ,Drama
-i10 ,u2  ,Sci-Fi
-i10 ,u3  ,Crime
-i10 ,u5  ,Crime
+item,user,tag	   ,timestamp
+i1  ,u1  ,Thriller ,1546300800
+i1  ,u2  ,Mystery  ,1546300800
+i1  ,u2  ,Sci-Fi   ,1546300800
+i1  ,u3  ,Adventure,1546300800
+i1  ,u5  ,Adventure,1546300800
+i2  ,u2  ,Adventure,1546300800
+i2  ,u3  ,Fantasy  ,1577836799
+i3  ,u1  ,Sci-Fi   ,1577836799
+i3  ,u2  ,Sci-Fi   ,1577836799
+i3  ,u2  ,Thriller ,1577836799
+i3  ,u3  ,Horror   ,1577836799
+i4  ,u3  ,Comedy   ,1577836799
+i4  ,u3  ,Sci-Fi   ,1577836799
+i5  ,u2  ,Comedy   ,1577836799
+i5  ,u4  ,Fantasy  ,1609459199
+i6  ,u2  ,Action   ,1609459199
+i6  ,u5  ,Mystery  ,1609459199
+i7  ,u2  ,Crime    ,1609459199
+i7  ,u2  ,Sci-Fi   ,1609459199
+i7  ,u2  ,Thriller ,1609459199
+i7  ,u3  ,Crime    ,1609459200
+i7  ,u3  ,Fantasy  ,1609459200
+i8  ,u1  ,Sci-Fi   ,1609459200
+i9  ,u4  ,Mystery  ,1609459200
+i10 ,u2  ,Action   ,1609459200
+i10 ,u2  ,Crime    ,1609459200
+i10 ,u2  ,Drama    ,1625097599
+i10 ,u2  ,Sci-Fi   ,1625097599
+i10 ,u3  ,Crime    ,1625097599
+i10 ,u5  ,Crime    ,1625097599
