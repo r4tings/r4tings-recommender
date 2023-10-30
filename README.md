@@ -14,7 +14,7 @@
 
 ## TOC
 
-- [R4tings Recommender 오픈소스 추천엔진](#r4tings-recommender-오픈소스-추천엔진)
+- [개요(Overview)](#개요overview)
 - [전제조건(Prerequisites)](#전제조건prerequisites)  
   - [필수 및 선택 소프트웨어(Required and optional software)](#필수-및-선택-소프트웨어required-and-optional-software)
   - [프로젝트 구성하기(Set up the project)](#프로젝트-구성하기set-up-the-project)  
@@ -35,10 +35,8 @@
   - [특잇값 분해 기반 협업 필터링 추천](#특잇값-분해-기반-협업-필터링-추천)
   - [TF-IDF 콘텐츠 기반 필터링 추천](#tf-idf-기반-콘텐츠-기반-필터링-추천)
   - [연관규칙 기반 추천](#연관규칙-기반-추천)
-- [피드백과 기여(Feedback and Contributions)](#피드백과-기여feedback-and-contributions)
-- [라이선스(License)](#라이선스license)
 
-## R4tings Recommender 오픈소스 추천엔진
+## 개요(Overview)
 
 추천 시스템은 많은 양의 정보 안에서 사용자가 적합한 정보를 선택할 수 있도록 도와주는 시스템으로, GroupLens Research의 [LensKit](https://lenskit.org/), 아파치 소프트웨어 재단의 [Apache Mahout](https://mahout.apache.org/)과 [Apache PredictionIO](https://predictionio.apache.org/) 등, 다양한 형태의 추천 컴포넌트나 시스템들이 오픈소스로도 제공되고 있으나, 추천 모델이 기본 수식만 구현되어 있거나, 블랙박스(black-box)로 제공되는 등 학술 연구나 상용화 목적의 개념 증명(PoC, Proof of Concept)을 위한 프로토타입 설계 및 구현 단계에서, 적용 영역에 따라 수식과 데이터의 내부 흐름을 미세 조정하고 유연하게 대응하기가 쉽지 않습니다. 또한, 웹 기반의 Notebook을 제공하는 Apache Zeppelin이나 Jupyter Notebook, 또는 Rmarkdown으로 추천 시스템을 구현해볼 수 있으나, 이는 분석가의 업무 흐름에 따라 하나의 Notebook에서 데이터와 처리를 표현하게 하는 목적으로 실제로 독립 시스템으로 구현하기에는 고려할 사항이 적지 않습니다. 
 
@@ -67,11 +65,26 @@
   - TF-IDF 콘텐츠 기반 필터링 추천 ([TermFrequencyInverseDocumentFrequency](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequency.java) 클래스와 [TermFrequencyInverseDocumentFrequencyParams](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequencyParams.java) 클래스)
   - 연관규칙 기반 추천 ([AssociationRuleMining](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMining.java) 클래스와 [AssociationRuleMiningParams](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMiningParams.java) 클래스)
 
-### 예제 컨텐츠(Example Content) 
+### API 가이드(API Guide) 
 
-- R4tings Recommender 오픈소스 추천엔진의 예제 컨텐츠는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#예제-컨텐츠example-content) 를 참고하세요
+- 예제 컨텐츠는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#예제-컨텐츠example-content) 를 참고하세요. `❗ 현재 예제 컨텐츠는 초안이며, 세부 내용은 수정 중에 있습니다.`
+- API 문서는 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/javadoc/index.html) 와 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/testFixturesjavadoc/index.html) 를 참고하세요.
 
-- R4tings Recommender 오픈소스 추천엔진의 API 문서는 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/javadoc/index.html) 와 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/testFixturesjavadoc/index.html) 를 참고하세요.
+### 피드백과 기여(Feedback and Contributions)
+
+- 기능 요청이 있는 경우 **[ISSUES](https://github.com/r4tings/r4tings-recommender/issues/)** 에 등록하세요. **[DISCUSSIONS](https://github.com/r4tings/r4tings-recommender/discussions/)** 을 통해서도 질문하실 수 있습니다. 
+- "R4tings Recommender 오픈소스 추천엔진" 프로젝트의 참여나 기여도 환영합니다. 자세한 정보는 **[여기](CONTRIBUTORS.md)** 에서 확인할 수 있습니다. 
+
+### 라이선스(License)
+
+This project is dual-licensed under [Apache License 2.0][apache] and [Creative Commons BY-NC-SA 4.0][cc-by-nc-sa]. Copyright (c) 2023 r4tings.com 
+
+See [`LICENSE.md`](/LICENSE.md) file for details.
+
+[apache]: https://www.apache.org/licenses/LICENSE-2.0
+[cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+<br/>
 
 ## 전제조건(Prerequisites)  
 <!--
@@ -1550,22 +1563,6 @@ $${\mathop{\rm lift}\nolimits} (X \Rightarrow Y) = \frac{{P(Y|X)}}{{P(Y)}} = \fr
 
 
 https://github.com/r4tings/r4tings-recommender/assets/123946859/69249c3e-8042-430f-861a-4111ed90e4da
-
-
-## 피드백과 기여(Feedback and Contributions)
-
-기능 요청이 있는 경우 **[ISSUES](https://github.com/r4tings/r4tings-recommender/issues/)** 에 등록하세요. **[DISCUSSIONS](https://github.com/r4tings/r4tings-recommender/discussions/)** 을 통해서도 질문하실 수 있습니다. 
-
-"R4tings Recommender 오픈소스 추천엔진" 프로젝트의 참여나 기여도 환영합니다. 자세한 정보는 **[여기](CONTRIBUTORS.md)** 에서 확인할 수 있습니다. 
-
-## 라이선스(License)
-
-This project is dual-licensed under [Apache License 2.0][apache] and [Creative Commons BY-NC-SA 4.0][cc-by-nc-sa]. Copyright (c) 2023 r4tings.com 
-
-See [`LICENSE.md`](/LICENSE.md) file for details.
-
-[apache]: https://www.apache.org/licenses/LICENSE-2.0
-[cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
 <br/>
 
