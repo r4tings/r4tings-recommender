@@ -211,8 +211,8 @@ C:\r4tings
        ├── ⋯                                       <- 일부 생략  
        ├── build.gradle                            <- Gradle 구성 파일
        ├── gradle.properties                       <- Gradle 구성 파일
-       ├── gradlew                                 <- Gradle Wrapper 구성 파일
-       ├── gradlew.bat                             <- Gradle Wrapper 구성 파일
+       ├── gradlew                                 <- Gradle 맥/리눅스용 스크립트 파일
+       ├── gradlew.bat                             <- Gradle 윈도우용 스크립트 파일
        └── settings.gradle                         <- Gradle 구성 파일
 ```
 
