@@ -209,11 +209,11 @@ C:\r4tings
        ├── recommender-examples                    <- R4tings Recommender Examples 프로젝트 
        │   └── src
        ├── ⋯                                       <- 일부 생략  
-       ├── build.gradle                            <- Gradle 구성 파일
-       ├── gradle.properties                       <- Gradle 구성 파일
+       ├── build.gradle                            <- Gradle 빌드 파일
+       ├── gradle.properties                       <- Gradle 속성 파일
        ├── gradlew                                 <- Gradle 맥/리눅스용 스크립트 파일
        ├── gradlew.bat                             <- Gradle 윈도우용 스크립트 파일
-       └── settings.gradle                         <- Gradle 구성 파일
+       └── settings.gradle                         <- Gradle 설정 파일
 ```
 
 > **Warning**
