@@ -33,6 +33,12 @@ public class SysPathUtils {
   }
 
   public static void addLibraryPath(String pathToAdd) throws Exception {
+
+    /*
+    System.setProperty("java.library.path", System.getProperty("java.library.path") + File.pathSeparator + pathToAdd);
+    log.warn("{}", System.getProperty("java.library.path"));
+     */
+
     final Field usrPathsField = ClassLoader.class.getDeclaredField("usr_paths");
 
     usrPathsField.setAccessible(true);

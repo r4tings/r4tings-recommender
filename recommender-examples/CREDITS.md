@@ -1,7 +1,7 @@
 
 # R4tings Recommender Examples v0.1.0-SNAPSHOT
 ## Dependency License Report
-_2023-10-14 09:17:24 KST_
+_2023-11-05 11:43:16 KST_
 ## Apache License, Version 2.0
 
 **1** **Group:** `net.lingala.zip4j` **Name:** `zip4j` **Version:** `2.11.5` 
@@ -32,7 +32,7 @@ _2023-10-14 09:17:24 KST_
 
 ## Eclipse Public License - v 1.0
 
-**5** **Group:** `ch.qos.logback` **Name:** `logback-classic` **Version:** `1.4.11` 
+**5** **Group:** `ch.qos.logback` **Name:** `logback-classic` **Version:** `1.3.11` 
 > - **Manifest Project URL**: [http://www.qos.ch](http://www.qos.ch)
 > - **Manifest License**: GNU LESSER GENERAL PUBLIC LICENSE, Version 2.1 (Not Packaged)
 > - **POM License**: Eclipse Public License - v 1.0 - [http://www.eclipse.org/legal/epl-v10.html](http://www.eclipse.org/legal/epl-v10.html)
@@ -62,7 +62,7 @@ _2023-10-14 09:17:24 KST_
 
 ## GNU LESSER GENERAL PUBLIC LICENSE, Version 2.1
 
-**10** **Group:** `ch.qos.logback` **Name:** `logback-classic` **Version:** `1.4.11` 
+**10** **Group:** `ch.qos.logback` **Name:** `logback-classic` **Version:** `1.3.11` 
 > - **Manifest Project URL**: [http://www.qos.ch](http://www.qos.ch)
 > - **Manifest License**: GNU LESSER GENERAL PUBLIC LICENSE, Version 2.1 (Not Packaged)
 > - **POM License**: Eclipse Public License - v 1.0 - [http://www.eclipse.org/legal/epl-v10.html](http://www.eclipse.org/legal/epl-v10.html)

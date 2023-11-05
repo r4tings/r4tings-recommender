@@ -35,7 +35,7 @@ public class DatasetArgumentConverter extends SimpleArgumentConverter {
     log.warn("path: {}", path);
 
     Map<String, String> options =
-        new HashMap<>() {
+        new HashMap<String, String>() {
           {
             put("header", "true");
             put("inferSchema", "true");

@@ -109,6 +109,8 @@ public abstract class AbstractSparkTests {
             .set("spark.worker.cleanup.enabled", "true")
             .set("spark.storage.cleanupFilesAfterExecutorExit", "true");
 
+
+    //--driver-java-options "--add-exports java.base/sun.nio.ch=ALL-UNNAMED"
     sparkConf.set("spark.sql.autoBroadcastJoinThreshold", String.valueOf(50 * 1024 * 1024));
 
     sparkConf.set("spark.serializer", "org.apache.spark.serializer.KryoSerializer");
@@ -128,7 +130,10 @@ public abstract class AbstractSparkTests {
     */
 
     log.info(
-        "spark.version: {} core: {}", spark.version(), Runtime.getRuntime().availableProcessors());
+        "Java Runtime: {} Apache Spark: {} Processors: {}",
+        SystemUtils.JAVA_SPECIFICATION_VERSION,
+        spark.version(),
+        Runtime.getRuntime().availableProcessors());
   }
 
   @AfterEach

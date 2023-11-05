@@ -45,7 +45,7 @@ public class DatasetArrayArgumentConverter extends SimpleArgumentConverter {
         .map(
             e -> {
               Map<String, String> options =
-                  new HashMap<>() {
+                  new HashMap<String, String>() {
                     {
                       put("header", "true");
                       put("inferSchema", "true");
