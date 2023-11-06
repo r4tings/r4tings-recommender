@@ -38,13 +38,45 @@
 
 ## 개요(Overview)
 
-추천 시스템은 많은 양의 정보 안에서 사용자가 적합한 정보를 선택할 수 있도록 도와주는 시스템으로, GroupLens Research의 [LensKit](https://lenskit.org/), 아파치 소프트웨어 재단의 [Apache Mahout](https://mahout.apache.org/)과 [Apache PredictionIO](https://predictionio.apache.org/) 등, 다양한 형태의 추천 컴포넌트나 시스템들이 오픈소스로도 제공되고 있으나, 추천 모델이 기본 수식만 구현되어 있거나, 블랙박스(black-box)로 제공되는 등 학술 연구나 상용화 목적의 개념 증명(PoC, Proof of Concept)을 위한 프로토타입 설계 및 구현 단계에서, 적용 영역에 따라 수식과 데이터의 내부 흐름을 미세 조정하고 유연하게 대응하기가 쉽지 않습니다. 또한, 웹 기반의 Notebook을 제공하는 Apache Zeppelin이나 Jupyter Notebook, 또는 Rmarkdown으로 추천 시스템을 구현해볼 수 있으나, 이는 분석가의 업무 흐름에 따라 하나의 Notebook에서 데이터와 처리를 표현하게 하는 목적으로 실제로 독립 시스템으로 구현하기에는 고려할 사항이 적지 않습니다. 
+추천 시스템은 많은 양의 정보 안에서 사용자가 적합한 정보를 선택할 수 있도록 도와주는 시스템으로, GroupLens Research의 [LensKit](https://lenskit.org/), 아파치 소프트웨어 재단의 [Apache Mahout](https://mahout.apache.org/)과 [Apache PredictionIO](https://predictionio.apache.org/) 등, 다양한 형태의 추천 컴포넌트나 시스템들이 오픈소스로도 제공되고 있으나, 추천 모델이 기본 수식만 구현되어 있거나, 블랙박스(black-box)로 제공되는 등 학술 연구나 상용화 목적의 개념 증명(PoC, Proof of Concept)을 위한 프로토타입 설계 및 구현 단계에서, 적용 영역에 따라 수식과 데이터의 내부 흐름을 미세 조정하고 유연하게 대응하기가 쉽지 않습니다. 또한, 웹 기반의 Notebook을 제공하는 Apache Zeppelin이나 Jupyter Notebook, 또는 Rmarkdown으로 추천 시스템을 구현해볼 수 있으나, 이는 분석가의 업무 흐름에 따라 하나의 Notebook에서 데이터와 처리를 표현하게 하는 목적으로 실제로 독립 시스템으로 구현하기에는 고려할 사항이 적지 않습니다.
+
+이러한 다양한 오픈 소스 추천 시스템들은 다양한 목적에 맞게 사용할 수 있지만, 실제 적용 영역에서 발생할 수 있는 모델 제한성, 블랙박스 모델, 확장성과 대용량 데이터 처리 측면에서 일부 단점이 존재할 수 있습니다.
+
+- 대용량 데이터 처리 : 구현된 언어나 방식에 따라 대규모 데이터를 다루는 데 한계가 있을 수 있으며, 대용량 데이터셋에서는 성능 문제가 발생할 수 있습니다
+- 제한된 수정 가능성 : 많은 오픈 소스 추천 시스템은 자체 모델을 기반으로 동작하며, 특정 수식의 알고리즘 구현에 초점을 맞춥니다. 이로 인해 상용화나 적용 영역에 따라 수식을 수정하거나 모델을 확장하기 어려울 수 있습니다.
+- 블랙박스 모델의 제한 : 몇몇 추천 시스템은 모델 내부 동작을 블랙박스로 다루며, 사용자가 모델 동작을 이해하고 수정 및 확장을 어렵게 만듭니다.
+
+R4tings Recommender 프로젝트는 오픈 소스 추천 엔진을 개발하고, 커뮤니티에 의해 유지 및 발전될 수 있는 오픈소스 에코 시스템 구축을 목적으로 합니다.
+
+- 오픈 소스 추천 엔진 패키지
+  - 추천 시스템을 위한 대규모 데이터의 병렬 처리가 가능
+  - 추천 처리 과정을 단계별로 분해하여 내부 흐름을 쉽게 이해 할 수 있도록 컴포넌트로 제공
+  - 추천모델을 보다 유연하게 확장 할 수 있도록, 내부 알고리즘은 고차 함수로 제공
+- 오픈소스 에코 시스템
+  - 추천 시스템에 대한 학습과 이해를 돕기 위한 워크북 제공
+  - 다양한 배경과 관심을 가진 사용자들이 참여하여 추천 시스템에 대한 새로운 아이디어를 시험
+  - 새로운 아이디어의 시험 결과인 추천 기법이나 수정되거나 확장된 기능을 플러그인(Plugin) 형식으로 프로젝트에 공유
+
+이 프로젝트의 목표는 다음과 같습니다.
+
+- 전통적인 통계나 기계 학습 기반 추천 모델들의 구현체와 워크샵 제공을 통한 추천 시스템의 학습과 이해
+- 시뮬레이터나 프로토타이핑을 통한 학술 연구 목적에서의 이론 및 성능 검증
+- 상용 수준의 추천 시스템 구현 가능성 검토
+
+R4tings Recommender 오픈 소스 추천 엔진은  추천 시스템을 구현하기 위한 Java와 Apache Spark 기반의 핵심코드와 이를 활용하기 위한 예제 코드가 포함된 워크북을 함께 제공합니다.
+
+- <a href="https://github.com/r4tings/r4tings-recommender/tree/main/recommender" target="_blank">**핵심 코드**</a> : 전통적인 통계나 기계 학습 기반의 추천 기법들과 절차를 구현한 핵심 코드는 오픈 소스로 제공되며, 누구나 프로젝트의 소스 코드를 자유롭게 확장하고 개선할 수 있습니다.
+- <a href="http://r4tings.com/docs/recommender/latest/workbook/home" target="_blank">**워크북**</a>과 <a href="https://github.com/r4tings/r4tings-recommender/tree/main/recommender-examples" target="_blank">**예제 코드**</a> : 추천 시스템을 학습하고 이해하는 데 도움이 되며, 프로토타입을 개발하거나 새로운 기법을 시험하기 위한 기초를 제공합니다. 또한 상용 수준의 추천 시스템을 구현하려는 경우의 출발점으로 사용할 수 있으며 커뮤니티의 참여와 기여를 유도합니다.
+
+<!--
 
 이러한 이유로 “R4tings Recommender 오픈소스 추천엔진”은 추천을 위한 통계나 기계 학습 기법들은 수정 없이 재사용 가능한 고차 함수로 제공하고, 수정되거나 새로운 기법을 적용하여 만들어진 고차 함수는 기존 고차 함수와 조합하거나, 컴포넌트로 제공되는 파이프라인을 통하여 다양한 도메인에 적용할 수 있도록, 추천하는 과정들을 단계별로 분해하여 하나의 파이프라인으로 연결하여 병렬 처리 할 수 있게 하는 것을 목표로 합니다.  
+
 
 “R4tings Recommender 오픈소스 추천엔진”은 전통적인 통계나 기계 학습 기반의 추천 모델들의 기본 구현체인 “[R4tings Recommender](https://github.com/r4tings/recommender/tree/main/recommender)”와 실행 예제들인 “[R4tings Recommender Examples](https://github.com/r4tings/recommender/tree/main/recommender-examples)"의 두 개의 프로젝트를 포함하고 있어 추천 처리 과정을 단계별로 분해하여 내부 흐름을 쉽게 이해하고, 추천을 위한 통계나 기계 학습 기법들을 손쉽게 수정하거나 확장 또는 재사용할 수 있습니다.
 
 “**R4tings Recommender 오픈소스 추천엔진**”의 최종 목표는 1) 전통적인 통계나 기계 학습 기반 추천 모델들의 구현체 제공을 통한 추천 시스템의 학습과 이해, 2) 시뮬레이터나 프로토타이핑을 통한 학술 연구 목적에서의 이론 검증, 3) 상용 수준의 추천 시스템 구현을 용이하게 하는 것입니다.
+-->
 
 ### 지원 알고리즘 및 클래스
 
@@ -65,10 +97,24 @@
   - TF-IDF 콘텐츠 기반 필터링 추천 ([TermFrequencyInverseDocumentFrequency](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequency.java) 클래스와 [TermFrequencyInverseDocumentFrequencyParams](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequencyParams.java) 클래스)
   - 연관규칙 기반 추천 ([AssociationRuleMining](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMining.java) 클래스와 [AssociationRuleMiningParams](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMiningParams.java) 클래스)
 
-### API 가이드(API Guide) 
+### 리소스(Resources):
 
-- 예제 컨텐츠는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#예제-컨텐츠example-content) 를 참고하세요. `❗ 현재 예제 컨텐츠는 초안이며, 세부 내용은 수정 중에 있습니다.`
-- API 문서는 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/javadoc/index.html) 와 [링크](https://raw.githack.com/r4tings/r4tings-recommender/main/docs/testFixturesjavadoc/index.html) 를 참고하세요.
+- <a href="https://github.com/r4tings/r4tings-recommender" target="_blank">공식 웹사이트(Official Website)</a>
+  - <a href="http://r4tings.com/docs/recommender/latest/workbook/home" target="_blank">워크북</a>
+    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-01" target="_blank">1. 추천과 추천 기법</a>
+    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-02" target="_blank">2. 데이터셋 살펴보기</a>
+    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-03" target="_blank">3. 평점 정규화</a>
+    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-04" target="_blank">4. 유사도</a>
+    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-05" target="_blank">5. 이웃 기반 협업 필터링 추천</a>
+    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-06" target="_blank">6. 특잇값 분해 기반 협업 필터링 추천</a>
+    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-07" target="_blank">7. TF-IDF 콘텐츠 기반 필터링 추천</a>
+    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-08" target="_blank">8. 연관규칙 기반 추천</a>
+- <a href="https://github.com/r4tings/r4tings-recommender" target="_blank">소스 코드 저장소(GitHub)</a>
+  - <a href="https://github.com/r4tings/r4tings-recommender/blob/main/recommender" target="_blank">핵심 코드</a>
+  - <a href="https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples" target="_blank">예제 코드</a>
+- API 문서(API Docs)
+  - <a href="https://raw.githack.com/r4tings/r4tings-recommender/main/docs/javadoc/index.html" target="_blank">Java</a>
+  - <a href="https://raw.githack.com/r4tings/r4tings-recommender/main/docs/testFixturesjavadoc/index.html" target="_blank">Test Fixture</a>
 
 ### 피드백과 기여(Feedback and Contributions)
 
@@ -83,6 +129,19 @@ See [`LICENSE.md`](/LICENSE.md) file for details.
 
 [apache]: https://www.apache.org/licenses/LICENSE-2.0
 [cc-by-nc-sa]: https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+### 참조(References)
+
+- <a href="https://link.springer.com/book/10.1007/978-0-387-85820-3" target="_blank">Recommender systems handbook</a>. Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantor. (2011).
+- <a href="https://link.springer.com/book/10.1007/978-3-319-29659-3" target="_blank">Recommender Systems  - The Textbook</a>. Charu C. Aggarwal. (2016).
+- <a href="https://doi.org/10.48550/arXiv.2205.12371" target="_blank">recommenderlab: An R framework for developing and testing recommendation algorithms</a>. Michael Hahsler. (2022).
+- <a href="https://www.coursera.org/specializations/recommender-systems" target="_blank">Recommender Systems Specialization</a>. Coursera.
+- <a href="https://spark.apache.org" target="_blank">Apache Spark</a>. The Apache Software Foundation.
+
+
+### 연락처(Contact)
+
+프로젝트에 대한 질문이나 제안, 또는 기타 연락이 필요한 경우, [dongsup.kim\@r4tings.com](mailto:dongsup.kim@r4tings.com?subject=[r4tings.com]) 으로 연락 주세요.
 
 <br/>
 
