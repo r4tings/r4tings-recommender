@@ -99,7 +99,7 @@ R4tings Recommender 오픈 소스 추천 엔진은  추천 시스템을 구현�
 
 ### 리소스(Resources):
 
-- <a href="https://github.com/r4tings/r4tings-recommender" target="_blank">공식 웹사이트(Official Website)</a>
+- <a href="http://r4tings.com" target="_blank">공식 웹사이트(Official Website)</a>
   - <a href="http://r4tings.com/docs/recommender/latest/workbook/home" target="_blank">워크북</a>
     - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-01" target="_blank">1. 추천과 추천 기법</a>
     - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-02" target="_blank">2. 데이터셋 살펴보기</a>
