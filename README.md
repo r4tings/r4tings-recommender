@@ -12,8 +12,6 @@
   
 </pre>
 
-![Concept](./docs/static/images/concept.svg)
-
 ## TOC
 
 - [개요(Overview)](#개요overview)
@@ -64,6 +62,8 @@ R4tings Recommender 프로젝트는 오픈 소스 추천 엔진을 개발하고,
 - 전통적인 통계나 기계 학습 기반 추천 모델들의 구현체와 워크샵 제공을 통한 추천 시스템의 학습과 이해
 - 시뮬레이터나 프로토타이핑을 통한 학술 연구 목적에서의 이론 및 성능 검증
 - 상용 수준의 추천 시스템 구현 가능성 검토
+
+![Concept](./docs/static/images/concept.svg)
 
 R4tings Recommender 오픈 소스 추천 엔진은  추천 시스템을 구현하기 위한 Java와 Apache Spark 기반의 핵심코드와 이를 활용하기 위한 예제 코드가 포함된 워크북을 함께 제공합니다.
 
