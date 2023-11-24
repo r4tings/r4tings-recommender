@@ -199,6 +199,12 @@ See [`LICENSE.md`](/LICENSE.md) file for details.
 
 프로젝트에 대한 질문이나 제안, 또는 기타 연락이 필요한 경우, [dongsup.kim\@r4tings.com](mailto:dongsup.kim@r4tings.com?subject=[r4tings.com]) 으로 연락 주세요.
 
+### 뉴스 및 업데이트(News & Updates):
+
+> [2023-12-01] 제17회 공개SW 개발자대회 은상(한국정보과학회 회장상). 공개SW페스티벌 2023. 과학기술정보통신부 (2023)
+>
+> <sup>R4tings Recommender - Java 언어와 Apache Spark 라이브러리 기반으로 구현된 오픈 소스 추천 엔진</sup>
+
 <br/>
 
 <div align="right">
