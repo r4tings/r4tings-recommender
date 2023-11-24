@@ -199,18 +199,8 @@ See [`LICENSE.md`](/LICENSE.md) file for details.
 
 프로젝트에 대한 질문이나 제안, 또는 기타 연락이 필요한 경우, [dongsup.kim\@r4tings.com](mailto:dongsup.kim@r4tings.com?subject=[r4tings.com]) 으로 연락 주세요.
 
+<br/>
+
 <div align="right">
    <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a>
 </div>
- 
-<!--
-
-“**R4tings Recommender 오픈소스 추천엔진**”는 JVM(Java와 Scala)과 [Apache Spark](https://spark.apache.org/) 기반의 학술 연구/상용 목적의 추천 시스템을 구현하기 위한 오픈소스 추천엔진로 통계나 기계 학습 기반 추천 모델들의 기본 구현체인 “**[R4tings Recommender](https://github.com/r4tings/r4tings-recommender)**”와 응용 예제들인 “**R4tings Recommender Examples**”를 통해 추천 과정을 단계별로 분해하여 흐름을 쉽게 파악하고, 어느 도메인에서도 손쉽게 수정하거나 확장 또는 재사용할 수 있고, 이를 하나의 파이프라인으로 연결하여 병렬 처리 할 수 있습니다.
-
-R4tings Recommender는 데이터의 이해와 전처리 과정에서 사용하는 모듈과 추천 모델 생성과 추천 예측을 위해 사용하는 모듈로 구성되어있다.
-전자는 데이터 로딩, 평점 표준화, (비)유사도 측정에 사용한다. 후자는 여러 알고리즘을 이용해 추천 및 예측 모델 생성을 위해 사용한다.
-
-R4tings Recommender는 머신러닝 시스템의 학습과 이해, 추천 시스템 개념증명 및 구현, 중/대규모의 추천 데이터 처리에 사용할 것으로 기대된다.
-또한, 학습 및 연구 목적의 프로토타이핑, 개인화된 추천을 위한 데이터 분석에 활용될 것이다.
-
--->
