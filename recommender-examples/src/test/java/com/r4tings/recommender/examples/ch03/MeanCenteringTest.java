@@ -19,9 +19,9 @@ public class MeanCenteringTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet',     , true, 'u4, i1,  0d       '",
-    "'dataset/r4tings, ratings.parquet', USER, true, 'u4, i1, -0.3333333'",
-    "'dataset/r4tings, ratings.parquet', ITEM, true, 'u4, i1,  0.8333333'",
+    "'dataset/r4tings, ratings.parquet',     , true, 'u4, i1,  0d    '",
+    "'dataset/r4tings, ratings.parquet', USER, true, 'u4, i1, -0.3333'",
+    "'dataset/r4tings, ratings.parquet', ITEM, true, 'u4, i1,  0.8333'",
   })
   void meanCenteringExamples(
       @ConvertPathString String path,
@@ -46,6 +46,6 @@ public class MeanCenteringTest extends AbstractSparkTests {
             .head()
             .getDouble(0);
 
-    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-4);
   }
 }

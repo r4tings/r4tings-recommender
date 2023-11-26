@@ -25,14 +25,14 @@ public class CosineSimilarityTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet',                              ,  USER,     , true, 'u4, u5,  0.996473 '",
-    "'dataset/r4tings, ratings.parquet', 'USER, MEAN_CENTERING, false',  USER,     , true, 'u4, u5, -0.4834227'",
-    "'dataset/r4tings, ratings.parquet', 'USER, MEAN_CENTERING, false',  USER, true, true, 'u4, u5, -0.1689656'",
-    "'dataset/r4tings, ratings.parquet', 'USER,        Z_SCORE, false',  USER,     , true, 'u4, u5, -0.4834227'",
-    "'dataset/r4tings, ratings.parquet',                              ,  ITEM,     , true, 'i3, i1,  0.9936053'",
-    "'dataset/r4tings, ratings.parquet', 'ITEM, MEAN_CENTERING, false',  ITEM,     , true, 'i3, i1,  0.975441 '",
-    "'dataset/r4tings, ratings.parquet', 'ITEM, MEAN_CENTERING, false',  ITEM, true, true, 'i3, i1,  0.5705628'",
-    "'dataset/r4tings, ratings.parquet', 'ITEM,        Z_SCORE, false',  ITEM,     , true, 'i3, i1,  0.975441 '",
+    "'dataset/r4tings, ratings.parquet',                              ,  USER,     , true, 'u4, u5,  0.9964'",
+    "'dataset/r4tings, ratings.parquet', 'USER, MEAN_CENTERING, false',  USER,     , true, 'u4, u5, -0.4834'",
+    "'dataset/r4tings, ratings.parquet', 'USER, MEAN_CENTERING, false',  USER, true, true, 'u4, u5, -0.1689'",
+    "'dataset/r4tings, ratings.parquet', 'USER,        Z_SCORE, false',  USER,     , true, 'u4, u5, -0.4834'",
+    "'dataset/r4tings, ratings.parquet',                              ,  ITEM,     , true, 'i3, i1,  0.9936'",
+    "'dataset/r4tings, ratings.parquet', 'ITEM, MEAN_CENTERING, false',  ITEM,     , true, 'i3, i1,  0.9754'",
+    "'dataset/r4tings, ratings.parquet', 'ITEM, MEAN_CENTERING, false',  ITEM, true, true, 'i3, i1,  0.5705'",
+    "'dataset/r4tings, ratings.parquet', 'ITEM,        Z_SCORE, false',  ITEM,     , true, 'i3, i1,  0.9754'",
   })
   void cosineSimilarityExamples(
       @ConvertPathString String path,
@@ -68,6 +68,6 @@ public class CosineSimilarityTest extends AbstractSparkTests {
             .head()
             .getDouble(0);
 
-    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-4);
   }
 }

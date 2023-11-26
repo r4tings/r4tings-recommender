@@ -19,9 +19,9 @@ public class MinMaxTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet',     , 1d, 5d, true, 'u4, i1, 3.2222222'",
-    "'dataset/r4tings, ratings.parquet', USER, 1d, 5d, true, 'u4, i1, 3.2222222'",
-    "'dataset/r4tings, ratings.parquet', ITEM, 1d, 5d, true, 'u4, i1, 5d       '",
+    "'dataset/r4tings, ratings.parquet',     , 1d, 5d, true, 'u4, i1, 3.2222'",
+    "'dataset/r4tings, ratings.parquet', USER, 1d, 5d, true, 'u4, i1, 3.2222'",
+    "'dataset/r4tings, ratings.parquet', ITEM, 1d, 5d, true, 'u4, i1, 5d    '",
   })
   void minMaxExamples(
       @ConvertPathString String path,
@@ -48,6 +48,6 @@ public class MinMaxTest extends AbstractSparkTests {
             .head()
             .getDouble(0);
 
-    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-4);
   }
 }

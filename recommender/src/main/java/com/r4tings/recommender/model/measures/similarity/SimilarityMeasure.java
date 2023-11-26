@@ -58,6 +58,17 @@ public enum SimilarityMeasure {
                   imputeZero,
                   (RealMatrix realMatrix) -> {
                     try {
+/*
+
+                      log.debug(
+                          "--------\n{}\n{}\n{}\n{}\n\n{}\n--------",
+                          realMatrix.getColumnVector(0),
+                          realMatrix.getColumnVector(1),
+                          realMatrix.getColumnVector(0).getNorm(),
+                          realMatrix.getColumnVector(1).getNorm(),
+                          realMatrix.getColumnVector(0).dotProduct(realMatrix.getColumnVector(1)));
+
+*/
                       return realMatrix.getColumnVector(0).cosine(realMatrix.getColumnVector(1));
                     } catch (MathArithmeticException mae) {
                       if (Objects.equals(verbose, Boolean.TRUE)) {
