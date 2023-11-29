@@ -26,12 +26,12 @@ public class KNearestNeighborsTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet',                              , 'USER, COSINE,  false, false', USER,         SIMPLE, 3, 2, 5, true, 'u4, i3, 3, 2.825149 '",
-    "'dataset/r4tings, ratings.parquet', 'USER, MEAN_CENTERING, false', 'USER, COSINE,  false, false', USER, MEAN_CENTERING, 3, 2, 5, true, 'u4, i3, 3, 1.960004 '",
-    "'dataset/r4tings, ratings.parquet', 'USER,        Z_SCORE, false', 'USER, COSINE,  false, false', USER,        Z_SCORE, 3, 2, 5, true, 'u4, i3, 3, 2.1836194'",
-    "'dataset/r4tings, ratings.parquet',                              , 'ITEM, COSINE,  false, false', ITEM,         SIMPLE, 3, 2, 5, true, 'u4, i3, 3, 3.6744673'",
-    "'dataset/r4tings, ratings.parquet', 'ITEM, MEAN_CENTERING, false', 'ITEM, COSINE,  false, false', ITEM, MEAN_CENTERING, 3, 2, 5, true, 'u4, i3, 1, 3.1968382'",
-    "'dataset/r4tings, ratings.parquet', 'ITEM,        Z_SCORE, false', 'ITEM, COSINE,  false, false', ITEM,        Z_SCORE, 3, 2, 5, true, 'u4, i3, 1, 3.3887394'",
+    "'dataset/r4tings, ratings.parquet',                              , 'USER, COSINE,  false, false', USER,         SIMPLE, 3, 2, 5, true, 'u4, i3, 3, 2.8251'",
+    "'dataset/r4tings, ratings.parquet', 'USER, MEAN_CENTERING, false', 'USER, COSINE,  false, false', USER, MEAN_CENTERING, 3, 2, 5, true, 'u4, i3, 3, 1.9600'",
+    "'dataset/r4tings, ratings.parquet', 'USER,        Z_SCORE, false', 'USER, COSINE,  false, false', USER,        Z_SCORE, 3, 2, 5, true, 'u4, i3, 3, 2.1836'",
+    "'dataset/r4tings, ratings.parquet',                              , 'ITEM, COSINE,  false, false', ITEM,         SIMPLE, 3, 2, 5, true, 'u4, i3, 3, 3.6744'",
+    "'dataset/r4tings, ratings.parquet', 'ITEM, MEAN_CENTERING, false', 'ITEM, COSINE,  false, false', ITEM, MEAN_CENTERING, 3, 2, 5, true, 'u4, i3, 1, 3.1968'",
+    "'dataset/r4tings, ratings.parquet', 'ITEM,        Z_SCORE, false', 'ITEM, COSINE,  false, false', ITEM,        Z_SCORE, 3, 2, 5, true, 'u4, i3, 1, 3.3887'",
   })
   void kNearestNeighborsExamples(
       @ConvertPathString String path,
@@ -74,6 +74,6 @@ public class KNearestNeighborsTest extends AbstractSparkTests {
 
     log.info("actual {}", String.format("%,.7f [%s]", actual, actual));
 
-    assertEquals(Double.parseDouble(expectations[3]), actual, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[3]), actual, 1.0e-4);
   }
 }

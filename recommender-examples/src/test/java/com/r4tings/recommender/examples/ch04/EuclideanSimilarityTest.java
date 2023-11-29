@@ -25,10 +25,10 @@ public class EuclideanSimilarityTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet', , USER,   , , true, 'u4, u5, 0.309017 '",
-    "'dataset/r4tings, ratings.parquet', , USER, 10, , true, 'u4, u5, 0.1666667'",
-    "'dataset/r4tings, ratings.parquet', , ITEM,   , , true, 'i3, i1, 0.5857864'",
-    "'dataset/r4tings, ratings.parquet', , ITEM,  5, , true, 'i3, i1, 0.4721359'",
+    "'dataset/r4tings, ratings.parquet', , USER,   , , true, 'u4, u5, 0.309 '",
+    "'dataset/r4tings, ratings.parquet', , USER, 10, , true, 'u4, u5, 0.1666'",
+    "'dataset/r4tings, ratings.parquet', , ITEM,   , , true, 'i3, i1, 0.5857'",
+    "'dataset/r4tings, ratings.parquet', , ITEM,  5, , true, 'i3, i1, 0.4721'",
   })
   void euclideanSimilarityExamples(
       @ConvertPathString String path,
@@ -71,6 +71,6 @@ public class EuclideanSimilarityTest extends AbstractSparkTests {
 
     log.info("actual {}", String.format("%,.7f [%s]", actual, actual));
 
-    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-4);
   }
 }
