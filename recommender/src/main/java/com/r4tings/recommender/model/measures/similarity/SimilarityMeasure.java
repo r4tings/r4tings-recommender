@@ -58,17 +58,16 @@ public enum SimilarityMeasure {
                   imputeZero,
                   (RealMatrix realMatrix) -> {
                     try {
-/*
+                      /*
+                                          log.debug(
+                                              "\n--------\n{}\n{}\n{}\n{}\n\n{}\n--------",
+                                              realMatrix.getColumnVector(0),
+                                              realMatrix.getColumnVector(1),
+                                              realMatrix.getColumnVector(0).getNorm(),
+                                              realMatrix.getColumnVector(1).getNorm(),
+                                              realMatrix.getColumnVector(0).dotProduct(realMatrix.getColumnVector(1)));
 
-                      log.debug(
-                          "--------\n{}\n{}\n{}\n{}\n\n{}\n--------",
-                          realMatrix.getColumnVector(0),
-                          realMatrix.getColumnVector(1),
-                          realMatrix.getColumnVector(0).getNorm(),
-                          realMatrix.getColumnVector(1).getNorm(),
-                          realMatrix.getColumnVector(0).dotProduct(realMatrix.getColumnVector(1)));
-
-*/
+                      */
                       return realMatrix.getColumnVector(0).cosine(realMatrix.getColumnVector(1));
                     } catch (MathArithmeticException mae) {
                       if (Objects.equals(verbose, Boolean.TRUE)) {
@@ -99,6 +98,16 @@ public enum SimilarityMeasure {
                     double correlation =
                         new PearsonsCorrelation()
                             .correlation(realMatrix.getColumn(0), realMatrix.getColumn(1));
+
+                    /*
+                                        log.error(
+                                            "\n--------\n{}\n{}\n\n{}\n{}\n--------",
+                                            realMatrix.getColumnVector(0),
+                                            realMatrix.getColumnVector(1),
+                                            new Covariance()
+                                                .covariance(realMatrix.getColumn(0), realMatrix.getColumn(1)),
+                                            correlation);
+                    */
 
                     // if (log.isDebugEnabled()) {
                     if (Objects.equals(verbose, Boolean.TRUE)) {
@@ -187,6 +196,14 @@ public enum SimilarityMeasure {
                     double distance =
                         MathArrays.distance(realMatrix.getColumn(0), realMatrix.getColumn(1));
 
+                    /*
+                                        log.error(
+                                            "\n--------\n{}\n{}\n{}\n--------",
+                                            realMatrix.getColumnVector(0),
+                                            realMatrix.getColumnVector(1),
+                                            distance);
+                    */
+
                     return 1d / (1d + distance);
                   },
                   verbose),
@@ -211,6 +228,14 @@ public enum SimilarityMeasure {
 
                     double scaleFactor = (double) weight / realMatrix.getRowDimension();
                     distance *= FastMath.sqrt(scaleFactor);
+
+                    /*
+                                        log.error(
+                                            "\n--------\n{}\n{}\n{}\n--------",
+                                            realMatrix.getColumnVector(0),
+                                            realMatrix.getColumnVector(1),
+                                            distance);
+                    */
 
                     return 1d / (1d + distance);
                   },

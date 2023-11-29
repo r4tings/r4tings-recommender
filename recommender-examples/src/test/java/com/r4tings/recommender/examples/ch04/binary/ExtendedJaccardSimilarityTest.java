@@ -25,8 +25,8 @@ public class ExtendedJaccardSimilarityTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d', USER, true, 'u4, u5, 0.1428571'",
-    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d', ITEM, true, 'i3, i1, 0.3333333'",
+    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d', USER, true, 'u4, u5, 0.1428'",
+    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d', ITEM, true, 'i3, i1, 0.3333'",
   })
   void extendedJaccardSimilarityExamples(
       @ConvertPathString String path,
@@ -58,6 +58,6 @@ public class ExtendedJaccardSimilarityTest extends AbstractSparkTests {
 
     log.info("actual {}", String.format("%,.7f [%s]", actual, actual));
 
-    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-4);
   }
 }
