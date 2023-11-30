@@ -74,58 +74,56 @@ R4tings Recommender는 추천 시스템에 필요한 평점 점규화와 유사�
   - TF-IDF 콘텐츠 기반 필터링 추천 ([TermFrequencyInverseDocumentFrequency](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequency.java) 클래스와 [TermFrequencyInverseDocumentFrequencyParams](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequencyParams.java) 클래스)
   - 연관규칙 기반 추천 ([AssociationRuleMining](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMining.java) 클래스와 [AssociationRuleMiningParams](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMiningParams.java) 클래스)
 
-### 평점 정규화
+### [평점 정규화](http://r4tings.com/docs/recommender/latest/workbook/ch-03)
 
-정규화는 데이터 집합에서 다른 범위나 척도를 가진 값을 일정한 범위로 변환하는 과정입니다.
+정규화는 데이터 집합에서 다른 범위나 척도를 가진 값을 일정한 범위로 변환하는 과정입니다. 
 평점 데이터의 경우, 평점이 서로 다른 척도 또는 범위를 가지기 때문에 평점 정규화를 통해 사용자마다 서로 다른 평점 기준과 아이템에 대한 선호에 따른 평점의 차이를 조정합니다.
 
-- 평균 중심화 (전체/사용자/아이템)
-- Z점수화 (전체/사용자/아이템)
-- 최소-최대화 (전체/사용자/아이템)
-- 소수 자릿수화 (전체)
-- 이진 임계화 (전체)
+- [평균 중심 정규화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-02)
+- [Z점수 정규화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-03)
+- [최소-최대 정규화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-04)
+- [소수 자릿수 정규화 (전체)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-05)
+- [이진 임계 이진화 (전체)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-06)
 
 <video class="w-100" controls><source src="https://github.com/r4tings/r4tings-recommender/assets/123946859/ceab3963-c27e-4617-a3b3-d9a0dcd71891" type="video/mp4" /></video>
 
-### 유사도 계산
+### [유사도 계산](http://r4tings.com/docs/recommender/latest/workbook/ch-04)
 
-유사도 계산은 다차원 공간에서 데이터 포인트 간의 유사성을 측정하는 방법입니다.
+유사도 계산은 다차원 공간에서 데이터 포인트 간의 유사성을 측정하는 방법입니다. 
 사용자가 아이템에 매긴 평점 데이터를 기반으로 사용자나 아이템 간의 유사성 또는 거리를 측정하여 데이터 간의 관련성을 파악하는 데 사용됩니다.
 
-- 코사인 유사도 (사용자/아이템)
-- 피어슨 상관계수와 유사도 (사용자/아이템)
-- 유클리드 거리와 유사도 (사용자/아이템)
-- 이진 속성과 유사도 (사용자/아이템)
+- [코사인 유사도 (사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-04-sec-02)
+- [피어슨 상관계수와 유사도 (사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-04-sec-03)
+- [유클리드 거리와 유사도 (사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-04-sec-04)
+- [이진 속성과 유사도 (사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-04-sec-05)
 
 <video class="w-100" controls><source src="https://github.com/r4tings/r4tings-recommender/assets/123946859/03a122d3-c094-44d7-8b6d-4fb7280ae616" /></video>
 
 ### 평점 예측과 아이템 추천
 
-- 이웃 기반 협업 필터링 추천
-- 특잇값 분해 기반 협업 필터링 추천
-- TF-IDF 콘텐츠 기반 필터링 추천
-- 연관규칙 기반 추천
+- [이웃 기반 협업 필터링 추천](http://r4tings.com/docs/recommender/latest/workbook/ch-05)
+- [특잇값 분해 기반 협업 필터링 추천](http://r4tings.com/docs/recommender/latest/workbook/ch-06)
+- [TF-IDF 콘텐츠 기반 필터링 추천](http://r4tings.com/docs/recommender/latest/workbook/ch-07)
+- [연관규칙 기반 추천](http://r4tings.com/docs/recommender/latest/workbook/ch-08)
 
 <video class="w-100" controls><source src="https://github.com/r4tings/r4tings-recommender/assets/123946859/71763280-ad25-4517-b2e6-3f0fc4008e18" type="video/mp4" /></video>
 
 #### 이웃 기반 협업 필터링 추천
 
-전통적인 협업 필터링 알고리즘 중 하나인 k-최근접 이웃을 사용하는 메모리 기반 협업 필터링 추천 모델입니다.
-사용자 간 또는 아이템 간의 유사성을 기반으로 아이템을 추천합니다.
+전통적인 협업 필터링 알고리즘 중 하나인 k-최근접 이웃을 사용하는 메모리 기반 협업 필터링 추천 모델입니다. 사용자 간 또는 아이템 간의 유사성을 기반으로 아이템을 추천합니다.
 
 #### 특잇값 분해 기반 협업 필터링 추천
 
-행렬 분해 알고리즘 중 하나인 특잇값 분해 접근 방법을 사용하는 모델 기반 협업 필터링 추천 모델입니다.
-평점 데이터의 기준선 추정을 통한 잔차의 절단된 특잇값 분해를 기반으로 아이템을 추천합니다.
+행렬 분해 알고리즘 중 하나인 특잇값 분해 접근 방법을 사용하는 모델 기반 협업 필터링 추천 모델입니다. 평점 데이터의 기준선 추정을 통한 잔차의 절단된 특잇값 분해를 기반으로 아이템을 추천합니다.
 
 #### TF-IDF 콘텐츠 기반 필터링 추천
 
-콘텐츠 기반 필터링 추천은 사용자가 선호하는 아이템의 특징, 즉 콘텐츠가 유사한 아이템을 추천하는 메모리 기반 추천 모델입니다.
+콘텐츠 기반 필터링 추천은 사용자가 선호하는 아이템의 특징, 즉 콘텐츠가 유사한 아이템을 추천하는 메모리 기반 추천 모델입니다. 
 아이템의 TF-IDF 벡터를 구하고, 사용자의 TF-IDF 벡터 간의 코사인 유사도를 계산하여 아이템을 추천합니다.
 
 #### 연관규칙 기반 추천
 
-연관규칙 추천은 어떤 아이템과 동반하여 등장하는 아이템에 대한 규칙인 아이템 간의 연관성을 분석하여 아이템을 추천하는 메모리 기반 추천 모델입니다.
+연관규칙 추천은 어떤 아이템과 동반하여 등장하는 아이템에 대한 규칙인 아이템 간의 연관성을 분석하여 아이템을 추천하는 메모리 기반 추천 모델입니다. 
 흥미도 측도인 연관규칙의 지지도와 신뢰도를 계산하여 아이템을 추천합니다.
 
 ## Get Started
