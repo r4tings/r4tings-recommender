@@ -53,7 +53,7 @@ R4tings Recommender 오픈 소스 추천 엔진은  추천 시스템을 구현�
 
 ## 구현 요소(Components)
 
-R4tings Recommender는 추천 시스템에 필요한 평점 점규화와 유사도 계산, 그리고 평점 예측과 아이템 추천에 대한 구현체를 제공합니다.
+R4tings Recommender는 [추천]((http://r4tings.com/docs/recommender/latest/workbook/ch-01)을 위한 평점 점규화와 유사도 계산, 그리고 협업 필터링과 콘텐츠 기반 필터링과 같은 대표적인 평점 예측과 아이템 추천 기법에 대한 구현체를 제공합니다.
 
 ### 지원 알고리즘 및 클래스
 
