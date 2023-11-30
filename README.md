@@ -127,6 +127,148 @@ R4tings Recommender는 추천 시스템에 필요한 평점 점규화와 유사�
 연관규칙 추천은 어떤 아이템과 동반하여 등장하는 아이템에 대한 규칙인 아이템 간의 연관성을 분석하여 아이템을 추천하는 메모리 기반 추천 모델입니다.
 흥미도 측도인 연관규칙의 지지도와 신뢰도를 계산하여 아이템을 추천합니다.
 
+## Get Started
+
+### 필수 및 선택 소프트웨어(Required and optional software)
+
+#### 필수(Required)
+
+|소프트웨어|버전|설명|
+|------|---|---|
+|JDK|8 또는 11| <p>OpenJDK 또는 Oracle JDK <p>* OpenJDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/) 를 참고하세요 <p>* Oracle JDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/)를 참고하세요|
+
+#### 선택(Optional)
+
+|소프트웨어|버전|설명|
+|------|---|---|
+|Git|Latest| Git을 내려받고 구성하는 방법은 [링크](https://git-scm.com/downloads)를 참고하세요|
+|Git Client|Latest| <p>GitHub Desktop 또는 Sourcetree <p>* GitHub Desktop을 내려받고 구성하는 방법은 [링크](https://docs.github.com/en/desktop/) 를 참고하세요 <p>* Sourcetree를 내려받고 구성하는 방법은 [링크](https://www.sourcetreeapp.com/)를 참고하세요|
+|Gradle|Latest|Build Tool을 내려받고 구성하는 방법은 [링크](https://docs.gradle.org/current/userguide/what_is_gradle.html/)를 참고하세요|
+|IntelliJ|Latest|IntelliJ를 내려받고 구성하는 방법은 [링크](https://www.jetbrains.com/idea/)를 참고하세요|
+|R|Latest|R을 내려받고 구성하는 방법은 [링크](https://www.r-project.org/)를 참고하세요|
+|RStudio Desktop|Latest|RStudio Desktop을 내려받고 구성하는 방법은 [링크](https://posit.co/products/open-source/rstudio/)를 참고하세요|
+
+### 프로젝트 구성하기(Set up the project)
+
+> **Note**
+> 필수 소프트웨어인 JDK 11의 설치와 구성이 사전에 완료되었다고 가정합니다.
+> 
+> 프로젝트 구성하기의 설명은 MS Windows 10 기준으로 작성되었습니다.
+> 
+> Windows OS에서의 전체 예제 실행은 [`set-up-the-project-on-windows.ps1`](https://github.com/r4tings/r4tings-recommender/blob/main/set-up-the-project-on-windows.ps1) 를 참고하세요.
+ 
+① Windows + R 단축키를 이용 해 실행 창을 열어 줍니다.
+
+② powershell 이라고 타이핑 후 확인을 클릭합니다.
+
+③ PowerShell을 실행한 뒤, 루트 경로로 이동하기 위해 "cd /"를 입력하여 실행합니다.
+
+④ C:에 "mkdir r4tings"를 입력하여 실행하여 r4tings 폴더를 생성하고 생성된 폴더로 이동하기 위해 "cd r4tings"를 입력하여 실행합니다.
+
+⑤ R4tings Recommender 리파지토리의 GitHub 소스 코드 보관 파일을 내려받기 위해 "Invoke-WebRequest https://github.com/r4tings/r4tings-recommender/archive/refs/heads/main.zip -OutFile r4tings-recommender-main.zip"를 입력하여 실행합니다.
+
+⑥ 내려받은 소스 코드 보관 파일의 압축 해제를 위해 "Expand-Archive -LiteralPath r4tings-recommender-main.zip -DestinationPath ."를 입력하여 실행합니다.
+
+⑦ 압축이 해제된 폴더의 이름을 변경하기 위해 "Rename-Item -Path r4tings-recommender-main -NewName r4tings-recommender"를 입력하여 실행합니다.
+
+⑧ "cd r4tings-recommender"를 입력하여 프로젝트 폴더로 이동하고 "ls"를 입력하고 실행하여 r4tings-recommender-master 폴더의 내용을 확인합니다.
+
+⑨ 마지막으로 "./gradlew clean build -x test"를 입력하여 프로젝트를 빌드합니다.
+
+```powershell
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+새로운 크로스 플랫폼 PowerShell 사용 https://aka.ms/pscore6
+
+PS C:\Users\r4tings> cd /
+PS C:\Users\r4tings> Remove-Item -path /r4tings -recurse -confirm
+PS C:\> mkdir r4tings
+
+
+    디렉터리: C:\
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----      2023-10-01  오전 11:38                r4tings
+
+PS C:\> cd r4tings
+PS C:\r4tings> Invoke-WebRequest https://github.com/r4tings/r4tings-recommender/archive/refs/heads/main.zip -OutFile r4tings-recommender-main.zip
+PS C:\r4tings> Expand-Archive -LiteralPath r4tings-recommender-main.zip -DestinationPath .
+PS C:\r4tings> Rename-Item -Path r4tings-recommender-main -NewName r4tings-recommender
+PS C:\r4tings> cd r4tings-recommender
+PS C:\r4tings\r4tings-recommender> ls
+
+
+    디렉터리: C:\r4tings\r4tings-recommender
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----      2023-10-01  오전 11:40                dataset
+d-----      2023-10-01  오전 11:40                gradle
+d-----      2023-10-01  오전 11:40                lib
+d-----      2023-10-01  오전 11:40                recommender
+d-----      2023-10-01  오전 11:40                recommender-examples
+-a----      2023-10-01   오후 6:58            151 .gitignore
+-a----      2023-10-01   오후 6:58            275 .whitesource
+-a----      2023-10-01   오후 6:58           3857 build.gradle
+-a----      2023-10-01   오후 6:58            209 gradle.properties
+-a----      2023-10-01   오후 6:58           8639 gradlew
+-a----      2023-10-01   오후 6:58           2776 gradlew.bat
+-a----      2023-10-01   오후 6:58          14480 README.md
+-a----      2023-10-01   오후 6:58             87 settings.gradle
+
+PS C:\r4tings\r4tings-recommender> ./gradlew clean build -x test
+⋯ - 일부 생략 -
+PS C:\r4tings\r4tings-recommender>
+```
+
+
+https://github.com/r4tings/r4tings-recommender/assets/123946859/6639a38a-e20d-45b0-ad7a-047bff745f8e
+
+
+**R4tings Recommender 오픈소스 추천엔진**의 디렉토리 구조는 다음과 같습니다
+
+```
+C:\r4tings
+   ├── r4tings-recommender-main.zip                <- R4tings Recommender 소스 코드 보관 파일
+   └── r4tings-recommender
+       ├── dataset                                 <- 예제 데이터셋 
+       │   └── r4tings                             <- r4tings 데이터셋
+       ├── gradle                                  
+       │   └── wrapper                             <- Gradle Wrapper
+       ├── lib                                     
+       │   └── hadoop-2.8.3                        <- Microsoft Windows용 Hadoop 바이너리
+       ├── recommender                             <- R4tings Recommender 프로젝트
+       │   └── src
+       ├── recommender-examples                    <- R4tings Recommender Examples 프로젝트 
+       │   └── src
+       ├── ⋯                                       <- 일부 생략  
+       ├── build.gradle                            <- Gradle 빌드 파일
+       ├── gradle.properties                       <- Gradle 속성 파일
+       ├── gradlew                                 <- Gradle 맥/리눅스용 스크립트 파일
+       ├── gradlew.bat                             <- Gradle 윈도우용 스크립트 파일
+       └── settings.gradle                         <- Gradle 설정 파일
+```
+
+> **Warning**
+> 
+> 프로젝트 폴더 명에는 **-main**이 없습니다.
+> 
+> 프로젝트 폴더는 r4tings-recommender 입니다.
+> 
+> Microsoft Windows용 Hadoop 바이너리는 [링크](https://github.com/cdarlint/winutils/)를 참고하세요.
+> 
+> 리포지토리 뷰에서 소스 코드 보관 파일 다운로드하는 자세한 내용은 [링크](https://docs.github.com/ko/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)를 참고하세요.
+
+### 데이터셋 준비하기(Prepare Dataset)
+
+- R4tings Recommender 프로젝트의 데이터셋 준비하기는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender/README.md#데이터셋-준비하기prepare-dataset) 를 참고하세요.
+- R4tings Recommender Examples 프로젝트의 데이터셋 준비하기는 [링크](https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples/README.md#데이터셋-준비하기prepare-dataset) 를 참고하세요.
+
 ## 유용한 정보(Other Resources)
 
 ### 기술 스택(Technology Stack)
