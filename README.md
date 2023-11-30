@@ -2,9 +2,8 @@
 <div align="right">
   <b>English</b> | <a href="/README_KO.md">한국어</a> |  <a href="/README_JA.md">日本語</a>
 </div>
-
-<br/>
 -->
+<br/>
 
 ![Concept](./docs/static/images/r4tings-recommender.svg)
 
