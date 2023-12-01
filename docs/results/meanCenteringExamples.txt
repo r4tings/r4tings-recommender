@@ -1,9 +1,3 @@
-1
-2
-3
-4
-
-
 > Task :recommender:compileJava UP-TO-DATE
 > Task :recommender-examples:compileJava NO-SOURCE
 > Task :recommender-examples:processResources NO-SOURCE
