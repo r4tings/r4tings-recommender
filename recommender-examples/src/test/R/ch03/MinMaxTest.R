@@ -1,8 +1,13 @@
-if (!require('data.table')) install.packages('data.table'); library('data.table')
-if (!require('recommenderlab')) install.packages('recommenderlab'); library('recommenderlab')
-if (!require('scales')) install.packages('scales'); library('scales')
+package_version(R.version)
+if (!require('devtools')) install.packages('devtools', repos = "http://cran.us.r-project.org", dependencies = TRUE); library('devtools')  # alternative installation of the %>%
+find_rtools()
+if (!require('gtools')) install.packages('gtools', repos="https://cran.rstudio.com"); library('gtools')
+if (!require('data.table')) install.packages('data.table', repos = "http://cran.us.r-project.org"); library('data.table')
+if (!require("recommenderlab")) install.packages("recommenderlab", repos = "http://cran.us.r-project.org" , dependencies = TRUE); library("recommenderlab")
+if (!require('dplyr')) install.packages('dplyr', repos = "http://cran.us.r-project.org", dependencies = TRUE); library('dplyr')  # alternative installation of the %>%
+if (!require('scales')) install.packages('scales', repos = "http://cran.us.r-project.org"); library('scales')
 
-filePath <- file.path("C:/r4tings/r4tings-recommender/dataset")
+filePath <- file.path("dataset")
 # filePath <- file.path("C:/GitHub/r4tings-recommender/dataset")
 
 list.files(filePath)

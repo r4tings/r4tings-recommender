@@ -1,22 +1,25 @@
+package_version(R.version)
+if (!require('devtools')) install.packages('devtools', repos = "http://cran.us.r-project.org", dependencies = TRUE); library('devtools')  # alternative installation of the %>%
+find_rtools()
 if (!require(data.table)) {
-  install.packages("data.table")
+  install.packages("data.table", repos = "http://cran.us.r-project.org")
 }else {
   library(data.table)
 }
 if (!require(dlookr)) {
-  install.packages("dlookr")
+  install.packages("dlookr", repos = "http://cran.us.r-project.org")
 }else {
   library(dlookr)
 }
 if (!require(dplyr)) {
-  install.packages("dplyr")   # alternative installation of the %>%
+  install.packages("dplyr", repos = "http://cran.us.r-project.org")   # alternative installation of the %>%
 }else {
   library(dplyr)
 }
 library(kableExtra)
 
 
-filePath <- file.path("C:/r4tings/r4tings-recommender/dataset")
+filePath <- file.path("dataset")
 list.files(filePath)
 setwd(filePath)
 
@@ -62,7 +65,6 @@ r4_terms.dt %>%
 
 r4_terms.dt %>%
   eda_report(output_format = "html")
-
 
 
 system.time(ml_movies.dt <- fread("MovieLens/ml-latest/movies.csv", na.strings = "NA", verbose = TRUE, encoding = "UTF-8"))
@@ -193,12 +195,12 @@ bx_ratings.dt %>% dlookr::describe()
 # https://funnystatistics.tistory.com/23
 # install Rtools and run Rstudio as administrator.
 if (!require(dlookr)) {
-  install.packages("dlookr")
+  install.packages("dlookr", repos = "http://cran.us.r-project.org")
 }else {
   library(dlookr)
 }
 
-install.packages("dplyr")    # alternative installation of the %>%
+install.packages("dplyr", repos = "http://cran.us.r-project.org")    # alternative installation of the %>%
 library(dplyr)    # alternatively, this also loads %>%
 
 

@@ -1,9 +1,12 @@
+package_version(R.version)
+if (!require('devtools')) install.packages('devtools', repos = "http://cran.us.r-project.org", dependencies = TRUE); library('devtools')  # alternative installation of the %>%
+find_rtools()
 if (!require(data.table)) {
-  install.packages("data.table")
+  install.packages("data.table", repos = "http://cran.us.r-project.org")
 }
 library(data.table)
 
-install.packages("sparklyr")
+install.packages("sparklyr", repos = "http://cran.us.r-project.org")
 
 
 spark_available_versions()

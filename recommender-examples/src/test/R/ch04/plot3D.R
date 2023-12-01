@@ -1,4 +1,7 @@
-if (!require('plot3D')) install.packages('plot3D'); library('plot3D')
+package_version(R.version)
+if (!require('devtools')) install.packages('devtools', repos = "http://cran.us.r-project.org", dependencies = TRUE); library('devtools')  # alternative installation of the %>%
+find_rtools()
+if (!require('plot3D')) install.packages('plot3D', repos = "http://cran.us.r-project.org"); library('plot3D')
 
 (a <- c(1, 3, 4))
 (b <- c(3, 2, 3))

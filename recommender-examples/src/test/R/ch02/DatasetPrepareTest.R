@@ -1,8 +1,12 @@
-if (!require('data.table')) install.packages('data.table'); library('data.table')
-if (!require('dlookr')) install.packages('dlookr'); library('dlookr')
-if (!require('dplyr')) install.packages('dplyr'); library('dplyr')  # alternative installation of the %>%
+package_version(R.version)
+if (!require('devtools')) install.packages('devtools', repos = "http://cran.us.r-project.org", dependencies = TRUE); library('devtools')  # alternative installation of the %>%
+find_rtools()
+if (!require('data.table')) install.packages('data.table', repos = "http://cran.us.r-project.org", dependencies = TRUE); library('data.table')
+if (!require('vctrs')) install.packages('vctrs', repos = "http://cran.us.r-project.org", dependencies = TRUE); library('vctrs')  # alternative installation of the %>%
+if (!require('dlookr')) install.packages('dlookr', repos = "http://cran.us.r-project.org", dependencies = TRUE); library('dlookr')
+if (!require('dplyr')) install.packages('dplyr', repos = "http://cran.us.r-project.org", dependencies = TRUE); library('dplyr')  # alternative installation of the %>%
 
-filePath <- file.path("C:/r4tings/r4tings-recommender/dataset")
+filePath <- file.path("dataset")
 list.files(filePath)
 setwd(filePath)
 
