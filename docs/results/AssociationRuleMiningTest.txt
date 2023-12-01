@@ -21,96 +21,121 @@
 
 > Task :recommender-examples:test
 
-DatasetPrepareTest > bookCrossingDataset(String, Boolean) STANDARD_ERROR
+MeanCenteringTest > meanCenteringExamples(String, Group, Boolean, String[]) STANDARD_ERROR
     SLF4J: Class path contains multiple SLF4J providers.
-    SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@698122b2]
-    SLF4J: Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@4212a0c8]
+    SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@31aa3ca5]
+    SLF4J: Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@45905bff]
     SLF4J: See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
-    SLF4J: Actual provider is of type [ch.qos.logback.classic.spi.LogbackServiceProvider@698122b2]
+    SLF4J: Actual provider is of type [ch.qos.logback.classic.spi.LogbackServiceProvider@31aa3ca5]
 
-DatasetPrepareTest > bookCrossingDataset(String, Boolean) > [1] dataset/Book-Crossing/BX-Books.csv, true STANDARD_OUT
+MeanCenteringTest > meanCenteringExamples(String, Group, Boolean, String[]) > [1] dataset/r4tings, ratings.parquet, null, true, u4, i1,  0d     STANDARD_OUT
     [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
     Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
     Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m 
 
 
 > Task :recommender-examples:test
-    root
-     |-- ISBN: string (nullable = true)
-     |-- Book-Title: string (nullable = true)
-     |-- Book-Author: string (nullable = true)
-     |-- Year-Of-Publication: integer (nullable = true)
-     |-- Publisher: string (nullable = true)
-     |-- Image-URL-S: string (nullable = true)
-     |-- Image-URL-M: string (nullable = true)
-     |-- Image-URL-L: string (nullable = true)
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+    |user|       i1|       i2|       i3|       i4|       i5|       i6|       i7|       i8|       i9|      i10|
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+    |  u1|0.5000000|5.0000000|1.0000000|         |         |3.0000000|3.5000000|         |5.0000000|2.5000000|
+    |  u2|3.0000000|2.0000000|3.5000000|2.0000000|4.0000000|         |4.0000000|         |         |1.0000000|
+    |  u3|         |3.5000000|1.0000000|3.5000000|4.0000000|1.0000000|         |         |3.5000000|         |
+    |  u4|3.0000000|5.0000000|         |0.5000000|         |3.5000000|         |3.5000000|4.5000000|         |
+    |  u5|         |3.0000000|4.0000000|         |         |2.5000000|4.0000000|         |         |         |
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
-    +----------+--------------------+--------------------+-------------------+--------------------+--------------------+--------------------+--------------------+
-    |      ISBN|          Book-Title|         Book-Author|Year-Of-Publication|           Publisher|         Image-URL-S|         Image-URL-M|         Image-URL-L|
-    +----------+--------------------+--------------------+-------------------+--------------------+--------------------+--------------------+--------------------+
-    |0195153448| Classical Mythology|  Mark P. O. Morford|               2002|Oxford University...|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0002005018|        Clara Callan|Richard Bruce Wright|               2001|HarperFlamingo Ca...|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0060973129|Decision in Normandy|        Carlo D'Este|               1991|     HarperPerennial|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0374157065|Flu: The Story of...|    Gina Bari Kolata|               1999|Farrar Straus Giroux|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0393045218|The Mummies of Ur...|     E. J. W. Barber|               1999|W. W. Norton &amp...|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0399135782|The Kitchen God's...|             Amy Tan|               1991|    Putnam Pub Group|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0425176428|What If?: The Wor...|       Robert Cowley|               2000|Berkley Publishin...|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0671870432|     PLEADING GUILTY|         Scott Turow|               1993|          Audioworks|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0679425608|Under the Black F...|     David Cordingly|               1996|        Random House|http://images.ama...|http://images.ama...|http://images.ama...|
-    |074322678X|Where You'll Find...|         Ann Beattie|               2002|            Scribner|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0771074670|Nights Below Stat...|David Adams Richards|               1988|     Emblem Editions|http://images.ama...|http://images.ama...|http://images.ama...|
-    |080652121X|Hitler's Secret B...|          Adam Lebor|               2000|       Citadel Press|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0887841740|  The Middle Stories|         Sheila Heti|               2004|House of Anansi P...|http://images.ama...|http://images.ama...|http://images.ama...|
-    |1552041778|            Jane Doe|        R. J. Kaiser|               1999|          Mira Books|http://images.ama...|http://images.ama...|http://images.ama...|
-    |1558746218|A Second Chicken ...|       Jack Canfield|               1998|Health Communicat...|http://images.ama...|http://images.ama...|http://images.ama...|
-    |1567407781|The Witchfinder (...|   Loren D. Estleman|               1998|Brilliance Audio ...|http://images.ama...|http://images.ama...|http://images.ama...|
-    |1575663937|More Cunning Than...|  Robert Hendrickson|               1999|Kensington Publis...|http://images.ama...|http://images.ama...|http://images.ama...|
-    |1881320189|Goodbye to the Bu...|        Julia Oliver|               1994|      River City Pub|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0440234743|       The Testament|        John Grisham|               1999|                Dell|http://images.ama...|http://images.ama...|http://images.ama...|
-    |0452264464|Beloved (Plume Co...|       Toni Morrison|               1994|               Plume|http://images.ama...|http://images.ama...|http://images.ama...|
-    +----------+--------------------+--------------------+-------------------+--------------------+--------------------+--------------------+--------------------+
-    only showing top 20 rows
+    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
+    |user|        i1|        i2|        i3|        i4|       i5|        i6|       i7|       i8|       i9|       i10|
+    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
+    |  u1|-2.5000000| 2.0000000|-2.0000000|          |         | 0.0000000|0.5000000|         |2.0000000|-0.5000000|
+    |  u2| 0.0000000|-1.0000000| 0.5000000|-1.0000000|1.0000000|          |1.0000000|         |         |-2.0000000|
+    |  u3|          | 0.5000000|-2.0000000| 0.5000000|1.0000000|-2.0000000|         |         |0.5000000|          |
+    |  u4| 0.0000000| 2.0000000|          |-2.5000000|         | 0.5000000|         |0.5000000|1.5000000|          |
+    |  u5|          | 0.0000000| 1.0000000|          |         |-0.5000000|1.0000000|         |         |          |
+    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
 
 
-DatasetPrepareTest > bookCrossingDataset(String, Boolean) > [1] dataset/Book-Crossing/BX-Books.csv, true PASSED
+MeanCenteringTest > meanCenteringExamples(String, Group, Boolean, String[]) > [1] dataset/r4tings, ratings.parquet, null, true, u4, i1,  0d     PASSED
 
-DatasetPrepareTest > bookCrossingDataset(String, Boolean) > [2] dataset/Book-Crossing/BX-Book-Ratings.csv, true STANDARD_OUT
+MeanCenteringTest > meanCenteringExamples(String, Group, Boolean, String[]) > [2] dataset/r4tings, ratings.parquet, USER, true, u4, i1, -0.3333 STANDARD_OUT
     [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
     Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
     Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m 
-    root
-     |-- User-ID: long (nullable = true)
-     |-- ISBN: string (nullable = true)
-     |-- Book-Rating: double (nullable = true)
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+    |user|       i1|       i2|       i3|       i4|       i5|       i6|       i7|       i8|       i9|      i10|
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+    |  u1|0.5000000|5.0000000|1.0000000|         |         |3.0000000|3.5000000|         |5.0000000|2.5000000|
+    |  u2|3.0000000|2.0000000|3.5000000|2.0000000|4.0000000|         |4.0000000|         |         |1.0000000|
+    |  u3|         |3.5000000|1.0000000|3.5000000|4.0000000|1.0000000|         |         |3.5000000|         |
+    |  u4|3.0000000|5.0000000|         |0.5000000|         |3.5000000|         |3.5000000|4.5000000|         |
+    |  u5|         |3.0000000|4.0000000|         |         |2.5000000|4.0000000|         |         |         |
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
-    +-------+----------+-----------+
-    |User-ID|      ISBN|Book-Rating|
-    +-------+----------+-----------+
-    | 276726|0155061224|        5.0|
-    | 276729|052165615X|        3.0|
-    | 276729|0521795028|        6.0|
-    | 276736|3257224281|        8.0|
-    | 276737|0600570967|        6.0|
-    | 276744|038550120X|        7.0|
-    | 276745| 342310538|       10.0|
-    | 276747|0060517794|        9.0|
-    | 276747|0671537458|        9.0|
-    | 276747|0679776818|        8.0|
-    | 276747|0943066433|        7.0|
-    | 276747|1885408226|        7.0|
-    | 276748|0747558167|        6.0|
-    | 276751|3596218098|        8.0|
-    | 276754|0684867621|        8.0|
-    | 276755|0451166892|        5.0|
-    | 276760|8440682697|       10.0|
-    | 276762|0380711524|        5.0|
-    | 276762|3453092007|        8.0|
-    | 276762|3453213025|        3.0|
-    +-------+----------+-----------+
-    only showing top 20 rows
+    +----+------------------+
+    |user|              mean|
+    +----+------------------+
+    |  u1|2.9285714285714284|
+    |  u2|2.7857142857142856|
+    |  u3|              2.75|
+    |  u4|3.3333333333333335|
+    |  u5|             3.375|
+    +----+------------------+
+
+    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
+    |user|        i1|        i2|        i3|        i4|       i5|        i6|       i7|       i8|       i9|       i10|
+    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
+    |  u1|-2.4285714| 2.0714286|-1.9285714|          |         | 0.0714286|0.5714286|         |2.0714286|-0.4285714|
+    |  u2| 0.2142857|-0.7857143| 0.7142857|-0.7857143|1.2142857|          |1.2142857|         |         |-1.7857143|
+    |  u3|          | 0.7500000|-1.7500000| 0.7500000|1.2500000|-1.7500000|         |         |0.7500000|          |
+    |  u4|-0.3333333| 1.6666667|          |-2.8333333|         | 0.1666667|         |0.1666667|1.1666667|          |
+    |  u5|          |-0.3750000| 0.6250000|          |         |-0.8750000|0.6250000|         |         |          |
+    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
 
 
-DatasetPrepareTest > bookCrossingDataset(String, Boolean) > [2] dataset/Book-Crossing/BX-Book-Ratings.csv, true PASSED
+MeanCenteringTest > meanCenteringExamples(String, Group, Boolean, String[]) > [2] dataset/r4tings, ratings.parquet, USER, true, u4, i1, -0.3333 PASSED
 
-BUILD SUCCESSFUL in 37s
+MeanCenteringTest > meanCenteringExamples(String, Group, Boolean, String[]) > [3] dataset/r4tings, ratings.parquet, ITEM, true, u4, i1,  0.8333 STANDARD_OUT
+    [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
+    Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
+    Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m 
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+    |user|       i1|       i2|       i3|       i4|       i5|       i6|       i7|       i8|       i9|      i10|
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+    |  u1|0.5000000|5.0000000|1.0000000|         |         |3.0000000|3.5000000|         |5.0000000|2.5000000|
+    |  u2|3.0000000|2.0000000|3.5000000|2.0000000|4.0000000|         |4.0000000|         |         |1.0000000|
+    |  u3|         |3.5000000|1.0000000|3.5000000|4.0000000|1.0000000|         |         |3.5000000|         |
+    |  u4|3.0000000|5.0000000|         |0.5000000|         |3.5000000|         |3.5000000|4.5000000|         |
+    |  u5|         |3.0000000|4.0000000|         |         |2.5000000|4.0000000|         |         |         |
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+    +----+------------------+
+    |item|              mean|
+    +----+------------------+
+    |  i1|2.1666666666666665|
+    |  i2|               3.7|
+    |  i3|             2.375|
+    |  i4|               2.0|
+    |  i5|               4.0|
+    |  i6|               2.5|
+    |  i7|3.8333333333333335|
+    |  i8|               3.5|
+    |  i9| 4.333333333333333|
+    | i10|              1.75|
+    +----+------------------+
+
+    +----+----------+----------+----------+----------+---------+----------+----------+---------+----------+----------+
+    |user|        i1|        i2|        i3|        i4|       i5|        i6|        i7|       i8|        i9|       i10|
+    +----+----------+----------+----------+----------+---------+----------+----------+---------+----------+----------+
+    |  u1|-1.6666667| 1.3000000|-1.3750000|          |         | 0.5000000|-0.3333333|         | 0.6666667| 0.7500000|
+    |  u2| 0.8333333|-1.7000000| 1.1250000| 0.0000000|0.0000000|          | 0.1666667|         |          |-0.7500000|
+    |  u3|          |-0.2000000|-1.3750000| 1.5000000|0.0000000|-1.5000000|          |         |-0.8333333|          |
+    |  u4| 0.8333333| 1.3000000|          |-1.5000000|         | 1.0000000|          |0.0000000| 0.1666667|          |
+    |  u5|          |-0.7000000| 1.6250000|          |         | 0.0000000| 0.1666667|         |          |          |
+    +----+----------+----------+----------+----------+---------+----------+----------+---------+----------+----------+
+
+
+MeanCenteringTest > meanCenteringExamples(String, Group, Boolean, String[]) > [3] dataset/r4tings, ratings.parquet, ITEM, true, u4, i1,  0.8333 PASSED
+
+BUILD SUCCESSFUL in 32s
 9 actionable tasks: 2 executed, 7 up-to-date
