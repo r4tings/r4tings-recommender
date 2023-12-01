@@ -1,6 +1,3 @@
-
-
-
 > Task :recommender:compileJava UP-TO-DATE
 > Task :recommender-examples:compileJava NO-SOURCE
 > Task :recommender-examples:processResources NO-SOURCE
@@ -17,21 +14,21 @@
 > Task :recommender:processTestFixturesResources NO-SOURCE
 > Task :recommender:testFixturesClasses UP-TO-DATE
 > Task :recommender:testFixturesJar UP-TO-DATE
-> Task :recommender-examples:cleanTest
+> Task :recommender-examples:cleanTestㅁ
 > Task :recommender-examples:compileTestJava UP-TO-DATE
 > Task :recommender-examples:processTestResources UP-TO-DATE
 > Task :recommender-examples:testClasses UP-TO-DATE
 
 > Task :recommender-examples:test
 
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) STANDARD_ERROR
+AssociationRuleMiningTest > associationRuleMiningExamples(String, InterestMeasure, Double, Double, Integer, Boolean, String[]) STANDARD_ERROR
     SLF4J: Class path contains multiple SLF4J providers.
-    SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@6941827a]
-    SLF4J: Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@5a7005d]
+    SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@31aa3ca5]
+    SLF4J: Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@45905bff]
     SLF4J: See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
-    SLF4J: Actual provider is of type [ch.qos.logback.classic.spi.LogbackServiceProvider@6941827a]
+    SLF4J: Actual provider is of type [ch.qos.logback.classic.spi.LogbackServiceProvider@31aa3ca5]
 
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [1] dataset/r4tings, ratings.parquet, null, USER, COSINE,  false, false, USER, SIMPLE, 3, 2, 5, true, u4, i3, 3, 2.8251 STANDARD_OUT
+AssociationRuleMiningTest > associationRuleMiningExamples(String, InterestMeasure, Double, Double, Integer, Boolean, String[]) > [1] dataset/r4tings, ratings.parquet, SUPPORT, 0.5, 0.5, 10, true, i3, 1, i2, 0.8  STANDARD_OUT
     [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
     Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
     Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m
@@ -39,22 +36,16 @@ KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, Rati
 
 > Task :recommender-examples:test
     [[34mINFO [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 132[0;39m [37mJava Runtime: 11 Apache Spark: 3.5.0 Processors: 8[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 26[0;39m [37msource: USER, COSINE,  false, false[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 35[0;39m [37mparams: [USER, COSINE, false, false][0;39m
-    [[34mINFO [0;39m] [32mc.r.r.test.StringArrayConverter.convert 25[0;39m [37msource: u4, i3, 3, 2.8251[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.test.StringArrayConverter.convert 37[0;39m [37mparams: [u4, i3, 3, 2.8251][0;39m
+    [[34mINFO [0;39m] [32mc.r.r.test.StringArrayConverter.convert 25[0;39m [37msource: i3, 1, i2, 0.8 [0;39m
+    [[39mDEBUG[0;39m] [32mc.r.r.test.StringArrayConverter.convert 37[0;39m [37mparams: [i3, 1, i2, 0.8][0;39m
     [[39mDEBUG[0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 33[0;39m [37mparams:
-    group: group:[item, user] (default: user, current: user)
     itemCol: item column name  (default: item)
-    k: The number of nearest neighbors to use for prediction. (default: 20, current: 3)
-    minimumNeighbors: The number of minimum nearest neighbors. (default: 2, current: 2)
-    ratingNormalizer: TODO (undefined)
-    outputCol: output column name (default: score)
+    minConfidence: minimal confidence for generating Association Rule (current: 0.5)
+    minSupport: the minimal support level of a frequent pattern (current: 0.5)
+    outputCol: output column name (default: support, current: support)
     ratingCol: rating column name (default: rating)
-    RatingSimilarityMeasurer: The default value of the similarityMeasurer is the value returned when getSimilarityMeasurer() is called.[i.e. return new CosineSimilarityMeasurer().setGroup(getGroup())] (current: CosineSimilarityMeasurer_1198b8836840)
     userCol: user column name  (default: user)
-    verbose: Enable verbose logging (default: false, current: true)
-    weightedAverage: TODO (default: simple, current: simple)[0;39m
+    verbose: Enable verbose logging (default: false, current: true)[0;39m
     [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 47[0;39m [37mratingDS: 30[0;39m
     +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
     |user|       i1|       i2|       i3|       i4|       i5|       i6|       i7|       i8|       i9|      i10|
@@ -66,679 +57,92 @@ KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, Rati
     |  u5|         |3.0000000|4.0000000|         |         |2.5000000|4.0000000|         |         |         |
     +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
-    [[34mINFO [0;39m] [32mc.r.r.model.knn.KNearestNeighbors.execute 45[0;39m [37muserRatedItems.count: 6[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.m.m.s.RatingSimilarityMeasurer.compute 264[0;39m [37mcrossJoinedDS: 4[0;39m
-    +---+------------------------------------------------------------------+---+------------------------------------------------------------------------------+
-    |lhs|lhs_ratings                                                       |rhs|rhs_ratings                                                                   |
-    +---+------------------------------------------------------------------+---+------------------------------------------------------------------------------+
-    |u4 |{i1 -> 3.0, i2 -> 5.0, i4 -> 0.5, i6 -> 3.5, i8 -> 3.5, i9 -> 4.5}|u5 |{i2 -> 3.0, i3 -> 4.0, i6 -> 2.5, i7 -> 4.0}                                  |
-    |u4 |{i1 -> 3.0, i2 -> 5.0, i4 -> 0.5, i6 -> 3.5, i8 -> 3.5, i9 -> 4.5}|u1 |{i1 -> 0.5, i2 -> 5.0, i3 -> 1.0, i6 -> 3.0, i7 -> 3.5, i9 -> 5.0, i10 -> 2.5}|
-    |u4 |{i1 -> 3.0, i2 -> 5.0, i4 -> 0.5, i6 -> 3.5, i8 -> 3.5, i9 -> 4.5}|u2 |{i1 -> 3.0, i2 -> 2.0, i3 -> 3.5, i4 -> 2.0, i5 -> 4.0, i7 -> 4.0, i10 -> 1.0}|
-    |u4 |{i1 -> 3.0, i2 -> 5.0, i4 -> 0.5, i6 -> 3.5, i8 -> 3.5, i9 -> 4.5}|u3 |{i2 -> 3.5, i3 -> 1.0, i4 -> 3.5, i5 -> 4.0, i6 -> 1.0, i9 -> 3.5}            |
-    +---+------------------------------------------------------------------+---+------------------------------------------------------------------------------+
-
-    +---+---------+---------+---------+---------+
-    |lhs|       u1|       u2|       u3|       u5|
-    +---+---------+---------+---------+---------+
-    | u4|0.9478988|0.8288487|0.8245676|0.9964730|
-    +---+---------+---------+---------+---------+
-
-    +---+---------+---------+---------+---------+
-    |lhs|       u1|       u2|       u3|       u5|
-    +---+---------+---------+---------+---------+
-    | u4|0.9478988|0.8288487|0.8245676|0.9964730|
-    +---+---------+---------+---------+---------+
-
-    +---+---+---+---+---+
-    |rhs| i3| i5| i7|i10|
-    +---+---+---+---+---+
-    | u1|1.0|   |3.5|2.5|
-    | u2|3.5|4.0|4.0|1.0|
-    | u3|1.0|4.0|   |   |
-    | u5|4.0|   |4.0|   |
-    +---+---+---+---+---+
-
-    +---+----+---+------------------+------+
-    |lhs|item|rhs|        similarity|rating|
-    +---+----+---+------------------+------+
-    | u4|  i3| u5|0.9964730409245757|   4.0|
-    | u4|  i3| u1|0.9478987831210758|   1.0|
-    | u4|  i3| u2|0.8288486740756481|   3.5|
-    | u4|  i3| u3|0.8245675835122609|   1.0|
-    | u4|  i5| u2|0.8288486740756481|   4.0|
-    | u4|  i5| u3|0.8245675835122609|   4.0|
-    | u4|  i7| u5|0.9964730409245757|   4.0|
-    | u4|  i7| u1|0.9478987831210758|   3.5|
-    | u4|  i7| u2|0.8288486740756481|   4.0|
-    | u4| i10| u1|0.9478987831210758|   2.5|
-    | u4| i10| u2|0.8288486740756481|   1.0|
-    +---+----+---+------------------+------+
-
-    [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 55[0;39m [37mitemScoreDS: 4[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8288486740756481,4.0], [0.8245675835122609,4.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 6.613665030351636 / 1.653416257587909[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9478987831210758,2.5], [0.8288486740756481,1.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 3.1985956318783373 / 1.776747457196724[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9964730409245757,4.0], [0.9478987831210758,3.5], [0.8288486740756481,4.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 10.61893260092466 / 2.7732204981212996[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9964730409245757,4.0], [0.9478987831210758,1.0], [0.8288486740756481,3.5]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 7.834761306084147 / 2.7732204981212996[0;39m
-    +----+---------+
-    |item|    score|
-    +----+---------+
-    |  i5|      4.0|
-    |  i3|2.8251491|
-    |  i7|3.8290978|
-    | i10|1.8002534|
-    +----+---------+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8288486740756481,4.0], [0.8245675835122609,4.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 6.613665030351636 / 1.653416257587909[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9478987831210758,2.5], [0.8288486740756481,1.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 3.1985956318783373 / 1.776747457196724[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9964730409245757,4.0], [0.9478987831210758,3.5], [0.8288486740756481,4.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 10.61893260092466 / 2.7732204981212996[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9964730409245757,4.0], [0.9478987831210758,1.0], [0.8288486740756481,3.5]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 7.834761306084147 / 2.7732204981212996[0;39m
-    +----+------------------+----+
-    |item|             score|rank|
-    +----+------------------+----+
-    |  i5|               4.0|   1|
-    |  i7| 3.829097833410069|   2|
-    |  i3| 2.825149068165245|   3|
-    | i10|1.8002533893730428|   4|
-    +----+------------------+----+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8288486740756481,4.0], [0.8245675835122609,4.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 6.613665030351636 / 1.653416257587909[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9478987831210758,2.5], [0.8288486740756481,1.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 3.1985956318783373 / 1.776747457196724[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9964730409245757,4.0], [0.9478987831210758,3.5], [0.8288486740756481,4.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 10.61893260092466 / 2.7732204981212996[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9964730409245757,4.0], [0.9478987831210758,1.0], [0.8288486740756481,3.5]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 7.834761306084147 / 2.7732204981212996[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.e.ch05.KNearestNeighborsTest.kNearestNeighborsExamples 75[0;39m [37mactual 2.8251491 [2.825149068165245][0;39m
-
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [1] dataset/r4tings, ratings.parquet, null, USER, COSINE,  false, false, USER, SIMPLE, 3, 2, 5, true, u4, i3, 3, 2.8251 PASSED
-
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [2] dataset/r4tings, ratings.parquet, USER, MEAN_CENTERING, false, USER, COSINE,  false, false, USER, MEAN_CENTERING, 3, 2, 5, true, u4, i3, 3, 1.9600 STANDARD_OUT
-    [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
-    Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
-    Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 132[0;39m [37mJava Runtime: 11 Apache Spark: 3.5.0 Processors: 8[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.t.RatingNormalizerArgumentConverter.convert 32[0;39m [37mRatingNormalizerArgumentConverter [USER, MEAN_CENTERING, false][0;39m
-    [[34mINFO [0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 26[0;39m [37msource: USER, COSINE,  false, false[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 35[0;39m [37mparams: [USER, COSINE, false, false][0;39m
-    [[34mINFO [0;39m] [32mc.r.r.test.StringArrayConverter.convert 25[0;39m [37msource: u4, i3, 3, 1.9600[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.test.StringArrayConverter.convert 37[0;39m [37mparams: [u4, i3, 3, 1.9600][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 33[0;39m [37mparams:
-    group: group:[item, user] (default: user, current: user)
-    itemCol: item column name  (default: item)
-    k: The number of nearest neighbors to use for prediction. (default: 20, current: 3)
-    minimumNeighbors: The number of minimum nearest neighbors. (default: 2, current: 2)
-    ratingNormalizer: TODO (current: MeanCenteringNormalizer_702466ca9c14)
-    outputCol: output column name (default: score)
-    ratingCol: rating column name (default: rating)
-    RatingSimilarityMeasurer: The default value of the similarityMeasurer is the value returned when getSimilarityMeasurer() is called.[i.e. return new CosineSimilarityMeasurer().setGroup(getGroup())] (current: CosineSimilarityMeasurer_6a2ed252b744)
-    userCol: user column name  (default: user)
-    verbose: Enable verbose logging (default: false, current: true)
-    weightedAverage: TODO (default: simple, current: mean-centering)[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 47[0;39m [37mratingDS: 30[0;39m
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-    |user|       i1|       i2|       i3|       i4|       i5|       i6|       i7|       i8|       i9|      i10|
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-    |  u1|0.5000000|5.0000000|1.0000000|         |         |3.0000000|3.5000000|         |5.0000000|2.5000000|
-    |  u2|3.0000000|2.0000000|3.5000000|2.0000000|4.0000000|         |4.0000000|         |         |1.0000000|
-    |  u3|         |3.5000000|1.0000000|3.5000000|4.0000000|1.0000000|         |         |3.5000000|         |
-    |  u4|3.0000000|5.0000000|         |0.5000000|         |3.5000000|         |3.5000000|4.5000000|         |
-    |  u5|         |3.0000000|4.0000000|         |         |2.5000000|4.0000000|         |         |         |
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-
-    [[34mINFO [0;39m] [32mc.r.r.model.knn.KNearestNeighbors.execute 45[0;39m [37muserRatedItems.count: 6[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.model.knn.KNearestNeighbors.getNeighborsSimilarity 240[0;39m [37mratingDS: 30[0;39m
-    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
-    |user|        i1|        i2|        i3|        i4|       i5|        i6|       i7|       i8|       i9|       i10|
-    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
-    |  u1|-2.4285714| 2.0714286|-1.9285714|          |         | 0.0714286|0.5714286|         |2.0714286|-0.4285714|
-    |  u2| 0.2142857|-0.7857143| 0.7142857|-0.7857143|1.2142857|          |1.2142857|         |         |-1.7857143|
-    |  u3|          | 0.7500000|-1.7500000| 0.7500000|1.2500000|-1.7500000|         |         |0.7500000|          |
-    |  u4|-0.3333333| 1.6666667|          |-2.8333333|         | 0.1666667|         |0.1666667|1.1666667|          |
-    |  u5|          |-0.3750000| 0.6250000|          |         |-0.8750000|0.6250000|         |         |          |
-    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.m.m.s.RatingSimilarityMeasurer.compute 264[0;39m [37mcrossJoinedDS: 4[0;39m
-    +---+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |lhs|lhs_ratings                                                                                                                                                     |rhs|rhs_ratings                                                                                                                                                                                |
-    +---+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |u4 |{i1 -> -0.3333333333333335, i2 -> 1.6666666666666665, i4 -> -2.8333333333333335, i6 -> 0.16666666666666652, i8 -> 0.16666666666666652, i9 -> 1.1666666666666665}|u5 |{i2 -> -0.375, i3 -> 0.625, i6 -> -0.875, i7 -> 0.625}                                                                                                                                     |
-    |u4 |{i1 -> -0.3333333333333335, i2 -> 1.6666666666666665, i4 -> -2.8333333333333335, i6 -> 0.16666666666666652, i8 -> 0.16666666666666652, i9 -> 1.1666666666666665}|u1 |{i1 -> -2.4285714285714284, i2 -> 2.0714285714285716, i3 -> -1.9285714285714284, i6 -> 0.07142857142857162, i7 -> 0.5714285714285716, i9 -> 2.0714285714285716, i10 -> -0.4285714285714284}|
-    |u4 |{i1 -> -0.3333333333333335, i2 -> 1.6666666666666665, i4 -> -2.8333333333333335, i6 -> 0.16666666666666652, i8 -> 0.16666666666666652, i9 -> 1.1666666666666665}|u2 |{i1 -> 0.2142857142857144, i2 -> -0.7857142857142856, i3 -> 0.7142857142857144, i4 -> -0.7857142857142856, i5 -> 1.2142857142857144, i7 -> 1.2142857142857144, i10 -> -1.7857142857142856} |
-    |u4 |{i1 -> -0.3333333333333335, i2 -> 1.6666666666666665, i4 -> -2.8333333333333335, i6 -> 0.16666666666666652, i8 -> 0.16666666666666652, i9 -> 1.1666666666666665}|u3 |{i2 -> 0.75, i3 -> -1.75, i4 -> 0.75, i5 -> 1.25, i6 -> -1.75, i9 -> 0.75}                                                                                                                 |
-    +---+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-    +---+---------+---------+----------+----------+
-    |lhs|       u1|       u2|        u3|        u5|
-    +---+---------+---------+----------+----------+
-    | u4|0.8499498|0.2260608|-0.0383230|-0.4834227|
-    +---+---------+---------+----------+----------+
-
-    +---+---------+---------+
-    |lhs|       u1|       u2|
-    +---+---------+---------+
-    | u4|0.8499498|0.2260608|
-    +---+---------+---------+
-
-    +---+---+---+---+---+
-    |rhs| i3| i5| i7|i10|
-    +---+---+---+---+---+
-    | u1|1.0|   |3.5|2.5|
-    | u2|3.5|4.0|4.0|1.0|
-    | u3|1.0|4.0|   |   |
-    | u5|4.0|   |4.0|   |
-    +---+---+---+---+---+
-
-    +---+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-    |lhs|          lhs_mean|        lhs_stddev|item|rhs|         similarity|rating|          rhs_mean|        rhs_stddev|
-    +---+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-    | u4|3.3333333333333335|1.5705625319186327|  i3| u1| 0.8499497664403586|   1.0|2.9285714285714284|1.7660825629193044|
-    | u4|3.3333333333333335|1.5705625319186327|  i3| u2|0.22606077533295316|   3.5|2.7857142857142856|  1.14953406710222|
-    | u4|3.3333333333333335|1.5705625319186327|  i5| u2|0.22606077533295316|   4.0|2.7857142857142856|  1.14953406710222|
-    | u4|3.3333333333333335|1.5705625319186327|  i7| u1| 0.8499497664403586|   3.5|2.9285714285714284|1.7660825629193044|
-    | u4|3.3333333333333335|1.5705625319186327|  i7| u2|0.22606077533295316|   4.0|2.7857142857142856|  1.14953406710222|
-    | u4|3.3333333333333335|1.5705625319186327| i10| u1| 0.8499497664403586|   2.5|2.9285714285714284|1.7660825629193044|
-    | u4|3.3333333333333335|1.5705625319186327| i10| u2|0.22606077533295316|   1.0|2.7857142857142856|  1.14953406710222|
-    +---+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-
-    [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 55[0;39m [37mitemScoreDS: 4[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.22606077533295316,4.0,2.7857142857142856]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403586,2.5,2.9285714285714284], [0.22606077533295316,1.0,2.7857142857142856]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -0.7679441415689985 / 1.0760105417733117[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403586,3.5,2.9285714285714284], [0.22606077533295316,4.0,2.7857142857142856]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 0.7601879508702196 / 1.0760105417733117[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403586,1.0,2.9285714285714284], [0.22606077533295316,3.5,2.7857142857142856]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -1.4777168528971534 / 1.0760105417733117[0;39m
-    +----+---------+
-    |item|    score|
-    +----+---------+
-    |  i5|      NaN|
-    |  i3| 1.960004|
-    | i10|2.6196376|
-    |  i7|4.0398208|
-    +----+---------+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.22606077533295316,4.0,2.7857142857142856]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403586,2.5,2.9285714285714284], [0.22606077533295316,1.0,2.7857142857142856]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -0.7679441415689985 / 1.0760105417733117[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403586,3.5,2.9285714285714284], [0.22606077533295316,4.0,2.7857142857142856]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 0.7601879508702196 / 1.0760105417733117[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403586,1.0,2.9285714285714284], [0.22606077533295316,3.5,2.7857142857142856]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -1.4777168528971534 / 1.0760105417733117[0;39m
-    +----+------------------+----+
-    |item|             score|rank|
-    +----+------------------+----+
-    |  i7|4.0398207898757175|   1|
-    | i10|2.6196375917438566|   2|
-    |  i3|1.9600039880075781|   3|
-    +----+------------------+----+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.22606077533295316,4.0,2.7857142857142856]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403586,2.5,2.9285714285714284], [0.22606077533295316,1.0,2.7857142857142856]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -0.7679441415689985 / 1.0760105417733117[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403586,3.5,2.9285714285714284], [0.22606077533295316,4.0,2.7857142857142856]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 0.7601879508702196 / 1.0760105417733117[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403586,1.0,2.9285714285714284], [0.22606077533295316,3.5,2.7857142857142856]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -1.4777168528971534 / 1.0760105417733117[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.e.ch05.KNearestNeighborsTest.kNearestNeighborsExamples 75[0;39m [37mactual 1.9600040 [1.9600039880075781][0;39m
-
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [2] dataset/r4tings, ratings.parquet, USER, MEAN_CENTERING, false, USER, COSINE,  false, false, USER, MEAN_CENTERING, 3, 2, 5, true, u4, i3, 3, 1.9600 PASSED
-
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [3] dataset/r4tings, ratings.parquet, USER,        Z_SCORE, false, USER, COSINE,  false, false, USER, Z_SCORE, 3, 2, 5, true, u4, i3, 3, 2.1836 STANDARD_OUT
-    [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
-    Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
-    Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 132[0;39m [37mJava Runtime: 11 Apache Spark: 3.5.0 Processors: 8[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.t.RatingNormalizerArgumentConverter.convert 32[0;39m [37mRatingNormalizerArgumentConverter [USER, Z_SCORE, false][0;39m
-    [[34mINFO [0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 26[0;39m [37msource: USER, COSINE,  false, false[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 35[0;39m [37mparams: [USER, COSINE, false, false][0;39m
-    [[34mINFO [0;39m] [32mc.r.r.test.StringArrayConverter.convert 25[0;39m [37msource: u4, i3, 3, 2.1836[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.test.StringArrayConverter.convert 37[0;39m [37mparams: [u4, i3, 3, 2.1836][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 33[0;39m [37mparams:
-    group: group:[item, user] (default: user, current: user)
-    itemCol: item column name  (default: item)
-    k: The number of nearest neighbors to use for prediction. (default: 20, current: 3)
-    minimumNeighbors: The number of minimum nearest neighbors. (default: 2, current: 2)
-    ratingNormalizer: TODO (current: ZScoreNormalizer_0cc954291775)
-    outputCol: output column name (default: score)
-    ratingCol: rating column name (default: rating)
-    RatingSimilarityMeasurer: The default value of the similarityMeasurer is the value returned when getSimilarityMeasurer() is called.[i.e. return new CosineSimilarityMeasurer().setGroup(getGroup())] (current: CosineSimilarityMeasurer_baa1188de5d3)
-    userCol: user column name  (default: user)
-    verbose: Enable verbose logging (default: false, current: true)
-    weightedAverage: TODO (default: simple, current: z-score)[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 47[0;39m [37mratingDS: 30[0;39m
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-    |user|       i1|       i2|       i3|       i4|       i5|       i6|       i7|       i8|       i9|      i10|
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-    |  u1|0.5000000|5.0000000|1.0000000|         |         |3.0000000|3.5000000|         |5.0000000|2.5000000|
-    |  u2|3.0000000|2.0000000|3.5000000|2.0000000|4.0000000|         |4.0000000|         |         |1.0000000|
-    |  u3|         |3.5000000|1.0000000|3.5000000|4.0000000|1.0000000|         |         |3.5000000|         |
-    |  u4|3.0000000|5.0000000|         |0.5000000|         |3.5000000|         |3.5000000|4.5000000|         |
-    |  u5|         |3.0000000|4.0000000|         |         |2.5000000|4.0000000|         |         |         |
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-
-    [[34mINFO [0;39m] [32mc.r.r.model.knn.KNearestNeighbors.execute 45[0;39m [37muserRatedItems.count: 6[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.model.knn.KNearestNeighbors.getNeighborsSimilarity 240[0;39m [37mratingDS: 30[0;39m
-    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
-    |user|        i1|        i2|        i3|        i4|       i5|        i6|       i7|       i8|       i9|       i10|
-    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
-    |  u1|-1.3751177| 1.1728945|-1.0920052|          |         | 0.0404446|0.3235571|         |1.1728945|-0.2426678|
-    |  u2| 0.1864109|-0.6835067| 0.6213698|-0.6835067|1.0563286|          |1.0563286|         |         |-1.5534244|
-    |  u3|          | 0.5477226|-1.2780193| 0.5477226|0.9128709|-1.2780193|         |         |0.5477226|          |
-    |  u4|-0.2122382| 1.0611909|          |-1.8040245|         | 0.1061191|         |0.1061191|0.7428336|          |
-    |  u5|          |-0.5000000| 0.8333333|          |         |-1.1666667|0.8333333|         |         |          |
-    +----+----------+----------+----------+----------+---------+----------+---------+---------+---------+----------+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.m.m.s.RatingSimilarityMeasurer.compute 264[0;39m [37mcrossJoinedDS: 4[0;39m
-    +---+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |lhs|lhs_ratings                                                                                                                                                     |rhs|rhs_ratings                                                                                                                                                                                   |
-    +---+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-    |u4 |{i1 -> -0.21223817998900454, i2 -> 1.0611908999450221, i4 -> -1.804024529906538, i6 -> 0.10611908999450213, i8 -> 0.10611908999450213, i9 -> 0.7428336299615155}|u5 |{i2 -> -0.49999999999999994, i3 -> 0.8333333333333333, i6 -> -1.1666666666666665, i7 -> 0.8333333333333333}                                                                                   |
-    |u4 |{i1 -> -0.21223817998900454, i2 -> 1.0611908999450221, i4 -> -1.804024529906538, i6 -> 0.10611908999450213, i8 -> 0.10611908999450213, i9 -> 0.7428336299615155}|u1 |{i1 -> -1.3751177207463285, i2 -> 1.1728945265189274, i3 -> -1.0920052488279668, i6 -> 0.040444638845480364, i7 -> 0.32355711076384214, i9 -> 1.1728945265189274, i10 -> -0.24266783307288142}|
-    |u4 |{i1 -> -0.21223817998900454, i2 -> 1.0611908999450221, i4 -> -1.804024529906538, i6 -> 0.10611908999450213, i8 -> 0.10611908999450213, i9 -> 0.7428336299615155}|u2 |{i1 -> 0.18641092980036014, i2 -> -0.6835067426013199, i3 -> 0.6213697660012002, i4 -> -0.6835067426013199, i5 -> 1.0563286022020402, i7 -> 1.0563286022020402, i10 -> -1.553424415003}       |
-    |u4 |{i1 -> -0.21223817998900454, i2 -> 1.0611908999450221, i4 -> -1.804024529906538, i6 -> 0.10611908999450213, i8 -> 0.10611908999450213, i9 -> 0.7428336299615155}|u3 |{i2 -> 0.5477225575051661, i3 -> -1.2780193008453875, i4 -> 0.5477225575051661, i5 -> 0.9128709291752769, i6 -> -1.2780193008453875, i9 -> 0.5477225575051661}                                |
-    +---+----------------------------------------------------------------------------------------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-    +---+---------+---------+----------+----------+
-    |lhs|       u1|       u2|        u3|        u5|
-    +---+---------+---------+----------+----------+
-    | u4|0.8499498|0.2260608|-0.0383230|-0.4834227|
-    +---+---------+---------+----------+----------+
-
-    +---+---------+---------+
-    |lhs|       u1|       u2|
-    +---+---------+---------+
-    | u4|0.8499498|0.2260608|
-    +---+---------+---------+
-
-    +---+---+---+---+---+
-    |rhs| i3| i5| i7|i10|
-    +---+---+---+---+---+
-    | u1|1.0|   |3.5|2.5|
-    | u2|3.5|4.0|4.0|1.0|
-    | u3|1.0|4.0|   |   |
-    | u5|4.0|   |4.0|   |
-    +---+---+---+---+---+
-
-    +---+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-    |lhs|          lhs_mean|        lhs_stddev|item|rhs|         similarity|rating|          rhs_mean|        rhs_stddev|
-    +---+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-    | u4|3.3333333333333335|1.5705625319186327|  i3| u1| 0.8499497664403589|   1.0|2.9285714285714284|1.7660825629193044|
-    | u4|3.3333333333333335|1.5705625319186327|  i3| u2|0.22606077533295324|   3.5|2.7857142857142856|  1.14953406710222|
-    | u4|3.3333333333333335|1.5705625319186327|  i5| u2|0.22606077533295324|   4.0|2.7857142857142856|  1.14953406710222|
-    | u4|3.3333333333333335|1.5705625319186327|  i7| u1| 0.8499497664403589|   3.5|2.9285714285714284|1.7660825629193044|
-    | u4|3.3333333333333335|1.5705625319186327|  i7| u2|0.22606077533295324|   4.0|2.7857142857142856|  1.14953406710222|
-    | u4|3.3333333333333335|1.5705625319186327| i10| u1| 0.8499497664403589|   2.5|2.9285714285714284|1.7660825629193044|
-    | u4|3.3333333333333335|1.5705625319186327| i10| u2|0.22606077533295324|   1.0|2.7857142857142856|  1.14953406710222|
-    +---+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-
-    [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 55[0;39m [37mitemScoreDS: 4[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.22606077533295324,4.0,2.7857142857142856,1.14953406710222]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403589,2.5,2.9285714285714284,1.7660825629193044], [0.22606077533295324,1.0,2.7857142857142856,1.14953406710222]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -0.5574237957196011 / 1.0760105417733121[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403589,3.5,2.9285714285714284,1.7660825629193044], [0.22606077533295324,4.0,2.7857142857142856,1.14953406710222]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 0.5138017535440129 / 1.0760105417733121[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403589,1.0,2.9285714285714284,1.7660825629193044], [0.22606077533295324,3.5,2.7857142857142856,1.14953406710222]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -0.7876822751222894 / 1.0760105417733121[0;39m
-    +----+---------+
-    |item|    score|
-    +----+---------+
-    |  i5|      NaN|
-    |  i7|4.0832868|
-    |  i3|2.1836194|
-    | i10|2.5197085|
-    +----+---------+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.22606077533295324,4.0,2.7857142857142856,1.14953406710222]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403589,2.5,2.9285714285714284,1.7660825629193044], [0.22606077533295324,1.0,2.7857142857142856,1.14953406710222]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -0.5574237957196011 / 1.0760105417733121[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403589,3.5,2.9285714285714284,1.7660825629193044], [0.22606077533295324,4.0,2.7857142857142856,1.14953406710222]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 0.5138017535440129 / 1.0760105417733121[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403589,1.0,2.9285714285714284,1.7660825629193044], [0.22606077533295324,3.5,2.7857142857142856,1.14953406710222]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -0.7876822751222894 / 1.0760105417733121[0;39m
-    +----+------------------+----+
-    |item|             score|rank|
-    +----+------------------+----+
-    |  i7| 4.083286750723108|   1|
-    | i10|2.5197084718944662|   2|
-    |  i3|2.1836194408237954|   3|
-    +----+------------------+----+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.22606077533295324,4.0,2.7857142857142856,1.14953406710222]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403589,2.5,2.9285714285714284,1.7660825629193044], [0.22606077533295324,1.0,2.7857142857142856,1.14953406710222]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -0.5574237957196011 / 1.0760105417733121[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403589,3.5,2.9285714285714284,1.7660825629193044], [0.22606077533295324,4.0,2.7857142857142856,1.14953406710222]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 0.5138017535440129 / 1.0760105417733121[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.8499497664403589,1.0,2.9285714285714284,1.7660825629193044], [0.22606077533295324,3.5,2.7857142857142856,1.14953406710222]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: -0.7876822751222894 / 1.0760105417733121[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.e.ch05.KNearestNeighborsTest.kNearestNeighborsExamples 75[0;39m [37mactual 2.1836194 [2.1836194408237954][0;39m
-
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [3] dataset/r4tings, ratings.parquet, USER,        Z_SCORE, false, USER, COSINE,  false, false, USER, Z_SCORE, 3, 2, 5, true, u4, i3, 3, 2.1836 PASSED
-
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [4] dataset/r4tings, ratings.parquet, null, ITEM, COSINE,  false, false, ITEM, SIMPLE, 3, 2, 5, true, u4, i3, 3, 3.6744 STANDARD_OUT
-    [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
-    Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
-    Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 132[0;39m [37mJava Runtime: 11 Apache Spark: 3.5.0 Processors: 8[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 26[0;39m [37msource: ITEM, COSINE,  false, false[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 35[0;39m [37mparams: [ITEM, COSINE, false, false][0;39m
-    [[34mINFO [0;39m] [32mc.r.r.test.StringArrayConverter.convert 25[0;39m [37msource: u4, i3, 3, 3.6744[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.test.StringArrayConverter.convert 37[0;39m [37mparams: [u4, i3, 3, 3.6744][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 33[0;39m [37mparams:
-    group: group:[item, user] (default: user, current: item)
-    itemCol: item column name  (default: item)
-    k: The number of nearest neighbors to use for prediction. (default: 20, current: 3)
-    minimumNeighbors: The number of minimum nearest neighbors. (default: 2, current: 2)
-    ratingNormalizer: TODO (undefined)
-    outputCol: output column name (default: score)
-    ratingCol: rating column name (default: rating)
-    RatingSimilarityMeasurer: The default value of the similarityMeasurer is the value returned when getSimilarityMeasurer() is called.[i.e. return new CosineSimilarityMeasurer().setGroup(getGroup())] (current: CosineSimilarityMeasurer_40b6d7125c51)
-    userCol: user column name  (default: user)
-    verbose: Enable verbose logging (default: false, current: true)
-    weightedAverage: TODO (default: simple, current: simple)[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 47[0;39m [37mratingDS: 30[0;39m
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-    |user|       i1|       i2|       i3|       i4|       i5|       i6|       i7|       i8|       i9|      i10|
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-    |  u1|0.5000000|5.0000000|1.0000000|         |         |3.0000000|3.5000000|         |5.0000000|2.5000000|
-    |  u2|3.0000000|2.0000000|3.5000000|2.0000000|4.0000000|         |4.0000000|         |         |1.0000000|
-    |  u3|         |3.5000000|1.0000000|3.5000000|4.0000000|1.0000000|         |         |3.5000000|         |
-    |  u4|3.0000000|5.0000000|         |0.5000000|         |3.5000000|         |3.5000000|4.5000000|         |
-    |  u5|         |3.0000000|4.0000000|         |         |2.5000000|4.0000000|         |         |         |
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-
-    [[34mINFO [0;39m] [32mc.r.r.model.knn.KNearestNeighbors.execute 45[0;39m [37muserRatedItems.count: 6[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.m.m.s.RatingSimilarityMeasurer.compute 264[0;39m [37mcrossJoinedDS: 24[0;39m
-    +---+-------------------------------------------------------+---+--------------------------------------------+
-    |lhs|lhs_ratings                                            |rhs|rhs_ratings                                 |
-    +---+-------------------------------------------------------+---+--------------------------------------------+
-    |i4 |{u2 -> 2.0, u3 -> 3.5, u4 -> 0.5}                      |i5 |{u2 -> 4.0, u3 -> 4.0}                      |
-    |i8 |{u4 -> 3.5}                                            |i5 |{u2 -> 4.0, u3 -> 4.0}                      |
-    |i1 |{u1 -> 0.5, u2 -> 3.0, u4 -> 3.0}                      |i5 |{u2 -> 4.0, u3 -> 4.0}                      |
-    |i6 |{u1 -> 3.0, u3 -> 1.0, u4 -> 3.5, u5 -> 2.5}           |i5 |{u2 -> 4.0, u3 -> 4.0}                      |
-    |i9 |{u1 -> 5.0, u3 -> 3.5, u4 -> 4.5}                      |i5 |{u2 -> 4.0, u3 -> 4.0}                      |
-    |i2 |{u1 -> 5.0, u2 -> 2.0, u3 -> 3.5, u4 -> 5.0, u5 -> 3.0}|i5 |{u2 -> 4.0, u3 -> 4.0}                      |
-    |i4 |{u2 -> 2.0, u3 -> 3.5, u4 -> 0.5}                      |i10|{u1 -> 2.5, u2 -> 1.0}                      |
-    |i8 |{u4 -> 3.5}                                            |i10|{u1 -> 2.5, u2 -> 1.0}                      |
-    |i1 |{u1 -> 0.5, u2 -> 3.0, u4 -> 3.0}                      |i10|{u1 -> 2.5, u2 -> 1.0}                      |
-    |i6 |{u1 -> 3.0, u3 -> 1.0, u4 -> 3.5, u5 -> 2.5}           |i10|{u1 -> 2.5, u2 -> 1.0}                      |
-    |i9 |{u1 -> 5.0, u3 -> 3.5, u4 -> 4.5}                      |i10|{u1 -> 2.5, u2 -> 1.0}                      |
-    |i2 |{u1 -> 5.0, u2 -> 2.0, u3 -> 3.5, u4 -> 5.0, u5 -> 3.0}|i10|{u1 -> 2.5, u2 -> 1.0}                      |
-    |i4 |{u2 -> 2.0, u3 -> 3.5, u4 -> 0.5}                      |i7 |{u1 -> 3.5, u2 -> 4.0, u5 -> 4.0}           |
-    |i8 |{u4 -> 3.5}                                            |i7 |{u1 -> 3.5, u2 -> 4.0, u5 -> 4.0}           |
-    |i1 |{u1 -> 0.5, u2 -> 3.0, u4 -> 3.0}                      |i7 |{u1 -> 3.5, u2 -> 4.0, u5 -> 4.0}           |
-    |i6 |{u1 -> 3.0, u3 -> 1.0, u4 -> 3.5, u5 -> 2.5}           |i7 |{u1 -> 3.5, u2 -> 4.0, u5 -> 4.0}           |
-    |i9 |{u1 -> 5.0, u3 -> 3.5, u4 -> 4.5}                      |i7 |{u1 -> 3.5, u2 -> 4.0, u5 -> 4.0}           |
-    |i2 |{u1 -> 5.0, u2 -> 2.0, u3 -> 3.5, u4 -> 5.0, u5 -> 3.0}|i7 |{u1 -> 3.5, u2 -> 4.0, u5 -> 4.0}           |
-    |i4 |{u2 -> 2.0, u3 -> 3.5, u4 -> 0.5}                      |i3 |{u1 -> 1.0, u2 -> 3.5, u3 -> 1.0, u5 -> 4.0}|
-    |i8 |{u4 -> 3.5}                                            |i3 |{u1 -> 1.0, u2 -> 3.5, u3 -> 1.0, u5 -> 4.0}|
-    +---+-------------------------------------------------------+---+--------------------------------------------+
-    only showing top 20 rows
-
-    +---+---------+---------+---------+---------+---+---------+
-    |lhs|       i1|       i2|       i4|       i6| i8|       i9|
-    +---+---------+---------+---------+---------+---+---------+
-    | i3|0.9936053|0.7053456|0.7155742|0.8185875|NaN|0.9847836|
-    | i5|      NaN|0.9647638|0.9647638|      NaN|NaN|      NaN|
-    | i7|0.8505946|0.9144982|      NaN|0.9876651|NaN|      NaN|
-    |i10|0.5189781|1.0000000|      NaN|      NaN|NaN|      NaN|
-    +---+---------+---------+---------+---------+---+---------+
-
-    +---+---------+---------+---------+---------+---------+
-    |lhs|       i1|       i2|       i4|       i6|       i9|
-    +---+---------+---------+---------+---------+---------+
-    | i3|0.9936053|0.7053456|0.7155742|0.8185875|0.9847836|
-    | i5|         |0.9647638|0.9647638|         |         |
-    | i7|0.8505946|0.9144982|         |0.9876651|         |
-    |i10|0.5189781|1.0000000|         |         |         |
-    +---+---------+---------+---------+---------+---------+
-
-    +---+---+
-    |rhs| u4|
-    +---+---+
-    | i1|3.0|
-    | i2|5.0|
-    | i4|0.5|
-    | i6|3.5|
-    | i8|3.5|
-    | i9|4.5|
-    +---+---+
-
-    +----+----+---+------------------+------+
-    |item|user|rhs|        similarity|rating|
-    +----+----+---+------------------+------+
-    |  i3|  u4| i1|0.9936052547897188|   3.0|
-    |  i3|  u4| i9|0.9847835588179369|   4.5|
-    |  i3|  u4| i6|0.8185874846865607|   3.5|
-    |  i3|  u4| i4|0.7155742058807849|   0.5|
-    |  i3|  u4| i2|0.7053456158585982|   5.0|
-    |  i5|  u4| i2|0.9647638212377322|   5.0|
-    |  i5|  u4| i4|0.9647638212377322|   0.5|
-    |  i7|  u4| i6|0.9876651119799223|   3.5|
-    |  i7|  u4| i2|0.9144981513743389|   5.0|
-    |  i7|  u4| i1|0.8505945695460383|   3.0|
-    | i10|  u4| i2|1.0000000000000002|   5.0|
-    | i10|  u4| i1|0.5189781342417641|   3.0|
-    +----+----+---+------------------+------+
-
-    [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 55[0;39m [37mitemScoreDS: 4[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9647638212377322,5.0], [0.9647638212377322,0.5]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 5.306201016807527 / 1.9295276424754644[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[1.0000000000000002,5.0], [0.5189781342417641,3.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 6.556934402725293 / 1.5189781342417643[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9876651119799223,3.5], [0.9144981513743389,5.0], [0.8505945695460383,3.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 10.581102357439537 / 2.7527578329002997[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9936052547897188,3.0], [0.9847835588179369,4.5], [0.8185874846865607,3.5]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 10.277397975452836 / 2.7969762982942163[0;39m
-    +----+---------+
-    |item|    score|
-    +----+---------+
-    |  i5|     2.75|
-    | i10|4.3166746|
-    |  i3|3.6744673|
-    |  i7|3.8438188|
-    +----+---------+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9647638212377322,5.0], [0.9647638212377322,0.5]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 5.306201016807527 / 1.9295276424754644[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[1.0000000000000002,5.0], [0.5189781342417641,3.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 6.556934402725293 / 1.5189781342417643[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9876651119799223,3.5], [0.9144981513743389,5.0], [0.8505945695460383,3.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 10.581102357439537 / 2.7527578329002997[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9936052547897188,3.0], [0.9847835588179369,4.5], [0.8185874846865607,3.5]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 10.277397975452836 / 2.7969762982942163[0;39m
-    +----+------------------+----+
-    |item|             score|rank|
-    +----+------------------+----+
-    | i10| 4.316674647853539|   1|
-    |  i7|3.8438188172518286|   2|
-    |  i3|3.6744673101880347|   3|
-    |  i5|              2.75|   4|
-    +----+------------------+----+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9647638212377322,5.0], [0.9647638212377322,0.5]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 5.306201016807527 / 1.9295276424754644[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[1.0000000000000002,5.0], [0.5189781342417641,3.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 6.556934402725293 / 1.5189781342417643[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9876651119799223,3.5], [0.9144981513743389,5.0], [0.8505945695460383,3.0]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 10.581102357439537 / 2.7527578329002997[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9936052547897188,3.0], [0.9847835588179369,4.5], [0.8185874846865607,3.5]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 10.277397975452836 / 2.7969762982942163[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.e.ch05.KNearestNeighborsTest.kNearestNeighborsExamples 75[0;39m [37mactual 3.6744673 [3.6744673101880347][0;39m
-
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [4] dataset/r4tings, ratings.parquet, null, ITEM, COSINE,  false, false, ITEM, SIMPLE, 3, 2, 5, true, u4, i3, 3, 3.6744 PASSED
-
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [5] dataset/r4tings, ratings.parquet, ITEM, MEAN_CENTERING, false, ITEM, COSINE,  false, false, ITEM, MEAN_CENTERING, 3, 2, 5, true, u4, i3, 1, 3.1968 STANDARD_OUT
-    [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
-    Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
-    Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 132[0;39m [37mJava Runtime: 11 Apache Spark: 3.5.0 Processors: 8[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.t.RatingNormalizerArgumentConverter.convert 32[0;39m [37mRatingNormalizerArgumentConverter [ITEM, MEAN_CENTERING, false][0;39m
-    [[34mINFO [0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 26[0;39m [37msource: ITEM, COSINE,  false, false[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 35[0;39m [37mparams: [ITEM, COSINE, false, false][0;39m
-    [[34mINFO [0;39m] [32mc.r.r.test.StringArrayConverter.convert 25[0;39m [37msource: u4, i3, 1, 3.1968[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.test.StringArrayConverter.convert 37[0;39m [37mparams: [u4, i3, 1, 3.1968][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 33[0;39m [37mparams:
-    group: group:[item, user] (default: user, current: item)
-    itemCol: item column name  (default: item)
-    k: The number of nearest neighbors to use for prediction. (default: 20, current: 3)
-    minimumNeighbors: The number of minimum nearest neighbors. (default: 2, current: 2)
-    ratingNormalizer: TODO (current: MeanCenteringNormalizer_0c02f3281684)
-    outputCol: output column name (default: score)
-    ratingCol: rating column name (default: rating)
-    RatingSimilarityMeasurer: The default value of the similarityMeasurer is the value returned when getSimilarityMeasurer() is called.[i.e. return new CosineSimilarityMeasurer().setGroup(getGroup())] (current: CosineSimilarityMeasurer_002e8ae5650f)
-    userCol: user column name  (default: user)
-    verbose: Enable verbose logging (default: false, current: true)
-    weightedAverage: TODO (default: simple, current: mean-centering)[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 47[0;39m [37mratingDS: 30[0;39m
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-    |user|       i1|       i2|       i3|       i4|       i5|       i6|       i7|       i8|       i9|      i10|
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-    |  u1|0.5000000|5.0000000|1.0000000|         |         |3.0000000|3.5000000|         |5.0000000|2.5000000|
-    |  u2|3.0000000|2.0000000|3.5000000|2.0000000|4.0000000|         |4.0000000|         |         |1.0000000|
-    |  u3|         |3.5000000|1.0000000|3.5000000|4.0000000|1.0000000|         |         |3.5000000|         |
-    |  u4|3.0000000|5.0000000|         |0.5000000|         |3.5000000|         |3.5000000|4.5000000|         |
-    |  u5|         |3.0000000|4.0000000|         |         |2.5000000|4.0000000|         |         |         |
-    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
-
-    [[34mINFO [0;39m] [32mc.r.r.model.knn.KNearestNeighbors.execute 45[0;39m [37muserRatedItems.count: 6[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.model.knn.KNearestNeighbors.getNeighborsSimilarity 240[0;39m [37mratingDS: 30[0;39m
-    +----+----------+----------+----------+----------+---------+----------+----------+---------+----------+----------+
-    |user|        i1|        i2|        i3|        i4|       i5|        i6|        i7|       i8|        i9|       i10|
-    +----+----------+----------+----------+----------+---------+----------+----------+---------+----------+----------+
-    |  u1|-1.6666667| 1.3000000|-1.3750000|          |         | 0.5000000|-0.3333333|         | 0.6666667| 0.7500000|
-    |  u2| 0.8333333|-1.7000000| 1.1250000| 0.0000000|0.0000000|          | 0.1666667|         |          |-0.7500000|
-    |  u3|          |-0.2000000|-1.3750000| 1.5000000|0.0000000|-1.5000000|          |         |-0.8333333|          |
-    |  u4| 0.8333333| 1.3000000|          |-1.5000000|         | 1.0000000|          |0.0000000| 0.1666667|          |
-    |  u5|          |-0.7000000| 1.6250000|          |         | 0.0000000| 0.1666667|         |          |          |
-    +----+----------+----------+----------+----------+---------+----------+----------+---------+----------+----------+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.m.m.s.RatingSimilarityMeasurer.compute 264[0;39m [37mcrossJoinedDS: 24[0;39m
-    +---+--------------------------------------------------------------------------------------------------------------------------------------+---+---------------------------------------------------------------------------------+
-    |lhs|lhs_ratings                                                                                                                           |rhs|rhs_ratings                                                                      |
-    +---+--------------------------------------------------------------------------------------------------------------------------------------+---+---------------------------------------------------------------------------------+
-    |i4 |{u2 -> 0.0, u3 -> 1.5, u4 -> -1.5}                                                                                                    |i5 |{u2 -> 0.0, u3 -> 0.0}                                                           |
-    |i8 |{u4 -> 0.0}                                                                                                                           |i5 |{u2 -> 0.0, u3 -> 0.0}                                                           |
-    |i1 |{u1 -> -1.6666666666666665, u2 -> 0.8333333333333335, u4 -> 0.8333333333333335}                                                       |i5 |{u2 -> 0.0, u3 -> 0.0}                                                           |
-    |i6 |{u1 -> 0.5, u3 -> -1.5, u4 -> 1.0, u5 -> 0.0}                                                                                         |i5 |{u2 -> 0.0, u3 -> 0.0}                                                           |
-    |i9 |{u1 -> 0.666666666666667, u3 -> -0.833333333333333, u4 -> 0.16666666666666696}                                                        |i5 |{u2 -> 0.0, u3 -> 0.0}                                                           |
-    |i2 |{u1 -> 1.2999999999999998, u2 -> -1.7000000000000002, u3 -> -0.20000000000000018, u4 -> 1.2999999999999998, u5 -> -0.7000000000000002}|i5 |{u2 -> 0.0, u3 -> 0.0}                                                           |
-    |i4 |{u2 -> 0.0, u3 -> 1.5, u4 -> -1.5}                                                                                                    |i10|{u1 -> 0.75, u2 -> -0.75}                                                        |
-    |i8 |{u4 -> 0.0}                                                                                                                           |i10|{u1 -> 0.75, u2 -> -0.75}                                                        |
-    |i1 |{u1 -> -1.6666666666666665, u2 -> 0.8333333333333335, u4 -> 0.8333333333333335}                                                       |i10|{u1 -> 0.75, u2 -> -0.75}                                                        |
-    |i6 |{u1 -> 0.5, u3 -> -1.5, u4 -> 1.0, u5 -> 0.0}                                                                                         |i10|{u1 -> 0.75, u2 -> -0.75}                                                        |
-    |i9 |{u1 -> 0.666666666666667, u3 -> -0.833333333333333, u4 -> 0.16666666666666696}                                                        |i10|{u1 -> 0.75, u2 -> -0.75}                                                        |
-    |i2 |{u1 -> 1.2999999999999998, u2 -> -1.7000000000000002, u3 -> -0.20000000000000018, u4 -> 1.2999999999999998, u5 -> -0.7000000000000002}|i10|{u1 -> 0.75, u2 -> -0.75}                                                        |
-    |i4 |{u2 -> 0.0, u3 -> 1.5, u4 -> -1.5}                                                                                                    |i7 |{u1 -> -0.3333333333333335, u2 -> 0.16666666666666652, u5 -> 0.16666666666666652}|
-    |i8 |{u4 -> 0.0}                                                                                                                           |i7 |{u1 -> -0.3333333333333335, u2 -> 0.16666666666666652, u5 -> 0.16666666666666652}|
-    |i1 |{u1 -> -1.6666666666666665, u2 -> 0.8333333333333335, u4 -> 0.8333333333333335}                                                       |i7 |{u1 -> -0.3333333333333335, u2 -> 0.16666666666666652, u5 -> 0.16666666666666652}|
-    |i6 |{u1 -> 0.5, u3 -> -1.5, u4 -> 1.0, u5 -> 0.0}                                                                                         |i7 |{u1 -> -0.3333333333333335, u2 -> 0.16666666666666652, u5 -> 0.16666666666666652}|
-    |i9 |{u1 -> 0.666666666666667, u3 -> -0.833333333333333, u4 -> 0.16666666666666696}                                                        |i7 |{u1 -> -0.3333333333333335, u2 -> 0.16666666666666652, u5 -> 0.16666666666666652}|
-    |i2 |{u1 -> 1.2999999999999998, u2 -> -1.7000000000000002, u3 -> -0.20000000000000018, u4 -> 1.2999999999999998, u5 -> -0.7000000000000002}|i7 |{u1 -> -0.3333333333333335, u2 -> 0.16666666666666652, u5 -> 0.16666666666666652}|
-    |i4 |{u2 -> 0.0, u3 -> 1.5, u4 -> -1.5}                                                                                                    |i3 |{u1 -> -1.375, u2 -> 1.125, u3 -> -1.375, u5 -> 1.625}                           |
-    |i8 |{u4 -> 0.0}                                                                                                                           |i3 |{u1 -> -1.375, u2 -> 1.125, u3 -> -1.375, u5 -> 1.625}                           |
-    +---+--------------------------------------------------------------------------------------------------------------------------------------+---+---------------------------------------------------------------------------------+
-    only showing top 20 rows
-
-    +---+----------+----------+----------+----------+---+---------+
-    |lhs|        i1|        i2|        i4|        i6| i8|       i9|
-    +---+----------+----------+----------+----------+---+---------+
-    | i3| 0.9754410|-0.7279472|-0.7739573| 0.3431640|NaN|0.1104315|
-    | i5|       NaN| 0.0000000| 0.0000000|       NaN|NaN|      NaN|
-    | i7| 1.0000000|-0.9065472|       NaN|-0.8944272|NaN|      NaN|
-    |i10|-0.9486833| 0.9912279|       NaN|       NaN|NaN|      NaN|
-    +---+----------+----------+----------+----------+---+---------+
-
-    +---+---------+---------+---------+---------+
-    |lhs|       i1|       i2|       i6|       i9|
-    +---+---------+---------+---------+---------+
-    | i3|0.9754410|         |0.3431640|0.1104315|
-    | i7|1.0000000|         |         |         |
-    |i10|         |0.9912279|         |         |
-    +---+---------+---------+---------+---------+
-
-    +---+---+
-    |rhs| u4|
-    +---+---+
-    | i1|3.0|
-    | i2|5.0|
-    | i4|0.5|
-    | i6|3.5|
-    | i8|3.5|
-    | i9|4.5|
-    +---+---+
-
-    +----+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-    |item|          lhs_mean|        lhs_stddev|user|rhs|         similarity|rating|          rhs_mean|        rhs_stddev|
-    +----+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-    | i10|              1.75|1.0606601717798212|  u4| i2| 0.9912279006826348|   5.0|               3.7|1.3038404810405297|
-    |  i3|             2.375|1.6007810593582121|  u4| i1| 0.9754410020677067|   3.0|2.1666666666666665|1.4433756729740643|
-    |  i3|             2.375|1.6007810593582121|  u4| i6|0.34316403829308156|   3.5|               2.5|1.0801234497346435|
-    |  i3|             2.375|1.6007810593582121|  u4| i9| 0.1104315260748462|   4.5| 4.333333333333333|0.7637626158259734|
-    |  i7|3.8333333333333335|0.2886751345948129|  u4| i1| 1.0000000000000002|   3.0|2.1666666666666665|1.4433756729740643|
-    +----+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 109[0;39m [37mtotalTransactions: 5[0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 110[0;39m [37mlhsDS
+    +---+----------------+-----------+
+    |lhs|lhs_transactions|lhs_support|
+    +---+----------------+-----------+
+    |i3 |[u1, u2, u3, u5]|0.8        |
+    +---+----------------+-----------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 111[0;39m [37mrhsDS
+    +---+--------------------+-----------+
+    |rhs|rhs_transactions    |rhs_support|
+    +---+--------------------+-----------+
+    |i1 |[u1, u2, u4]        |0.6        |
+    |i2 |[u1, u2, u3, u4, u5]|1.0        |
+    |i4 |[u2, u3, u4]        |0.6        |
+    |i6 |[u1, u3, u4, u5]    |0.8        |
+    |i7 |[u1, u2, u5]        |0.6        |
+    |i9 |[u1, u3, u4]        |0.6        |
+    +---+--------------------+-----------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 113[0;39m [37mcandidateRuleDS
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |lhs|lhs_transactions|lhs_support|rhs|rhs_transactions    |rhs_support|support|confidence        |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |i3 |[u1, u2, u3, u5]|0.8        |i1 |[u1, u2, u4]        |0.6        |0.4    |0.5               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i2 |[u1, u2, u3, u4, u5]|1.0        |0.8    |1.0               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i4 |[u2, u3, u4]        |0.6        |0.4    |0.5               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i6 |[u1, u3, u4, u5]    |0.8        |0.6    |0.7499999999999999|
+    |i3 |[u1, u2, u3, u5]|0.8        |i7 |[u1, u2, u5]        |0.6        |0.6    |0.7499999999999999|
+    |i3 |[u1, u2, u3, u5]|0.8        |i9 |[u1, u3, u4]        |0.6        |0.4    |0.5               |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 116[0;39m [37mstrongRuleDS
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |lhs|lhs_transactions|lhs_support|rhs|rhs_transactions    |rhs_support|support|confidence        |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |i3 |[u1, u2, u3, u5]|0.8        |i2 |[u1, u2, u3, u4, u5]|1.0        |0.8    |1.0               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i6 |[u1, u3, u4, u5]    |0.8        |0.6    |0.7499999999999999|
+    |i3 |[u1, u2, u3, u5]|0.8        |i7 |[u1, u2, u5]        |0.6        |0.6    |0.7499999999999999|
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 119[0;39m [37massociationRuleDS
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+------------------+--------------------+------------------+
+    |lhs|lhs_transactions|lhs_support|rhs|rhs_transactions    |rhs_support|support|confidence        |lift              |leverage            |conviction        |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+------------------+--------------------+------------------+
+    |i3 |[u1, u2, u3, u5]|0.8        |i6 |[u1, u3, u4, u5]    |0.8        |0.6    |0.7499999999999999|0.9374999999999998|-0.04000000000000015|0.7999999999999995|
+    |i3 |[u1, u2, u3, u5]|0.8        |i2 |[u1, u2, u3, u4, u5]|1.0        |0.8    |1.0               |1.0               |0.0                 |Infinity          |
+    |i3 |[u1, u2, u3, u5]|0.8        |i7 |[u1, u2, u5]        |0.6        |0.6    |0.7499999999999999|1.2499999999999998|0.12                |0.7999999999999995|
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+------------------+--------------------+------------------+
+    [0;39m
     [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 55[0;39m [37mitemScoreDS: 3[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.9912279006826348,5.0,3.7]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([1.0000000000000002,3.0,2.1666666666666665]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9754410020677067,3.0,2.1666666666666665], [0.34316403829308156,3.5,2.5], [0.1104315260748462,4.5,4.333333333333333]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 1.1744367943619785 / 1.4290365664356344[0;39m
-    +----+---------+
-    |item|    score|
-    +----+---------+
-    | i10|      NaN|
-    |  i7|      NaN|
-    |  i3|3.1968382|
-    +----+---------+
+    +----+-------+
+    |item|support|
+    +----+-------+
+    |  i6|    0.6|
+    |  i7|    0.6|
+    |  i2|    0.8|
+    +----+-------+
 
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.9912279006826348,5.0,3.7]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([1.0000000000000002,3.0,2.1666666666666665]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9754410020677067,3.0,2.1666666666666665], [0.34316403829308156,3.5,2.5], [0.1104315260748462,4.5,4.333333333333333]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 1.1744367943619785 / 1.4290365664356344[0;39m
-    +----+-----------------+----+
-    |item|            score|rank|
-    +----+-----------------+----+
-    |  i3|3.196838168418118|   1|
-    +----+-----------------+----+
+    +----+-------+----+
+    |item|support|rank|
+    +----+-------+----+
+    |  i2|    0.8|   1|
+    |  i6|    0.6|   2|
+    |  i7|    0.6|   3|
+    +----+-------+----+
 
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.9912279006826348,5.0,3.7]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([1.0000000000000002,3.0,2.1666666666666665]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9754410020677067,3.0,2.1666666666666665], [0.34316403829308156,3.5,2.5], [0.1104315260748462,4.5,4.333333333333333]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 1.1744367943619785 / 1.4290365664356344[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.e.ch05.KNearestNeighborsTest.kNearestNeighborsExamples 75[0;39m [37mactual 3.1968382 [3.196838168418118][0;39m
+    [[34mINFO [0;39m] [32mc.r.r.e.c.AssociationRuleMiningTest.associationRuleMiningExamples 65[0;39m [37mactual 0.8000000 [0.8][0;39m
 
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [5] dataset/r4tings, ratings.parquet, ITEM, MEAN_CENTERING, false, ITEM, COSINE,  false, false, ITEM, MEAN_CENTERING, 3, 2, 5, true, u4, i3, 1, 3.1968 PASSED
+AssociationRuleMiningTest > associationRuleMiningExamples(String, InterestMeasure, Double, Double, Integer, Boolean, String[]) > [1] dataset/r4tings, ratings.parquet, SUPPORT, 0.5, 0.5, 10, true, i3, 1, i2, 0.8  PASSED
 
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [6] dataset/r4tings, ratings.parquet, ITEM,        Z_SCORE, false, ITEM, COSINE,  false, false, ITEM, Z_SCORE, 3, 2, 5, true, u4, i3, 1, 3.3887 STANDARD_OUT
+AssociationRuleMiningTest > associationRuleMiningExamples(String, InterestMeasure, Double, Double, Integer, Boolean, String[]) > [2] dataset/r4tings, ratings.parquet, CONFIDENCE, 0.5, 0.5, 10, true, i3, 1, i2, 1    STANDARD_OUT
     [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
     Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
     Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m
     [[34mINFO [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 132[0;39m [37mJava Runtime: 11 Apache Spark: 3.5.0 Processors: 8[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.t.RatingNormalizerArgumentConverter.convert 32[0;39m [37mRatingNormalizerArgumentConverter [ITEM, Z_SCORE, false][0;39m
-    [[34mINFO [0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 26[0;39m [37msource: ITEM, COSINE,  false, false[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.t.RatingSimilarityMeasurerArgumentConverter.convert 35[0;39m [37mparams: [ITEM, COSINE, false, false][0;39m
-    [[34mINFO [0;39m] [32mc.r.r.test.StringArrayConverter.convert 25[0;39m [37msource: u4, i3, 1, 3.3887[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.test.StringArrayConverter.convert 37[0;39m [37mparams: [u4, i3, 1, 3.3887][0;39m
+    [[34mINFO [0;39m] [32mc.r.r.test.StringArrayConverter.convert 25[0;39m [37msource: i3, 1, i2, 1   [0;39m
+    [[39mDEBUG[0;39m] [32mc.r.r.test.StringArrayConverter.convert 37[0;39m [37mparams: [i3, 1, i2, 1][0;39m
     [[39mDEBUG[0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 33[0;39m [37mparams:
-    group: group:[item, user] (default: user, current: item)
     itemCol: item column name  (default: item)
-    k: The number of nearest neighbors to use for prediction. (default: 20, current: 3)
-    minimumNeighbors: The number of minimum nearest neighbors. (default: 2, current: 2)
-    ratingNormalizer: TODO (current: ZScoreNormalizer_a0234a03537c)
-    outputCol: output column name (default: score)
+    minConfidence: minimal confidence for generating Association Rule (current: 0.5)
+    minSupport: the minimal support level of a frequent pattern (current: 0.5)
+    outputCol: output column name (default: support, current: confidence)
     ratingCol: rating column name (default: rating)
-    RatingSimilarityMeasurer: The default value of the similarityMeasurer is the value returned when getSimilarityMeasurer() is called.[i.e. return new CosineSimilarityMeasurer().setGroup(getGroup())] (current: CosineSimilarityMeasurer_395c6ce227c0)
     userCol: user column name  (default: user)
-    verbose: Enable verbose logging (default: false, current: true)
-    weightedAverage: TODO (default: simple, current: z-score)[0;39m
+    verbose: Enable verbose logging (default: false, current: true)[0;39m
     [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 47[0;39m [37mratingDS: 30[0;39m
     +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
     |user|       i1|       i2|       i3|       i4|       i5|       i6|       i7|       i8|       i9|      i10|
@@ -750,113 +154,173 @@ KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, Rati
     |  u5|         |3.0000000|4.0000000|         |         |2.5000000|4.0000000|         |         |         |
     +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
-    [[34mINFO [0;39m] [32mc.r.r.model.knn.KNearestNeighbors.execute 45[0;39m [37muserRatedItems.count: 6[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.model.knn.KNearestNeighbors.getNeighborsSimilarity 240[0;39m [37mratingDS: 30[0;39m
-    +----+----------+----------+----------+----------+---+----------+----------+---+----------+----------+
-    |user|        i1|        i2|        i3|        i4| i5|        i6|        i7| i8|        i9|       i10|
-    +----+----------+----------+----------+----------+---+----------+----------+---+----------+----------+
-    |  u1|-1.1547005| 0.9970545|-0.8589557|          |   | 0.4629100|-1.1547005|   | 0.8728716| 0.7071068|
-    |  u2| 0.5773503|-1.3038405| 0.7027819| 0.0000000|NaN|          | 0.5773503|   |          |-0.7071068|
-    |  u3|          |-0.1533930|-0.8589557| 1.0000000|NaN|-1.3887301|          |   |-1.0910895|          |
-    |  u4| 0.5773503| 0.9970545|          |-1.0000000|   | 0.9258201|          |NaN| 0.2182179|          |
-    |  u5|          |-0.5368755| 1.0151295|          |   | 0.0000000| 0.5773503|   |          |          |
-    +----+----------+----------+----------+----------+---+----------+----------+---+----------+----------+
-
-    [[39mDEBUG[0;39m] [32mc.r.r.m.m.s.RatingSimilarityMeasurer.compute 264[0;39m [37mcrossJoinedDS: 24[0;39m
-    +---+------------------------------------------------------------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------+
-    |lhs|lhs_ratings                                                                                                                         |rhs|rhs_ratings                                                                                               |
-    +---+------------------------------------------------------------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------+
-    |i4 |{u2 -> 0.0, u3 -> 1.0, u4 -> -1.0}                                                                                                  |i5 |{u2 -> NaN, u3 -> NaN}                                                                                    |
-    |i8 |{u4 -> NaN}                                                                                                                         |i5 |{u2 -> NaN, u3 -> NaN}                                                                                    |
-    |i1 |{u1 -> -1.1547005383792515, u2 -> 0.577350269189626, u4 -> 0.577350269189626}                                                       |i5 |{u2 -> NaN, u3 -> NaN}                                                                                    |
-    |i6 |{u1 -> 0.4629100498862757, u3 -> -1.3887301496588271, u4 -> 0.9258200997725514, u5 -> 0.0}                                          |i5 |{u2 -> NaN, u3 -> NaN}                                                                                    |
-    |i9 |{u1 -> 0.8728715609439699, u3 -> -1.0910894511799614, u4 -> 0.21821789023599275}                                                    |i5 |{u2 -> NaN, u3 -> NaN}                                                                                    |
-    |i2 |{u1 -> 0.9970544855015814, u2 -> -1.30384048104053, u3 -> -0.15339299776947424, u4 -> 0.9970544855015814, u5 -> -0.5368754921931594}|i5 |{u2 -> NaN, u3 -> NaN}                                                                                    |
-    |i4 |{u2 -> 0.0, u3 -> 1.0, u4 -> -1.0}                                                                                                  |i10|{u1 -> 0.7071067811865476, u2 -> -0.7071067811865476}                                                     |
-    |i8 |{u4 -> NaN}                                                                                                                         |i10|{u1 -> 0.7071067811865476, u2 -> -0.7071067811865476}                                                     |
-    |i1 |{u1 -> -1.1547005383792515, u2 -> 0.577350269189626, u4 -> 0.577350269189626}                                                       |i10|{u1 -> 0.7071067811865476, u2 -> -0.7071067811865476}                                                     |
-    |i6 |{u1 -> 0.4629100498862757, u3 -> -1.3887301496588271, u4 -> 0.9258200997725514, u5 -> 0.0}                                          |i10|{u1 -> 0.7071067811865476, u2 -> -0.7071067811865476}                                                     |
-    |i9 |{u1 -> 0.8728715609439699, u3 -> -1.0910894511799614, u4 -> 0.21821789023599275}                                                    |i10|{u1 -> 0.7071067811865476, u2 -> -0.7071067811865476}                                                     |
-    |i2 |{u1 -> 0.9970544855015814, u2 -> -1.30384048104053, u3 -> -0.15339299776947424, u4 -> 0.9970544855015814, u5 -> -0.5368754921931594}|i10|{u1 -> 0.7071067811865476, u2 -> -0.7071067811865476}                                                     |
-    |i4 |{u2 -> 0.0, u3 -> 1.0, u4 -> -1.0}                                                                                                  |i7 |{u1 -> -1.154700538379252, u2 -> 0.5773502691896252, u5 -> 0.5773502691896252}                            |
-    |i8 |{u4 -> NaN}                                                                                                                         |i7 |{u1 -> -1.154700538379252, u2 -> 0.5773502691896252, u5 -> 0.5773502691896252}                            |
-    |i1 |{u1 -> -1.1547005383792515, u2 -> 0.577350269189626, u4 -> 0.577350269189626}                                                       |i7 |{u1 -> -1.154700538379252, u2 -> 0.5773502691896252, u5 -> 0.5773502691896252}                            |
-    |i6 |{u1 -> 0.4629100498862757, u3 -> -1.3887301496588271, u4 -> 0.9258200997725514, u5 -> 0.0}                                          |i7 |{u1 -> -1.154700538379252, u2 -> 0.5773502691896252, u5 -> 0.5773502691896252}                            |
-    |i9 |{u1 -> 0.8728715609439699, u3 -> -1.0910894511799614, u4 -> 0.21821789023599275}                                                    |i7 |{u1 -> -1.154700538379252, u2 -> 0.5773502691896252, u5 -> 0.5773502691896252}                            |
-    |i2 |{u1 -> 0.9970544855015814, u2 -> -1.30384048104053, u3 -> -0.15339299776947424, u4 -> 0.9970544855015814, u5 -> -0.5368754921931594}|i7 |{u1 -> -1.154700538379252, u2 -> 0.5773502691896252, u5 -> 0.5773502691896252}                            |
-    |i4 |{u2 -> 0.0, u3 -> 1.0, u4 -> -1.0}                                                                                                  |i3 |{u1 -> -0.8589556903873333, u2 -> 0.7027819284987273, u3 -> -0.8589556903873333, u5 -> 1.0151294522759395}|
-    |i8 |{u4 -> NaN}                                                                                                                         |i3 |{u1 -> -0.8589556903873333, u2 -> 0.7027819284987273, u3 -> -0.8589556903873333, u5 -> 1.0151294522759395}|
-    +---+------------------------------------------------------------------------------------------------------------------------------------+---+----------------------------------------------------------------------------------------------------------+
-    only showing top 20 rows
-
-    +---+----------+----------+----------+----------+---+---------+
-    |lhs|        i1|        i2|        i4|        i6| i8|       i9|
-    +---+----------+----------+----------+----------+---+---------+
-    | i3| 0.9754410|-0.7279472|-0.7739573| 0.3431640|NaN|0.1104315|
-    | i5|       NaN| 0.0000000| 0.0000000|       NaN|NaN|      NaN|
-    | i7| 1.0000000|-0.9065472|       NaN|-0.8944272|NaN|      NaN|
-    |i10|-0.9486833| 0.9912279|       NaN|       NaN|NaN|      NaN|
-    +---+----------+----------+----------+----------+---+---------+
-
-    +---+---------+---------+---------+---------+
-    |lhs|       i1|       i2|       i6|       i9|
-    +---+---------+---------+---------+---------+
-    | i3|0.9754410|         |0.3431640|0.1104315|
-    | i7|1.0000000|         |         |         |
-    |i10|         |0.9912279|         |         |
-    +---+---------+---------+---------+---------+
-
-    +---+---+
-    |rhs| u4|
-    +---+---+
-    | i1|3.0|
-    | i2|5.0|
-    | i4|0.5|
-    | i6|3.5|
-    | i8|3.5|
-    | i9|4.5|
-    +---+---+
-
-    +----+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-    |item|          lhs_mean|        lhs_stddev|user|rhs|         similarity|rating|          rhs_mean|        rhs_stddev|
-    +----+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-    | i10|              1.75|1.0606601717798212|  u4| i2| 0.9912279006826349|   5.0|               3.7|1.3038404810405297|
-    |  i3|             2.375|1.6007810593582121|  u4| i1| 0.9754410020677066|   3.0|2.1666666666666665|1.4433756729740643|
-    |  i3|             2.375|1.6007810593582121|  u4| i6|0.34316403829308156|   3.5|               2.5|1.0801234497346435|
-    |  i3|             2.375|1.6007810593582121|  u4| i9|0.11043152607484612|   4.5| 4.333333333333333|0.7637626158259734|
-    |  i7|3.8333333333333335|0.2886751345948129|  u4| i1| 1.0000000000000002|   3.0|2.1666666666666665|1.4433756729740643|
-    +----+------------------+------------------+----+---+-------------------+------+------------------+------------------+
-
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 109[0;39m [37mtotalTransactions: 5[0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 110[0;39m [37mlhsDS
+    +---+----------------+-----------+
+    |lhs|lhs_transactions|lhs_support|
+    +---+----------------+-----------+
+    |i3 |[u1, u2, u3, u5]|0.8        |
+    +---+----------------+-----------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 111[0;39m [37mrhsDS
+    +---+--------------------+-----------+
+    |rhs|rhs_transactions    |rhs_support|
+    +---+--------------------+-----------+
+    |i1 |[u1, u2, u4]        |0.6        |
+    |i2 |[u1, u2, u3, u4, u5]|1.0        |
+    |i4 |[u2, u3, u4]        |0.6        |
+    |i6 |[u1, u3, u4, u5]    |0.8        |
+    |i7 |[u1, u2, u5]        |0.6        |
+    |i9 |[u1, u3, u4]        |0.6        |
+    +---+--------------------+-----------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 113[0;39m [37mcandidateRuleDS
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |lhs|lhs_transactions|lhs_support|rhs|rhs_transactions    |rhs_support|support|confidence        |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |i3 |[u1, u2, u3, u5]|0.8        |i1 |[u1, u2, u4]        |0.6        |0.4    |0.5               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i2 |[u1, u2, u3, u4, u5]|1.0        |0.8    |1.0               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i4 |[u2, u3, u4]        |0.6        |0.4    |0.5               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i6 |[u1, u3, u4, u5]    |0.8        |0.6    |0.7499999999999999|
+    |i3 |[u1, u2, u3, u5]|0.8        |i7 |[u1, u2, u5]        |0.6        |0.6    |0.7499999999999999|
+    |i3 |[u1, u2, u3, u5]|0.8        |i9 |[u1, u3, u4]        |0.6        |0.4    |0.5               |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 116[0;39m [37mstrongRuleDS
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |lhs|lhs_transactions|lhs_support|rhs|rhs_transactions    |rhs_support|support|confidence        |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |i3 |[u1, u2, u3, u5]|0.8        |i2 |[u1, u2, u3, u4, u5]|1.0        |0.8    |1.0               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i6 |[u1, u3, u4, u5]    |0.8        |0.6    |0.7499999999999999|
+    |i3 |[u1, u2, u3, u5]|0.8        |i7 |[u1, u2, u5]        |0.6        |0.6    |0.7499999999999999|
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 119[0;39m [37massociationRuleDS
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+------------------+--------------------+------------------+
+    |lhs|lhs_transactions|lhs_support|rhs|rhs_transactions    |rhs_support|support|confidence        |lift              |leverage            |conviction        |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+------------------+--------------------+------------------+
+    |i3 |[u1, u2, u3, u5]|0.8        |i6 |[u1, u3, u4, u5]    |0.8        |0.6    |0.7499999999999999|0.9374999999999998|-0.04000000000000015|0.7999999999999995|
+    |i3 |[u1, u2, u3, u5]|0.8        |i2 |[u1, u2, u3, u4, u5]|1.0        |0.8    |1.0               |1.0               |0.0                 |Infinity          |
+    |i3 |[u1, u2, u3, u5]|0.8        |i7 |[u1, u2, u5]        |0.6        |0.6    |0.7499999999999999|1.2499999999999998|0.12                |0.7999999999999995|
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+------------------+--------------------+------------------+
+    [0;39m
     [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 55[0;39m [37mitemScoreDS: 3[0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.9912279006826349,5.0,3.7,1.3038404810405297]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([1.0000000000000002,3.0,2.1666666666666665,1.4433756729740643]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9754410020677066,3.0,2.1666666666666665,1.4433756729740643], [0.34316403829308156,3.5,2.5,1.0801234497346435], [0.11043152607484612,4.5,4.333333333333333,0.7637626158259734]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 0.9049774239288353 / 1.4290365664356344[0;39m
-    +----+---------+
-    |item|    score|
-    +----+---------+
-    | i10|      NaN|
-    |  i7|      NaN|
-    |  i3|3.3887394|
-    +----+---------+
+    +----+----------+
+    |item|confidence|
+    +----+----------+
+    |  i2|       1.0|
+    |  i6|      0.75|
+    |  i7|      0.75|
+    +----+----------+
 
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.9912279006826349,5.0,3.7,1.3038404810405297]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([1.0000000000000002,3.0,2.1666666666666665,1.4433756729740643]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9754410020677066,3.0,2.1666666666666665,1.4433756729740643], [0.34316403829308156,3.5,2.5,1.0801234497346435], [0.11043152607484612,4.5,4.333333333333333,0.7637626158259734]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 0.9049774239288353 / 1.4290365664356344[0;39m
-    +----+-----------------+----+
-    |item|            score|rank|
-    +----+-----------------+----+
-    |  i3|3.388739433543961|   1|
-    +----+-----------------+----+
+    +----+------------------+----+
+    |item|        confidence|rank|
+    +----+------------------+----+
+    |  i2|               1.0|   1|
+    |  i6|0.7499999999999999|   2|
+    |  i7|0.7499999999999999|   3|
+    +----+------------------+----+
 
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([0.9912279006826349,5.0,3.7,1.3038404810405297]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 125[0;39m [37mrowSeq: WrappedArray([1.0000000000000002,3.0,2.1666666666666665,1.4433756729740643]) [0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 144[0;39m [37mkNearestNeighborList: [[0.9754410020677066,3.0,2.1666666666666665,1.4433756729740643], [0.34316403829308156,3.5,2.5,1.0801234497346435], [0.11043152607484612,4.5,4.333333333333333,0.7637626158259734]][0;39m
-    [[39mDEBUG[0;39m] [32mc.r.r.model.knn.WeightedAverage.calculate 153[0;39m [37mnumerator / denominator: 0.9049774239288353 / 1.4290365664356344[0;39m
-    [[34mINFO [0;39m] [32mc.r.r.e.ch05.KNearestNeighborsTest.kNearestNeighborsExamples 75[0;39m [37mactual 3.3887394 [3.388739433543961][0;39m
+    [[34mINFO [0;39m] [32mc.r.r.e.c.AssociationRuleMiningTest.associationRuleMiningExamples 65[0;39m [37mactual 1.0000000 [1.0][0;39m
 
-KNearestNeighborsTest > kNearestNeighborsExamples(String, RatingNormalizer, RatingSimilarityMeasurer, Group, WeightedAverage, Integer, Integer, Integer, Boolean, String[]) > [6] dataset/r4tings, ratings.parquet, ITEM,        Z_SCORE, false, ITEM, COSINE,  false, false, ITEM, Z_SCORE, 3, 2, 5, true, u4, i3, 1, 3.3887 PASSED
+AssociationRuleMiningTest > associationRuleMiningExamples(String, InterestMeasure, Double, Double, Integer, Boolean, String[]) > [2] dataset/r4tings, ratings.parquet, CONFIDENCE, 0.5, 0.5, 10, true, i3, 1, i2, 1    PASSED
 
-BUILD SUCCESSFUL in 1m 27s
+AssociationRuleMiningTest > associationRuleMiningExamples(String, InterestMeasure, Double, Double, Integer, Boolean, String[]) > [3] dataset/r4tings, ratings.parquet, LIFT, 0.5, 0.5, 10, true, i3, 1, i7, 1.25 STANDARD_OUT
+    [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
+    Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
+    Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m
+    [[34mINFO [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 132[0;39m [37mJava Runtime: 11 Apache Spark: 3.5.0 Processors: 8[0;39m
+    [[34mINFO [0;39m] [32mc.r.r.test.StringArrayConverter.convert 25[0;39m [37msource: i3, 1, i7, 1.25[0;39m
+    [[39mDEBUG[0;39m] [32mc.r.r.test.StringArrayConverter.convert 37[0;39m [37mparams: [i3, 1, i7, 1.25][0;39m
+    [[39mDEBUG[0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 33[0;39m [37mparams:
+    itemCol: item column name  (default: item)
+    minConfidence: minimal confidence for generating Association Rule (current: 0.5)
+    minSupport: the minimal support level of a frequent pattern (current: 0.5)
+    outputCol: output column name (default: support, current: lift)
+    ratingCol: rating column name (default: rating)
+    userCol: user column name  (default: user)
+    verbose: Enable verbose logging (default: false, current: true)[0;39m
+    [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 47[0;39m [37mratingDS: 30[0;39m
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+    |user|       i1|       i2|       i3|       i4|       i5|       i6|       i7|       i8|       i9|      i10|
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+    |  u1|0.5000000|5.0000000|1.0000000|         |         |3.0000000|3.5000000|         |5.0000000|2.5000000|
+    |  u2|3.0000000|2.0000000|3.5000000|2.0000000|4.0000000|         |4.0000000|         |         |1.0000000|
+    |  u3|         |3.5000000|1.0000000|3.5000000|4.0000000|1.0000000|         |         |3.5000000|         |
+    |  u4|3.0000000|5.0000000|         |0.5000000|         |3.5000000|         |3.5000000|4.5000000|         |
+    |  u5|         |3.0000000|4.0000000|         |         |2.5000000|4.0000000|         |         |         |
+    +----+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
+
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 109[0;39m [37mtotalTransactions: 5[0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 110[0;39m [37mlhsDS
+    +---+----------------+-----------+
+    |lhs|lhs_transactions|lhs_support|
+    +---+----------------+-----------+
+    |i3 |[u1, u2, u3, u5]|0.8        |
+    +---+----------------+-----------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 111[0;39m [37mrhsDS
+    +---+--------------------+-----------+
+    |rhs|rhs_transactions    |rhs_support|
+    +---+--------------------+-----------+
+    |i1 |[u1, u2, u4]        |0.6        |
+    |i2 |[u1, u2, u3, u4, u5]|1.0        |
+    |i4 |[u2, u3, u4]        |0.6        |
+    |i6 |[u1, u3, u4, u5]    |0.8        |
+    |i7 |[u1, u2, u5]        |0.6        |
+    |i9 |[u1, u3, u4]        |0.6        |
+    +---+--------------------+-----------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 113[0;39m [37mcandidateRuleDS
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |lhs|lhs_transactions|lhs_support|rhs|rhs_transactions    |rhs_support|support|confidence        |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |i3 |[u1, u2, u3, u5]|0.8        |i1 |[u1, u2, u4]        |0.6        |0.4    |0.5               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i2 |[u1, u2, u3, u4, u5]|1.0        |0.8    |1.0               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i4 |[u2, u3, u4]        |0.6        |0.4    |0.5               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i6 |[u1, u3, u4, u5]    |0.8        |0.6    |0.7499999999999999|
+    |i3 |[u1, u2, u3, u5]|0.8        |i7 |[u1, u2, u5]        |0.6        |0.6    |0.7499999999999999|
+    |i3 |[u1, u2, u3, u5]|0.8        |i9 |[u1, u3, u4]        |0.6        |0.4    |0.5               |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 116[0;39m [37mstrongRuleDS
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |lhs|lhs_transactions|lhs_support|rhs|rhs_transactions    |rhs_support|support|confidence        |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    |i3 |[u1, u2, u3, u5]|0.8        |i2 |[u1, u2, u3, u4, u5]|1.0        |0.8    |1.0               |
+    |i3 |[u1, u2, u3, u5]|0.8        |i6 |[u1, u3, u4, u5]    |0.8        |0.6    |0.7499999999999999|
+    |i3 |[u1, u2, u3, u5]|0.8        |i7 |[u1, u2, u5]        |0.6        |0.6    |0.7499999999999999|
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.m.arm.AssociationRuleMining.execute 119[0;39m [37massociationRuleDS
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+------------------+--------------------+------------------+
+    |lhs|lhs_transactions|lhs_support|rhs|rhs_transactions    |rhs_support|support|confidence        |lift              |leverage            |conviction        |
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+------------------+--------------------+------------------+
+    |i3 |[u1, u2, u3, u5]|0.8        |i6 |[u1, u3, u4, u5]    |0.8        |0.6    |0.7499999999999999|0.9374999999999998|-0.04000000000000015|0.7999999999999995|
+    |i3 |[u1, u2, u3, u5]|0.8        |i2 |[u1, u2, u3, u4, u5]|1.0        |0.8    |1.0               |1.0               |0.0                 |Infinity          |
+    |i3 |[u1, u2, u3, u5]|0.8        |i7 |[u1, u2, u5]        |0.6        |0.6    |0.7499999999999999|1.2499999999999998|0.12                |0.7999999999999995|
+    +---+----------------+-----------+---+--------------------+-----------+-------+------------------+------------------+--------------------+------------------+
+    [0;39m
+    [[34mINFO [0;39m] [32mc.r.r.common.ml.AbstractRecommender.recommend 55[0;39m [37mitemScoreDS: 3[0;39m
+    +----+------+
+    |item|  lift|
+    +----+------+
+    |  i2|   1.0|
+    |  i6|0.9375|
+    |  i7|  1.25|
+    +----+------+
+
+    +----+------------------+----+
+    |item|              lift|rank|
+    +----+------------------+----+
+    |  i7|1.2499999999999998|   1|
+    |  i2|               1.0|   2|
+    |  i6|0.9374999999999998|   3|
+    +----+------------------+----+
+
+    [[34mINFO [0;39m] [32mc.r.r.e.c.AssociationRuleMiningTest.associationRuleMiningExamples 65[0;39m [37mactual 1.2500000 [1.2499999999999998][0;39m
+
+AssociationRuleMiningTest > associationRuleMiningExamples(String, InterestMeasure, Double, Double, Integer, Boolean, String[]) > [3] dataset/r4tings, ratings.parquet, LIFT, 0.5, 0.5, 10, true, i3, 1, i7, 1.25 PASSED
+
+BUILD SUCCESSFUL in 33s
 9 actionable tasks: 2 executed, 7 up-to-date
