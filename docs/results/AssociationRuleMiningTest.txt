@@ -1,10 +1,40 @@
-PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.bookCrossingDataset
-⋮     
- 생략 -
-⋮     
-DatasetPrepareTest > bookCrossingDataset(String) > [1] dataset/Book-Crossing/BX-Books.csv STANDARD_OUT
-    [INFO ] c.r.r.test.AbstractSparkTests.setUp 130 spark.version: 3.5.0 core: 8 02.DatasetPrepareTest
-    [INFO ] c.r.r.e.ch02.DatasetPrepareTest.bookCrossingDataset 145 count: 271379
+> Task :recommender:compileJava UP-TO-DATE
+> Task :recommender-examples:compileJava NO-SOURCE
+> Task :recommender-examples:processResources NO-SOURCE
+> Task :recommender-examples:classes UP-TO-DATE
+> Task :recommender-examples:jar SKIPPED
+> Task :recommender-examples:compileTestFixturesJava NO-SOURCE
+> Task :recommender-examples:processTestFixturesResources NO-SOURCE
+> Task :recommender-examples:testFixturesClasses UP-TO-DATE
+> Task :recommender-examples:testFixturesJar SKIPPED
+> Task :recommender:processResources UP-TO-DATE
+> Task :recommender:classes UP-TO-DATE
+> Task :recommender:jar UP-TO-DATE
+> Task :recommender:compileTestFixturesJava UP-TO-DATE
+> Task :recommender:processTestFixturesResources NO-SOURCE
+> Task :recommender:testFixturesClasses UP-TO-DATE
+> Task :recommender:testFixturesJar UP-TO-DATE
+> Task :recommender-examples:cleanTest
+> Task :recommender-examples:compileTestJava UP-TO-DATE
+> Task :recommender-examples:processTestResources UP-TO-DATE
+> Task :recommender-examples:testClasses UP-TO-DATE
+
+> Task :recommender-examples:test
+
+DatasetPrepareTest > bookCrossingDataset(String, Boolean) STANDARD_ERROR
+    SLF4J: Class path contains multiple SLF4J providers.
+    SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@698122b2]
+    SLF4J: Found provider [org.apache.logging.slf4j.SLF4JServiceProvider@4212a0c8]
+    SLF4J: See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+    SLF4J: Actual provider is of type [ch.qos.logback.classic.spi.LogbackServiceProvider@698122b2]
+
+DatasetPrepareTest > bookCrossingDataset(String, Boolean) > [1] dataset/Book-Crossing/BX-Books.csv, true STANDARD_OUT
+    [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
+    Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
+    Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m 
+
+
+> Task :recommender-examples:test
     root
      |-- ISBN: string (nullable = true)
      |-- Book-Title: string (nullable = true)
@@ -42,11 +72,12 @@ DatasetPrepareTest > bookCrossingDataset(String) > [1] dataset/Book-Crossing/BX-
     only showing top 20 rows
 
 
-DatasetPrepareTest > bookCrossingDataset(String) > [1] dataset/Book-Crossing/BX-Books.csv PASSED
+DatasetPrepareTest > bookCrossingDataset(String, Boolean) > [1] dataset/Book-Crossing/BX-Books.csv, true PASSED
 
-DatasetPrepareTest > bookCrossingDataset(String) > [2] dataset/Book-Crossing/BX-Book-Ratings.csv STANDARD_OUT
-    [INFO ] c.r.r.test.AbstractSparkTests.setUp 130 spark.version: 3.5.0 core: 8
-    [INFO ] c.r.r.e.ch02.DatasetPrepareTest.bookCrossingDataset 145 count: 433671
+DatasetPrepareTest > bookCrossingDataset(String, Boolean) > [2] dataset/Book-Crossing/BX-Book-Ratings.csv, true STANDARD_OUT
+    [[31mWARN [0;39m] [32mc.r.r.test.AbstractSparkTests.setUp 79[0;39m [37mProblems running Hadoop on Windows
+    Unable to find native drivers in HADOOP_HOME. Please, refer to <a href=\"https://wiki.apache.org/hadoop/WindowsProblems\">Hadoop Wiki</a> for more details.
+    Apache Spark uses Hadoop’s libraries for distributed data processing tasks. If Spark cannot find these libraries, it will fail to initialize the Spark Context.[0;39m 
     root
      |-- User-ID: long (nullable = true)
      |-- ISBN: string (nullable = true)
@@ -79,7 +110,7 @@ DatasetPrepareTest > bookCrossingDataset(String) > [2] dataset/Book-Crossing/BX-
     only showing top 20 rows
 
 
-DatasetPrepareTest > bookCrossingDataset(String) > [2] dataset/Book-Crossing/BX-Book-Ratings.csv PASSED
-⋮     
- 생략 -
-⋮  
+DatasetPrepareTest > bookCrossingDataset(String, Boolean) > [2] dataset/Book-Crossing/BX-Book-Ratings.csv, true PASSED
+
+BUILD SUCCESSFUL in 37s
+9 actionable tasks: 2 executed, 7 up-to-date
