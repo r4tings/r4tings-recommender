@@ -6,8 +6,17 @@
 |소프트웨어|버전|설명|
 |------|---|---|
 |JDK|11| <p>OpenJDK 또는 Oracle JDK <p>* OpenJDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/) 를 참고하세요. <p>* Oracle JDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/)를 참고하세요.|
+
+### 선택 소프트웨어(Optional software)
+|소프트웨어|버전|설명|
+|------|---|---|
+|Git|Latest| Git을 내려받고 구성하는 방법은 [링크](https://git-scm.com/downloads)를 참고하세요|
+|Git Client|Latest| <p>GitHub Desktop 또는 Sourcetree <p>* GitHub Desktop을 내려받고 구성하는 방법은 [링크](https://docs.github.com/en/desktop/)를 참고하세요 <p>* Sourcetree를 내려받고 구성하는 방법은 [링크](https://www.sourcetreeapp.com/)를 참고하세요|
+|Gradle|Latest|Build Tool을 내려받고 구성하는 방법은 [링크](https://docs.gradle.org/current/userguide/what_is_gradle.html/)를 참고하세요|
+|IntelliJ|Latest|IntelliJ를 내려받고 구성하는 방법은 [링크](https://www.jetbrains.com/idea/)를 참고하세요|
 |R|4.3|<p>R-4.3.2 for Windows를 내려받고 구성하는 방법은 [링크](https://cran.r-project.org/bin/windows/base/) 를 참고하세요.|
 |RTools|4.3| <p>RTools: Toolchains for building R and R packages from source on Windows를 내려받고 구성하는 방법은 [링크](https://cran.r-project.org/bin/windows/Rtools/) 를 참고하세요.|
+|RStudio Desktop|Latest|IntelliJ를 내려받고 구성하는 방법은 [링크](https://posit.co/products/open-source/rstudio/)를 참고하세요|
 
 ### 프로젝트 구성하기(Set up the project)
 
