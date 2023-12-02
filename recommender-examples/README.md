@@ -5,7 +5,9 @@
 ### 필수 소프트웨어(Required software)
 |소프트웨어|버전|설명|
 |------|---|---|
-|JDK|11| <p>OpenJDK 또는 Oracle JDK <p>* OpenJDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/) 를 참고하세요 <p>* Oracle JDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/)를 참고하세요|
+|JDK|11| <p>OpenJDK 또는 Oracle JDK <p>* OpenJDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/) 를 참고하세요. <p>* Oracle JDK를 내려받고 구성하는 방법은 [링크](https://docs.oracle.com/en/java/javase/11/)를 참고하세요.|
+|R|4.3|<p>R-4.3.2 for Windows를 내려받고 구성하는 방법은 [링크](https://cran.r-project.org/bin/windows/base/) 를 참고하세요.|
+|RTools|4.3| <p>RTools: Toolchains for building R and R packages from source on Windows를 내려받고 구성하는 방법은 [링크](https://cran.r-project.org/bin/windows/Rtools/) 를 참고하세요.|
 
 ### 프로젝트 구성하기(Set up the project)
 
