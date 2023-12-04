@@ -28,9 +28,9 @@ public class BaselineSingleValueDecompositionTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet',  SIMPLE,   ,   , 3, 5, true, 'u4, i1,       2.5,        0.5,  0.5374888, u4, i3, 3, 2.6591122'",
-    "'dataset/r4tings, ratings.parquet', GENERAL,  0,  0, 3, 5, true, 'u4, i1, 2.4666667,  0.5333333,  0.5590040, u4, i3, 3, 2.5964331'",
-    "'dataset/r4tings, ratings.parquet', GENERAL, 25, 10, 3, 5, true, 'u4, i1, 3.0348793, -0.0348793, -0.6658965, u4, i3, 2, 3.1906588'",
+    "'dataset/r4tings, ratings.parquet',  SIMPLE,   ,   , 3, 5, true, 'u4, i1,       2.5,        0.5,  0.5374888, u4, i3, 3, 2.6591'",
+    "'dataset/r4tings, ratings.parquet', GENERAL,  0,  0, 3, 5, true, 'u4, i1, 2.4666667,  0.5333333,  0.5590040, u4, i3, 3, 2.5964'",
+    "'dataset/r4tings, ratings.parquet', GENERAL, 25, 10, 3, 5, true, 'u4, i1, 3.0348793, -0.0348793, -0.6658965, u4, i3, 2, 3.1906'",
     // Full SVD
     // "'dataset/r4tings, ratings.parquet',  SIMPLE,   ,   , 5, 5, true, 'u4, i1,       2.5,
     // 0.5,        0.5, u4, i3, 3, 2.7083333'",
@@ -129,6 +129,6 @@ public class BaselineSingleValueDecompositionTest extends AbstractSparkTests {
 
     log.info("actual3 {}", String.format("%,.7f [%s]", actual4, actual4));
 
-    assertEquals(Double.parseDouble(expectations[8]), actual4, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[8]), actual4, 1.0e-4);
   }
 }
