@@ -52,7 +52,7 @@ public class SimpleMeanRatingBaseline extends CommonEstimator<SimpleMeanRatingBa
             .agg(avg(getRatingCol()).minus(lit(overallMeanRating)).as(COL.ITEM_BIAS));
 
     if (Objects.equals(getVerbose(), Boolean.TRUE)) {
-      log.info("overallMeanRating: {}", String.format("%,.7f", overallMeanRating));
+      log.info("overallMeanRating: {}", String.format("%.7f", overallMeanRating));
       log.info("itemBiasDS\n{}", itemBiasDS.showString(10, 0, false));
       log.info("userBiasDS\n{}", userBiasDS.showString(10, 0, false));
 

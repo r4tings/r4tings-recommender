@@ -62,7 +62,7 @@ public class TermFrequencyInverseDocumentFrequencyTest extends AbstractSparkTest
             .head()
             .getAs(params.getOutputCol());
 
-    log.info("actual {}", String.format("%,.7f [%s]", actual, actual));
+    log.info("actual {}", String.format("%.7f [%s]", actual, actual));
 
     assertEquals(Double.parseDouble(expectations[3]), actual, 1.0e-7);
   }

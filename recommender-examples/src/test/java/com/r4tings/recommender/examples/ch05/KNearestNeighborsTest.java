@@ -72,7 +72,7 @@ public class KNearestNeighborsTest extends AbstractSparkTests {
             .head()
             .getAs(params.getOutputCol());
 
-    log.info("actual {}", String.format("%,.7f [%s]", actual, actual));
+    log.info("actual {}", String.format("%.7f [%s]", actual, actual));
 
     assertEquals(Double.parseDouble(expectations[3]), actual, 1.0e-4);
   }

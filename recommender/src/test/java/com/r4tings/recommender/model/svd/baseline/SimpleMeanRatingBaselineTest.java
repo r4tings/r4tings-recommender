@@ -86,7 +86,7 @@ class SimpleMeanRatingBaselineTest extends AbstractSparkTests {
 
     testReporter.publishEntry(
         COL.RESIDUAL,
-        String.format("%,.7f [%s]\n%s", actual, actual, result /* result.prettyJson()*/));
+        String.format("%.7f [%s]\n%s", actual, actual, result /* result.prettyJson()*/));
 
     assertAll(
         //  "TODO: heading",

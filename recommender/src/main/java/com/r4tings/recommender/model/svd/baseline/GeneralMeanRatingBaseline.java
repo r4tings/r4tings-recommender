@@ -68,8 +68,21 @@ public class GeneralMeanRatingBaseline extends CommonEstimator<GeneralMeanRating
                     .divide(count(getRatingCol()).plus(lit(getLambda3())))
                     .as(COL.USER_BIAS));
 
+    ratingDS
+        .join(
+            itemBiasDS.hint(SPARK.HINT_BROADCAST),
+            JavaConverters.asScalaBuffer(Collections.singletonList(getItemCol())),
+            SPARK.JOINTYPE_LEFT_OUTER)
+        .groupBy(getUserCol())
+        .agg(
+            collect_list(col(getRatingCol())),
+            lit(overallMeanRating),
+            collect_list(col(COL.ITEM_BIAS)),
+            count(getRatingCol()))
+            .show(false);
+
     if (Objects.equals(getVerbose(), Boolean.TRUE)) {
-      log.info("overallMeanRating: {}", String.format("%,.7f", overallMeanRating));
+      log.info("overallMeanRating: {}", String.format("%.7f", overallMeanRating));
       log.info("itemBiasDS\n{}", itemBiasDS.showString(10, 0, false));
       log.info("userBiasDS\n{}", userBiasDS.showString(10, 0, false));
 

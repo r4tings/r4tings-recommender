@@ -78,7 +78,7 @@ class BaselineSingleValueDecompositionTest extends AbstractSparkTests {
       log.warn(
           "{}",
           String.format(
-              "%,.7f",
+              "%.7f",
               reconstructedRatingDS.agg(round(avg(col(COL.RESIDUAL)), 7)).head().getDouble(0)));
 
       reconstructedRatingDS.show(true);
@@ -96,7 +96,7 @@ class BaselineSingleValueDecompositionTest extends AbstractSparkTests {
             .head()
             .getDouble(0);
 
-    testReporter.publishEntry("actual", String.format("%,.7f [%s]", actual, actual));
+    testReporter.publishEntry("actual", String.format("%.7f [%s]", actual, actual));
 
     assertEquals(Double.parseDouble(expects[2]), actual, 1.0e-7);
   }
