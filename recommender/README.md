@@ -33,8 +33,9 @@
 PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.downloadPublicDatasets
 ```
 
+<!--
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
-
+-->
 
 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 downloadPublicDatasets 실행 후, R4tings Recommender 오픈소스 추천엔진의 dataset 디렉토리 구조는 다음과 같습니다
 
@@ -77,7 +78,9 @@ CSV 파일 형식의 Book-Crossing 데이터셋을 로드하여 Parquet 형식�
 PS C:\r4tings\r4tings-recommender> ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch02.DatasetPrepareTest.bookCrossingDataset
 ```
 
+<!--
 https://github.com/r4tings/r4tings-recommender-examples/assets/123946859/b0079e57-6d14-48e8-8d95-ecd2064c462e
+-->
 
 Gradle Wrapper로 DatasetPrepareTest 클래스의 테스트 메서드인 bookCrossingDatasetExamples 실행 후, R4tings Recommender 오픈소스 추천엔진의 dataset 디렉토리 구조는 다음과 같습니다.
 
