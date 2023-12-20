@@ -7,7 +7,7 @@
 
 ![Concept](./docs/static/images/r4tings-recommender.svg)
 
-<sup>Official Website: [`http://r4tings.com`](http://r4tings.com/)</sup>
+### Official Website: [`http://r4tings.com`](http://r4tings.com/)
 
 ## 소개(Introduction)
 
@@ -336,11 +336,25 @@ See [`LICENSE.md`](/LICENSE.md) file for details.
 
 프로젝트에 대한 질문이나 제안, 또는 기타 연락이 필요한 경우, [dongsup.kim\@r4tings.com](mailto:dongsup.kim@r4tings.com?subject=[r4tings.com]) 으로 연락 주세요.
 
-## 뉴스 및 업데이트(News & Updates):
+## NEWS & UPDATES
 
-> [2023-12-01] 제17회 공개SW 개발자대회 은상(한국정보과학회 회장상). 과학기술정보통신부 (2023)
+> **[2023/12]** 공개SW 개발자대회 은상(한국정보과학회 회장상). (2023) 
 >
-> <sup>R4tings Recommender - Java 언어와 Apache Spark 라이브러리 기반으로 구현된 오픈 소스 추천 엔진</sup>
+> - <a href="https://www.oss.kr/dev_competition_activities/show/47925e10-ffd4-4cf8-9001-c80dc3d5fe7c" target="_blank">R4tings Recommender - Java 언어와 Apache Spark 라이브러리 기반으로 구현된 오픈 소스 추천 엔진</a>. 공개SW 포털.
+
+> **[2017/07]** R로 만드는 추천 시스템. 에이콘출판사.
+>
+> - <a href="https://www.packtpub.com/product/building-a-recommendation-system-with-r" target="_blank">Building a Recommendation System with R</a>. Suresh K. Gorakala. Michele Usuelli. (2015)
+> - <a href="http://acornpub.co.kr/book/building-recommend-system-r" target="_blank">R로 만드는 추천 시스템 - 고객의 취향을 예측하는 추천 시스템 만들기</a>. 김동섭, 윤병도, 김현돈, 박정현. (2017)
+
+> **[2016/12]** <a href="https://www.facebook.com/lab4all/photos/a.180932468766396/676020832590888/?type=3&mibextid=2JQ9oc" target="_blank">Recomon 연구실</a> (2016/12 - 2017/12). 모두의 연구소. 
+
+> **[2016/09]** <a href="https://www.coursera.org/specializations/recommender-systems" target="_blank">Recommender Systems Specialization</a>. University of Minnesota on Coursera. 
+> 
+> - <a href="https://www.coursera.org/account/accomplishments/verify/GJL34DWX89W4" target="_blank">Matrix Factorization and Advanced Techniques (with Honors)</a>. (2017/07)				
+> - <a href="https://www.coursera.org/account/accomplishments/verify/9KCTU637G45E" target="_blank">Recommender Systems: Evaluation and Metrics</a>. (2017/03)	
+> - <a href="https://www.coursera.org/account/accomplishments/verify/9KCTU637G45E" target="_blank">Nearest Neighbor Collaborative Filtering (with Honors)</a>. (2016/11)						     	          
+> - <a href="https://www.coursera.org/account/accomplishments/verify/H4G2DDZCQPEY" target="_blank">Introduction to Recommender Systems: Non-Personalized and Content-Based(with Honors)</a>. (2016/10)	
 
 <br/>
 
