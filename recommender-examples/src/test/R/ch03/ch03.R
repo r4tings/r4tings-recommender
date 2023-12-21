@@ -136,14 +136,14 @@ dat1 = data.frame(rating=raw.dt$rating, method="⊙원본")
 dat2 = data.frame(rating=mean.dt$rating, method="평균중심화")
 dat3 = data.frame(rating=mean_user.dt$rating, method="평균중심화(사용자)")
 dat4 = data.frame(rating=mean_item.dt$rating, method="평균중심화(아이템)")
-dat5 = data.frame(rating=zscore.dt$rating, method="Z점수")
-dat6 = data.frame(rating=zscore_user.dt$rating, method="Z점수(사용자)")
-dat7 = data.frame(rating=zscore_item.dt$rating, method="Z점수(아이템)")
-dat8 = data.frame(rating=minmax.dt$rating, method="최소-최대")
-dat9 = data.frame(rating=minmax_user.dt$rating, method="최소-최대(사용자)")
-dat10 = data.frame(rating=minmax_item.dt$rating, method="최소-최대(아이템)")
-dat11 = data.frame(rating=decimal.dt$rating, method="소수스케일링")
-dat12 = data.frame(rating=binary.dt$rating, method="이진임계")
+dat5 = data.frame(rating=zscore.dt$rating, method="Z점수화")
+dat6 = data.frame(rating=zscore_user.dt$rating, method="Z점수화(사용자)")
+dat7 = data.frame(rating=zscore_item.dt$rating, method="Z점수화(아이템)")
+dat8 = data.frame(rating=minmax.dt$rating, method="최소-최대화")
+dat9 = data.frame(rating=minmax_user.dt$rating, method="최소-최대화(사용자)")
+dat10 = data.frame(rating=minmax_item.dt$rating, method="최소-최대화(아이템)")
+dat11 = data.frame(rating=decimal.dt$rating, method="소수스케일링화")
+dat12 = data.frame(rating=binary.dt$rating, method="이진임계화")
 
 
 dat = rbind(dat1,dat2)
@@ -156,6 +156,10 @@ dat = rbind(dat1,dat2, dat3, dat4)
 dat = rbind(dat1,dat5, dat6, dat7)
 
 dat = rbind(dat1,dat8, dat9, dat10)
+
+dat = rbind(dat1,dat11)
+
+dat = rbind(dat1,dat12)
 
 dat = rbind(dat1,dat2, dat3, dat4, na.omit(dat5), na.omit(dat6), na.omit(dat7), na.omit(dat8), na.omit(dat9), na.omit(dat10), dat11, dat12)
 
@@ -176,7 +180,7 @@ ggplot(dat, aes(x = rating, , y=method, fill=method, color=method)) +
   geom_density_ridges(jittered_points=TRUE,
                       position="raincloud",
                       alpha=0.5, scale=0.9) +
-    ggtitle("최소-최대화") +
+  ggtitle("이진 임계화") +
   xlab("평점") +
   ylab("평점 정규화") +
   
@@ -199,7 +203,7 @@ ggplot(dat, aes(x = rating, , y=method, fill=method, color=method)) +
   annotate(x = 3, y = -Inf, label = "평점 평균", vjust = -1, geom = "text") +
   geom_vline(xintercept = 0, linetype= "dotted", size=1) +
   geom_density_ridges(alpha=0.7, scale=1) + 
-  ggtitle("평균 중심화") +
+  # ggtitle("평균 중심화") +
   theme_ridges() +
   theme(
     plot.title = element_text(hjust = 0.5 ,size=20, face='bold'),
