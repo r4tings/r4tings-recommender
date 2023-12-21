@@ -16,27 +16,27 @@ Rscript recommender-examples/src/test/R/ch02/DatasetPrepareTest.R > docs/workboo
 # 평점 정규화(Normalize rating)
 ##############################################################################
 
-# 평균 중심 정규화
+# 평균 중심화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples > docs/workbook/ch-03-sec-02.txt
 
 Rscript recommender-examples/src/test/R/ch03/MeanCenteringTest.R > docs/workbook/ch-03-sec-02.R.txt
 
-# Z점수 정규화
+# Z점수화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples > docs/workbook/ch-03-sec-03.txt
 
 Rscript recommender-examples/src/test/R/ch03/ZScoreTest.R > docs/workbook/ch-03-sec-03.R.txt
 
-# 최소-최대 정규화
+# 최소-최대화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MinMaxTest.minMaxExamples > docs/workbook/ch-03-sec-04.txt
 
 Rscript recommender-examples/src/test/R/ch03/MinMaxTest.R > docs/workbook/ch-03-sec-04.R.txt
 
-# 소수 스케일링 정규화
+# 소수 스케일링화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples > docs/workbook/ch-03-sec-05.txt
 
 Rscript recommender-examples/src/test/R/ch03/DecimalScalingTest.R > docs/workbook/ch-03-sec-05.R.txt
 
-# 이진 임계 이진화
+# 이진 임계화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.BinaryThresholdingTest.binaryThresholdingExamples > docs/workbook/ch-03-sec-06.txt
 
 Rscript recommender-examples/src/test/R/ch03/BinaryThresholdingTest.R > docs/workbook/ch-03-sec-06.R.txt
