@@ -120,7 +120,7 @@ Windows OS에서의 전체 예제 실행은 [`getting-started-recommender-on-win
 # 최소-최대 정규화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.MinMaxNormalizerTest.testWithExample
 
-# 소수 자릿수 정규화
+# 소수 스케일링 정규화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.DecimalScalingNormalizerTest.testWithExample
 
 # 이진 임계 이진화

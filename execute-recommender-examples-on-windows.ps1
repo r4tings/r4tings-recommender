@@ -31,7 +31,7 @@ Rscript recommender-examples/src/test/R/ch03/ZScoreTest.R > docs/workbook/ch-03-
 
 Rscript recommender-examples/src/test/R/ch03/MinMaxTest.R > docs/workbook/ch-03-sec-04.R.txt
 
-# 소수 자릿수 정규화
+# 소수 스케일링 정규화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples > docs/workbook/ch-03-sec-05.txt
 
 Rscript recommender-examples/src/test/R/ch03/DecimalScalingTest.R > docs/workbook/ch-03-sec-05.R.txt

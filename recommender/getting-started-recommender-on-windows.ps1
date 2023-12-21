@@ -52,7 +52,7 @@ Write-Host -Foregroundcolor black -backgroundcolor white "`n Normalize by Decima
 
 pause
 
-# 소수 자릿수 정규화
+# 소수 스케일링 정규화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.DecimalScalingNormalizerTest.testWithExample
 
 pause
