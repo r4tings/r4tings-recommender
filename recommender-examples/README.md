@@ -69,19 +69,19 @@ Windows OS에서의 전체 예제 실행은 [`getting-started-recommender-exampl
 # 평점 정규화(Normalize rating)
 ##############################################################################
 
-# 평균 중심 정규화
+# 평균 중심화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MeanCenteringTest.meanCenteringExamples
 
-# Z점수 정규화
+# Z점수화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.ZScoreTest.zScoreExamples
 
-# 최소-최대 정규화
+# 최소-최대화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.MinMaxTest.minMaxExamples
 
-# 소수 자릿수 정규화
+# 소수 스케일링화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.DecimalScalingTest.decimalScalingExamples
 
-# 이진 임계 이진화
+# 이진 임계화
 ./gradlew :recommender-examples:test --tests com.r4tings.recommender.examples.ch03.BinaryThresholdingTest.binaryThresholdingExamples
 
 ##############################################################################
@@ -148,11 +148,11 @@ https://github.com/r4tings/r4tings-recommender/assets/123946859/71763280-ad25-45
     - [2.4 요약(Summary)](http://r4tings.com/docs/recommender/latest/workbook/ch-02-sec-04)
 - [3. 평점 정규화](http://r4tings.com/docs/recommender/latest/workbook/ch-03)
     - [3.1 평점 정규화와 이진화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-01)
-    - [3.2 평균 중심 정규화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-02)
-    - [3.3 Z점수 정규화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-03)
-    - [3.4 최소-최대 정규화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-04)
-    - [3.5 소수 자릿수 정규화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-05)
-    - [3.6 이진 임계 이진화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-06)
+    - [3.2 평균 중심화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-02)
+    - [3.3 Z점수화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-03)
+    - [3.4 최소-최대화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-04)
+    - [3.5 소수 스케일링화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-05)
+    - [3.6 이진 임계화](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-06)
     - [3.7 요약(Summary)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-07)
 - [4. 유사도](http://r4tings.com/docs/recommender/latest/workbook/ch-04)
     - [4.1 유사도와 거리](http://r4tings.com/docs/recommender/latest/workbook/ch-04-sec-01)

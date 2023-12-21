@@ -25,7 +25,7 @@ Write-Host -Foregroundcolor black -backgroundcolor white "`n Normalize by Mean C
 
 pause
 
-# 평균 중심 정규화
+# 평균 중심화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.MeanCenteringNormalizerTest.testWithExample
 
 pause
@@ -34,7 +34,7 @@ Write-Host -Foregroundcolor black -backgroundcolor white "`n Normalize by Z-Scor
 
 pause
 
-# Z점수 정규화
+# Z점수화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.ZScoreNormalizerTest.testWithExample
 
 pause
@@ -43,7 +43,7 @@ Write-Host -Foregroundcolor black -backgroundcolor white "`n Normalize by Min-Ma
 
 pause
 
-# 최소-최대 정규화
+# 최소-최대화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.MinMaxNormalizerTest.testWithExample
 
 pause
@@ -52,7 +52,7 @@ Write-Host -Foregroundcolor black -backgroundcolor white "`n Normalize by Decima
 
 pause
 
-# 소수 자릿수 정규화
+# 소수 스케일링화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.DecimalScalingNormalizerTest.testWithExample
 
 pause
@@ -61,7 +61,7 @@ Write-Host -Foregroundcolor black -backgroundcolor white "`n Binarize by Binary 
 
 pause
 
-# 이진 임계 이진화
+# 이진 임계화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.ThresholdBinarizerTest.testWithExample
 
 #########################

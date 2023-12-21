@@ -111,19 +111,19 @@ Windows OS에서의 전체 예제 실행은 [`getting-started-recommender-on-win
 # 평점 정규화(Normalize rating)
 ##############################################################################
 
-# 평균 중심 정규화
+# 평균 중심화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.MeanCenteringNormalizerTest.testWithExample
 
-# Z점수 정규화
+# Z점수화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.ZScoreNormalizerTest.testWithExample
 
-# 최소-최대 정규화
+# 최소-최대화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.MinMaxNormalizerTest.testWithExample
 
-# 소수 자릿수 정규화
+# 소수 스케일링화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.DecimalScalingNormalizerTest.testWithExample
 
-# 이진 임계 이진화
+# 이진 임계화
 ./gradlew :recommender:test --tests com.r4tings.recommender.data.normalize.ThresholdBinarizerTest.testWithExample
 
 ##############################################################################

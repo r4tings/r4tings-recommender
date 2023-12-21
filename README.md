@@ -63,7 +63,7 @@ R4tings Recommender는 [추천](http://r4tings.com/docs/recommender/latest/workb
   - 평균 중심화 ([MeanCenteringNormalizer](./recommender/src/main/java/com/r4tings/recommender/data/normalize/MeanCenteringNormalizer.java) 클래스)
   - Z점수화 ([ZScoreNormalizer](./recommender/src/main/java/com/r4tings/recommender/data/normalize/ZScoreNormalizer.java) 클래스)
   - 최소-최대화 ([MinMaxNormalizer](./recommender/src/main/java/com/r4tings/recommender/data/normalize/MinMaxNormalizer.java) 클래스)
-  - 소수 자릿수화 ([DecimalScalingNormalizer](./recommender/src/main/java/com/r4tings/recommender/data/normalize/DecimalScalingNormalizer.java) 클래스)
+  - 소수 스케일링화 ([DecimalScalingNormalizer](./recommender/src/main/java/com/r4tings/recommender/data/normalize/DecimalScalingNormalizer.java) 클래스)
   - 이진 임계화 ([ThresholdBinarizer](./recommender/src/main/java/com/r4tings/recommender/data/normalize/ThresholdBinarizer.java) 클래스)
 - **유사도 계산**
   - 코사인 유사도 ([CosineSimilarityMeasurer](./recommender/src/main/java/com/r4tings/recommender/model/measures/similarity/CosineSimilarityMeasurer.java) 클래스)
@@ -81,11 +81,11 @@ R4tings Recommender는 [추천](http://r4tings.com/docs/recommender/latest/workb
 정규화는 데이터 집합에서 다른 범위나 척도를 가진 값을 일정한 범위로 변환하는 과정입니다. 
 평점 데이터의 경우, 평점이 서로 다른 척도 또는 범위를 가지기 때문에 평점 정규화를 통해 사용자마다 서로 다른 평점 기준과 아이템에 대한 선호에 따른 평점의 차이를 조정합니다.
 
-- [평균 중심 정규화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-02)
-- [Z점수 정규화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-03)
-- [최소-최대 정규화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-04)
-- [소수 자릿수 정규화 (전체)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-05)
-- [이진 임계 이진화 (전체)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-06)
+- [평균 중심화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-02)
+- [Z점수화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-03)
+- [최소-최대화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-04)
+- [소수 스케일링화 (전체)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-05)
+- [이진 임계화 (전체)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-06)
 
 <video class="w-100" controls><source src="https://github.com/r4tings/r4tings-recommender/assets/123946859/ceab3963-c27e-4617-a3b3-d9a0dcd71891" type="video/mp4" /></video>
 
