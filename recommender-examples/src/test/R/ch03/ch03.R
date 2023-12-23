@@ -235,3 +235,4 @@ p6 <- hist(raw.dt$rating, breaks=10, freq = FALSE)
 p7 <- hist(raw.dt$rating, breaks=10, freq = FALSE)
 p8 <- hist(raw.dt$rating, breaks=10, freq = FALSE)
 
+
