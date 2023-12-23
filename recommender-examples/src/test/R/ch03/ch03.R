@@ -3,6 +3,9 @@ package_version(R.version)
 if (!require("ggplot2")) install.packages("ggplot2", repos = "http://cran.us.r-project.org" , dependencies = TRUE); library("ggplot2")
 if (!require("ggridges")) install.packages("ggridges", repos = "http://cran.us.r-project.org" , dependencies = TRUE); library("ggridges")
 
+if (!require('showtext')) install.packages('showtext', repos="https://cran.rstudio.com"); library('showtext')
+
+showtext_auto()
 
 # filePath <- file.path("dataset")
 filePath <- file.path("C:/r4tings/r4tings-recommender/docs/workbook/ch03")
@@ -234,4 +237,5 @@ p5 <- hist(raw.dt$rating, breaks=10, freq = FALSE)
 p6 <- hist(raw.dt$rating, breaks=10, freq = FALSE)
 p7 <- hist(raw.dt$rating, breaks=10, freq = FALSE)
 p8 <- hist(raw.dt$rating, breaks=10, freq = FALSE)
+
 
