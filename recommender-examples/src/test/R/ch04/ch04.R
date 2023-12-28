@@ -30,6 +30,11 @@ system.time(euclidean_item.dt <- fread('euclidean_item.csv', verbose = FALSE, en
 system.time(euclidean_item_5.dt <- fread('euclidean_item_5.csv', verbose = FALSE, encoding = 'UTF-8'))
 system.time(euclidean_user.dt <- fread('euclidean_user.csv', verbose = FALSE, encoding = 'UTF-8'))
 system.time(euclidean_user_10.dt <- fread('euclidean_user_10.csv', verbose = FALSE, encoding = 'UTF-8'))
+system.time(manhattan_item.dt <- fread('manhattan_item.csv', verbose = FALSE, encoding = 'UTF-8'))
+system.time(manhattan_item_5.dt <- fread('manhattan_item_5.csv', verbose = FALSE, encoding = 'UTF-8'))
+system.time(manhattan_user.dt <- fread('manhattan_user.csv', verbose = FALSE, encoding = 'UTF-8'))
+system.time(manhattan_user_10.dt <- fread('manhattan_user_10.csv', verbose = FALSE, encoding = 'UTF-8'))
+
 system.time(extendedJaccard_item.dt <- fread('extendedJaccard_item.csv', verbose = FALSE, encoding = 'UTF-8'))
 system.time(extendedJaccard_user.dt <- fread('extendedJaccard_user.csv', verbose = FALSE, encoding = 'UTF-8'))
 system.time(jaccard_item.dt <- fread('jaccard_item.csv', verbose = FALSE, encoding = 'UTF-8'))
@@ -52,6 +57,11 @@ euclidean_item.mat <- as.matrix(acast(euclidean_item.dt, lhs ~ rhs, value.var = 
 euclidean_item_5.mat <- as.matrix(acast(euclidean_item_5.dt, lhs ~ rhs, value.var = 'similarity'))
 euclidean_user.mat <- as.matrix(acast(euclidean_user.dt, lhs ~ rhs, value.var = 'similarity'))
 euclidean_user_10.mat <- as.matrix(acast(euclidean_user_10.dt, lhs ~ rhs, value.var = 'similarity'))
+manhattan_item.mat <- as.matrix(acast(manhattan_item.dt, lhs ~ rhs, value.var = 'similarity'))
+manhattan_item_5.mat <- as.matrix(acast(manhattan_item_5.dt, lhs ~ rhs, value.var = 'similarity'))
+manhattan_user.mat <- as.matrix(acast(manhattan_user.dt, lhs ~ rhs, value.var = 'similarity'))
+manhattan_user_10.mat <- as.matrix(acast(manhattan_user_10.dt, lhs ~ rhs, value.var = 'similarity'))
+
 extendedJaccard_item.mat <- as.matrix(acast(extendedJaccard_item.dt, lhs ~ rhs, value.var = 'similarity'))
 extendedJaccard_user.mat <- as.matrix(acast(extendedJaccard_user.dt, lhs ~ rhs, value.var = 'similarity'))
 jaccard_item.mat <- as.matrix(acast(jaccard_item.dt, lhs ~ rhs, value.var = 'similarity'))
@@ -74,6 +84,11 @@ euclidean_item.mat<- (euclidean_item.mat[mixedsort(rownames(euclidean_item.mat))
 euclidean_item_5.mat<- (euclidean_item_5.mat[mixedsort(rownames(euclidean_item_5.mat)), mixedsort(colnames(euclidean_item_5.mat))])
 euclidean_user.mat<- (euclidean_user.mat[mixedsort(rownames(euclidean_user.mat)), mixedsort(colnames(euclidean_user.mat))])
 euclidean_user_10.mat<- (euclidean_user_10.mat[mixedsort(rownames(euclidean_user_10.mat)), mixedsort(colnames(euclidean_user_10.mat))])
+manhattan_item.mat<- (manhattan_item.mat[mixedsort(rownames(manhattan_item.mat)), mixedsort(colnames(manhattan_item.mat))])
+manhattan_item_5.mat<- (manhattan_item_5.mat[mixedsort(rownames(manhattan_item_5.mat)), mixedsort(colnames(manhattan_item_5.mat))])
+manhattan_user.mat<- (manhattan_user.mat[mixedsort(rownames(manhattan_user.mat)), mixedsort(colnames(manhattan_user.mat))])
+manhattan_user_10.mat<- (manhattan_user_10.mat[mixedsort(rownames(manhattan_user_10.mat)), mixedsort(colnames(manhattan_user_10.mat))])
+
 extendedJaccard_item.mat<- (extendedJaccard_item.mat[mixedsort(rownames(extendedJaccard_item.mat)), mixedsort(colnames(extendedJaccard_item.mat))])
 extendedJaccard_user.mat<- (extendedJaccard_user.mat[mixedsort(rownames(extendedJaccard_user.mat)), mixedsort(colnames(extendedJaccard_user.mat))])
 jaccard_item.mat<- (jaccard_item.mat[mixedsort(rownames(jaccard_item.mat)), mixedsort(colnames(jaccard_item.mat))])
@@ -130,6 +145,7 @@ trunc_digits <- function(mat,digits) {
 }
 
 
+# 코사인 유사도 (사용자)
 
 
 par(mfrow = c(2, 2))
@@ -140,18 +156,18 @@ corrplot.mixed(
   number.digits = 4,
   upper.col = custom_colors,
   lower.col = custom_colors,
-  title="사용자 코사인 유사도", mar=c(0,0,1,0),
+  title="사용자 코사인 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
 )
 
 
-par("mar")
 corrplot.mixed(
   trunc_digits(cosine_user_MeanCenteringNormalizer.mat,4),lower="number",upper="pie",
   number.digits = 4,
   upper.col = custom_colors,
   lower.col = custom_colors,
-  title="Example Plot", mar=c(0,0,1,0),
-
+  main="사용자 코사인 유사도(평균 중심화)", mar=c(0,0,2,0),
+  cex.main = 1.2,
 )
 
 
@@ -160,7 +176,8 @@ corrplot.mixed(
   number.digits = 4,
   upper.col = custom_colors,
   lower.col = custom_colors,
-  title="Example Plot", mar=c(0,0,1,0),
+  title="사용자 코사인 유사도(평균 중심화/결측값 0 대체)", mar=c(0,0,2,0),
+  cex.main = 1.2,
 )
 
 corrplot.mixed(
@@ -168,7 +185,8 @@ corrplot.mixed(
   number.digits = 4,
   upper.col = custom_colors,
   lower.col = custom_colors,
-  title="Example Plot", mar=c(0,0,1,0),
+  title="사용자 코사인 유사도(Z점수화)", mar=c(0,0,2,0),
+  cex.main = 1.2,
 )
 
 resetPar <- function() {
@@ -180,25 +198,28 @@ resetPar <- function() {
 
 par(resetPar())  
 
+# 코사인 유사도 - 아이템
+
 par(mfrow = c(2, 2))
 
-cex.before <- par("cex")
-par(cex = 0.6)
 
 corrplot.mixed(
   trunc_digits(cosine_item.mat,4),lower="number",upper="pie",
   number.digits = 4,
   upper.col = custom_colors,
   lower.col = custom_colors,
-  title="Example Plot", mar=c(0,0,1,0),
+  title="아이템 코사인 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
 )
+
 
 corrplot.mixed(
   trunc_digits(cosine_item_MeanCenteringNormalizer.mat,4),lower="number",upper="pie",
   number.digits = 4,
   upper.col = custom_colors,
   lower.col = custom_colors,
-  title="Example Plot", mar=c(0,0,1,0),
+  main="아이템 코사인 유사도(평균 중심화)", mar=c(0,0,2,0),
+  cex.main = 1.2,
 )
 
 
@@ -207,7 +228,8 @@ corrplot.mixed(
   number.digits = 4,
   upper.col = custom_colors,
   lower.col = custom_colors,
-  title="Example Plot", mar=c(0,0,1,0),
+  title="아이템 코사인 유사도(평균 중심화/결측값 0 대체)", mar=c(0,0,2,0),
+  cex.main = 1.2,
 )
 
 corrplot.mixed(
@@ -215,8 +237,18 @@ corrplot.mixed(
   number.digits = 4,
   upper.col = custom_colors,
   lower.col = custom_colors,
-  title="Example Plot", mar=c(0,0,1,0),
+  title="아이템 코사인 유사도(Z점수화)", mar=c(0,0,2,0),
+  cex.main = 1.2,
 )
+
+resetPar <- function() {
+  dev.new()
+  op <- par(no.readonly = TRUE)
+  dev.off()
+  op
+}
+
+par(resetPar())  
 
 #+---+----------+----------+----------+----------+---------+----------+----------+---------+----------+----------+
 #|lhs|        i1|        i2|        i3|        i4|       i5|        i6|        i7|       i8|        i9|       i10|
@@ -233,6 +265,126 @@ corrplot.mixed(
 #|i10|-0.9486833| 0.9912279|-0.9950372| 0.0000000|0.0000000| 0.0000000|-0.9486833|      NaN| 0.0000000| 1.0000000|
 # +---+----------+----------+----------+----------+---------+----------+----------+---------+----------+----------+
 
-par(cex = cex.before)
 
-par(resetPar())
+# 코사인 유사도 (사용자)
+
+
+par(mfrow = c(2, 2))
+
+
+corrplot.mixed(
+  trunc_digits(pearson_user.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  title="사용자 피어슨 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+
+corrplot.mixed(
+  trunc_digits(pearson_item.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  main="아이템 피어슨 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+par(resetPar())  
+
+
+
+# 거리 유사도 (사용자)
+
+
+par(mfrow = c(2, 2))
+
+
+corrplot.mixed(
+  trunc_digits(euclidean_user.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  title="사용자 유클리드 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+
+corrplot.mixed(
+  trunc_digits(euclidean_user_10.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  main="사용자 가중 유클리드 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+corrplot.mixed(
+  trunc_digits(manhattan_user.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  title="사용자 맨해튼 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+
+corrplot.mixed(
+  trunc_digits(manhattan_user_10.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  main="사용자 가중 맨해튼 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+
+par(resetPar())  
+
+# 거리 유사도 (아이템)
+
+
+par(mfrow = c(2, 2))
+
+
+corrplot.mixed(
+  trunc_digits(euclidean_item.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  title="아이템 유클리드 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+
+corrplot.mixed(
+  trunc_digits(euclidean_item_5.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  main="아이템 가중 유클리드 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+
+corrplot.mixed(
+  trunc_digits(manhattan_item.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  title="아이템 맨해튼 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+
+corrplot.mixed(
+  trunc_digits(manhattan_item_5.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  main="아이템 가중 맨해튼 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+par(resetPar())  

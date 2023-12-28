@@ -221,10 +221,13 @@ public abstract class RatingSimilarityMeasurer<T extends RatingSimilarityMeasure
               .withColumnRenamed(COL.LHS_RATINGS, COL.RHS_RATINGS)
               .withColumnRenamed(COL.LHS_INDEX, COL.RHS_INDEX);
 
+      crossJoinedDS = lhsDS.crossJoin(rhsDS).where(col(COL.LHS_INDEX).$greater(col(COL.RHS_INDEX))); // 같은 컬럼 제외하고 lower만 출력
+
       // TODO 검증을 위한 단순 출력용  이후 삭제
-      // crossJoinedDS =
-      // lhsDS.crossJoin(rhsDS).where(col(COL.LHS_INDEX).notEqual(col(COL.RHS_INDEX)));
-      crossJoinedDS = lhsDS.crossJoin(rhsDS).where(col(COL.LHS_INDEX).$greater(col(COL.RHS_INDEX)));
+      // crossJoinedDS = lhsDS.crossJoin(rhsDS); // 전체 출력
+      // crossJoinedDS = lhsDS.crossJoin(rhsDS).where(col(COL.LHS_INDEX).notEqual(col(COL.RHS_INDEX))); // 같은 컬럼만 제외
+      // crossJoinedDS = lhsDS.crossJoin(rhsDS).where(col(COL.LHS_INDEX).$greater$eq(col(COL.RHS_INDEX))); // 같은 컬럼 포함하고 lower만 출력
+
     } else if (Objects.nonNull(getIds())) {
 
       Dataset<Row> lhsDS =
