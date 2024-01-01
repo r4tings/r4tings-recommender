@@ -25,9 +25,9 @@ public class ManhattanSimilarityTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet', , USER,   , , true, 'u4, u5, 0.2500'",
+    "'dataset/r4tings, ratings.parquet', , USER,   , , true, 'u4, u5, 0.25  '",
     "'dataset/r4tings, ratings.parquet', , USER, 10, , true, 'u4, u5, 0.1297'",
-    "'dataset/r4tings, ratings.parquet', , ITEM,   , , true, 'i3, i1, 0.5000'",
+    "'dataset/r4tings, ratings.parquet', , ITEM,   , , true, 'i3, i1, 0.5   '",
     "'dataset/r4tings, ratings.parquet', , ITEM,  5, , true, 'i3, i1, 0.3874'",
   })
   void manhattanSimilarityExamples(
