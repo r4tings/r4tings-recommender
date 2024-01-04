@@ -34,7 +34,7 @@ public class EuclideanSimilarityTest extends AbstractSparkTests {
       @ConvertPathString String path,
       @ConvertRatingNormalizer RatingNormalizer normalizer,
       Group group,
-      Integer weight,
+      Integer actualScale,
       Boolean imputeZero,
       Boolean verbose,
       @ConvertStringArray String[] expectations) {
@@ -51,8 +51,8 @@ public class EuclideanSimilarityTest extends AbstractSparkTests {
             .setImputeZero(imputeZero)
             .setVerbose(verbose);
 
-    if (Objects.nonNull(weight)) {
-      measurer.setWeight(weight);
+    if (Objects.nonNull(actualScale)) {
+      measurer.setActualScale(actualScale);
     }
 
     Dataset<Row> similarityDS = measurer.transform(ratingDS);

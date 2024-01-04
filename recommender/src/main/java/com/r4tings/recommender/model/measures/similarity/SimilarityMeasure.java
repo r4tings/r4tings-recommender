@@ -162,7 +162,7 @@ public enum SimilarityMeasure {
       return udf(
           (scala.collection.Map<String, Double> lhsScalaMap,
               scala.collection.Map<String, Double> rhsScalaMap,
-              Integer weight) ->
+              Integer actualScale) ->
               calculate(
                   lhsScalaMap,
                   rhsScalaMap,
@@ -171,7 +171,7 @@ public enum SimilarityMeasure {
                     double distance =
                         MathArrays.distance1(realMatrix.getColumn(0), realMatrix.getColumn(1));
 
-                    double scaleFactor = (double) weight / realMatrix.getRowDimension();
+                    double scaleFactor = (double) actualScale / realMatrix.getRowDimension();
                     distance *= FastMath.sqrt(scaleFactor);
 
                     return 1d / (1d + distance);
@@ -217,7 +217,7 @@ public enum SimilarityMeasure {
       return udf(
           (scala.collection.Map<String, Double> lhsScalaMap,
               scala.collection.Map<String, Double> rhsScalaMap,
-              Integer weight) ->
+              Integer actualScale) ->
               calculate(
                   lhsScalaMap,
                   rhsScalaMap,
@@ -226,7 +226,7 @@ public enum SimilarityMeasure {
                     double distance =
                         MathArrays.distance(realMatrix.getColumn(0), realMatrix.getColumn(1));
 
-                    double scaleFactor = (double) weight / realMatrix.getRowDimension();
+                    double scaleFactor = (double) actualScale / realMatrix.getRowDimension();
                     distance *= FastMath.sqrt(scaleFactor);
 
                     /*
