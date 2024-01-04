@@ -19,7 +19,7 @@ public class ManhattanSimilarityMeasurer
 
   public ManhattanSimilarityMeasurer() {
     super(ManhattanSimilarityMeasurer.class.getSimpleName());
-    setDefault(weight(), null);
+    setDefault(actualScale(), null);
   }
 
   @Override
@@ -29,7 +29,7 @@ public class ManhattanSimilarityMeasurer
 
   @Override
   protected Dataset<Row> execute(Dataset<Row> ratingDS) {
-    if (Objects.isNull(getWeight())) {
+    if (Objects.isNull(getActualScale())) {
       return compute(
           ratingDS,
           SimilarityMeasure.MANHATTAN
@@ -40,31 +40,31 @@ public class ManhattanSimilarityMeasurer
           ratingDS,
           SimilarityMeasure.WEIGHTED_MANHATTAN
               .invoke(getImputeZero(), getVerbose())
-              .apply(col(COL.LHS_RATINGS), col(COL.RHS_RATINGS), lit(getWeight())));
+              .apply(col(COL.LHS_RATINGS), col(COL.RHS_RATINGS), lit(getActualScale())));
     }
   }
 
   /*
    * Param Definitions
    */
-  public IntParam weight() {
+  public IntParam actualScale() {
     return new IntParam(this, "lower", "lower bound");
   }
 
   /*
    * Param Getters
    */
-  public Integer getWeight() {
-    return (Integer) getOrDefault(weight());
+  public Integer getActualScale() {
+    return (Integer) getOrDefault(actualScale());
   }
 
   /*
    *  Param Setters
    */
 
-  public ManhattanSimilarityMeasurer setWeight(Integer value) {
+  public ManhattanSimilarityMeasurer setActualScale(Integer value) {
     if (Objects.nonNull(value)) {
-      set(weight(), value);
+      set(actualScale(), value);
     }
 
     return this;
