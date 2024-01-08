@@ -356,6 +356,10 @@ See [`LICENSE.md`](/LICENSE.md) file for details.
 > - <a href="https://www.coursera.org/account/accomplishments/verify/9KCTU637G45E" target="_blank">Nearest Neighbor Collaborative Filtering (with Honors)</a>. (2016/11)						     	          
 > - <a href="https://www.coursera.org/account/accomplishments/verify/H4G2DDZCQPEY" target="_blank">Introduction to Recommender Systems: Non-Personalized and Content-Based(with Honors)</a>. (2016/10)	
 
+## 스폰서
+
+[GitHub Sponsors](https://github.com/sponsors/r4tings)을 통하여 후원해 주시면 지속해서 프로젝트를 진행하는 데에 큰 도움이 됩니다.
+
 <br/>
 
 <div align="right">
