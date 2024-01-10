@@ -7,6 +7,7 @@ package com.r4tings.recommender.common.util;
 import org.apache.spark.sql.Column;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.types.DecimalType;
 import org.slf4j.Logger;
 import scala.collection.JavaConverters;
 
@@ -53,7 +54,12 @@ public class VerboseUtils {
           ds.withColumn(
                   aggColName,
                   when(col(aggColName).isNaN(), col(aggColName))
-                      .otherwise(format_number(round(col(aggColName), d), d)))
+                      // .otherwise(format_number(round(col(aggColName), d), d)))
+                      .otherwise(
+                          format_number(
+                              regexp_extract(col(aggColName), "\\d+\\.\\d{0," + d + "}", 0)
+                                  .cast(new DecimalType(38, d)),
+                              d)))
               .select(groupByCol, pivotCol, aggColName)
               .groupBy(groupByCol)
               .pivot(pivotCol)

@@ -7,8 +7,6 @@ package com.r4tings.recommender.model.measures.similarity;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
 
-import java.util.Objects;
-
 import static com.r4tings.recommender.common.Constants.COL;
 import static org.apache.spark.sql.functions.col;
 
@@ -17,8 +15,6 @@ public class SimpleMatchingSimilarityMeasurer
 
   public SimpleMatchingSimilarityMeasurer() {
     super(SimpleMatchingSimilarityMeasurer.class.getSimpleName());
-
-    setDefault(imputeZero(), Boolean.TRUE);
   }
 
   @Override
@@ -28,10 +24,6 @@ public class SimpleMatchingSimilarityMeasurer
 
   @Override
   protected Dataset<Row> execute(Dataset<Row> ratingDS) {
-
-    if (Objects.nonNull(getImputeZero()) && getImputeZero().equals(Boolean.FALSE)) {
-      throw new UnsupportedOperationException("The requested operation is not supported.");
-    }
 
     return compute(
         ratingDS,

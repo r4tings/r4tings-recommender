@@ -11,6 +11,7 @@ import com.r4tings.recommender.test.AbstractSparkTests;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.Row;
+import org.apache.spark.sql.SaveMode;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -25,13 +26,16 @@ public class SimpleMatchingSimilarityTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d', USER, true, 'u4, u5, 0.25'",
-    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d', ITEM, true, 'i3, i1, 0.6 '",
+    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d', USER, true, true, 'u4, u5, 0.25'",
+    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d', ITEM, true, true, 'i3, i1, 0.6 '",
+//  "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d', USER,     , true, 'u4, u5, 0.5 '",
+//  "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d', ITEM,     , true, 'i3, i1, 1d  '",
   })
   void simpleMatchingSimilarityExamples(
       @ConvertPathString String path,
       @ConvertRatingNormalizer RatingNormalizer binarizer,
       Group group,
+      Boolean imputeZero,
       Boolean verbose,
       @ConvertStringArray String[] expectations) {
 
@@ -40,7 +44,10 @@ public class SimpleMatchingSimilarityTest extends AbstractSparkTests {
     Dataset<Row> binarizedRatingDS = Objects.requireNonNull(binarizer).transform(ratingDS);
 
     SimpleMatchingSimilarityMeasurer measurer =
-        new SimpleMatchingSimilarityMeasurer().setGroup(group).setVerbose(verbose);
+        new SimpleMatchingSimilarityMeasurer()
+            .setGroup(group)
+            .setImputeZero(imputeZero)
+            .setVerbose(verbose);
 
     Dataset<Row> similarityDS = measurer.transform(binarizedRatingDS);
 

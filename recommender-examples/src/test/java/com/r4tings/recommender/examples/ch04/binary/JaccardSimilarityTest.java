@@ -19,17 +19,16 @@ import java.util.Objects;
 import static com.r4tings.recommender.common.Constants.COL;
 import static org.apache.spark.sql.functions.col;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @Slf4j
 public class JaccardSimilarityTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d',  USER,      , true, '                                       u4, u5, 0.1428571'",
-    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d',  USER, false, true, 'The requested operation is not supported.,  ,           '",
-    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d',  ITEM,      , true, '                                       i3, i1, 0.3333333'",
-    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d',  ITEM, false, true, 'The requested operation is not supported.,  ,           '",
+    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d',  USER, true, true, 'u4, u5, 0.1428571'",
+    "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d',  ITEM, true, true, 'i3, i1, 0.3333333'",
+//  "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d',  USER,     , true, 'u4, u5, 0.5      '",
+//  "'dataset/r4tings, ratings.parquet', ' , BINARY_THRESHOLDING, , , , 3d',  ITEM,     , true, 'i3, i1, 1d       '",
   })
   void jaccardSimilarityExamples(
       @ConvertPathString String path,
@@ -49,30 +48,22 @@ public class JaccardSimilarityTest extends AbstractSparkTests {
             .setImputeZero(imputeZero)
             .setVerbose(verbose);
 
-    if (Objects.isNull(imputeZero)) {
-      Dataset<Row> similarityDS = measurer.transform(binarizedRatingDS);
+    Dataset<Row> similarityDS = measurer.transform(binarizedRatingDS);
 
-      double actual =
-          similarityDS
-              .where(
-                  (col(COL.LHS).equalTo(expectations[0]).and(col(COL.RHS).equalTo(expectations[1])))
-                      .or(
-                          col(COL.LHS)
-                              .equalTo(expectations[1])
-                              .and(col(COL.RHS).equalTo(expectations[0]))))
-              .select(measurer.getOutputCol())
-              .head()
-              .getDouble(0);
+    double actual =
+        similarityDS
+            .where(
+                (col(COL.LHS).equalTo(expectations[0]).and(col(COL.RHS).equalTo(expectations[1])))
+                    .or(
+                        col(COL.LHS)
+                            .equalTo(expectations[1])
+                            .and(col(COL.RHS).equalTo(expectations[0]))))
+            .select(measurer.getOutputCol())
+            .head()
+            .getDouble(0);
 
-      log.info("actual {}", String.format("%.7f [%s]", actual, actual));
+    log.info("actual {}", String.format("%.7f [%s]", actual, actual));
 
-      assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-7);
-    } else {
-      UnsupportedOperationException exception =
-          assertThrows(
-              UnsupportedOperationException.class, () -> measurer.transform(binarizedRatingDS));
-
-      assertEquals(expectations[0], exception.getMessage());
-    }
+    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-7);
   }
 }
