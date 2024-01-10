@@ -1,5 +1,6 @@
 package_version(R.version)
 
+if (!require('data.table')) install.packages('data.table', repos = "http://cran.us.r-project.org"); library('data.table')
 if (!require("ggplot2")) install.packages("ggplot2", repos = "http://cran.us.r-project.org" , dependencies = TRUE); library("ggplot2")
 if (!require("ggridges")) install.packages("ggridges", repos = "http://cran.us.r-project.org" , dependencies = TRUE); library("ggridges")
 if (!require("reshape2")) install.packages("reshape2", repos = "http://cran.us.r-project.org" , dependencies = TRUE); library("reshape2")
@@ -386,5 +387,82 @@ corrplot.mixed(
   main="아이템 가중 맨해튼 유사도", mar=c(0,0,2,0),
   cex.main = 1.2,
 )
+
+par(resetPar())  
+
+
+
+# 이진 유사도 (사용자)
+
+
+par(mfrow = c(2, 2))
+
+
+corrplot.mixed(
+  trunc_digits(smc_user.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  title="사용자 단순 일치 계수 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+
+corrplot.mixed(
+  trunc_digits(jaccard_user.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  main="사용자 자카드 계수", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+corrplot.mixed(
+  trunc_digits(extendedJaccard_user.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  title="사용자 자카드 계수 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+
+par(resetPar())  
+
+
+# 이진 유사도 (아이템)
+
+
+par(mfrow = c(2, 2))
+
+
+corrplot.mixed(
+  trunc_digits(smc_item.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  title="아이템 단순 일치 계수 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+
+corrplot.mixed(
+  trunc_digits(jaccard_item.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  main="아이템 자카드 계수", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
+corrplot.mixed(
+  trunc_digits(extendedJaccard_item.mat,4),lower="number",upper="pie",
+  number.digits = 4,
+  upper.col = custom_colors,
+  lower.col = custom_colors,
+  title="아이템 자카드 계수 유사도", mar=c(0,0,2,0),
+  cex.main = 1.2,
+)
+
 
 par(resetPar())  
