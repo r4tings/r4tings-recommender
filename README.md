@@ -326,11 +326,12 @@ See [`LICENSE.md`](/LICENSE.md) file for details.
 
 ### 참조(References)
 
-- <a href="https://link.springer.com/book/10.1007/978-0-387-85820-3" target="_blank">Recommender systems handbook</a>. Francesco Ricci, Lior Rokach, Bracha Shapira, Paul B. Kantor. (2011).
+- <a href="https://link.springer.com/book/10.1007/978-0-387-85820-3" target="_blank">Recommender systems handbook</a>. Francesco Ricci, Lior Roka../workbook/ch, Bra../workbook/cha Shapira, Paul B. Kantor. (2011).
 - <a href="https://link.springer.com/book/10.1007/978-3-319-29659-3" target="_blank">Recommender Systems  - The Textbook</a>. Charu C. Aggarwal. (2016).
-- <a href="https://doi.org/10.48550/arXiv.2205.12371" target="_blank">recommenderlab: An R framework for developing and testing recommendation algorithms</a>. Michael Hahsler. (2022).
+- <a href="https://www.pearson.com/en-us/subject-catalog/p/introduction-to-data-mining/P200000003204?view=educator" target="_blank">Introduction to Data Mining, 2nd edition</a>. P. Tan, M. Steinbach, A. Karpatne, Vipin Kumar. (2018).
+- <a href="https://doi.org/10.48550/arXiv.2205.12371" target="_blank">recommenderlab: An R framework for developing and testing recommendation algorithms</a>. Mi../workbook/chael Hahsler. (2022).
 - <a href="https://www.coursera.org/specializations/recommender-systems" target="_blank">Recommender Systems Specialization</a>. Coursera.
-- <a href="https://spark.apache.org" target="_blank">Apache Spark</a>. The Apache Software Foundation.
+- <a href="https://spark.apa../workbook/che.org" target="_blank">Apa../workbook/che Spark</a>. The Apa../workbook/che Software Foundation.
 
 ### 연락처(Contact)
 
