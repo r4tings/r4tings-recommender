@@ -64,7 +64,7 @@ public enum InterestMeasure {
     public UserDefinedFunction invoke(Boolean verbose) {
       return udf(
           // conviction(X -> Y) = P(X)P(not Y)/P(X and not Y)=(1-sup(Y))/(1-conf(X -> Y))
-          (Double supportX, Double confidence) -> (1 - supportX) / (1 - confidence),
+          (Double supportY, Double confidence) -> (1 - supportY) / (1 - confidence),
           DataTypes.DoubleType);
     }
   };

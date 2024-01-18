@@ -94,16 +94,18 @@ public class AssociationRuleMining extends AbstractRecommender {
                 InterestMeasure.LEVERAGE
                     .invoke(params.getVerbose())
                     .apply(col(COL.SUPPORT), col(COL.LHS_SUPPORT), col(COL.RHS_SUPPORT)))
-            // divide by zero 대응 향상도가1일때 발생 support가 0인 경우는 최소 지지도로 제거됨
+            // divide by zero 대응 향상도가 1일때 발생 support가 0인 경우는 최소 지지도로 제거됨
             .withColumn(
                 COL.CONVICTION,
                 //  For instance, in the case of a perfect confidence score, the denominator becomes
                 // 0 (due to 1 - 1) for which the conviction score is defined as 'inf'.
+                // Conviction is infinite for logical implications (confidence 1), and is 1 if
+                // X and Y are independent
                 when(col(COL.CONFIDENCE).equalTo(1d), Double.POSITIVE_INFINITY)
                     .otherwise(
                         InterestMeasure.CONVICTION
                             .invoke(params.getVerbose())
-                            .apply(col(COL.LHS_SUPPORT), col(COL.CONFIDENCE))));
+                            .apply(col(COL.RHS_SUPPORT), col(COL.CONFIDENCE))));
 
     if (Objects.equals(params.getVerbose(), Boolean.TRUE)) {
       log.info("totalTransactions: {}", totalTransactions);
