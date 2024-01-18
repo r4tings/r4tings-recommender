@@ -26,8 +26,8 @@ public class AssociationRuleMiningTest extends AbstractSparkTests {
     "'dataset/r4tings, ratings.parquet',    SUPPORT, 0.5, 0.5, 10, true, 'i3, 1, i2, 0.8 '",
     "'dataset/r4tings, ratings.parquet', CONFIDENCE, 0.5, 0.5, 10, true, 'i3, 1, i2, 1   '",
     "'dataset/r4tings, ratings.parquet',       LIFT, 0.5, 0.5, 10, true, 'i3, 1, i7, 1.25'",
-    //  "'dataset/r4tings, ratings.parquet',   LEVERAGE, 0.5, 0.5, 10, true, 'i3, 1, i7, 0.12'",
-    //  "'dataset/r4tings, ratings.parquet', CONVICTION, 0.5, 0.5, 10, true, 'i3, 1, i2, Infinity'",
+//  "'dataset/r4tings, ratings.parquet',   LEVERAGE, 0.5, 0.5, 10, true, 'i3, 1, i7, 0.12'",
+//  "'dataset/r4tings, ratings.parquet', CONVICTION, 0.5, 0.5, 10, true, 'i3, 1, i2, Infinity'",
   })
   void associationRuleMiningExamples(
       @ConvertPathString String path,
