@@ -23,11 +23,11 @@ public class AssociationRuleMiningTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet',    SUPPORT, 0.5, 0.5, 10, true, 'i3, 1, i2, 0.8 '",
-    "'dataset/r4tings, ratings.parquet', CONFIDENCE, 0.5, 0.5, 10, true, 'i3, 1, i2, 1   '",
-    "'dataset/r4tings, ratings.parquet',       LIFT, 0.5, 0.5, 10, true, 'i3, 1, i2, 1   '",
-//  "'dataset/r4tings, ratings.parquet',   LEVERAGE, 0.5, 0.5, 10, true, 'i3, 1, i2, 0   '",
-//  "'dataset/r4tings, ratings.parquet', CONVICTION, 0.5, 0.5, 10, true, 'i3, 1, i2, Infinity'",
+    "'dataset/r4tings, ratings.parquet',    SUPPORT, 0.5, 0.5, 10, true, 'i3, 1, i2, 0.8     '",
+    "'dataset/r4tings, ratings.parquet', CONFIDENCE, 0.5, 0.5, 10, true, 'i3, 1, i2, 1       '",
+    "'dataset/r4tings, ratings.parquet',       LIFT, 0.5, 0.5, 10, true, 'i3, 2, i2, 1       '",
+    "'dataset/r4tings, ratings.parquet',   LEVERAGE, 0.5, 0.5, 10, true, 'i3, 2, i2, 0       '",
+    "'dataset/r4tings, ratings.parquet', CONVICTION, 0.5, 0.5, 10, true, 'i3, 1, i2, Infinity'",
   })
   void associationRuleMiningExamples(
       @ConvertPathString String path,
@@ -54,13 +54,13 @@ public class AssociationRuleMiningTest extends AbstractSparkTests {
     recommendedItemDS.show();
 
     double actual =
-        recommendedItemDS
-            .where(
-                col(COL.RANK)
-                    .equalTo(expectations[1])
-                    .and(col(params.getItemCol()).equalTo(expectations[2])))
-            .head()
-            .getAs(params.getOutputCol());
+            (double) recommendedItemDS
+                .where(
+                    col(COL.RANK)
+                        .equalTo(expectations[1])
+                        .and(col(params.getItemCol()).equalTo(expectations[2])))
+                .head()
+                .getAs(params.getOutputCol());
 
     log.info("actual {}", String.format("%.7f [%s]", actual, actual));
 
