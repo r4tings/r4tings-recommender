@@ -21,6 +21,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Slf4j
 public class AssociationRuleMiningTest extends AbstractSparkTests {
 
+  // TODO 흥미도 측도 검증은 단일행으로, 정렬기준은 변경 가능으로, 측도 임곗값 필터 기능은 추가
   @ParameterizedTest
   @CsvSource({
     "'dataset/r4tings, ratings.parquet',    SUPPORT, 0.5, 0.5, 10, true, 'i3, 1, i2, 0.8     '",
