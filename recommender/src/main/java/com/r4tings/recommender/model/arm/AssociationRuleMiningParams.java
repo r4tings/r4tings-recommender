@@ -17,7 +17,9 @@ public class AssociationRuleMiningParams extends CommonParams<AssociationRuleMin
   public AssociationRuleMiningParams() {
     super(AssociationRuleMiningParams.class.getSimpleName());
 
-    setDefault(outputCol(), COL.SUPPORT);
+    setDefault(minSupport(), 0d);
+    setDefault(minConfidence(), 0d);
+    setDefault(outputCol(), COL.LIFT);
   }
 
   /*

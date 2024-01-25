@@ -45,8 +45,7 @@ public abstract class AbstractRecommender {
 
     if (Objects.equals(params.getVerbose(), Boolean.TRUE)) {
       log.info("ratingDS: {}", ratingDS.count());
-      VerboseUtils.showPivot(
-          ratingDS, params.getUserCol(), params.getItemCol(), params.getRatingCol(), 7);
+      VerboseUtils.showPivot(ratingDS, params.getUserCol(), params.getItemCol(), params.getRatingCol(), 7);
     }
 
     Dataset<Row> scoredItemDS = execute(ratingDS, userId);
@@ -68,8 +67,9 @@ public abstract class AbstractRecommender {
             1);
 
     if (Objects.equals(params.getVerbose(), Boolean.TRUE)) {
-      log.info("scoredItemDS: {}", scoredItemDS.count());
-      VerboseUtils.show(scoredItemDS, params.getOutputCol(), params.getOutputCol(), 7);
+      log.info("scoredItemDS:{}\n{}", scoredItemDS.count(), scoredItemDS.showString(10, 0, false));
+
+//      VerboseUtils.show(scoredItemDS, params.getOutputCol(), params.getOutputCol(), 7);
 //      log.info("recommendedItemDS: {}", recommendedItemDS.count());
 //      VerboseUtils.show(recommendedItemDS, params.getOutputCol(), params.getOutputCol(), 7);
     }

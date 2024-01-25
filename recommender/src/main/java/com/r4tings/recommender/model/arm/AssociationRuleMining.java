@@ -48,14 +48,17 @@ public class AssociationRuleMining extends AbstractRecommender {
             .select(col(params.getItemCol()), col(params.getUserCol()))
             .groupBy(col(params.getItemCol()).as(COL.RHS))
             .agg(collect_list(params.getUserCol()).as(COL.RHS_TRANSACTIONS))
-            .withColumn(COL.RHS_SUPPORT, size(col(COL.RHS_TRANSACTIONS)).divide(totalTransactions))
-            .where(col(COL.RHS_SUPPORT).$greater$eq(params.getMinSupport()));
+            .withColumn(COL.RHS_SUPPORT, size(col(COL.RHS_TRANSACTIONS)).divide(totalTransactions));
 
+    // Frequent Itemsets
+    if (params.getMinSupport() != 0) {
+      rhsDS = rhsDS.where(col(COL.RHS_SUPPORT).$greater$eq(params.getMinSupport()));
+    }
     /*
-     * Step 2: Build Strong rules
+     * Step 2: Build Candidaterules
      */
 
-    Dataset<Row> candidateRuleDS =
+    Dataset<Row> associationRuleDS =
         lhsDS
             .hint(SPARK.HINT_BROADCAST)
             .crossJoin(rhsDS)
@@ -72,18 +75,21 @@ public class AssociationRuleMining extends AbstractRecommender {
                     .invoke(params.getVerbose())
                     .apply(col(COL.SUPPORT), col(COL.LHS_SUPPORT)));
 
-    Dataset<Row> strongRuleDS =
-        candidateRuleDS.where(
-            col(COL.SUPPORT)
-                .$greater$eq(params.getMinSupport())
-                .and(col(COL.CONFIDENCE).$greater$eq(params.getMinConfidence())));
+    // Strong Rules
+    if (params.getMinSupport() != 0 && params.getMinConfidence() != 0) {
+      associationRuleDS =
+              associationRuleDS.where(
+              col(COL.SUPPORT)
+                  .$greater$eq(params.getMinSupport())
+                  .and(col(COL.CONFIDENCE).$greater$eq(params.getMinConfidence())));
+    }
 
     /*
      * Step 3: Compute additional Interest Measures
      */
 
-    Dataset<Row> associationRuleDS =
-        strongRuleDS
+    Dataset<Row> candidateRuleDS =
+            associationRuleDS
             .withColumn(
                 COL.LIFT,
                 InterestMeasure.LIFT
@@ -111,17 +117,22 @@ public class AssociationRuleMining extends AbstractRecommender {
       log.info("totalTransactions: {}", totalTransactions);
       log.info("lhsDS\n{}", lhsDS.showString(10, 0, false));
       log.info(
-          "rhsDS\n{}", rhsDS.orderBy(length(col(COL.RHS)), col(COL.RHS)).showString(10, 0, false));
+          "{} (minSupport: {})\n{}",
+          params.getMinSupport() != 0 ? "rhsFrequentDS" : "rhs",
+          params.getMinSupport(),
+          rhsDS.orderBy(length(col(COL.RHS)), col(COL.RHS)).showString(10, 0, false));
       log.info(
-          "candidateRuleDS\n{}",
-          candidateRuleDS.orderBy(length(col(COL.RHS)), col(COL.RHS)).showString(10, 0, false));
-      log.info(
-          "strongRuleDS\n{}",
-          strongRuleDS.orderBy(length(col(COL.RHS)), col(COL.RHS)).showString(10, 0, false));
-      log.info("associationRuleDS\n{}", associationRuleDS.showString(10, 0, false));
+          "{} (minSupport: {} minConfidence: {})\n{}",
+          params.getMinSupport() != 0 && params.getMinConfidence() != 0
+              ? "strongRuleDS"
+              : "associationRuleDS",
+          params.getMinSupport(),
+          params.getMinConfidence(),
+          associationRuleDS.orderBy(length(col(COL.RHS)), col(COL.RHS)).showString(10, 0, false));
+      log.info("candidateRuleDS\n{}", candidateRuleDS.showString(10, 0, false));
     }
 
-    return associationRuleDS.select(
+    return candidateRuleDS.select(
         col(COL.RHS).as(params.getItemCol()),
         col(COL.SUPPORT),
         col(COL.CONFIDENCE),

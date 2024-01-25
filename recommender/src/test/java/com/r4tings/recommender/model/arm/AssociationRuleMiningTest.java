@@ -32,7 +32,8 @@ class AssociationRuleMiningTest extends AbstractSparkTests {
   @Retention(RetentionPolicy.RUNTIME)
   @ParameterizedTest(name = "[{arguments}] #{index}")
   @CsvSource({
-    "'dataset/r4tings, ratings.csv, items.csv', LIFT, 0.2, 0.5,  true, 10, , , , label, 'i3, 6, i1, 0.4, 0.5, 0.8333333, 0.8, -0.08'",
+    "'dataset/r4tings, ratings.csv, items.csv', LIFT    , 0.4, 0.4,  true, 10, , , , label, 'i3, 2, i10, 0.4, 0.5, 1.25, 1.2, 0.08'",
+    "'dataset/r4tings, ratings.csv, items.csv', LEVERAGE, 0d , 0d ,  true, 10, , , , label, 'i3, 3, i10, 0.4, 0.5, 1.25, 1.2, 0.08'",
   })
   @interface AssociationRuleMiningCsvSource {}
 
@@ -83,7 +84,9 @@ class AssociationRuleMiningTest extends AbstractSparkTests {
     testReporter.publishEntry("ids", expects[0]);
 
     Dataset<Row> recommendedItemDS =
-        new AssociationRuleMining(params).recommend(ratings, topN, expects[0]);
+        new AssociationRuleMining(params)
+            .recommend(ratings, topN, expects[0])
+            .where(col(COL.LIFT).gt(1));
 
     if (Objects.equals(verbose, Boolean.TRUE)) {
       testReporter.publishEntry("recommendDS.count", String.valueOf(recommendedItemDS.count()));
@@ -96,23 +99,21 @@ class AssociationRuleMiningTest extends AbstractSparkTests {
         .show(false);
 
     Row row =
-            recommendedItemDS
-                    .where(
-                            col(COL.RANK)
-                                    .equalTo(expects[1])
-                                    .and(col(params.getItemCol()).equalTo(expects[2])))
-                    .head();
+        recommendedItemDS
+            .where(
+                col(COL.RANK).equalTo(expects[1]).and(col(params.getItemCol()).equalTo(expects[2])))
+            .head();
 
     List<String> measureList =
-            Arrays.asList(COL.SUPPORT, COL.CONFIDENCE, COL.LIFT, COL.CONVICTION, COL.LEVERAGE);
+        Arrays.asList(COL.SUPPORT, COL.CONFIDENCE, COL.LIFT, COL.CONVICTION, COL.LEVERAGE);
 
     IntStream.range(0, measureList.size())
-            .forEach(
-                    idx -> {
-                      String measure = measureList.get(idx);
-                      double actual = (double) row.getAs(measure);
-                      log.info("{} {}", measure, String.format("%.7f [%s]", actual, actual));
-                      assertEquals(Double.parseDouble(expects[idx + 3]), actual, 1.0e-7);
-                    });
+        .forEach(
+            idx -> {
+              String measure = measureList.get(idx);
+              double actual = (double) row.getAs(measure);
+              log.info("{} {}", measure, String.format("%.7f [%s]", actual, actual));
+              assertEquals(Double.parseDouble(expects[idx + 3]), actual, 1.0e-7);
+            });
   }
 }
