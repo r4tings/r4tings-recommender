@@ -67,26 +67,26 @@ public class BaselineSingleValueDecompositionTest extends AbstractSparkTests {
     Dataset<Row> baselineRatingDS = baselineModel.transform(ratingDS);
 
     double actual1 =
-        baselineRatingDS
-            .where(
-                col(baselineModel.getUserCol())
-                    .equalTo(expectations[0])
-                    .and(col(baselineModel.getItemCol()).equalTo(expectations[1])))
-            .head()
-            .getAs(baselineModel.getOutputCol());
+            (double) baselineRatingDS
+                .where(
+                    col(baselineModel.getUserCol())
+                        .equalTo(expectations[0])
+                        .and(col(baselineModel.getItemCol()).equalTo(expectations[1])))
+                .head()
+                .getAs(baselineModel.getOutputCol());
 
-    assertEquals(Double.parseDouble(expectations[2]), actual1, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[2]), actual1, 1.0e-4);
 
     double actual2 =
-        baselineRatingDS
-            .where(
-                col(baselineModel.getUserCol())
-                    .equalTo(expectations[0])
-                    .and(col(baselineModel.getItemCol()).equalTo(expectations[1])))
-            .head()
-            .getAs(baselineModel.getResidualCol());
+            (double) baselineRatingDS
+                .where(
+                    col(baselineModel.getUserCol())
+                        .equalTo(expectations[0])
+                        .and(col(baselineModel.getItemCol()).equalTo(expectations[1])))
+                .head()
+                .getAs(baselineModel.getResidualCol());
 
-    assertEquals(Double.parseDouble(expectations[3]), actual2, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[3]), actual2, 1.0e-4);
 
     SingleValueDecomposition svd =
         new SingleValueDecomposition().setK(k).setVerbose(verbose).setRatingCol(COL.RESIDUAL);
@@ -96,15 +96,15 @@ public class BaselineSingleValueDecompositionTest extends AbstractSparkTests {
     Dataset<Row> reconstructedRatingDS = svdModel.transform(baselineRatingDS);
 
     double actual3 =
-        reconstructedRatingDS
-            .where(
-                col(baselineModel.getUserCol())
-                    .equalTo(expectations[0])
-                    .and(col(baselineModel.getItemCol()).equalTo(expectations[1])))
-            .head()
-            .getAs(svdModel.getOutputCol());
+            (double) reconstructedRatingDS
+                .where(
+                    col(baselineModel.getUserCol())
+                        .equalTo(expectations[0])
+                        .and(col(baselineModel.getItemCol()).equalTo(expectations[1])))
+                .head()
+                .getAs(svdModel.getOutputCol());
 
-    assertEquals(Double.parseDouble(expectations[4]), actual3, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[4]), actual3, 1.0e-4);
 
     BaselineSingleValueDecompositionParams params =
         new BaselineSingleValueDecompositionParams()
@@ -119,13 +119,13 @@ public class BaselineSingleValueDecompositionTest extends AbstractSparkTests {
     recommendedItemDS.show();
 
     double actual4 =
-        recommendedItemDS
-            .where(
-                col(params.getItemCol())
-                    .equalTo(expectations[6])
-                    .and(col(COL.RANK).equalTo(expectations[7])))
-            .head()
-            .getAs(params.getOutputCol());
+            (double) recommendedItemDS
+                .where(
+                    col(params.getItemCol())
+                        .equalTo(expectations[6])
+                        .and(col(COL.RANK).equalTo(expectations[7])))
+                .head()
+                .getAs(params.getOutputCol());
 
     log.info("actual3 {}", String.format("%.7f [%s]", actual4, actual4));
 

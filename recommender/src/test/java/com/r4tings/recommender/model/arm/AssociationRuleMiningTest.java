@@ -18,7 +18,9 @@ import org.junit.jupiter.params.provider.CsvSource;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Objects;
+import java.util.stream.IntStream;
 
 import static com.r4tings.recommender.common.Constants.COL;
 import static org.apache.spark.sql.functions.col;
@@ -30,9 +32,7 @@ class AssociationRuleMiningTest extends AbstractSparkTests {
   @Retention(RetentionPolicy.RUNTIME)
   @ParameterizedTest(name = "[{arguments}] #{index}")
   @CsvSource({
-    "'dataset/r4tings                  , ratings.csv,  items.csv',    SUPPORT, 0.2, 0.5,  true, 10,       ,        , , label, '  i3, 4,   i1, 0.4      '",
-    "'dataset/r4tings                  , ratings.csv,  items.csv', CONFIDENCE, 0.2, 0.5,  true, 10,       ,        , , label, '  i3, 4,   i1, 0.5      '",
-    "'dataset/r4tings                  , ratings.csv,  items.csv',       LIFT, 0.2, 0.5,  true, 10,       ,        , , label, '  i3, 6,   i1, 0.8333333'",
+    "'dataset/r4tings, ratings.csv, items.csv', LIFT, 0.2, 0.5,  true, 10, , , , label, 'i3, 6, i1, 0.4, 0.5, 0.8333333, 0.8, -0.08'",
   })
   @interface AssociationRuleMiningCsvSource {}
 
@@ -82,28 +82,37 @@ class AssociationRuleMiningTest extends AbstractSparkTests {
 
     testReporter.publishEntry("ids", expects[0]);
 
-    Dataset<Row> recommendDS =
+    Dataset<Row> recommendedItemDS =
         new AssociationRuleMining(params).recommend(ratings, topN, expects[0]);
 
     if (Objects.equals(verbose, Boolean.TRUE)) {
-      testReporter.publishEntry("recommendDS.count", String.valueOf(recommendDS.count()));
-      testReporter.publishEntry("recommendDS.schema", recommendDS.schema().simpleString());
+      testReporter.publishEntry("recommendDS.count", String.valueOf(recommendedItemDS.count()));
+      testReporter.publishEntry("recommendDS.schema", recommendedItemDS.schema().simpleString());
     }
 
-    recommendDS
+    recommendedItemDS
         .join(items.select(params.getItemCol(), labelCol), params.getItemCol())
         .orderBy(col(COL.RANK))
         .show(false);
 
-    double actual =
-        recommendDS
-            .where(
-                col(COL.RANK).equalTo(expects[1]).and(col(params.getItemCol()).equalTo(expects[2])))
-            .head()
-            .getAs(params.getOutputCol());
+    Row row =
+            recommendedItemDS
+                    .where(
+                            col(COL.RANK)
+                                    .equalTo(expects[1])
+                                    .and(col(params.getItemCol()).equalTo(expects[2])))
+                    .head();
 
-    testReporter.publishEntry("actual", String.format("%.7f [%s]", actual, actual));
+    List<String> measureList =
+            Arrays.asList(COL.SUPPORT, COL.CONFIDENCE, COL.LIFT, COL.CONVICTION, COL.LEVERAGE);
 
-    assertEquals(Double.parseDouble(expects[3]), actual, 1.0e-7);
+    IntStream.range(0, measureList.size())
+            .forEach(
+                    idx -> {
+                      String measure = measureList.get(idx);
+                      double actual = (double) row.getAs(measure);
+                      log.info("{} {}", measure, String.format("%.7f [%s]", actual, actual));
+                      assertEquals(Double.parseDouble(expects[idx + 3]), actual, 1.0e-7);
+                    });
   }
 }

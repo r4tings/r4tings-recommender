@@ -106,9 +106,9 @@ public class SingleValueDecomposition extends CommonEstimator<SingleValueDecompo
             .map(
                 row ->
                     MatrixEntry.apply(
-                        row.getAs(COL.USER_INDEX),
-                        row.getAs(COL.ITEM_INDEX),
-                        row.getAs(getRatingCol())))
+                        (long) row.getAs(COL.USER_INDEX),
+                        (long) row.getAs(COL.ITEM_INDEX),
+                        (double) row.getAs(getRatingCol())))
             .rdd();
 
     /*

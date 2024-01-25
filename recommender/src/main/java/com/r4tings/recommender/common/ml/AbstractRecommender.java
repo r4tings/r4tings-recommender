@@ -49,27 +49,31 @@ public abstract class AbstractRecommender {
           ratingDS, params.getUserCol(), params.getItemCol(), params.getRatingCol(), 7);
     }
 
-    Dataset<Row> itemScoreDS = execute(ratingDS, userId);
-
-    if (Objects.equals(params.getVerbose(), Boolean.TRUE)) {
-      log.info("itemScoreDS: {}", itemScoreDS.count());
-      VerboseUtils.show(itemScoreDS, params.getOutputCol(), params.getOutputCol(), 7);
-    }
+    Dataset<Row> scoredItemDS = execute(ratingDS, userId);
 
     /*
      * Step 4: Top-N item recommendation
      */
 
-    return SparkUtils.zipWithIndex(
-        itemScoreDS
-            .na()
-            .drop()
-            .orderBy(
-                col(params.getOutputCol()).desc(),
-                length(col(params.getItemCol())),
-                col(params.getItemCol()))
-            .limit(topN),
-        COL.RANK,
-        1);
+    Dataset<Row> recommendedItemDS =  SparkUtils.zipWithIndex(
+            scoredItemDS
+                    .na()
+                    .drop()
+                    .orderBy(
+                            col(params.getOutputCol()).desc(),
+                            length(col(params.getItemCol())),
+                            col(params.getItemCol()))
+                    .limit(topN),
+            COL.RANK /*+ "_by_" + params.getOutputCol()*/,
+            1);
+
+    if (Objects.equals(params.getVerbose(), Boolean.TRUE)) {
+      log.info("scoredItemDS: {}", scoredItemDS.count());
+      VerboseUtils.show(scoredItemDS, params.getOutputCol(), params.getOutputCol(), 7);
+//      log.info("recommendedItemDS: {}", recommendedItemDS.count());
+//      VerboseUtils.show(recommendedItemDS, params.getOutputCol(), params.getOutputCol(), 7);
+    }
+
+    return recommendedItemDS;
   }
 }

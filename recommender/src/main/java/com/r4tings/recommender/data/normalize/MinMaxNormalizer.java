@@ -33,8 +33,8 @@ public class MinMaxNormalizer extends RatingNormalizer<MinMaxNormalizer> {
   protected Dataset<Row> compute(Dataset<Row> ratingDS) {
     Row row = ratingDS.agg(min(getRatingCol()).as(COL.MIN), max(getRatingCol()).as(COL.MAX)).head();
 
-    double min = row.getAs(COL.MIN);
-    double max = row.getAs(COL.MAX);
+    double min = (double) row.getAs(COL.MIN);
+    double max = (double) row.getAs(COL.MAX);
 
     if (Objects.equals(getVerbose(), Boolean.TRUE)) {
       log.info("min: {} max: {}", min, max);

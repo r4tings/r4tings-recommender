@@ -64,13 +64,13 @@ public class KNearestNeighborsTest extends AbstractSparkTests {
     recommendedItemDS.show();
 
     double actual =
-        recommendedItemDS
-            .where(
-                col(params.getItemCol())
-                    .equalTo(expectations[1])
-                    .and(col(COL.RANK).equalTo(expectations[2])))
-            .head()
-            .getAs(params.getOutputCol());
+            (double) recommendedItemDS
+                .where(
+                    col(params.getItemCol())
+                        .equalTo(expectations[1])
+                        .and(col(COL.RANK).equalTo(expectations[2])))
+                .head()
+                .getAs(params.getOutputCol());
 
     log.info("actual {}", String.format("%.7f [%s]", actual, actual));
 
