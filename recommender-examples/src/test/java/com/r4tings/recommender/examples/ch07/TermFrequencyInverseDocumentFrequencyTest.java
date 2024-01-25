@@ -51,7 +51,8 @@ public class TermFrequencyInverseDocumentFrequencyTest extends AbstractSparkTest
 
     Dataset<Row> recommendedItemDS = recommender.recommend(ratingDS, termDS, topN, expectations[0]);
 
-    recommendedItemDS.show();
+    log.info(
+            "recommendedItemDS\n{}", recommendedItemDS.orderBy(col(COL.RANK)).showString(10, 0, false));
 
     double actual =
             (double) recommendedItemDS
