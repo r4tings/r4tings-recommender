@@ -27,8 +27,8 @@ public class AssociationRuleMiningTest extends AbstractSparkTests {
 
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet', LIFT, 0.5, 0.5, 10, true, 'i3, 1, i7, 0.6, 0.75, 1.25, 1.6, 0.12'",
-    "'dataset/r4tings, ratings.parquet', LIFT, 0d , 0d , 10, true, 'i3, 1, i5, 0.4, 0.5 , 1.25, 1.2, 0.08'",
+    "'dataset/r4tings, ratings.parquet', LIFT    , 0.5, 0.5, 10, true, 'i3, 1, i7, 0.6, 0.75, 1.25, 1.6, 0.12'",
+    "'dataset/r4tings, ratings.parquet', LEVERAGE, 0d , 0d , 10, true, 'i3, 1, i7, 0.6, 0.75, 1.25, 1.6, 0.12'",
   })
   void associationRuleMiningExamples(
       @ConvertPathString String path,
