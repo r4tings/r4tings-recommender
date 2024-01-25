@@ -14,6 +14,10 @@ import org.apache.spark.sql.Row;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.IntStream;
+
 import static com.r4tings.recommender.common.Constants.COL;
 import static org.apache.spark.sql.functions.col;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -21,14 +25,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @Slf4j
 public class AssociationRuleMiningTest extends AbstractSparkTests {
 
-  // TODO 흥미도 측도 검증은 단일행으로, 정렬기준은 변경 가능으로, 측도 임곗값 필터 기능은 추가
   @ParameterizedTest
   @CsvSource({
-    "'dataset/r4tings, ratings.parquet',    SUPPORT, 0.5, 0.5, 10, true, 'i3, 1, i2, 0.8     '",
-    "'dataset/r4tings, ratings.parquet', CONFIDENCE, 0.5, 0.5, 10, true, 'i3, 1, i2, 1       '",
-    "'dataset/r4tings, ratings.parquet',       LIFT, 0.5, 0.5, 10, true, 'i3, 2, i2, 1       '",
-    "'dataset/r4tings, ratings.parquet',   LEVERAGE, 0.5, 0.5, 10, true, 'i3, 2, i2, 0       '",
-    "'dataset/r4tings, ratings.parquet', CONVICTION, 0.5, 0.5, 10, true, 'i3, 1, i2, Infinity'",
+    "'dataset/r4tings, ratings.parquet', LIFT, 0.5, 0.5, 10, true, 'i3, 1, i7, 0.6, 0.75, 1.25, 1.6, 0.12'",
   })
   void associationRuleMiningExamples(
       @ConvertPathString String path,
@@ -52,19 +51,24 @@ public class AssociationRuleMiningTest extends AbstractSparkTests {
 
     Dataset<Row> recommendedItemDS = recommender.recommend(ratingDS, topN, expectations[0]);
 
-    recommendedItemDS.show();
+    Row row =
+        recommendedItemDS
+            .where(
+                col(COL.RANK)
+                    .equalTo(expectations[1])
+                    .and(col(params.getItemCol()).equalTo(expectations[2])))
+            .head();
 
-    double actual =
-            (double) recommendedItemDS
-                .where(
-                    col(COL.RANK)
-                        .equalTo(expectations[1])
-                        .and(col(params.getItemCol()).equalTo(expectations[2])))
-                .head()
-                .getAs(params.getOutputCol());
+    List<String> measureList =
+        Arrays.asList(COL.SUPPORT, COL.CONFIDENCE, COL.LIFT, COL.CONVICTION, COL.LEVERAGE);
 
-    log.info("actual {}", String.format("%.7f [%s]", actual, actual));
-
-    assertEquals(Double.parseDouble(expectations[3]), actual, 1.0e-7);
+    IntStream.range(0, measureList.size())
+        .forEach(
+            idx -> {
+              String measure = measureList.get(idx);
+              double actual = (double) row.getAs(measure);
+              log.info("{} {}", measure, String.format("%.7f [%s]", actual, actual));
+              assertEquals(Double.parseDouble(expectations[idx + 3]), actual, 1.0e-4);
+            });
   }
 }

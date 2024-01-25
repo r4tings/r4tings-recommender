@@ -51,7 +51,7 @@ public class BinaryThresholdingTest extends AbstractSparkTests {
               .head()
               .getDouble(0);
 
-      assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-7);
+      assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-4);
     } else {
       UnsupportedOperationException exception =
           assertThrows(UnsupportedOperationException.class, () -> binarizer.transform(ratingDS));

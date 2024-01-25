@@ -89,11 +89,6 @@ public class AssociationRuleMining extends AbstractRecommender {
                 InterestMeasure.LIFT
                     .invoke(params.getVerbose())
                     .apply(col(COL.CONFIDENCE), col(COL.RHS_SUPPORT)))
-            .withColumn(
-                COL.LEVERAGE,
-                InterestMeasure.LEVERAGE
-                    .invoke(params.getVerbose())
-                    .apply(col(COL.SUPPORT), col(COL.LHS_SUPPORT), col(COL.RHS_SUPPORT)))
             // divide by zero 대응 향상도가 1일때 발생 support가 0인 경우는 최소 지지도로 제거됨
             .withColumn(
                 COL.CONVICTION,
@@ -105,7 +100,12 @@ public class AssociationRuleMining extends AbstractRecommender {
                     .otherwise(
                         InterestMeasure.CONVICTION
                             .invoke(params.getVerbose())
-                            .apply(col(COL.RHS_SUPPORT), col(COL.CONFIDENCE))));
+                            .apply(col(COL.RHS_SUPPORT), col(COL.CONFIDENCE))))
+            .withColumn(
+                COL.LEVERAGE,
+                InterestMeasure.LEVERAGE
+                    .invoke(params.getVerbose())
+                    .apply(col(COL.SUPPORT), col(COL.LHS_SUPPORT), col(COL.RHS_SUPPORT)));
 
     if (Objects.equals(params.getVerbose(), Boolean.TRUE)) {
       log.info("totalTransactions: {}", totalTransactions);
@@ -122,6 +122,11 @@ public class AssociationRuleMining extends AbstractRecommender {
     }
 
     return associationRuleDS.select(
-        col(COL.RHS).as(params.getItemCol()), col(params.getOutputCol()));
+        col(COL.RHS).as(params.getItemCol()),
+        col(COL.SUPPORT),
+        col(COL.CONFIDENCE),
+        col(COL.LIFT),
+        col(COL.CONVICTION),
+        col(COL.LEVERAGE));
   }
 }

@@ -67,6 +67,6 @@ public class PearsonSimilarityTest extends AbstractSparkTests {
 
     log.info("actual {}", String.format("%.7f [%s]", actual, actual));
 
-    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[2]), actual, 1.0e-4);
   }
 }

@@ -69,7 +69,7 @@ public abstract class AbstractRecommender {
                 length(col(params.getItemCol())),
                 col(params.getItemCol()))
             .limit(topN),
-        COL.RANK,
+        COL.RANK /*+ "_by_" + params.getOutputCol()*/,
         1);
   }
 }

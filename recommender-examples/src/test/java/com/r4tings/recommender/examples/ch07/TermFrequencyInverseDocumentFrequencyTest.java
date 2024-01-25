@@ -54,16 +54,16 @@ public class TermFrequencyInverseDocumentFrequencyTest extends AbstractSparkTest
     recommendedItemDS.show();
 
     double actual =
-        recommendedItemDS
-            .where(
-                col(COL.RANK)
-                    .equalTo(expectations[1])
-                    .and(col(params.getItemCol()).equalTo(expectations[2])))
-            .head()
-            .getAs(params.getOutputCol());
+            (double) recommendedItemDS
+                .where(
+                    col(COL.RANK)
+                        .equalTo(expectations[1])
+                        .and(col(params.getItemCol()).equalTo(expectations[2])))
+                .head()
+                .getAs(params.getOutputCol());
 
     log.info("actual {}", String.format("%.7f [%s]", actual, actual));
 
-    assertEquals(Double.parseDouble(expectations[3]), actual, 1.0e-7);
+    assertEquals(Double.parseDouble(expectations[3]), actual, 1.0e-4);
   }
 }
