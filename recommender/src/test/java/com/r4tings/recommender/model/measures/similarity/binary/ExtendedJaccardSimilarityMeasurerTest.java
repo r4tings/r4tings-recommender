@@ -36,19 +36,19 @@ class ExtendedJaccardSimilarityMeasurerTest extends AbstractSparkTests {
   @ParameterizedTest(name = "[{arguments}] #{index}")
   @CsvFileSource(
       resources =
-          "/com/r4tings/recommender/model/measures/similarity/binary/jaccard_similarity.csv",
+          "/com/r4tings/recommender/model/measures/similarity/binary/extended_jaccard_similarity.csv",
       numLinesToSkip = 1)
   @interface ExtendedJaccardSimilarityCsvFileSource {}
 
   @Retention(RetentionPolicy.RUNTIME)
   @ParameterizedTest(name = "#{index} run with [{arguments}]")
   @CsvSource({
-    "dataset/r4tings/ratings.csv, ' , BINARY_THRESHOLDING, , , , 3d', USER, true, , , , , , 'u4, u5, 0.1428571'",
-    "dataset/r4tings/ratings.csv, ' , BINARY_THRESHOLDING, , , , 3d', ITEM, true, , , , , , 'i3, i1, 0.3333333'",
+    "dataset/r4tings/ratings.csv, ' , BINARY_THRESHOLDING, , , , 3d', USER, true, true, , , , , 'u4, u5, 0.1428571'",
+    "dataset/r4tings/ratings.csv, ' , BINARY_THRESHOLDING, , , , 3d', ITEM, true, true, , , , , 'i3, i1, 0.3333333'",
   })
   @interface ExtendedJaccardSimilarityCsvSource {}
 
-  @ExtendedJaccardSimilarityCsvSource
+  // @ExtendedJaccardSimilarityCsvSource
   @ExtendedJaccardSimilarityCsvFileSource
   @Tag("Similarity")
   @DisplayName("Binary Extended Jaccard Similarity")
@@ -94,6 +94,7 @@ class ExtendedJaccardSimilarityMeasurerTest extends AbstractSparkTests {
         new ExtendedJaccardSimilarityMeasurer()
             .setGroup(group)
             .setVerbose(verbose)
+            .setImputeZero(imputeZero)
             .setIds(ids)
             .setUserCol(userCol)
             .setItemCol(itemCol)

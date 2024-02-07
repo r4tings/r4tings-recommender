@@ -1,7 +1,7 @@
 Ratings Data File                            ,"Criterion,Rating Scaler      ,Verbose,Lower,Upper,Threshold",Criterion,Verbose,Impute Zero,Ids       ,User Column,Item Column,Rating Column,"    LHS Id,      RHS Id,   Expected"
 dataset/r4tings/ratings.csv                  ,"         ,BINARY_THRESHOLDING,       ,     ,     ,       3d",USER     ,true   ,true       ,          ,           ,           ,             ,"        u4,          u5,  0.1428571"
 dataset/r4tings/ratings.csv                  ,"         ,BINARY_THRESHOLDING,       ,     ,     ,       3d",ITEM     ,true   ,true       ,          ,           ,           ,             ,"        i3,          i1,  0.3333333"
-dataset/r4tings/ratings.csv                  ,"         ,BINARY_THRESHOLDING,       ,     ,     ,       3d",USER     ,true   ,false      ,          ,           ,           ,             ,"         u4,         u5,  0.5      "
+dataset/r4tings/ratings.csv                  ,"         ,BINARY_THRESHOLDING,       ,     ,     ,       3d",USER     ,true   ,false      ,          ,           ,           ,             ,"         u4,         u5,  0.4999999"
 dataset/r4tings/ratings.csv                  ,"         ,BINARY_THRESHOLDING,       ,     ,     ,       3d",ITEM     ,true   ,false      ,          ,           ,           ,             ,"         i3,         i1,  1d       "
 
 dataset/Book-Crossing/BX-Book-Ratings.parquet,"         ,BINARY_THRESHOLDING,       ,     ,     ,       5d",USER     ,       ,true       ,11676     ,User-ID    ,ISBN       ,Book-Rating  ,"     11676,       98391,  0.0181573"

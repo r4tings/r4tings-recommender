@@ -7,7 +7,7 @@
 
 ![Concept](./docs/static/images/r4tings-recommender.svg)
 
-### Official Website: [`http://r4tings.com`](http://r4tings.com/)
+### Official Website: [`https://r4tings.com`](https://r4tings.com/)
 
 ## 소개(Introduction)
 
@@ -41,7 +41,7 @@ R4tings Recommender 프로젝트는 오픈 소스 추천 엔진을 개발하고,
 R4tings Recommender 오픈 소스 추천 엔진은  추천 시스템을 구현하기 위한 Java와 Apache Spark 기반의 핵심코드와 이를 활용하기 위한 예제 코드가 포함된 워크북을 함께 제공합니다.
 
 - <a href="https://github.com/r4tings/r4tings-recommender/tree/main/recommender" target="_blank">**핵심 코드**</a> : 전통적인 통계나 기계 학습 기반의 추천 기법들과 절차를 구현한 핵심 코드는 오픈 소스로 제공되며, 누구나 프로젝트의 소스 코드를 자유롭게 확장하고 개선할 수 있습니다.
-- <a href="http://r4tings.com/docs/recommender/latest/workbook/home" target="_blank">**워크북**</a>과 <a href="https://github.com/r4tings/r4tings-recommender/tree/main/recommender-examples" target="_blank">**예제 코드**</a> : 추천 시스템을 학습하고 이해하는 데 도움이 되며, 프로토타입을 개발하거나 새로운 기법을 시험하기 위한 기초를 제공합니다. 또한 상용 수준의 추천 시스템을 구현하려는 경우의 출발점으로 사용할 수 있으며 커뮤니티의 참여와 기여를 유도합니다.
+- <a href="https://r4tings.com/recommender/docs/workbook/latest/home" target="_blank">**워크북**</a>과 <a href="https://github.com/r4tings/r4tings-recommender/tree/main/recommender-examples" target="_blank">**예제 코드**</a> : 추천 시스템을 학습하고 이해하는 데 도움이 되며, 프로토타입을 개발하거나 새로운 기법을 시험하기 위한 기초를 제공합니다. 또한 상용 수준의 추천 시스템을 구현하려는 경우의 출발점으로 사용할 수 있으며 커뮤니티의 참여와 기여를 유도합니다.
 
 <!--
 
@@ -55,7 +55,7 @@ R4tings Recommender 오픈 소스 추천 엔진은  추천 시스템을 구현�
 
 ## 구현 요소(Components)
 
-R4tings Recommender는 [추천](http://r4tings.com/docs/recommender/latest/workbook/ch-01)을 위한 평점 점규화와 유사도 계산, 그리고 협업 필터링과 콘텐츠 기반 필터링과 같은 대표적인 평점 예측과 아이템 추천 기법에 대한 구현체를 제공합니다.
+R4tings Recommender는 [추천](https://r4tings.com/recommender/docs/workbook/latest/ch-01)을 위한 평점 점규화와 유사도 계산, 그리고 협업 필터링과 콘텐츠 기반 필터링과 같은 대표적인 평점 예측과 아이템 추천 기법에 대한 구현체를 제공합니다.
 
 ### 지원 알고리즘 및 클래스
 
@@ -76,37 +76,37 @@ R4tings Recommender는 [추천](http://r4tings.com/docs/recommender/latest/workb
   - TF-IDF 콘텐츠 기반 필터링 추천 ([TermFrequencyInverseDocumentFrequency](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequency.java) 클래스와 [TermFrequencyInverseDocumentFrequencyParams](./recommender/src/main/java/com/r4tings/recommender/model/tfidf/TermFrequencyInverseDocumentFrequencyParams.java) 클래스)
   - 연관규칙 기반 추천 ([AssociationRuleMining](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMining.java) 클래스와 [AssociationRuleMiningParams](./recommender/src/main/java/com/r4tings/recommender/model/arm/AssociationRuleMiningParams.java) 클래스)
 
-### [평점 정규화](http://r4tings.com/docs/recommender/latest/workbook/ch-03)
+### [평점 정규화](https://r4tings.com/recommender/docs/workbook/latest/ch-03)
 
 정규화는 데이터 집합에서 다른 범위나 척도를 가진 값을 일정한 범위로 변환하는 과정입니다. 
 평점 데이터의 경우, 평점이 서로 다른 척도 또는 범위를 가지기 때문에 평점 정규화를 통해 사용자마다 서로 다른 평점 기준과 아이템에 대한 선호에 따른 평점의 차이를 조정합니다.
 
-- [평균 중심화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-02)
-- [Z점수화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-03)
-- [최소-최대화 (전체/사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-04)
-- [소수 스케일링화 (전체)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-05)
-- [이진 임계화 (전체)](http://r4tings.com/docs/recommender/latest/workbook/ch-03-sec-06)
+- [평균 중심화 (전체/사용자/아이템)](https://r4tings.com/recommender/docs/workbook/latest/ch-03-sec-02)
+- [Z점수화 (전체/사용자/아이템)](https://r4tings.com/recommender/docs/workbook/latest/ch-03-sec-03)
+- [최소-최대화 (전체/사용자/아이템)](https://r4tings.com/recommender/docs/workbook/latest/ch-03-sec-04)
+- [소수 스케일링화 (전체)](https://r4tings.com/recommender/docs/workbook/latest/ch-03-sec-05)
+- [이진 임계화 (전체)](https://r4tings.com/recommender/docs/workbook/latest/ch-03-sec-06)
 
 <video class="w-100" controls><source src="https://github.com/r4tings/r4tings-recommender/assets/123946859/ceab3963-c27e-4617-a3b3-d9a0dcd71891" type="video/mp4" /></video>
 
-### [유사도 계산](http://r4tings.com/docs/recommender/latest/workbook/ch-04)
+### [유사도 계산](https://r4tings.com/recommender/docs/workbook/latest/ch-04)
 
 유사도 계산은 다차원 공간에서 데이터 포인트 간의 유사성을 측정하는 방법입니다. 
 사용자가 아이템에 매긴 평점 데이터를 기반으로 사용자나 아이템 간의 유사성 또는 거리를 측정하여 데이터 간의 관련성을 파악하는 데 사용됩니다.
 
-- [코사인 유사도 (사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-04-sec-02)
-- [피어슨 상관계수와 유사도 (사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-04-sec-03)
-- [유클리드 거리와 유사도 (사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-04-sec-04)
-- [이진 속성과 유사도 (사용자/아이템)](http://r4tings.com/docs/recommender/latest/workbook/ch-04-sec-05)
+- [코사인 유사도 (사용자/아이템)](https://r4tings.com/recommender/docs/workbook/latest/ch-04-sec-02)
+- [피어슨 상관계수와 유사도 (사용자/아이템)](https://r4tings.com/recommender/docs/workbook/latest/ch-04-sec-03)
+- [유클리드 거리와 유사도 (사용자/아이템)](https://r4tings.com/recommender/docs/workbook/latest/ch-04-sec-04)
+- [이진 속성과 유사도 (사용자/아이템)](https://r4tings.com/recommender/docs/workbook/latest/ch-04-sec-05)
 
 <video class="w-100" controls><source src="https://github.com/r4tings/r4tings-recommender/assets/123946859/03a122d3-c094-44d7-8b6d-4fb7280ae616" /></video>
 
 ### 평점 예측과 아이템 추천
 
-- [이웃 기반 협업 필터링 추천](http://r4tings.com/docs/recommender/latest/workbook/ch-05)
-- [특잇값 분해 기반 협업 필터링 추천](http://r4tings.com/docs/recommender/latest/workbook/ch-06)
-- [TF-IDF 콘텐츠 기반 필터링 추천](http://r4tings.com/docs/recommender/latest/workbook/ch-07)
-- [연관규칙 기반 추천](http://r4tings.com/docs/recommender/latest/workbook/ch-08)
+- [이웃 기반 협업 필터링 추천](https://r4tings.com/recommender/docs/workbook/latest/ch-05)
+- [특잇값 분해 기반 협업 필터링 추천](https://r4tings.com/recommender/docs/workbook/latest/ch-06)
+- [TF-IDF 콘텐츠 기반 필터링 추천](https://r4tings.com/recommender/docs/workbook/latest/ch-07)
+- [연관규칙 기반 추천](https://r4tings.com/recommender/docs/workbook/latest/ch-08)
 
 <video class="w-100" controls><source src="https://github.com/r4tings/r4tings-recommender/assets/123946859/71763280-ad25-4517-b2e6-3f0fc4008e18" type="video/mp4" /></video>
 
@@ -293,16 +293,16 @@ C:\r4tings
 
 ### 리소스(Resources)
 
-- <a href="http://r4tings.com" target="_blank">공식 웹사이트(Official Website)</a>
-  - <a href="http://r4tings.com/docs/recommender/latest/workbook/home" target="_blank">워크북</a>
-    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-01" target="_blank">1. 추천과 추천 기법</a>
-    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-02" target="_blank">2. 데이터셋 살펴보기</a>
-    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-03" target="_blank">3. 평점 정규화</a>
-    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-04" target="_blank">4. 유사도</a>
-    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-05" target="_blank">5. 이웃 기반 협업 필터링 추천</a>
-    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-06" target="_blank">6. 특잇값 분해 기반 협업 필터링 추천</a>
-    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-07" target="_blank">7. TF-IDF 콘텐츠 기반 필터링 추천</a>
-    - <a href="http://r4tings.com/docs/recommender/latest/workbook/ch-08" target="_blank">8. 연관규칙 기반 추천</a>
+- <a href="https://r4tings.com" target="_blank">공식 웹사이트(Official Website)</a>
+  - <a href="https://r4tings.com/recommender/docs/workbook/latest/home" target="_blank">워크북</a>
+    - <a href="https://r4tings.com/recommender/docs/workbook/latest/ch-01" target="_blank">1. 추천과 추천 기법</a>
+    - <a href="https://r4tings.com/recommender/docs/workbook/latest/ch-02" target="_blank">2. 데이터셋 살펴보기</a>
+    - <a href="https://r4tings.com/recommender/docs/workbook/latest/ch-03" target="_blank">3. 평점 정규화</a>
+    - <a href="https://r4tings.com/recommender/docs/workbook/latest/ch-04" target="_blank">4. 유사도</a>
+    - <a href="https://r4tings.com/recommender/docs/workbook/latest/ch-05" target="_blank">5. 이웃 기반 협업 필터링 추천</a>
+    - <a href="https://r4tings.com/recommender/docs/workbook/latest/ch-06" target="_blank">6. 특잇값 분해 기반 협업 필터링 추천</a>
+    - <a href="https://r4tings.com/recommender/docs/workbook/latest/ch-07" target="_blank">7. TF-IDF 콘텐츠 기반 필터링 추천</a>
+    - <a href="https://r4tings.com/recommender/docs/workbook/latest/ch-08" target="_blank">8. 연관규칙 기반 추천</a>
 - <a href="https://github.com/r4tings/r4tings-recommender" target="_blank">소스 코드 저장소(GitHub)</a>
   - <a href="https://github.com/r4tings/r4tings-recommender/blob/main/recommender" target="_blank">핵심 코드</a>
   - <a href="https://github.com/r4tings/r4tings-recommender/blob/main/recommender-examples" target="_blank">예제 코드</a>
