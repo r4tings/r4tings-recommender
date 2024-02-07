@@ -43,12 +43,12 @@ class JaccardSimilarityMeasurerTest extends AbstractSparkTests {
   @Retention(RetentionPolicy.RUNTIME)
   @ParameterizedTest(name = "#{index} run with [{arguments}]")
   @CsvSource({
-    "dataset/r4tings/ratings.csv, ' , BINARY_THRESHOLDING, , , , 3d', USER, true, , , , , , 'u4, u5, 0.1428571'",
-    "dataset/r4tings/ratings.csv, ' , BINARY_THRESHOLDING, , , , 3d', ITEM, true, , , , , , 'i3, i1, 0.3333333'",
+    "dataset/r4tings/ratings.csv, ' , BINARY_THRESHOLDING, , , , 3d', USER, true, true, , , , , 'u4, u5, 0.1428571'",
+    "dataset/r4tings/ratings.csv, ' , BINARY_THRESHOLDING, , , , 3d', ITEM, true, true, , , , , 'i3, i1, 0.3333333'",
   })
   @interface JaccardSimilarityCsvSource {}
 
-  @JaccardSimilarityCsvSource
+  // @JaccardSimilarityCsvSource
   @JaccardSimilarityCsvFileSource
   @Tag("Binary Similarity")
   @DisplayName("Jaccard Similarity")
@@ -94,6 +94,7 @@ class JaccardSimilarityMeasurerTest extends AbstractSparkTests {
         new JaccardSimilarityMeasurer()
             .setGroup(group)
             .setVerbose(verbose)
+            .setImputeZero(imputeZero)
             .setIds(ids)
             .setUserCol(userCol)
             .setItemCol(itemCol)
