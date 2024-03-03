@@ -170,7 +170,7 @@ https://github.com/r4tings/r4tings-recommender/assets/123946859/71763280-ad25-45
     - [5.6 요약(Summary)](https://r4tings.com/recommender/docs/workbook/latest/ch-05-sec-06)
 - [6. 특잇값 분해 기반 협업 필터링 추천](https://r4tings.com/recommender/docs/workbook/latest/ch-06)
     - [6.1 모델 기반 협업 필터링](https://r4tings.com/recommender/docs/workbook/latest/ch-06-sec-01)
-    - [6.2 기준선 추정과 특잇값 분해 기반 평점 예측](https://r4tings.com/recommender/docs/workbook/latest/ch-06-sec-02)
+    - [6.2 특잇값 분해 평점 예측](https://r4tings.com/recommender/docs/workbook/latest/ch-06-sec-02)
     - [6.3 요약(Summary)](https://r4tings.com/recommender/docs/workbook/latest/ch-06-sec-03)
 - [7. TF-IDF 콘텐츠 기반 필터링 추천](https://r4tings.com/recommender/docs/workbook/latest/ch-07)
     - [7.1 TF-IDF와 콘텐츠 기반 필터링](https://r4tings.com/recommender/docs/workbook/latest/ch-07-sec-01)
