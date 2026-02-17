@@ -339,10 +339,6 @@ See [`LICENSE.md`](/LICENSE.md) file for details.
 
 ## NEWS & UPDATES
 
-> **[2024/3Q]** `온라인 강좌. (준비중)` 
->
-> - `(가제) 수식으로 이해하는 추천 시스템 워크북. 미정.`
-
 > **[2023/12]** 공개SW 개발자대회 은상(한국정보과학회 회장상). (2023) 
 >
 > - <a href="https://www.oss.kr/dev_competition_activities/show/47925e10-ffd4-4cf8-9001-c80dc3d5fe7c" target="_blank">R4tings Recommender - Java 언어와 Apache Spark 라이브러리 기반으로 구현된 오픈 소스 추천 엔진</a>. 공개SW 포털.
